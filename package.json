@@ -1,0 +1,14 @@
+{
+  "name": "data-pulse-dev",
+  "version": "1.0.0",
+  "description": "DataPulse — Real-World Web Data & Scrapers for AI Assistants",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["apify", "mcp", "scrapers", "ai", "claude", "cursor"],
+  "author": "DataPulse Team",
+  "license": "MIT"
+}

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataPulse — Real-World Web Data & Scrapers for AI Assistants</title>
+  <meta name="description" content="Production-ready web scrapers and real-time data pipelines for AI assistants, LLM RAG pipelines, and automated workflows. Connect via MCP or Apify.">
+  <link rel="canonical" href="https://data-pulse.dev">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://data-pulse.dev">
+  <meta property="og:title" content="DataPulse — Real-World Web Data & Scrapers for AI Assistants">
+  <meta property="og:description" content="Production-ready web scrapers and real-time data pipelines for AI assistants, LLM RAG pipelines, and automated workflows. Connect via MCP or Apify.">
+  <meta property="og:site_name" content="DataPulse">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://data-pulse.dev">
+  <meta property="twitter:title" content="DataPulse — Real-World Web Data & Scrapers for AI Assistants">
+  <meta property="twitter:description" content="Production-ready web scrapers and real-time data pipelines for AI assistants, LLM RAG pipelines, and automated workflows. Connect via MCP or Apify.">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
+  
+  <!-- Tailwind CSS CDN & Inter Font -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca'
+            },
+            dark: {
+              950: '#090d16',
+              900: '#0f172a',
+              850: '#131e36',
+              800: '#1e293b',
+              700: '#334155'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    code, pre {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .grid-pattern {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .glow-radial {
+      background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    }
+  </style>
+</head>
+<body class="bg-dark-950 text-slate-100 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT BANNER -->
+  <div class="bg-gradient-to-r from-brand-600/30 via-indigo-600/30 to-purple-600/30 border-b border-brand-500/20 py-2 px-4 text-center text-xs sm:text-sm text-slate-300">
+    <span class="inline-flex items-center gap-1.5 font-medium text-brand-300">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+      24 Live Scrapers & MCP Tools Online
+    </span>
+    <span class="mx-2 text-slate-600 hidden sm:inline">•</span>
+    <span class="hidden sm:inline">Pay-Per-Event pricing starting at just $0.002 / item</span>
+    <a href="https://apify.com/laborious_rumor" target="_blank" rel="noopener noreferrer" class="ml-2 underline text-white hover:text-brand-300 font-semibold">Visit Apify Store &rarr;</a>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-dark-950/80 border-b border-dark-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-500 to-indigo-700 flex items-center justify-center shadow-lg shadow-brand-500/25">
+          <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <div>
+          <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">DataPulse</span>
+          <span class="text-[10px] font-mono uppercase tracking-wider text-brand-400 ml-1.5 px-1.5 py-0.5 rounded bg-brand-500/10 border border-brand-500/20">MCP / API</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#catalog" class="hover:text-white transition-colors">Catalog</a>
+        <a href="#mcp-setup" class="hover:text-white transition-colors">Connect AI (MCP)</a>
+        <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://apify.com/laborious_rumor" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-600/20 transition-all hover:scale-[1.02]">
+          <span>Run on Apify</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-16 pb-20 overflow-hidden grid-pattern glow-radial border-b border-dark-800/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-dark-850 border border-brand-500/30 text-xs font-medium text-brand-300 mb-6 shadow-sm">
+        <svg class="w-4 h-4 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+        </svg>
+        <span>Model Context Protocol (MCP) & Apify Native</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+        Real-world web data.<br>
+        <span class="bg-gradient-to-r from-brand-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
+          Right inside your AI assistant.
+        </span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-base sm:text-lg text-slate-400 mb-10 leading-relaxed">
+        Plug verified B2B leads, e-commerce pricing, ATS job pipelines, and RAG-ready markdown into Claude, Cursor, and automated workflows. Pay only for the data you extract.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#catalog" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm shadow-xl shadow-brand-600/30 transition-all hover:scale-105 flex items-center gap-2">
+          <span>Explore 24+ Scrapers</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </a>
+        <a href="#mcp-setup" class="px-6 py-3 rounded-xl bg-dark-850 hover:bg-dark-800 text-slate-200 border border-dark-700 font-semibold text-sm transition-all hover:border-brand-500/40 flex items-center gap-2">
+          <span>Connect via MCP (Claude/Cursor)</span>
+          <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+        </a>
+      </div>
+
+      <!-- STATS BAR -->
+      <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-dark-800/80 pt-8 text-left">
+        <div class="p-3 bg-dark-900/60 rounded-xl border border-dark-800/60">
+          <div class="text-2xl font-bold text-white">167+</div>
+          <div class="text-xs text-slate-400 mt-0.5">Live Executions</div>
+        </div>
+        <div class="p-3 bg-dark-900/60 rounded-xl border border-dark-800/60">
+          <div class="text-2xl font-bold text-brand-400">24</div>
+          <div class="text-xs text-slate-400 mt-0.5">Production Scrapers</div>
+        </div>
+        <div class="p-3 bg-dark-900/60 rounded-xl border border-dark-800/60">
+          <div class="text-2xl font-bold text-emerald-400">$0.002</div>
+          <div class="text-xs text-slate-400 mt-0.5">Avg. Cost / Record</div>
+        </div>
+        <div class="p-3 bg-dark-900/60 rounded-xl border border-dark-800/60">
+          <div class="text-2xl font-bold text-purple-400">100%</div>
+          <div class="text-xs text-slate-400 mt-0.5">Pay-Per-Event (No sub)</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEARCH & FILTER CATALOG -->
+  <section id="catalog" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Verified Scrapers Catalog</h2>
+        <p class="text-sm text-slate-400 mt-1">Browse and execute production-ready data pipelines via Apify or MCP.</p>
+      </div>
+
+      <!-- SEARCH BOX -->
+      <div class="w-full md:w-80 relative">
+        <input type="text" id="searchInput" placeholder="Search scrapers or keywords..." 
+               class="w-full bg-dark-900 border border-dark-700 rounded-xl px-4 py-2.5 pl-10 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+        <svg class="w-4 h-4 text-slate-500 absolute left-3.5 top-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- CATEGORY PILLS -->
+    <div class="flex flex-wrap items-center gap-2 mb-10" id="categoryFilters">
+      <button data-cat="all" class="cat-pill active px-4 py-1.5 rounded-full text-xs font-semibold bg-brand-600 text-white border border-brand-500 transition-all">All (24)</button>
+      <button data-cat="B2B & Leads" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-dark-900 hover:bg-dark-850 text-slate-300 border border-dark-800 transition-all">B2B & Leads</button>
+      <button data-cat="AI & RAG" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-dark-900 hover:bg-dark-850 text-slate-300 border border-dark-800 transition-all">AI & RAG</button>
+      <button data-cat="E-Commerce" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-dark-900 hover:bg-dark-850 text-slate-300 border border-dark-800 transition-all">E-Commerce</button>
+      <button data-cat="Jobs & Hiring" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-dark-900 hover:bg-dark-850 text-slate-300 border border-dark-800 transition-all">Jobs & Hiring</button>
+      <button data-cat="Social Trends" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-dark-900 hover:bg-dark-850 text-slate-300 border border-dark-800 transition-all">Social Trends</button>
+      <button data-cat="Tech Recon" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-dark-900 hover:bg-dark-850 text-slate-300 border border-dark-800 transition-all">Tech Recon</button>
+    </div>
+
+    <!-- ACTORS GRID -->
+    <div id="actorsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Populated via JS -->
+    </div>
+
+    <div id="noResults" class="hidden text-center py-16 bg-dark-900/40 rounded-2xl border border-dark-800">
+      <p class="text-slate-400 text-sm">No scrapers found matching your search.</p>
+    </div>
+
+  </section>
+
+  <!-- MCP & ASSISTANT INTEGRATION (Like Thirdwatch) -->
+  <section id="mcp-setup" class="py-16 bg-dark-900/50 border-t border-b border-dark-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-white tracking-tight">Connect directly to your AI Assistant</h2>
+        <p class="text-sm sm:text-base text-slate-400 mt-2">
+          Use your scrapers natively inside Claude Desktop, Cursor, ChatGPT, or Python scripts.
+        </p>
+      </div>
+
+      <!-- CODE TABS -->
+      <div class="bg-dark-950 border border-dark-800 rounded-2xl shadow-2xl overflow-hidden">
+        
+        <div class="flex items-center justify-between border-b border-dark-800 px-4 sm:px-6 bg-dark-900/70 overflow-x-auto">
+          <div class="flex space-x-2 sm:space-x-4 py-3" id="mcpTabs">
+            <button data-tab="claude" class="tab-btn active px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-white bg-dark-800 border border-dark-700">Claude Desktop (MCP)</button>
+            <button data-tab="cursor" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-400 hover:text-white">Cursor IDE</button>
+            <button data-tab="python" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-400 hover:text-white">Python SDK</button>
+            <button data-tab="curl" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-400 hover:text-white">cURL / REST</button>
+          </div>
+          <button id="copyCodeBtn" class="text-xs font-mono text-brand-400 hover:text-brand-300 flex items-center gap-1.5 py-1 px-2 rounded bg-brand-500/10 border border-brand-500/20">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            <span id="copyText">Copy Config</span>
+          </button>
+        </div>
+
+        <div class="p-6 font-mono text-xs sm:text-sm text-slate-300 leading-relaxed overflow-x-auto">
+          <pre id="codeDisplay"></pre>
+        </div>
+
+      </div>
+
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 text-slate-400 text-xs sm:text-sm">
+        <div class="p-4 bg-dark-950/60 rounded-xl border border-dark-800/60">
+          <div class="font-semibold text-white mb-1">1. Get your Apify Token</div>
+          Grab your free API token from <a href="https://console.apify.com/account/integrations" target="_blank" class="text-brand-400 underline">Apify Console</a>.
+        </div>
+        <div class="p-4 bg-dark-950/60 rounded-xl border border-dark-800/60">
+          <div class="font-semibold text-white mb-1">2. Paste into Claude / Cursor</div>
+          Add the MCP configuration to your assistant's settings JSON.
+        </div>
+        <div class="p-4 bg-dark-950/60 rounded-xl border border-dark-800/60">
+          <div class="font-semibold text-white mb-1">3. Ask Natural Questions</div>
+          "Find 10 B2B leads in Austin" or "Extract product prices from this shop".
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section id="pricing" class="py-16 max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-white tracking-tight">Simple, Transparent Pay-Per-Event</h2>
+      <p class="text-sm text-slate-400 mt-2">Zero subscriptions. Zero flat monthly rental fees. You only pay for what you extract.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <div class="p-6 bg-dark-900 border border-dark-800 rounded-2xl flex flex-col justify-between">
+        <div>
+          <div class="text-xs uppercase tracking-wider font-semibold text-slate-400">Light Exploration</div>
+          <div class="text-3xl font-bold text-white mt-2">$0 <span class="text-xs font-normal text-slate-400">/ forever</span></div>
+          <p class="text-xs text-slate-400 mt-2">Use Apify's free $5 monthly credit to run up to 2,500 scrape events monthly.</p>
+          <ul class="mt-6 space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Full access to all 19 scrapers</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Export to JSON, CSV, Excel</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Fast HTTP-first extraction</li>
+          </ul>
+        </div>
+        <a href="https://apify.com/laborious_rumor" target="_blank" class="mt-8 w-full py-2.5 text-center text-xs font-semibold rounded-xl bg-dark-800 hover:bg-dark-700 text-white border border-dark-700 transition-all">Start Free on Apify</a>
+      </div>
+
+      <div class="p-6 bg-gradient-to-b from-brand-900/30 via-dark-900 to-dark-900 border-2 border-brand-500/60 rounded-2xl flex flex-col justify-between relative shadow-xl shadow-brand-500/10">
+        <div class="absolute -top-3 right-6 px-2.5 py-0.5 rounded-full bg-brand-500 text-[10px] font-bold text-white uppercase tracking-wider">Most Popular</div>
+        <div>
+          <div class="text-xs uppercase tracking-wider font-semibold text-brand-300">Pay-Per-Event (PPE)</div>
+          <div class="text-3xl font-bold text-white mt-2">$2 – $5 <span class="text-xs font-normal text-slate-400">/ 1k results</span></div>
+          <p class="text-xs text-slate-400 mt-2">Scale as high as you want with no minimum commitment and 80% cheaper than SaaS tools.</p>
+          <ul class="mt-6 space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Zero compute hour fees</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Native MCP support for Claude/Cursor</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Direct Zapier & Make webhooks</li>
+          </ul>
+        </div>
+        <a href="https://apify.com/laborious_rumor" target="_blank" class="mt-8 w-full py-2.5 text-center text-xs font-semibold rounded-xl bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-600/30 transition-all">Launch a Pipeline</a>
+      </div>
+
+      <div class="p-6 bg-dark-900 border border-dark-800 rounded-2xl flex flex-col justify-between">
+        <div>
+          <div class="text-xs uppercase tracking-wider font-semibold text-slate-400">Enterprise & Custom</div>
+          <div class="text-3xl font-bold text-white mt-2">Custom <span class="text-xs font-normal text-slate-400">Volume</span></div>
+          <p class="text-xs text-slate-400 mt-2">For high-throughput scheduled scraping, custom field extraction, or private proxies.</p>
+          <ul class="mt-6 space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Tailored schema definitions</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Dedicated webhook endpoints</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> SLA & priority ticket handling</li>
+          </ul>
+        </div>
+        <a href="https://apify.com/laborious_rumor" target="_blank" class="mt-8 w-full py-2.5 text-center text-xs font-semibold rounded-xl bg-dark-800 hover:bg-dark-700 text-white border border-dark-700 transition-all">Contact via Apify</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 border-t border-dark-800">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="space-y-4 text-sm">
+      <div class="p-4 bg-dark-900 rounded-xl border border-dark-800">
+        <h3 class="font-semibold text-white">How do I run these scrapers?</h3>
+        <p class="text-slate-400 mt-1 text-xs sm:text-sm">You can click "Run on Apify" on any card to run it directly from your web browser, or configure MCP to trigger it from Claude Desktop or Cursor.</p>
+      </div>
+      <div class="p-4 bg-dark-900 rounded-xl border border-dark-800">
+        <h3 class="font-semibold text-white">Do I need proxies or my own servers?</h3>
+        <p class="text-slate-400 mt-1 text-xs sm:text-sm">No. All infrastructure, browserless HTTP runtime, rate-limit backoff, and cloud scheduling are completely managed by Apify.</p>
+      </div>
+      <div class="p-4 bg-dark-900 rounded-xl border border-dark-800">
+        <h3 class="font-semibold text-white">What formats can I export data in?</h3>
+        <p class="text-slate-400 mt-1 text-xs sm:text-sm">JSON, CSV, Excel (XLSX), XML, and RSS feeds are available instantly via one-click download or automated webhook API.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mt-auto border-t border-dark-800 bg-dark-950 py-10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-xs">D</div>
+        <span class="font-semibold text-slate-300">data-pulse.dev</span>
+        <span>• Autonomous Web Data Systems</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="https://apify.com/laborious_rumor" target="_blank" class="hover:text-slate-300">Apify Store Profile</a>
+        <a href="#catalog" class="hover:text-slate-300">Scrapers</a>
+        <a href="#mcp-setup" class="hover:text-slate-300">MCP Protocol</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SAMPLE DATA MODAL -->
+  <div id="sampleModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-dark-900 border border-dark-700 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      <div class="px-6 py-4 border-b border-dark-800 flex items-center justify-between bg-dark-950">
+        <div>
+          <h3 id="modalTitle" class="text-base font-bold text-white">Sample Output Record</h3>
+          <span id="modalSlug" class="text-xs font-mono text-brand-400"></span>
+        </div>
+        <button id="closeModalBtn" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-dark-800">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto font-mono text-xs text-slate-300 leading-relaxed bg-dark-950">
+        <pre id="modalJson" class="text-emerald-400"></pre>
+      </div>
+      <div class="px-6 py-3 border-t border-dark-800 bg-dark-900 flex items-center justify-between">
+        <span class="text-xs text-slate-400">Production-validated JSON schema</span>
+        <a id="modalRunBtn" href="#" target="_blank" class="px-4 py-1.5 rounded-lg text-xs font-semibold bg-brand-600 hover:bg-brand-500 text-white">Run this Scraper &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    let actorsData = [];
+    const APIFY_HANDLE = 'laborious_rumor';
+
+    // MCP code templates
+    const CODE_SNIPPETS = {
+      claude: `// Claude Desktop: ~/Library/Application Support/Claude/claude_desktop_config.json
+{
+  "mcpServers": {
+    "datapulse-scrapers": {
+      "command": "npx",
+      "args": ["-y", "@apify/mcp-server"],
+      "env": {
+        "APIFY_TOKEN": "YOUR_APIFY_API_TOKEN"
+      }
+    }
+  }
+}`,
+      cursor: `// Cursor IDE: Settings > Features > MCP > Add New Server
+Name: DataPulse Apify
+Type: command
+Command: npx -y @apify/mcp-server
+Environment: APIFY_TOKEN=YOUR_APIFY_API_TOKEN`,
+      python: `import os
+from apify_client import ApifyClient
+
+client = ApifyClient(os.getenv("APIFY_TOKEN", "YOUR_APIFY_API_TOKEN"))
+
+# Run any DataPulse actor with structured input
+run = client.actor("laborious_rumor/ai-web-to-markdown-rag-scraper").call(run_input={
+    "startUrls": ["https://docs.anthropic.com/en/docs/welcome"],
+    "maxPages": 10,
+    "outputFormat": "MARKDOWN"
+})
+
+# Fetch and stream dataset items
+for item in client.dataset(run["defaultDatasetId"]).iterate_items():
+    print(item["title"], "| Tokens:", item.get("tokenEstimate"))`,
+      curl: `curl -X POST "https://api.apify.com/v2/acts/laborious_rumor~lead-scraper/runs?token=YOUR_APIFY_API_TOKEN" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "queries": ["cloud consulting agencies in New York"],
+    "maxResults": 50
+  }'`
+    };
+
+    // Load data
+    async function init() {
+      try {
+        const res = await fetch('/api/actors');
+        actorsData = await res.json();
+      } catch (e) {
+        // Fallback to static if needed
+        const res = await fetch('/data/actors.json');
+        actorsData = await res.json();
+      }
+      renderActors(actorsData);
+      setupFilters();
+      setupTabs();
+      setupModal();
+    }
+
+    function renderActors(items) {
+      const grid = document.getElementById('actorsGrid');
+      const noResults = document.getElementById('noResults');
+
+      if (!items || items.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+      noResults.classList.add('hidden');
+
+      grid.innerHTML = items.map(a => `
+        <div class="bg-dark-900 border border-dark-800 hover:border-brand-500/50 rounded-2xl p-6 flex flex-col justify-between transition-all hover:shadow-xl hover:shadow-brand-500/5 group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-semibold text-brand-400 bg-brand-500/10 border border-brand-500/20 px-2.5 py-0.5 rounded-full uppercase tracking-wider">${a.category}</span>
+              <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">${a.price}</span>
+            </div>
+
+            <h3 class="text-base font-bold text-white group-hover:text-brand-300 transition-colors line-clamp-1">${a.name}</h3>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2 leading-relaxed">${a.description}</p>
+
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              ${(a.tags || []).slice(0, 3).map(t => `<span class="text-[10px] text-slate-400 bg-dark-950 px-2 py-0.5 rounded border border-dark-800">${t}</span>`).join('')}
+            </div>
+
+            <ul class="mt-4 space-y-1 text-[11px] text-slate-300">
+              ${(a.features || []).slice(0, 2).map(f => `<li class="flex items-center gap-1.5 text-slate-400"><span class="w-1 h-1 rounded-full bg-brand-400"></span>${f}</li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-dark-800 flex items-center justify-between gap-2">
+            <button onclick="openModal('${a.slug}')" class="text-xs font-medium text-slate-400 hover:text-white transition-colors flex items-center gap-1 py-1 px-2 rounded hover:bg-dark-800">
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              <span>Sample Data</span>
+            </button>
+
+            <a href="https://apify.com/${APIFY_HANDLE}/${a.slug}" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-600 hover:bg-brand-500 text-white transition-colors">
+              <span>Run</span>
+              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function setupFilters() {
+      const search = document.getElementById('searchInput');
+      const catPills = document.querySelectorAll('.cat-pill');
+      let activeCat = 'all';
+
+      function applyFilter() {
+        const query = search.value.toLowerCase().trim();
+        const filtered = actorsData.filter(a => {
+          const matchCat = activeCat === 'all' || a.category === activeCat;
+          const matchQuery = !query || 
+                             a.name.toLowerCase().includes(query) || 
+                             a.description.toLowerCase().includes(query) || 
+                             (a.tags && a.tags.some(t => t.toLowerCase().includes(query)));
+          return matchCat && matchQuery;
+        });
+        renderActors(filtered);
+      }
+
+      search.addEventListener('input', applyFilter);
+
+      catPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          catPills.forEach(p => {
+            p.classList.remove('bg-brand-600', 'text-white', 'border-brand-500');
+            p.classList.add('bg-dark-900', 'text-slate-300', 'border-dark-800');
+          });
+          pill.classList.remove('bg-dark-900', 'text-slate-300', 'border-dark-800');
+          pill.classList.add('bg-brand-600', 'text-white', 'border-brand-500');
+
+          activeCat = pill.dataset.cat;
+          applyFilter();
+        });
+      });
+    }
+
+    function setupTabs() {
+      const display = document.getElementById('codeDisplay');
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      let currentTab = 'claude';
+
+      display.textContent = CODE_SNIPPETS[currentTab];
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => {
+            b.classList.remove('text-white', 'bg-dark-800', 'border', 'border-dark-700');
+            b.classList.add('text-slate-400');
+          });
+          btn.classList.remove('text-slate-400');
+          btn.classList.add('text-white', 'bg-dark-800', 'border', 'border-dark-700');
+          currentTab = btn.dataset.tab;
+          display.textContent = CODE_SNIPPETS[currentTab];
+        });
+      });
+
+      document.getElementById('copyCodeBtn').addEventListener('click', () => {
+        navigator.clipboard.writeText(CODE_SNIPPETS[currentTab]);
+        const copyText = document.getElementById('copyText');
+        copyText.textContent = 'Copied!';
+        setTimeout(() => copyText.textContent = 'Copy Config', 2000);
+      });
+    }
+
+    function setupModal() {
+      const modal = document.getElementById('sampleModal');
+      document.getElementById('closeModalBtn').addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.add('hidden');
+      });
+    }
+
+    window.openModal = function(slug) {
+      const actor = actorsData.find(a => a.slug === slug);
+      if (!actor) return;
+      document.getElementById('modalTitle').textContent = actor.name;
+      document.getElementById('modalSlug').textContent = APIFY_HANDLE + '/' + actor.slug;
+      document.getElementById('modalJson').textContent = JSON.stringify(actor.sampleOutput || {}, null, 2);
+      document.getElementById('modalRunBtn').href = 'https://apify.com/' + APIFY_HANDLE + '/' + actor.slug;
+      document.getElementById('sampleModal').classList.remove('hidden');
+    };
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
