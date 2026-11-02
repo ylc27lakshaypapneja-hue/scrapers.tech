@@ -383,7 +383,758 @@
 
   <!-- SCRIPT LOGIC -->
   <script>
-    let actorsData = [];
+    const DEFAULT_ACTORS = [
+  {
+    "slug": "lead-scraper",
+    "name": "B2B Business & Contact Lead Scraper",
+    "category": "B2B & Leads",
+    "badge": "Popular",
+    "price": "$0.01 / lead",
+    "pricePer1k": "$10.00 / 1k",
+    "description": "High-accuracy business directory scraper extracting verified contact emails, phone numbers, domain websites, and physical addresses.",
+    "tags": [
+      "B2B",
+      "Lead Gen",
+      "Contacts",
+      "Email Discovery"
+    ],
+    "features": [
+      "Direct contact extraction",
+      "Email regex validation",
+      "Domain deduplication",
+      "Instant CSV/JSON export"
+    ],
+    "sampleOutput": {
+      "businessName": "Apex Cloud Solutions Inc",
+      "website": "https://apexcloud.io",
+      "emails": [
+        "contact@apexcloud.io",
+        "sales@apexcloud.io"
+      ],
+      "phone": "+1 (415) 890-1200",
+      "location": "San Francisco, CA",
+      "industry": "Cloud Infrastructure"
+    }
+  },
+  {
+    "slug": "ai-web-to-markdown-rag-scraper",
+    "name": "AI Web-to-Markdown & Semantic RAG Scraper",
+    "category": "AI & RAG",
+    "badge": "Hot",
+    "price": "$0.002 / page",
+    "pricePer1k": "$2.00 / 1k",
+    "description": "Converts documentation, blogs, and complex web pages into clean GitHub-flavored Markdown with automated token chunking for LLM RAG pipelines.",
+    "tags": [
+      "LLM",
+      "RAG",
+      "Markdown",
+      "Vector Search"
+    ],
+    "features": [
+      "HTML noise stripping",
+      "Metadata extraction",
+      "Semantic token chunking",
+      "Ready for Pinecone & Chroma"
+    ],
+    "sampleOutput": {
+      "url": "https://docs.example.com/api",
+      "title": "API Authentication Reference",
+      "markdown": "# Authentication\nAll requests require a Bearer token...",
+      "tokenEstimate": 420,
+      "headings": [
+        "Authentication",
+        "Header Format",
+        "Error Codes"
+      ]
+    }
+  },
+  {
+    "slug": "b2b-lead-contact-tech-enricher",
+    "name": "B2B Lead Contact & Tech Stack Enricher",
+    "category": "B2B & Leads",
+    "badge": "Trending",
+    "price": "$0.005 / lead",
+    "pricePer1k": "$5.00 / 1k",
+    "description": "Enriches company domains with MX DNS records, mail deliverability signals, social profiles, and detects 100+ technologies.",
+    "tags": [
+      "Enrichment",
+      "B2B",
+      "Tech Stack",
+      "Deliverability"
+    ],
+    "features": [
+      "MX deliverability check",
+      "Social link extraction",
+      "CMS & Framework detection",
+      "Company tech stack"
+    ],
+    "sampleOutput": {
+      "domain": "fintechgrowth.co",
+      "companyName": "Fintech Growth Labs",
+      "emails": [
+        "hello@fintechgrowth.co"
+      ],
+      "techStack": [
+        "Stripe",
+        "React",
+        "Segment",
+        "HubSpot"
+      ],
+      "hasMxRecords": true,
+      "linkedin": "https://linkedin.com/company/fintechgrowth"
+    }
+  },
+  {
+    "slug": "local-business-directory-maps-lead-enricher",
+    "name": "Local Business Directory & Maps Enricher",
+    "category": "B2B & Leads",
+    "badge": "High Demand",
+    "price": "$0.004 / lead",
+    "pricePer1k": "$4.00 / 1k",
+    "description": "Extracts local businesses, ratings, review counts, booking links, and contact channels across Google Maps and directories.",
+    "tags": [
+      "Local SEO",
+      "Maps",
+      "SMB Leads",
+      "Reviews"
+    ],
+    "features": [
+      "Star ratings & reviews",
+      "Direct phone & email",
+      "Booking link discovery",
+      "Geo-coordinates"
+    ],
+    "sampleOutput": {
+      "name": "Blue Harbor Dental Studio",
+      "rating": 4.9,
+      "reviewCount": 312,
+      "phone": "+1 (312) 555-0199",
+      "address": "220 N Michigan Ave, Chicago, IL",
+      "bookingUrl": "https://blueharbordental.com/book"
+    }
+  },
+  {
+    "slug": "universal-ecommerce-product-price-tracker",
+    "name": "Universal E-Commerce & Shopify Price Tracker",
+    "category": "E-Commerce",
+    "badge": "Essential",
+    "price": "$0.0025 / item",
+    "pricePer1k": "$2.50 / 1k",
+    "description": "Monitors real-time product prices, inventory stock status, variant options, and discounts across Shopify, WooCommerce, and retail stores.",
+    "tags": [
+      "Shopify",
+      "Pricing",
+      "Inventory",
+      "Retail"
+    ],
+    "features": [
+      "SKU & variant extraction",
+      "Stock availability",
+      "Discount percentage",
+      "Direct image URLs"
+    ],
+    "sampleOutput": {
+      "productTitle": "Pro Performance Runner V2",
+      "currentPrice": 120,
+      "originalPrice": 150,
+      "currency": "USD",
+      "inStock": true,
+      "variantsCount": 6,
+      "brand": "AeroAthletics"
+    }
+  },
+  {
+    "slug": "social-viral-trend-reddit-hn-pulse-scraper",
+    "name": "Social Viral Trend & HN Pulse Scraper",
+    "category": "Social Trends",
+    "badge": "Live",
+    "price": "$0.002 / item",
+    "pricePer1k": "$2.00 / 1k",
+    "description": "Scrapes trending topics, upvote velocities, sentiment spikes, and breakout keywords from Reddit and Hacker News for market research.",
+    "tags": [
+      "Reddit",
+      "HackerNews",
+      "Virality",
+      "Trend Hunter"
+    ],
+    "features": [
+      "Upvote velocity scoring",
+      "Comment sentiment",
+      "Subreddit filtering",
+      "Breakout keyword alert"
+    ],
+    "sampleOutput": {
+      "title": "Show HN: Open Source Autonomous Agents",
+      "source": "HackerNews",
+      "score": 418,
+      "commentsCount": 164,
+      "velocityScore": 92.4,
+      "url": "https://news.ycombinator.com/item?id=381920"
+    }
+  },
+  {
+    "slug": "youtube-tiktok-transcript-hook-extractor",
+    "name": "YouTube & TikTok Transcript Hook Extractor",
+    "category": "Social Trends",
+    "badge": "Creator Tool",
+    "price": "$0.003 / video",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extracts full spoken transcripts, first-3-second retention hooks, timestamps, and key takeaways from short and long-form video content.",
+    "tags": [
+      "YouTube",
+      "TikTok",
+      "Transcripts",
+      "Hooks"
+    ],
+    "features": [
+      "Full timed captions",
+      "Retention hook extraction",
+      "Summary bullets",
+      "No browser needed"
+    ],
+    "sampleOutput": {
+      "videoTitle": "How to scale an AI business to 10k MRR",
+      "hookText": "Stop selling chatbots in 2026. Here is what actually makes money...",
+      "durationSecs": 485,
+      "transcriptLengthWords": 1240,
+      "keyTopics": [
+        "Agentic Workflows",
+        "Distribution",
+        "Pricing Models"
+      ]
+    }
+  },
+  {
+    "slug": "multi-ats-tech-jobs-hiring-aggregator",
+    "name": "Multi-ATS Tech Jobs & Hiring Signal Aggregator",
+    "category": "Jobs & Hiring",
+    "badge": "Career Intel",
+    "price": "$0.002 / job",
+    "pricePer1k": "$2.00 / 1k",
+    "description": "Monitors Greenhouse, Lever, Ashby, and Workday directly to aggregate real-time tech job listings, compensation ranges, and tech stacks.",
+    "tags": [
+      "Greenhouse",
+      "Lever",
+      "Ashby",
+      "Tech Jobs"
+    ],
+    "features": [
+      "Direct ATS scraping",
+      "Salary compensation parse",
+      "Remote/Hybrid tags",
+      "Tech stack detection"
+    ],
+    "sampleOutput": {
+      "jobTitle": "Senior Machine Learning Infrastructure Engineer",
+      "company": "ScaleAI",
+      "location": "Remote, US",
+      "salaryRange": "$180,000 - $230,000 USD",
+      "atsSource": "Greenhouse",
+      "requiredSkills": [
+        "Python",
+        "PyTorch",
+        "Kubernetes",
+        "Ray"
+      ]
+    }
+  },
+  {
+    "slug": "seo-serp-competitor-content-gap-analyzer",
+    "name": "SEO Competitor SERP & Content Gap Analyzer",
+    "category": "SEO & Content",
+    "badge": "Growth",
+    "price": "$0.003 / page",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Analyzes competitor landing pages, organic search headings (H1-H3), keyword densities, schema markup, and content gaps.",
+    "tags": [
+      "SEO",
+      "SERP",
+      "Competitor Intel",
+      "Content Gap"
+    ],
+    "features": [
+      "Heading hierarchy audit",
+      "Keyword frequency table",
+      "Schema.org JSON-LD",
+      "Page word count"
+    ],
+    "sampleOutput": {
+      "targetUrl": "https://competitor.com/best-crm-software",
+      "h1": "10 Best CRM Software Tools in 2026",
+      "totalWords": 3450,
+      "topKeywords": [
+        "crm software",
+        "pipeline management",
+        "lead tracking"
+      ],
+      "internalLinksCount": 42
+    }
+  },
+  {
+    "slug": "builtwith-wappalyzer-deep-tech-detector",
+    "name": "Deep Tech Stack & CMS Fingerprinter",
+    "category": "Tech Recon",
+    "badge": "Security / Intel",
+    "price": "$0.004 / domain",
+    "pricePer1k": "$4.00 / 1k",
+    "description": "Detects 100+ frontend, backend, analytics, CRM, payment, and cloud infrastructure signatures from domain response headers and scripts.",
+    "tags": [
+      "Tech Stack",
+      "Fingerprinting",
+      "BuiltWith",
+      "Wappalyzer"
+    ],
+    "features": [
+      "100+ framework signatures",
+      "CDN & Hosting detection",
+      "Analytics & Tag trackers",
+      "Payment gateway tags"
+    ],
+    "sampleOutput": {
+      "domain": "cal.com",
+      "frameworks": [
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "analytics": [
+        "PostHog",
+        "Google Analytics 4"
+      ],
+      "payments": [
+        "Stripe"
+      ],
+      "hosting": [
+        "Vercel",
+        "AWS"
+      ]
+    }
+  },
+  {
+    "slug": "subdomain-dns-recon-security-finder",
+    "name": "Subdomain & DNS Recon Scanner",
+    "category": "Tech Recon",
+    "badge": "Security",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Enumerates subdomains, DNS records (A, CNAME, MX, TXT, SPF, DMARC), and mail gateway security for cybersecurity audits and B2B recon.",
+    "tags": [
+      "DNS",
+      "Security",
+      "Subdomains",
+      "DMARC"
+    ],
+    "features": [
+      "Subdomain enumeration",
+      "SPF/DMARC status",
+      "MX records verification",
+      "Cloudflare detection"
+    ],
+    "sampleOutput": {
+      "domain": "company.com",
+      "subdomainsFound": [
+        "api.company.com",
+        "app.company.com",
+        "staging.company.com"
+      ],
+      "hasDmarc": true,
+      "hasSpf": true,
+      "dnsProvider": "Cloudflare"
+    }
+  },
+  {
+    "slug": "sitemap-xml-llm-knowledgebase-crawler",
+    "name": "XML Sitemap Crawler & Knowledgebase Builder",
+    "category": "AI & RAG",
+    "badge": "LLM Tools",
+    "price": "$0.002 / page",
+    "pricePer1k": "$2.00 / 1k",
+    "description": "Crawls entire XML sitemaps, extracts clean page documentation, strips boilerplate navigation, and formats markdown for LLM ingestion.",
+    "tags": [
+      "Sitemap",
+      "XML",
+      "LLM",
+      "Knowledge Base"
+    ],
+    "features": [
+      "Auto sitemap-index parsing",
+      "Lastmod date filtering",
+      "Boilerplate removal",
+      "Clean markdown"
+    ],
+    "sampleOutput": {
+      "sitemapUrl": "https://docs.anthropic.com/sitemap.xml",
+      "totalPagesDiscovered": 120,
+      "pagesScraped": 25,
+      "avgPageTokens": 680
+    }
+  },
+  {
+    "slug": "hackernews-who-is-hiring-job-lead-parser",
+    "name": "HackerNews Who is Hiring Lead Parser",
+    "category": "Jobs & Hiring",
+    "badge": "Tech Talent",
+    "price": "$0.002 / job",
+    "pricePer1k": "$2.00 / 1k",
+    "description": "Parses monthly HN Who is Hiring threads, extracting company names, tech stacks, salary ranges, remote status, and direct email contacts.",
+    "tags": [
+      "HackerNews",
+      "Remote Jobs",
+      "Startup Hiring",
+      "Email Contacts"
+    ],
+    "features": [
+      "Regex contact parsing",
+      "Remote/Visa classification",
+      "Salary extraction",
+      "Startup filtering"
+    ],
+    "sampleOutput": {
+      "company": "Supabase",
+      "role": "Staff Systems Engineer",
+      "remote": true,
+      "techStack": [
+        "PostgreSQL",
+        "Go",
+        "Elixir",
+        "Rust"
+      ],
+      "contactEmail": "careers@supabase.com"
+    }
+  },
+  {
+    "slug": "producthunt-launch-upvote-maker-monitor",
+    "name": "Product Hunt Launch & Maker Intelligence",
+    "category": "Social Trends",
+    "badge": "Startup Intel",
+    "price": "$0.003 / launch",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Tracks daily and weekly Product Hunt launches, upvote velocity, makers info, tech stacks, and badges for startup intelligence.",
+    "tags": [
+      "ProductHunt",
+      "Startups",
+      "Launches",
+      "Makers"
+    ],
+    "features": [
+      "Daily leaderboard",
+      "Maker Twitter/X handles",
+      "Tagline & topic tags",
+      "Upvote tracker"
+    ],
+    "sampleOutput": {
+      "productName": "Cursor AI",
+      "tagline": "The AI Code Editor built for software engineers",
+      "upvotes": 1840,
+      "rankOfDay": 1,
+      "makerTwitter": "@cursor_editor"
+    }
+  },
+  {
+    "slug": "saas-stripe-lemonsqueezy-pricing-comparer",
+    "name": "SaaS Stripe & LemonSqueezy Pricing Comparer",
+    "category": "E-Commerce",
+    "badge": "SaaS Intel",
+    "price": "$0.005 / page",
+    "pricePer1k": "$5.00 / 1k",
+    "description": "Scrapes and normalizes pricing tiers, monthly vs annual discounts, feature matrices, and limits across modern SaaS billing pages.",
+    "tags": [
+      "SaaS",
+      "Stripe",
+      "Pricing Intel",
+      "Benchmarking"
+    ],
+    "features": [
+      "Tier comparison",
+      "Annual discount %",
+      "Usage limits detection",
+      "Free trial flags"
+    ],
+    "sampleOutput": {
+      "saasName": "Linear",
+      "starterTier": "$0 / month",
+      "proTier": "$10 / user / month",
+      "annualDiscount": "16%",
+      "featuresIncluded": [
+        "Unlimited issues",
+        "Git integrations",
+        "Cycles & roadmaps"
+      ]
+    }
+  },
+  {
+    "slug": "clutch-g2-b2b-agency-reviews-scraper",
+    "name": "Clutch & G2 B2B Agency Reviews Scraper",
+    "category": "B2B & Leads",
+    "badge": "Agency Intel",
+    "price": "$0.005 / agency",
+    "pricePer1k": "$5.00 / 1k",
+    "description": "Extracts top software agencies, hourly rates, project sizes, client reviews, and verified portfolios from Clutch and G2.",
+    "tags": [
+      "Clutch",
+      "G2",
+      "Agencies",
+      "Reviews"
+    ],
+    "features": [
+      "Hourly rates range",
+      "Min project size",
+      "Client verified reviews",
+      "Location breakdown"
+    ],
+    "sampleOutput": {
+      "agencyName": "Vanguard Software Studios",
+      "hourlyRate": "$100 - $149 / hr",
+      "minProjectSize": "$25,000+",
+      "rating": 4.9,
+      "reviewCount": 38,
+      "focus": "Custom Software & AI"
+    }
+  },
+  {
+    "slug": "etsy-trending-handmade-product-keyword-scraper",
+    "name": "Etsy Trending Product & Keyword Scraper",
+    "category": "E-Commerce",
+    "badge": "E-com SEO",
+    "price": "$0.003 / product",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Scrapes Etsy trending keywords, listing tags, review volumes, prices, and bestseller badges for e-commerce store owners.",
+    "tags": [
+      "Etsy",
+      "Keywords",
+      "Bestsellers",
+      "E-commerce"
+    ],
+    "features": [
+      "Tag extraction",
+      "Bestseller badge check",
+      "Review count velocity",
+      "Pricing distribution"
+    ],
+    "sampleOutput": {
+      "listingTitle": "Minimalist Leather Desk Pad Organizer",
+      "price": 45,
+      "currency": "USD",
+      "isBestseller": true,
+      "tags": [
+        "desk accessories",
+        "leather pad",
+        "workspace gifts"
+      ]
+    }
+  },
+  {
+    "slug": "github-repo-codebase-llm-packer",
+    "name": "GitHub Repo Codebase LLM Context Packer",
+    "category": "AI & RAG",
+    "badge": "Dev Tools",
+    "price": "$0.002 / file",
+    "pricePer1k": "$2.00 / 1k",
+    "description": "Packs GitHub repositories into formatted single-prompt context bundles for Claude 3.5 Sonnet, GPT-4o, and Gemini 1.5 Pro.",
+    "tags": [
+      "GitHub",
+      "LLM Context",
+      "Codebase",
+      "Prompt Engineering"
+    ],
+    "features": [
+      "AST-aware tree pruning",
+      "Token count calculation",
+      "gitignore respect",
+      "Single bundle file"
+    ],
+    "sampleOutput": {
+      "repo": "expressjs/express",
+      "filesPacked": 48,
+      "totalTokens": 64200,
+      "languages": [
+        "JavaScript"
+      ],
+      "bundleUrl": "https://api.apify.com/v2/key-value-stores/..."
+    }
+  },
+  {
+    "slug": "arxiv-hf-paper-summary-citation-extractor",
+    "name": "arXiv & Hugging Face AI Paper & Citation Extractor",
+    "category": "AI & RAG",
+    "badge": "Research",
+    "price": "$0.002 / paper",
+    "pricePer1k": "$2.00 / 1k",
+    "description": "Extracts the latest AI research papers, abstracts, citation counts, GitHub model checkpoints, and PDF links from arXiv and Hugging Face.",
+    "tags": [
+      "arXiv",
+      "HuggingFace",
+      "AI Papers",
+      "Research"
+    ],
+    "features": [
+      "Abstract extraction",
+      "GitHub code link finder",
+      "HF model weights link",
+      "Citation count"
+    ],
+    "sampleOutput": {
+      "title": "Attention Is All You Need",
+      "authors": [
+        "Vaswani et al."
+      ],
+      "arxivId": "1706.03762",
+      "hfModelsCount": 4200,
+      "summary": "The Transformer model architecture based solely on attention mechanisms..."
+    }
+  },
+  {
+    "slug": "substack-beehiiv-newsletter-directory-scraper",
+    "name": "Substack & Beehiiv Newsletter Directory Scraper",
+    "category": "B2B & Leads",
+    "badge": "PR & Growth",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Discover newsletters across Substack and Beehiiv by topic, subscriber counts, and post frequency for PR, advertising, and sponsorships.",
+    "tags": [
+      "Substack",
+      "Beehiiv",
+      "Newsletters",
+      "Sponsors"
+    ],
+    "features": [
+      "Dual-platform discovery",
+      "Subscriber tier flags",
+      "Post cadence tracking",
+      "Author contact resolution"
+    ],
+    "sampleOutput": {
+      "newsletterName": "The AI Breakthrough",
+      "platform": "Beehiiv",
+      "author": "David Chen",
+      "subscribersRange": "25,000 - 50,000",
+      "category": "Artificial Intelligence",
+      "websiteUrl": "https://theaibreakthrough.beehiiv.com"
+    }
+  },
+  {
+    "slug": "podcast-rss-sponsor-guest-extractor",
+    "name": "Podcast RSS Sponsor, Promo Code & Guest Extractor",
+    "category": "Social Trends",
+    "badge": "Media Intel",
+    "price": "$0.003 / episode",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract sponsors, promo discount codes, guest names, audio URLs, and timestamps from public podcast RSS feeds.",
+    "tags": [
+      "Podcast",
+      "Sponsors",
+      "Promo Codes",
+      "Media Intel"
+    ],
+    "features": [
+      "Promo code regex detection",
+      "Guest name parsing",
+      "Direct MP3 audio link",
+      "Fast RSS feed engine"
+    ],
+    "sampleOutput": {
+      "podcastTitle": "Lenny's Podcast",
+      "episodeTitle": "Building Product with Shreyas Doshi",
+      "sponsors": [
+        "Linear",
+        "Vanta",
+        "PostHog"
+      ],
+      "promoCode": "LENNY20",
+      "audioUrl": "https://traffic.libsyn.com/.../episode140.mp3"
+    }
+  },
+  {
+    "slug": "amazon-product-review-aspect-sentiment-miner",
+    "name": "Amazon Product Review Aspect Sentiment Miner",
+    "category": "E-Commerce",
+    "badge": "E-com Intel",
+    "price": "$0.002 / review",
+    "pricePer1k": "$2.00 / 1k",
+    "description": "Scrape customer reviews for e-commerce products, classify sentiment by aspect (quality, price, durability), and extract complaints.",
+    "tags": [
+      "Amazon",
+      "Reviews",
+      "Sentiment",
+      "Complaints"
+    ],
+    "features": [
+      "Aspect-level classification",
+      "Verified purchase filter",
+      "Helpful votes ranking",
+      "Complaint extraction"
+    ],
+    "sampleOutput": {
+      "asin": "B08N5WRWNW",
+      "reviewText": "The sound quality is great but the charging case stopped working after 2 weeks.",
+      "aspectSentiment": {
+        "soundQuality": "POSITIVE",
+        "durability": "NEGATIVE"
+      },
+      "verifiedPurchase": true,
+      "rating": 2
+    }
+  },
+  {
+    "slug": "poshmark-depop-reseller-pricing-tracker",
+    "name": "Depop & Poshmark Resale Price Arbitrage Tracker",
+    "category": "E-Commerce",
+    "badge": "Reseller Tool",
+    "price": "$0.003 / item",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Track vintage and secondhand apparel pricing, sold vs active listings, brand demand, and seller inventory metrics.",
+    "tags": [
+      "Poshmark",
+      "Depop",
+      "Resale",
+      "Arbitrage"
+    ],
+    "features": [
+      "Sold vs Active comps",
+      "Dual-platform pricing",
+      "Brand demand ranking",
+      "Clean photo URLs"
+    ],
+    "sampleOutput": {
+      "brand": "Carhartt",
+      "title": "Vintage Detroit Jacket J97",
+      "activePrice": 220,
+      "historicalSoldAvg": 185,
+      "condition": "Pre-owned",
+      "platform": "Depop"
+    }
+  },
+  {
+    "slug": "npm-pypi-package-growth-trending-tracker",
+    "name": "NPM & PyPI Package Growth & Star Velocity Tracker",
+    "category": "Tech Recon",
+    "badge": "Dev Intelligence",
+    "price": "$0.002 / package",
+    "pricePer1k": "$2.00 / 1k",
+    "description": "Track weekly download spikes, GitHub stars velocity, dependencies, and maintainer details for devtool and software intelligence.",
+    "tags": [
+      "NPM",
+      "PyPI",
+      "DevTools",
+      "Open Source"
+    ],
+    "features": [
+      "Weekly download velocity",
+      "GitHub stars growth",
+      "SPDX license parsing",
+      "Dual JS/Python support"
+    ],
+    "sampleOutput": {
+      "package": "zustand",
+      "ecosystem": "npm",
+      "weeklyDownloads": 4850000,
+      "growthWeekOverWeek": "+14.2%",
+      "license": "MIT",
+      "githubStars": 44200
+    }
+  }
+];
+    let actorsData = DEFAULT_ACTORS;
     const APIFY_HANDLE = 'laborious_rumor';
 
     // MCP code templates
@@ -432,11 +1183,9 @@ for item in client.dataset(run["defaultDatasetId"]).iterate_items():
     async function init() {
       try {
         const res = await fetch('/api/actors');
-        actorsData = await res.json();
+        if (res.ok) actorsData = await res.json();
       } catch (e) {
-        // Fallback to static if needed
-        const res = await fetch('/data/actors.json');
-        actorsData = await res.json();
+        // Uses embedded DEFAULT_ACTORS
       }
       renderActors(actorsData);
       setupFilters();
