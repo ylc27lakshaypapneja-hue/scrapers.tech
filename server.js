@@ -68,5 +68,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`🚀 [DataPulse] Customer-Facing Portal running at http://localhost:${PORT}`);
+  console.log(`🚀 [Scrapers.tech] Customer-Facing Portal running at http://localhost:${PORT}`);
 });

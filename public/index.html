@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DataPulse — Real-World Web Data & Scrapers for AI Assistants</title>
+  <title>Scrapers.tech — Real-World Web Data & Scrapers for AI Assistants</title>
   <meta name="description" content="Production-ready web scrapers and real-time data pipelines for AI assistants, LLM RAG pipelines, and automated workflows. Connect via MCP or Apify.">
-  <link rel="canonical" href="https://data-pulse.dev">
+  <link rel="canonical" href="https://scrapers.tech">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://data-pulse.dev">
-  <meta property="og:title" content="DataPulse — Real-World Web Data & Scrapers for AI Assistants">
+  <meta property="og:url" content="https://scrapers.tech">
+  <meta property="og:title" content="Scrapers.tech — Real-World Web Data & Scrapers for AI Assistants">
   <meta property="og:description" content="Production-ready web scrapers and real-time data pipelines for AI assistants, LLM RAG pipelines, and automated workflows. Connect via MCP or Apify.">
-  <meta property="og:site_name" content="DataPulse">
+  <meta property="og:site_name" content="Scrapers.tech">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://data-pulse.dev">
-  <meta property="twitter:title" content="DataPulse — Real-World Web Data & Scrapers for AI Assistants">
+  <meta property="twitter:url" content="https://scrapers.tech">
+  <meta property="twitter:title" content="Scrapers.tech — Real-World Web Data & Scrapers for AI Assistants">
   <meta property="twitter:description" content="Production-ready web scrapers and real-time data pipelines for AI assistants, LLM RAG pipelines, and automated workflows. Connect via MCP or Apify.">
   
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>">
@@ -94,7 +94,7 @@
           </svg>
         </div>
         <div>
-          <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">DataPulse</span>
+          <span class="font-extrabold text-lg tracking-tight text-white">Scrapers<span class="text-brand-400">.tech</span></span>
           <span class="text-[10px] font-mono uppercase tracking-wider text-brand-400 ml-1.5 px-1.5 py-0.5 rounded bg-brand-500/10 border border-brand-500/20">MCP / API</span>
         </div>
       </div>
@@ -347,8 +347,8 @@
   <footer class="mt-auto border-t border-dark-800 bg-dark-950 py-10 text-xs text-slate-500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
-        <div class="w-6 h-6 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-xs">D</div>
-        <span class="font-semibold text-slate-300">data-pulse.dev</span>
+        <div class="w-6 h-6 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-xs">S</div>
+        <span class="font-semibold text-slate-300">scrapers.tech</span>
         <span>• Autonomous Web Data Systems</span>
       </div>
       <div class="flex items-center gap-6">
@@ -1152,7 +1152,7 @@
   }
 }`,
       cursor: `// Cursor IDE: Settings > Features > MCP > Add New Server
-Name: DataPulse Apify
+Name: Scrapers.tech Apify
 Type: command
 Command: npx -y @apify/mcp-server
 Environment: APIFY_TOKEN=YOUR_APIFY_API_TOKEN`,
@@ -1161,7 +1161,7 @@ from apify_client import ApifyClient
 
 client = ApifyClient(os.getenv("APIFY_TOKEN", "YOUR_APIFY_API_TOKEN"))
 
-# Run any DataPulse actor with structured input
+# Run any Scrapers.tech actor with structured input
 run = client.actor("laborious_rumor/ai-web-to-markdown-rag-scraper").call(run_input={
     "startUrls": ["https://docs.anthropic.com/en/docs/welcome"],
     "maxPages": 10,

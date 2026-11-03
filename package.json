@@ -1,7 +1,7 @@
 {
-  "name": "data-pulse-dev",
+  "name": "scrapers-tech",
   "version": "1.0.0",
-  "description": "DataPulse — Real-World Web Data & Scrapers for AI Assistants",
+  "description": "Scrapers.tech — Real-World Web Data & Scrapers for AI Assistants",
   "type": "module",
   "main": "server.js",
   "scripts": {
@@ -9,6 +9,6 @@
     "dev": "node server.js"
   },
   "keywords": ["apify", "mcp", "scrapers", "ai", "claude", "cursor"],
-  "author": "DataPulse Team",
+  "author": "Scrapers.tech Team",
   "license": "MIT"
 }
