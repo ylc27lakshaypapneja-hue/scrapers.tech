@@ -892,5 +892,130 @@
       "license": "MIT",
       "githubStars": 44200
     }
+  },
+  {
+    "slug": "twitch-kick-streamer-stats-sponsorship-monitor",
+    "name": "Twitch & Kick Streamer Stats & Brand Sponsor Tracker",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Production HTTP-first web scraper with native MCP & API support.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Twitch & Kick Streamer Stats & Brand Sponsor Tracker",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "zillow-redfin-real-estate-comps-property-analyzer",
+    "name": "Real Estate Comps Scraper: Price History & Tax",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Production HTTP-first web scraper with native MCP & API support.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Real Estate Comps Scraper: Price History & Tax",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "yelp-tripadvisor-restaurant-menu-pricing-scraper",
+    "name": "Restaurant Menu & Price Scraper: Yelp & TripAdvisor",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Production HTTP-first web scraper with native MCP & API support.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Restaurant Menu & Price Scraper: Yelp & TripAdvisor",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "tiktok-instagram-sound-hashtag-virality-tracker",
+    "name": "TikTok & Reels Trending Audio Scraper: Virality",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Production HTTP-first web scraper with native MCP & API support.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "TikTok & Reels Trending Audio Scraper: Virality",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "airbnb-vrbo-short-term-rental-market-analyzer",
+    "name": "Airbnb & VRBO Rental Scraper: Nightly Rates & Fees",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Production HTTP-first web scraper with native MCP & API support.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Airbnb & VRBO Rental Scraper: Nightly Rates & Fees",
+      "verifiedStatus": true
+    }
   }
 ]
