@@ -1,0 +1,323 @@
+# Scrapers.tech — 39 Production Web Scrapers & AI MCP Tools Fleet
+
+> HTTP-first web intelligence and scraping infrastructure published on the Apify Store by @laborious_rumor. Engineered for sub-5 second execution, zero cookie dependencies, and Pay-Per-Event micro-pricing ($0.002 - $0.004 / record).
+
+## Core Capabilities
+- Model Context Protocol (MCP) server support for Claude Desktop, Cursor, ChatGPT, and LangChain.
+- Automated B2B lead enrichment, e-commerce price monitoring, job board tracking, and social media analytics.
+- Output exports supported in JSON, CSV, Excel, XML, and live Webhook endpoints.
+
+## Catalog of 39 Live Scrapers
+
+### AliExpress Product Scraper — Prices, Orders & Suppliers
+- Slug: laborious_rumor/aliexpress-product-scraper
+- URL: https://apify.com/laborious_rumor/aliexpress-product-scraper
+- Category: E-Commerce
+- Pricing: $0.002 / product
+- Description: HTTP-first AliExpress product scraper. Extract product prices, discount tiers, sold order counts, star ratings, shipping costs, and supplier store metrics.
+- Use Case: Sold order volume tracking • Supplier feedback score • Discount & margin math • Cookie-free HTTP speed
+
+### LinkedIn Company Employees & People Scraper (No Cookies)
+- Slug: laborious_rumor/linkedin-company-employees-scraper
+- URL: https://apify.com/laborious_rumor/linkedin-company-employees-scraper
+- Category: B2B & Leads
+- Pricing: $0.004 / profile
+- Description: Extract public company employees, VP/Director decision-makers, job titles, locations, and verified work email patterns without LinkedIn cookies or login.
+- Use Case: 100% Cookie-free safety • VP & Head seniority filter • Corporate email pattern • Instant Clay/CRM export
+
+### IndiaMART Supplier Scraper — B2B Products & Contacts
+- Slug: laborious_rumor/indiamart-supplier-scraper
+- URL: https://apify.com/laborious_rumor/indiamart-supplier-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / supplier
+- Description: Scrape verified B2B manufacturers, exporters, and wholesalers from IndiaMART. Extract MOQ pricing, GST verification status, TrustSEAL badges, and city hubs.
+- Use Case: TrustSEAL & GST verification • MOQ & wholesale pricing • City & industrial hub filter • Buyer response rate
+
+### Facebook Ad Library Scraper — Competitor Ads & CTAs
+- Slug: laborious_rumor/facebook-ads-library-scraper
+- URL: https://apify.com/laborious_rumor/facebook-ads-library-scraper
+- Category: SEO & Marketing
+- Pricing: $0.003 / ad
+- Description: Scrape active and historical ads from the Meta / Facebook Ad Library. Extract ad copy, headlines, CTA buttons, landing page URLs, and active longevity.
+- Use Case: Evergreen winning ad detection • Full ad copy & headline • Destination URL & UTM tags • Video & carousel formats
+
+### Pinterest Scraper & Monitor — Pins, Saves & Boards
+- Slug: laborious_rumor/pinterest-scraper
+- URL: https://apify.com/laborious_rumor/pinterest-scraper
+- Category: Social & Creator
+- Pricing: $0.002 / pin
+- Description: Extract trending Pinterest Pins, board metrics, save counts, dominant color hexes, creator profiles, and outbound e-commerce links for visual trend discovery.
+- Use Case: Save & repin velocity • Outbound store URL extraction • Dominant hex color palette • Viral top 1% tiering
+
+### B2B Business & Contact Lead Scraper
+- Slug: laborious_rumor/lead-scraper
+- URL: https://apify.com/laborious_rumor/lead-scraper
+- Category: B2B & Leads
+- Pricing: $0.01 / lead
+- Description: High-accuracy business directory scraper extracting verified contact emails, phone numbers, domain websites, and physical addresses.
+- Use Case: Direct contact extraction • Email regex validation • Domain deduplication • Instant CSV/JSON export
+
+### AI Web-to-Markdown & Semantic RAG Scraper
+- Slug: laborious_rumor/ai-web-to-markdown-rag-scraper
+- URL: https://apify.com/laborious_rumor/ai-web-to-markdown-rag-scraper
+- Category: AI & RAG
+- Pricing: $0.002 / page
+- Description: Converts documentation, blogs, and complex web pages into clean GitHub-flavored Markdown with automated token chunking for LLM RAG pipelines.
+- Use Case: HTML noise stripping • Metadata extraction • Semantic token chunking • Ready for Pinecone & Chroma
+
+### B2B Lead Contact & Tech Stack Enricher
+- Slug: laborious_rumor/b2b-lead-contact-tech-enricher
+- URL: https://apify.com/laborious_rumor/b2b-lead-contact-tech-enricher
+- Category: B2B & Leads
+- Pricing: $0.005 / lead
+- Description: Enriches company domains with MX DNS records, mail deliverability signals, social profiles, and detects 100+ technologies.
+- Use Case: MX deliverability check • Social link extraction • CMS & Framework detection • Company tech stack
+
+### Local Business Directory & Maps Enricher
+- Slug: laborious_rumor/local-business-directory-maps-lead-enricher
+- URL: https://apify.com/laborious_rumor/local-business-directory-maps-lead-enricher
+- Category: B2B & Leads
+- Pricing: $0.004 / lead
+- Description: Extracts local businesses, ratings, review counts, booking links, and contact channels across Google Maps and directories.
+- Use Case: Star ratings & reviews • Direct phone & email • Booking link discovery • Geo-coordinates
+
+### Universal E-Commerce & Shopify Price Tracker
+- Slug: laborious_rumor/universal-ecommerce-product-price-tracker
+- URL: https://apify.com/laborious_rumor/universal-ecommerce-product-price-tracker
+- Category: E-Commerce
+- Pricing: $0.0025 / item
+- Description: Monitors real-time product prices, inventory stock status, variant options, and discounts across Shopify, WooCommerce, and retail stores.
+- Use Case: SKU & variant extraction • Stock availability • Discount percentage • Direct image URLs
+
+### Social Viral Trend & HN Pulse Scraper
+- Slug: laborious_rumor/social-viral-trend-reddit-hn-pulse-scraper
+- URL: https://apify.com/laborious_rumor/social-viral-trend-reddit-hn-pulse-scraper
+- Category: Social Trends
+- Pricing: $0.002 / item
+- Description: Scrapes trending topics, upvote velocities, sentiment spikes, and breakout keywords from Reddit and Hacker News for market research.
+- Use Case: Upvote velocity scoring • Comment sentiment • Subreddit filtering • Breakout keyword alert
+
+### YouTube & TikTok Transcript Hook Extractor
+- Slug: laborious_rumor/youtube-tiktok-transcript-hook-extractor
+- URL: https://apify.com/laborious_rumor/youtube-tiktok-transcript-hook-extractor
+- Category: Social Trends
+- Pricing: $0.003 / video
+- Description: Extracts full spoken transcripts, first-3-second retention hooks, timestamps, and key takeaways from short and long-form video content.
+- Use Case: Full timed captions • Retention hook extraction • Summary bullets • No browser needed
+
+### Multi-ATS Tech Jobs & Hiring Signal Aggregator
+- Slug: laborious_rumor/multi-ats-tech-jobs-hiring-aggregator
+- URL: https://apify.com/laborious_rumor/multi-ats-tech-jobs-hiring-aggregator
+- Category: Jobs & Hiring
+- Pricing: $0.002 / job
+- Description: Monitors Greenhouse, Lever, Ashby, and Workday directly to aggregate real-time tech job listings, compensation ranges, and tech stacks.
+- Use Case: Direct ATS scraping • Salary compensation parse • Remote/Hybrid tags • Tech stack detection
+
+### SEO Competitor SERP & Content Gap Analyzer
+- Slug: laborious_rumor/seo-serp-competitor-content-gap-analyzer
+- URL: https://apify.com/laborious_rumor/seo-serp-competitor-content-gap-analyzer
+- Category: SEO & Content
+- Pricing: $0.003 / page
+- Description: Analyzes competitor landing pages, organic search headings (H1-H3), keyword densities, schema markup, and content gaps.
+- Use Case: Heading hierarchy audit • Keyword frequency table • Schema.org JSON-LD • Page word count
+
+### Deep Tech Stack & CMS Fingerprinter
+- Slug: laborious_rumor/builtwith-wappalyzer-deep-tech-detector
+- URL: https://apify.com/laborious_rumor/builtwith-wappalyzer-deep-tech-detector
+- Category: Tech Recon
+- Pricing: $0.004 / domain
+- Description: Detects 100+ frontend, backend, analytics, CRM, payment, and cloud infrastructure signatures from domain response headers and scripts.
+- Use Case: 100+ framework signatures • CDN & Hosting detection • Analytics & Tag trackers • Payment gateway tags
+
+### Subdomain & DNS Recon Scanner
+- Slug: laborious_rumor/subdomain-dns-recon-security-finder
+- URL: https://apify.com/laborious_rumor/subdomain-dns-recon-security-finder
+- Category: Tech Recon
+- Pricing: $0.003 / record
+- Description: Enumerates subdomains, DNS records (A, CNAME, MX, TXT, SPF, DMARC), and mail gateway security for cybersecurity audits and B2B recon.
+- Use Case: Subdomain enumeration • SPF/DMARC status • MX records verification • Cloudflare detection
+
+### XML Sitemap Crawler & Knowledgebase Builder
+- Slug: laborious_rumor/sitemap-xml-llm-knowledgebase-crawler
+- URL: https://apify.com/laborious_rumor/sitemap-xml-llm-knowledgebase-crawler
+- Category: AI & RAG
+- Pricing: $0.002 / page
+- Description: Crawls entire XML sitemaps, extracts clean page documentation, strips boilerplate navigation, and formats markdown for LLM ingestion.
+- Use Case: Auto sitemap-index parsing • Lastmod date filtering • Boilerplate removal • Clean markdown
+
+### HackerNews Who is Hiring Lead Parser
+- Slug: laborious_rumor/hackernews-who-is-hiring-job-lead-parser
+- URL: https://apify.com/laborious_rumor/hackernews-who-is-hiring-job-lead-parser
+- Category: Jobs & Hiring
+- Pricing: $0.002 / job
+- Description: Parses monthly HN Who is Hiring threads, extracting company names, tech stacks, salary ranges, remote status, and direct email contacts.
+- Use Case: Regex contact parsing • Remote/Visa classification • Salary extraction • Startup filtering
+
+### Product Hunt Launch & Maker Intelligence
+- Slug: laborious_rumor/producthunt-launch-upvote-maker-monitor
+- URL: https://apify.com/laborious_rumor/producthunt-launch-upvote-maker-monitor
+- Category: Social Trends
+- Pricing: $0.003 / launch
+- Description: Tracks daily and weekly Product Hunt launches, upvote velocity, makers info, tech stacks, and badges for startup intelligence.
+- Use Case: Daily leaderboard • Maker Twitter/X handles • Tagline & topic tags • Upvote tracker
+
+### SaaS Stripe & LemonSqueezy Pricing Comparer
+- Slug: laborious_rumor/saas-stripe-lemonsqueezy-pricing-comparer
+- URL: https://apify.com/laborious_rumor/saas-stripe-lemonsqueezy-pricing-comparer
+- Category: E-Commerce
+- Pricing: $0.005 / page
+- Description: Scrapes and normalizes pricing tiers, monthly vs annual discounts, feature matrices, and limits across modern SaaS billing pages.
+- Use Case: Tier comparison • Annual discount % • Usage limits detection • Free trial flags
+
+### Clutch & G2 B2B Agency Reviews Scraper
+- Slug: laborious_rumor/clutch-g2-b2b-agency-reviews-scraper
+- URL: https://apify.com/laborious_rumor/clutch-g2-b2b-agency-reviews-scraper
+- Category: B2B & Leads
+- Pricing: $0.005 / agency
+- Description: Extracts top software agencies, hourly rates, project sizes, client reviews, and verified portfolios from Clutch and G2.
+- Use Case: Hourly rates range • Min project size • Client verified reviews • Location breakdown
+
+### Etsy Trending Product & Keyword Scraper
+- Slug: laborious_rumor/etsy-trending-handmade-product-keyword-scraper
+- URL: https://apify.com/laborious_rumor/etsy-trending-handmade-product-keyword-scraper
+- Category: E-Commerce
+- Pricing: $0.003 / product
+- Description: Scrapes Etsy trending keywords, listing tags, review volumes, prices, and bestseller badges for e-commerce store owners.
+- Use Case: Tag extraction • Bestseller badge check • Review count velocity • Pricing distribution
+
+### GitHub Repo Codebase LLM Context Packer
+- Slug: laborious_rumor/github-repo-codebase-llm-packer
+- URL: https://apify.com/laborious_rumor/github-repo-codebase-llm-packer
+- Category: AI & RAG
+- Pricing: $0.002 / file
+- Description: Packs GitHub repositories into formatted single-prompt context bundles for Claude 3.5 Sonnet, GPT-4o, and Gemini 1.5 Pro.
+- Use Case: AST-aware tree pruning • Token count calculation • gitignore respect • Single bundle file
+
+### arXiv & Hugging Face AI Paper & Citation Extractor
+- Slug: laborious_rumor/arxiv-hf-paper-summary-citation-extractor
+- URL: https://apify.com/laborious_rumor/arxiv-hf-paper-summary-citation-extractor
+- Category: AI & RAG
+- Pricing: $0.002 / paper
+- Description: Extracts the latest AI research papers, abstracts, citation counts, GitHub model checkpoints, and PDF links from arXiv and Hugging Face.
+- Use Case: Abstract extraction • GitHub code link finder • HF model weights link • Citation count
+
+### Substack & Beehiiv Newsletter Directory Scraper
+- Slug: laborious_rumor/substack-beehiiv-newsletter-directory-scraper
+- URL: https://apify.com/laborious_rumor/substack-beehiiv-newsletter-directory-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: Discover newsletters across Substack and Beehiiv by topic, subscriber counts, and post frequency for PR, advertising, and sponsorships.
+- Use Case: Dual-platform discovery • Subscriber tier flags • Post cadence tracking • Author contact resolution
+
+### Podcast RSS Sponsor, Promo Code & Guest Extractor
+- Slug: laborious_rumor/podcast-rss-sponsor-guest-extractor
+- URL: https://apify.com/laborious_rumor/podcast-rss-sponsor-guest-extractor
+- Category: Social Trends
+- Pricing: $0.003 / episode
+- Description: Extract sponsors, promo discount codes, guest names, audio URLs, and timestamps from public podcast RSS feeds.
+- Use Case: Promo code regex detection • Guest name parsing • Direct MP3 audio link • Fast RSS feed engine
+
+### Amazon Product Review Aspect Sentiment Miner
+- Slug: laborious_rumor/amazon-product-review-aspect-sentiment-miner
+- URL: https://apify.com/laborious_rumor/amazon-product-review-aspect-sentiment-miner
+- Category: E-Commerce
+- Pricing: $0.002 / review
+- Description: Scrape customer reviews for e-commerce products, classify sentiment by aspect (quality, price, durability), and extract complaints.
+- Use Case: Aspect-level classification • Verified purchase filter • Helpful votes ranking • Complaint extraction
+
+### Depop & Poshmark Resale Price Arbitrage Tracker
+- Slug: laborious_rumor/poshmark-depop-reseller-pricing-tracker
+- URL: https://apify.com/laborious_rumor/poshmark-depop-reseller-pricing-tracker
+- Category: E-Commerce
+- Pricing: $0.003 / item
+- Description: Track vintage and secondhand apparel pricing, sold vs active listings, brand demand, and seller inventory metrics.
+- Use Case: Sold vs Active comps • Dual-platform pricing • Brand demand ranking • Clean photo URLs
+
+### NPM & PyPI Package Growth & Star Velocity Tracker
+- Slug: laborious_rumor/npm-pypi-package-growth-trending-tracker
+- URL: https://apify.com/laborious_rumor/npm-pypi-package-growth-trending-tracker
+- Category: Tech Recon
+- Pricing: $0.002 / package
+- Description: Track weekly download spikes, GitHub stars velocity, dependencies, and maintainer details for devtool and software intelligence.
+- Use Case: Weekly download velocity • GitHub stars growth • SPDX license parsing • Dual JS/Python support
+
+### Twitch & Kick Streamer Stats & Brand Sponsor Tracker
+- Slug: laborious_rumor/twitch-kick-streamer-stats-sponsorship-monitor
+- URL: https://apify.com/laborious_rumor/twitch-kick-streamer-stats-sponsorship-monitor
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: Production HTTP-first web scraper with native MCP & API support.
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### Real Estate Comps Scraper: Price History & Tax
+- Slug: laborious_rumor/zillow-redfin-real-estate-comps-property-analyzer
+- URL: https://apify.com/laborious_rumor/zillow-redfin-real-estate-comps-property-analyzer
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: Production HTTP-first web scraper with native MCP & API support.
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### Restaurant Menu & Price Scraper: Yelp & TripAdvisor
+- Slug: laborious_rumor/yelp-tripadvisor-restaurant-menu-pricing-scraper
+- URL: https://apify.com/laborious_rumor/yelp-tripadvisor-restaurant-menu-pricing-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: Production HTTP-first web scraper with native MCP & API support.
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### TikTok & Reels Trending Audio Scraper: Virality
+- Slug: laborious_rumor/tiktok-instagram-sound-hashtag-virality-tracker
+- URL: https://apify.com/laborious_rumor/tiktok-instagram-sound-hashtag-virality-tracker
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: Production HTTP-first web scraper with native MCP & API support.
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### Airbnb & VRBO Rental Scraper: Nightly Rates & Fees
+- Slug: laborious_rumor/airbnb-vrbo-short-term-rental-market-analyzer
+- URL: https://apify.com/laborious_rumor/airbnb-vrbo-short-term-rental-market-analyzer
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: Production HTTP-first web scraper with native MCP & API support.
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### Indeed Jobs Scraper - Global Job Postings & Salaries
+- Slug: laborious_rumor/indeed-jobs-scraper
+- URL: https://apify.com/laborious_rumor/indeed-jobs-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first Indeed Jobs Scraper - Global Job Postings & Salaries. Extract structured, normalized records from indeed.com with sub-5s execution, zero cookies requ
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### JustDial Business Scraper - Verified India B2B Leads
+- Slug: laborious_rumor/justdial-business-scraper
+- URL: https://apify.com/laborious_rumor/justdial-business-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first JustDial Business Scraper - Verified India B2B Leads. Extract structured, normalized records from justdial.com with sub-5s execution, zero cookies re
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### Google Maps Reviews Scraper - Ratings, Text & Replies
+- Slug: laborious_rumor/google-maps-reviews-scraper
+- URL: https://apify.com/laborious_rumor/google-maps-reviews-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first Google Maps Reviews Scraper - Ratings, Text & Replies. Extract structured, normalized records from google.com/maps with sub-5s execution, zero cookie
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### Naukri Jobs Scraper - India & Gulf Jobs & Salaries
+- Slug: laborious_rumor/naukri-jobs-scraper
+- URL: https://apify.com/laborious_rumor/naukri-jobs-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first Naukri Jobs Scraper - India & Gulf Jobs & Salaries. Extract structured, normalized records from naukri.com with sub-5s execution, zero cookies requir
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### YouTube Comments Scraper - Viewer Sentiment & Leads
+- Slug: laborious_rumor/youtube-comments-scraper
+- URL: https://apify.com/laborious_rumor/youtube-comments-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first YouTube Comments Scraper - Viewer Sentiment & Leads. Extract structured, normalized records from youtube.com with sub-5s execution, zero cookies requ
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
