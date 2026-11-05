@@ -1017,5 +1017,105 @@
       "title": "Airbnb & VRBO Rental Scraper: Nightly Rates & Fees",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "indeed-jobs-scraper",
+    "name": "Indeed Jobs Scraper - Global Job Postings & Salaries",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Indeed Jobs Scraper - Global Job Postings & Salaries. Extract structured, normalized records from indeed.com with sub-5s execution, zero cookies requ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Indeed Jobs Scraper - Global Job Postings & Salaries",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "justdial-business-scraper",
+    "name": "JustDial Business Scraper - Verified India B2B Leads",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first JustDial Business Scraper - Verified India B2B Leads. Extract structured, normalized records from justdial.com with sub-5s execution, zero cookies re",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "JustDial Business Scraper - Verified India B2B Leads",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "google-maps-reviews-scraper",
+    "name": "Google Maps Reviews Scraper - Ratings, Text & Replies",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Google Maps Reviews Scraper - Ratings, Text & Replies. Extract structured, normalized records from google.com/maps with sub-5s execution, zero cookie",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Google Maps Reviews Scraper - Ratings, Text & Replies",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "naukri-jobs-scraper",
+    "name": "Naukri Jobs Scraper - India & Gulf Jobs & Salaries",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Naukri Jobs Scraper - India & Gulf Jobs & Salaries. Extract structured, normalized records from naukri.com with sub-5s execution, zero cookies requir",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Naukri Jobs Scraper - India & Gulf Jobs & Salaries",
+      "verifiedStatus": true
+    }
   }
 ]
