@@ -1117,5 +1117,30 @@
       "title": "Naukri Jobs Scraper - India & Gulf Jobs & Salaries",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "youtube-comments-scraper",
+    "name": "YouTube Comments Scraper - Viewer Sentiment & Leads",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first YouTube Comments Scraper - Viewer Sentiment & Leads. Extract structured, normalized records from youtube.com with sub-5s execution, zero cookies requ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "YouTube Comments Scraper - Viewer Sentiment & Leads",
+      "verifiedStatus": true
+    }
   }
 ]
