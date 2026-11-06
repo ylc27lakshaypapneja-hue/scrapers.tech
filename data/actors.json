@@ -1167,5 +1167,105 @@
       "title": "LinkedIn Profile Scraper + Work Email (No Cookies)",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "linkedin-jobs-scraper",
+    "name": "LinkedIn Jobs Scraper - Hiring Companies & Salaries",
+    "category": "JOBS",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first LinkedIn Jobs Scraper - Hiring Companies & Salaries. Extract structured, normalized records from linkedin.com/jobs with sub-5s execution, zero cookie",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "LinkedIn Jobs Scraper - Hiring Companies & Salaries",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "twitter-x-tweet-scraper",
+    "name": "Tweet Scraper V2 - X / Twitter Posts, Metrics & Threads",
+    "category": "SOCIAL_MEDIA",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Tweet Scraper V2 - X / Twitter Posts, Metrics & Threads. Extract structured, normalized records from x.com with sub-5s execution, zero cookies requir",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Tweet Scraper V2 - X / Twitter Posts, Metrics & Threads",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "tiktok-comments-scraper",
+    "name": "TikTok Comments Scraper - Viral Video Audience Insights",
+    "category": "SOCIAL_MEDIA",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first TikTok Comments Scraper - Viral Video Audience Insights. Extract structured, normalized records from tiktok.com with sub-5s execution, zero cookies r",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "TikTok Comments Scraper - Viral Video Audience Insights",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "tiktok-profile-scraper",
+    "name": "TikTok Profile & Creator Scraper - Emails & Engagement",
+    "category": "SOCIAL_MEDIA",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first TikTok Profile & Creator Scraper - Emails & Engagement. Extract structured, normalized records from tiktok.com with sub-5s execution, zero cookies re",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "TikTok Profile & Creator Scraper - Emails & Engagement",
+      "verifiedStatus": true
+    }
   }
 ]
