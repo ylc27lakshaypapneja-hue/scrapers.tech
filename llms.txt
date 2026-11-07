@@ -321,3 +321,43 @@
 - Description: HTTP-first YouTube Comments Scraper - Viewer Sentiment & Leads. Extract structured, normalized records from youtube.com with sub-5s execution, zero cookies requ
 - Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
 
+### LinkedIn Profile Scraper + Work Email (No Cookies)
+- Slug: laborious_rumor/linkedin-profile-scraper
+- URL: https://apify.com/laborious_rumor/linkedin-profile-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first LinkedIn Profile Scraper + Work Email (No Cookies). Extract structured, normalized records from linkedin.com/in with sub-5s execution, zero cookies r
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### LinkedIn Jobs Scraper - Hiring Companies & Salaries
+- Slug: laborious_rumor/linkedin-jobs-scraper
+- URL: https://apify.com/laborious_rumor/linkedin-jobs-scraper
+- Category: JOBS
+- Pricing: $0.003 / record
+- Description: HTTP-first LinkedIn Jobs Scraper - Hiring Companies & Salaries. Extract structured, normalized records from linkedin.com/jobs with sub-5s execution, zero cookie
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### Tweet Scraper V2 - X / Twitter Posts, Metrics & Threads
+- Slug: laborious_rumor/twitter-x-tweet-scraper
+- URL: https://apify.com/laborious_rumor/twitter-x-tweet-scraper
+- Category: SOCIAL_MEDIA
+- Pricing: $0.003 / record
+- Description: HTTP-first Tweet Scraper V2 - X / Twitter Posts, Metrics & Threads. Extract structured, normalized records from x.com with sub-5s execution, zero cookies requir
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### TikTok Comments Scraper - Viral Video Audience Insights
+- Slug: laborious_rumor/tiktok-comments-scraper
+- URL: https://apify.com/laborious_rumor/tiktok-comments-scraper
+- Category: SOCIAL_MEDIA
+- Pricing: $0.003 / record
+- Description: HTTP-first TikTok Comments Scraper - Viral Video Audience Insights. Extract structured, normalized records from tiktok.com with sub-5s execution, zero cookies r
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### TikTok Profile & Creator Scraper - Emails & Engagement
+- Slug: laborious_rumor/tiktok-profile-scraper
+- URL: https://apify.com/laborious_rumor/tiktok-profile-scraper
+- Category: SOCIAL_MEDIA
+- Pricing: $0.003 / record
+- Description: HTTP-first TikTok Profile & Creator Scraper - Emails & Engagement. Extract structured, normalized records from tiktok.com with sub-5s execution, zero cookies re
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
