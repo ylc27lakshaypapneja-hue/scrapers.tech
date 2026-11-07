@@ -1267,5 +1267,130 @@
       "title": "TikTok Profile & Creator Scraper - Emails & Engagement",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "us-new-business-llc-incorporations-scraper",
+    "name": "US New Business & LLC Incorporations Scraper",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first US New Business & LLC Incorporations Scraper. Extract high-intent US commercial records from sos.state.tx.us with sub-5s execution, zero cookies requ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "US New Business & LLC Incorporations Scraper",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "zillow-fsbo-motivated-seller-leads-scraper",
+    "name": "Zillow FSBO & Motivated Seller Real Estate Leads",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Zillow FSBO & Motivated Seller Real Estate Leads. Extract high-intent US commercial records from zillow.com with sub-5s execution, zero cookies requi",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Zillow FSBO & Motivated Seller Real Estate Leads",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "us-home-services-contractor-leads-scraper",
+    "name": "US Contractor Leads Scraper: Roofers, HVAC & Plumbers",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first US Contractor Leads Scraper: Roofers, HVAC & Plumbers. Extract high-intent US commercial records from google.com/localservices with sub-5s execution,",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "US Contractor Leads Scraper: Roofers, HVAC & Plumbers",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "ziprecruiter-us-remote-tech-salaries-scraper",
+    "name": "ZipRecruiter US Tech Jobs & Salary Benchmark Scraper",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first ZipRecruiter US Tech Jobs & Salary Benchmark Scraper. Extract high-intent US commercial records from ziprecruiter.com with sub-5s execution, zero coo",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "ZipRecruiter US Tech Jobs & Salary Benchmark Scraper",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "amazon-us-bsr-fba-arbitrage-product-tracker",
+    "name": "Amazon US BSR & Movers and Shakers Product Tracker",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Amazon US BSR & Movers and Shakers Product Tracker. Extract high-intent US commercial records from amazon.com with sub-5s execution, zero cookies req",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Amazon US BSR & Movers and Shakers Product Tracker",
+      "verifiedStatus": true
+    }
   }
 ]
