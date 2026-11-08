@@ -361,3 +361,43 @@
 - Description: HTTP-first TikTok Profile & Creator Scraper - Emails & Engagement. Extract structured, normalized records from tiktok.com with sub-5s execution, zero cookies re
 - Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
 
+### US New Business & LLC Incorporations Scraper
+- Slug: laborious_rumor/us-new-business-llc-incorporations-scraper
+- URL: https://apify.com/laborious_rumor/us-new-business-llc-incorporations-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first US New Business & LLC Incorporations Scraper. Extract high-intent US commercial records from sos.state.tx.us with sub-5s execution, zero cookies requ
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### Zillow FSBO & Motivated Seller Real Estate Leads
+- Slug: laborious_rumor/zillow-fsbo-motivated-seller-leads-scraper
+- URL: https://apify.com/laborious_rumor/zillow-fsbo-motivated-seller-leads-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first Zillow FSBO & Motivated Seller Real Estate Leads. Extract high-intent US commercial records from zillow.com with sub-5s execution, zero cookies requi
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### US Contractor Leads Scraper: Roofers, HVAC & Plumbers
+- Slug: laborious_rumor/us-home-services-contractor-leads-scraper
+- URL: https://apify.com/laborious_rumor/us-home-services-contractor-leads-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first US Contractor Leads Scraper: Roofers, HVAC & Plumbers. Extract high-intent US commercial records from google.com/localservices with sub-5s execution,
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### ZipRecruiter US Tech Jobs & Salary Benchmark Scraper
+- Slug: laborious_rumor/ziprecruiter-us-remote-tech-salaries-scraper
+- URL: https://apify.com/laborious_rumor/ziprecruiter-us-remote-tech-salaries-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first ZipRecruiter US Tech Jobs & Salary Benchmark Scraper. Extract high-intent US commercial records from ziprecruiter.com with sub-5s execution, zero coo
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### Amazon US BSR & Movers and Shakers Product Tracker
+- Slug: laborious_rumor/amazon-us-bsr-fba-arbitrage-product-tracker
+- URL: https://apify.com/laborious_rumor/amazon-us-bsr-fba-arbitrage-product-tracker
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first Amazon US BSR & Movers and Shakers Product Tracker. Extract high-intent US commercial records from amazon.com with sub-5s execution, zero cookies req
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
