@@ -1392,5 +1392,130 @@
       "title": "Amazon US BSR & Movers and Shakers Product Tracker",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "remoteok-us-remote-jobs-scraper",
+    "name": "RemoteOK Scraper: US High-Paying Remote Tech Jobs & Salaries",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract real-time US remote software engineer, AI, product, and tech jobs with verified salary compensation, company names, tech stacks, and direct application ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "RemoteOK Scraper: US High-Paying Remote Tech Jobs & Salaries",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "nobroker-scraper",
+    "name": "NoBroker India Scraper - Owner Properties & Rentals",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first NoBroker India Scraper - Owner Properties & Rentals. Extract structured, normalized records from nobroker.in with sub-5s execution, zero cookies requ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "NoBroker India Scraper - Owner Properties & Rentals",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "sec-edgar-form-d-fundraising-scraper",
+    "name": "SEC EDGAR Form D Scraper: Startup & Private Capital Leads",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract newly filed SEC Form D venture capital, private equity & angel funding rounds directly from the US SEC. Includes company names, offering amounts, amount",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "SEC EDGAR Form D Scraper: Startup & Private Capital Leads",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "acres99-scraper",
+    "name": "99acres India Property Scraper - Commercial & Residential",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first 99acres India Property Scraper - Commercial & Residential. Extract structured, normalized records from 99acres.com with sub-5s execution, zero cookie",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "99acres India Property Scraper - Commercial & Residential",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "magicbricks-scraper",
+    "name": "MagicBricks India Scraper - Rent & Buy Property Comps",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first MagicBricks India Scraper - Rent & Buy Property Comps. Extract structured, normalized records from magicbricks.com with sub-5s execution, zero cookie",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "MagicBricks India Scraper - Rent & Buy Property Comps",
+      "verifiedStatus": true
+    }
   }
 ]
