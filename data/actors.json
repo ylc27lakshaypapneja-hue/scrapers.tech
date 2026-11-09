@@ -1517,5 +1517,80 @@
       "title": "MagicBricks India Scraper - Rent & Buy Property Comps",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "noon-scraper",
+    "name": "Noon.com Scraper - UAE & KSA E-Commerce Prices & Sellers",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Noon.com Scraper - UAE & KSA E-Commerce Prices & Sellers. Extract structured, normalized records from noon.com with sub-5s execution, zero cookies re",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Noon.com Scraper - UAE & KSA E-Commerce Prices & Sellers",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "adzuna-jobs-scraper",
+    "name": "Adzuna Jobs Scraper - Global Job Aggregator & Salaries",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Adzuna Jobs Scraper - Global Job Aggregator & Salaries. Extract structured, normalized records from adzuna.com with sub-5s execution, zero cookies re",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Adzuna Jobs Scraper - Global Job Aggregator & Salaries",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "talabat-scraper",
+    "name": "Talabat Scraper - MENA Restaurant Menus, Prices & Promos",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Talabat Scraper - MENA Restaurant Menus, Prices & Promos. Extract structured, normalized records from talabat.com with sub-5s execution, zero cookies",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Talabat Scraper - MENA Restaurant Menus, Prices & Promos",
+      "verifiedStatus": true
+    }
   }
 ]

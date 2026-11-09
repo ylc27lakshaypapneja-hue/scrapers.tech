@@ -401,3 +401,43 @@
 - Description: HTTP-first Amazon US BSR & Movers and Shakers Product Tracker. Extract high-intent US commercial records from amazon.com with sub-5s execution, zero cookies req
 - Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
 
+### RemoteOK Scraper: US High-Paying Remote Tech Jobs & Salaries
+- Slug: laborious_rumor/remoteok-us-remote-jobs-scraper
+- URL: https://apify.com/laborious_rumor/remoteok-us-remote-jobs-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: Extract real-time US remote software engineer, AI, product, and tech jobs with verified salary compensation, company names, tech stacks, and direct application 
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### NoBroker India Scraper - Owner Properties & Rentals
+- Slug: laborious_rumor/nobroker-scraper
+- URL: https://apify.com/laborious_rumor/nobroker-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first NoBroker India Scraper - Owner Properties & Rentals. Extract structured, normalized records from nobroker.in with sub-5s execution, zero cookies requ
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### SEC EDGAR Form D Scraper: Startup & Private Capital Leads
+- Slug: laborious_rumor/sec-edgar-form-d-fundraising-scraper
+- URL: https://apify.com/laborious_rumor/sec-edgar-form-d-fundraising-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: Extract newly filed SEC Form D venture capital, private equity & angel funding rounds directly from the US SEC. Includes company names, offering amounts, amount
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### 99acres India Property Scraper - Commercial & Residential
+- Slug: laborious_rumor/acres99-scraper
+- URL: https://apify.com/laborious_rumor/acres99-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first 99acres India Property Scraper - Commercial & Residential. Extract structured, normalized records from 99acres.com with sub-5s execution, zero cookie
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
+### MagicBricks India Scraper - Rent & Buy Property Comps
+- Slug: laborious_rumor/magicbricks-scraper
+- URL: https://apify.com/laborious_rumor/magicbricks-scraper
+- Category: B2B & Leads
+- Pricing: $0.003 / record
+- Description: HTTP-first MagicBricks India Scraper - Rent & Buy Property Comps. Extract structured, normalized records from magicbricks.com with sub-5s execution, zero cookie
+- Use Case: Sub-5s execution • Cookie-free extraction • JSON/CSV/Excel export • Pay-Per-Event
+
