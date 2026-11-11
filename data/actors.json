@@ -1592,5 +1592,155 @@
       "title": "Talabat Scraper - MENA Restaurant Menus, Prices & Promos",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "zomato-swiggy-restaurant-scraper",
+    "name": "Zomato & Swiggy Restaurant Menu, Rating & Discount Scraper",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Zomato & Swiggy Restaurant Menu, Rating & Discount Scraper. Extract structured, normalized records from zomato.com with sub-5s execution, zero cookie",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Zomato & Swiggy Restaurant Menu, Rating & Discount Scraper",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "deliveroo-menu-scraper",
+    "name": "Deliveroo Restaurant & Menu Scraper - UK, EU & UAE Prices",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Deliveroo Restaurant & Menu Scraper - UK, EU & UAE Prices. Extract structured, normalized records from deliveroo.co.uk with sub-5s execution, zero co",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Deliveroo Restaurant & Menu Scraper - UK, EU & UAE Prices",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "linkedin-post-search-scraper",
+    "name": "LinkedIn Post Search Scraper - Viral Posts & Authors",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first LinkedIn Post Search Scraper - Viral Posts & Authors. Extract structured, normalized records from linkedin.com/posts with sub-5s execution, zero cook",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "LinkedIn Post Search Scraper - Viral Posts & Authors",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "blinkit-zepto-instamart-price-scraper",
+    "name": "Blinkit, Zepto & Instamart Quick-Commerce Price Tracker",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Blinkit, Zepto & Instamart Quick-Commerce Price Tracker. Extract structured, normalized records from blinkit.com with sub-5s execution, zero cookies ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Blinkit, Zepto & Instamart Quick-Commerce Price Tracker",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "uber-eats-doordash-menu-scraper",
+    "name": "UberEats & DoorDash Menu Price & Delivery Fee Scraper",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first UberEats & DoorDash Menu Price & Delivery Fee Scraper. Extract structured, normalized records from ubereats.com with sub-5s execution, zero cookies r",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "UberEats & DoorDash Menu Price & Delivery Fee Scraper",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "bulk-email-verifier-cleaner",
+    "name": "Bulk Email Verifier & Validator - MX, SMTP & Catch-All",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Bulk Email Verifier & Validator - MX, SMTP & Catch-All. Extract structured, normalized records from dns.google with sub-5s execution, zero cookies re",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Bulk Email Verifier & Validator - MX, SMTP & Catch-All",
+      "verifiedStatus": true
+    }
   }
 ]
