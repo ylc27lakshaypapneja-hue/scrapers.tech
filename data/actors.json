@@ -27,7 +27,8 @@
       "ordersCount": 4280,
       "rating": 4.9,
       "storeName": "Shenzhen KeyTech Official Store"
-    }
+    },
+    "title": "AliExpress Product Scraper: Prices, Orders & [🎁 1,000 Free]"
   },
   {
     "slug": "linkedin-company-employees-scraper",
@@ -56,7 +57,8 @@
       "seniority": "VP / Executive",
       "workEmailPattern": "marcus.vance@stripe.com",
       "location": "San Francisco, CA"
-    }
+    },
+    "title": "LinkedIn Company Employees & People Scraper [🎁 1,000 Free]"
   },
   {
     "slug": "indiamart-supplier-scraper",
@@ -85,7 +87,8 @@
       "city": "Gurugram, Haryana",
       "trustSealVerified": true,
       "gstVerified": true
-    }
+    },
+    "title": "IndiaMART Supplier Scraper: B2B Products & C [🎁 1,000 Free]"
   },
   {
     "slug": "facebook-ads-library-scraper",
@@ -114,7 +117,8 @@
       "ctaType": "Sign Up",
       "activeDays": 84,
       "isWinningEvergreenAd": true
-    }
+    },
+    "title": "Facebook Ad Library Scraper: Competitor Ads [🎁 1,000 Free]"
   },
   {
     "slug": "pinterest-scraper",
@@ -142,7 +146,8 @@
       "savesCount": 14820,
       "viralityTier": "VIRAL_TOP_1_PCT",
       "dominantColorHex": "#1A1C1E"
-    }
+    },
+    "title": "Pinterest Scraper & Monitor: Pins, Saves & B [🎁 1,000 Free]"
   },
   {
     "slug": "lead-scraper",
@@ -174,7 +179,8 @@
       "phone": "+1 (415) 890-1200",
       "location": "San Francisco, CA",
       "industry": "Cloud Infrastructure"
-    }
+    },
+    "title": "Lead Scraper: B2B Leads, Emails & Decision M [🎁 1,000 Free]"
   },
   {
     "slug": "ai-web-to-markdown-rag-scraper",
@@ -206,7 +212,8 @@
         "Header Format",
         "Error Codes"
       ]
-    }
+    },
+    "title": "Website to Markdown & Clean RAG Context Craw [🎁 1,000 Free]"
   },
   {
     "slug": "b2b-lead-contact-tech-enricher",
@@ -242,7 +249,8 @@
       ],
       "hasMxRecords": true,
       "linkedin": "https://linkedin.com/company/fintechgrowth"
-    }
+    },
+    "title": "B2B Lead Finder & Contact Scraper: Emails & [🎁 1,000 Free]"
   },
   {
     "slug": "local-business-directory-maps-lead-enricher",
@@ -271,7 +279,8 @@
       "phone": "+1 (312) 555-0199",
       "address": "220 N Michigan Ave, Chicago, IL",
       "bookingUrl": "https://blueharbordental.com/book"
-    }
+    },
+    "title": "Google Maps Email Extractor: Local Business [🎁 1,000 Free]"
   },
   {
     "slug": "universal-ecommerce-product-price-tracker",
@@ -301,7 +310,8 @@
       "inStock": true,
       "variantsCount": 6,
       "brand": "AeroAthletics"
-    }
+    },
+    "title": "Shopify Product Scraper: Prices, Stock & SKU [🎁 1,000 Free]"
   },
   {
     "slug": "social-viral-trend-reddit-hn-pulse-scraper",
@@ -330,7 +340,8 @@
       "commentsCount": 164,
       "velocityScore": 92.4,
       "url": "https://news.ycombinator.com/item?id=381920"
-    }
+    },
+    "title": "Reddit & Hacker News Scraper: Viral Social T [🎁 1,000 Free]"
   },
   {
     "slug": "youtube-tiktok-transcript-hook-extractor",
@@ -362,7 +373,8 @@
         "Distribution",
         "Pricing Models"
       ]
-    }
+    },
+    "title": "YouTube Transcript Scraper: Captions & Viral [🎁 1,000 Free]"
   },
   {
     "slug": "multi-ats-tech-jobs-hiring-aggregator",
@@ -396,7 +408,8 @@
         "Kubernetes",
         "Ray"
       ]
-    }
+    },
+    "title": "Job Board Scraper: Greenhouse & Lever Tech H [🎁 1,000 Free]"
   },
   {
     "slug": "seo-serp-competitor-content-gap-analyzer",
@@ -428,7 +441,8 @@
         "lead tracking"
       ],
       "internalLinksCount": 42
-    }
+    },
+    "title": "SEO Audit Tool: SERP Competitor & On-Page An [🎁 1,000 Free]"
   },
   {
     "slug": "builtwith-wappalyzer-deep-tech-detector",
@@ -468,7 +482,8 @@
         "Vercel",
         "AWS"
       ]
-    }
+    },
+    "title": "Deep Tech Stack Fingerprinter: 100+ Framewor [🎁 1,000 Free]"
   },
   {
     "slug": "subdomain-dns-recon-security-finder",
@@ -500,7 +515,8 @@
       "hasDmarc": true,
       "hasSpf": true,
       "dnsProvider": "Cloudflare"
-    }
+    },
+    "title": "Subdomain & DNS Recon Scanner: Security Audi [🎁 1,000 Free]"
   },
   {
     "slug": "sitemap-xml-llm-knowledgebase-crawler",
@@ -527,7 +543,8 @@
       "totalPagesDiscovered": 120,
       "pagesScraped": 25,
       "avgPageTokens": 680
-    }
+    },
+    "title": "XML Sitemap Crawler: Clean LLM Q&A Chunks [🎁 1,000 Free]"
   },
   {
     "slug": "hackernews-who-is-hiring-job-lead-parser",
@@ -560,7 +577,8 @@
         "Rust"
       ],
       "contactEmail": "careers@supabase.com"
-    }
+    },
+    "title": "Hacker News Who Is Hiring Scraper [🎁 1,000 Free]"
   },
   {
     "slug": "producthunt-launch-upvote-maker-monitor",
@@ -588,7 +606,8 @@
       "upvotes": 1840,
       "rankOfDay": 1,
       "makerTwitter": "@cursor_editor"
-    }
+    },
+    "title": "Product Hunt Scraper — Daily Launches, Produ [🎁 1,000 Free]"
   },
   {
     "slug": "saas-stripe-lemonsqueezy-pricing-comparer",
@@ -620,7 +639,8 @@
         "Git integrations",
         "Cycles & roadmaps"
       ]
-    }
+    },
+    "title": "SaaS Pricing Table Scraper: Plans & Tier Lim [🎁 1,000 Free]"
   },
   {
     "slug": "clutch-g2-b2b-agency-reviews-scraper",
@@ -649,7 +669,8 @@
       "rating": 4.9,
       "reviewCount": 38,
       "focus": "Custom Software & AI"
-    }
+    },
+    "title": "Clutch & G2 Reviews Scraper: B2B Agencies & [🎁 1,000 Free]"
   },
   {
     "slug": "etsy-trending-handmade-product-keyword-scraper",
@@ -681,7 +702,8 @@
         "leather pad",
         "workspace gifts"
       ]
-    }
+    },
+    "title": "Etsy Trending Products Scraper: Sales & Tags [🎁 1,000 Free]"
   },
   {
     "slug": "github-repo-codebase-llm-packer",
@@ -711,7 +733,8 @@
         "JavaScript"
       ],
       "bundleUrl": "https://api.apify.com/v2/key-value-stores/..."
-    }
+    },
+    "title": "GitHub Repo Codebase Packer: LLM Context & T [🎁 1,000 Free]"
   },
   {
     "slug": "arxiv-hf-paper-summary-citation-extractor",
@@ -741,7 +764,8 @@
       "arxivId": "1706.03762",
       "hfModelsCount": 4200,
       "summary": "The Transformer model architecture based solely on attention mechanisms..."
-    }
+    },
+    "title": "ArXiv & Hugging Face AI Research Paper Scrap [🎁 1,000 Free]"
   },
   {
     "slug": "substack-beehiiv-newsletter-directory-scraper",
@@ -770,7 +794,8 @@
       "subscribersRange": "25,000 - 50,000",
       "category": "Artificial Intelligence",
       "websiteUrl": "https://theaibreakthrough.beehiiv.com"
-    }
+    },
+    "title": "Substack & Beehiiv Newsletter Directory Scra [🎁 1,000 Free]"
   },
   {
     "slug": "podcast-rss-sponsor-guest-extractor",
@@ -802,7 +827,8 @@
       ],
       "promoCode": "LENNY20",
       "audioUrl": "https://traffic.libsyn.com/.../episode140.mp3"
-    }
+    },
+    "title": "Podcast RSS Feed Scraper: Sponsors & Guest I [🎁 1,000 Free]"
   },
   {
     "slug": "amazon-product-review-aspect-sentiment-miner",
@@ -833,7 +859,8 @@
       },
       "verifiedPurchase": true,
       "rating": 2
-    }
+    },
+    "title": "Amazon Product Reviews & Sentiment Analysis [🎁 1,000 Free]"
   },
   {
     "slug": "poshmark-depop-reseller-pricing-tracker",
@@ -862,7 +889,8 @@
       "historicalSoldAvg": 185,
       "condition": "Pre-owned",
       "platform": "Depop"
-    }
+    },
+    "title": "Poshmark & Depop Reseller Scraper: Sold Pric [🎁 1,000 Free]"
   },
   {
     "slug": "npm-pypi-package-growth-trending-tracker",
@@ -891,7 +919,8 @@
       "growthWeekOverWeek": "+14.2%",
       "license": "MIT",
       "githubStars": 44200
-    }
+    },
+    "title": "NPM & PyPI Package Growth & Download Velocit [🎁 1,000 Free]"
   },
   {
     "slug": "twitch-kick-streamer-stats-sponsorship-monitor",
@@ -916,7 +945,8 @@
       "recordId": "900100200",
       "title": "Twitch & Kick Streamer Stats & Brand Sponsor Tracker",
       "verifiedStatus": true
-    }
+    },
+    "title": "Twitch & Kick Streamer Stats & Brand Sponsor [🎁 1,000 Free]"
   },
   {
     "slug": "zillow-redfin-real-estate-comps-property-analyzer",
@@ -941,7 +971,8 @@
       "recordId": "900100200",
       "title": "Real Estate Comps Scraper: Price History & Tax",
       "verifiedStatus": true
-    }
+    },
+    "title": "Real Estate Comps Scraper: Price History & T [🎁 1,000 Free]"
   },
   {
     "slug": "yelp-tripadvisor-restaurant-menu-pricing-scraper",
@@ -966,7 +997,8 @@
       "recordId": "900100200",
       "title": "Restaurant Menu & Price Scraper: Yelp & TripAdvisor",
       "verifiedStatus": true
-    }
+    },
+    "title": "Restaurant Menu & Price Scraper: Yelp & Trip [🎁 1,000 Free]"
   },
   {
     "slug": "tiktok-instagram-sound-hashtag-virality-tracker",
@@ -991,7 +1023,8 @@
       "recordId": "900100200",
       "title": "TikTok & Reels Trending Audio Scraper: Virality",
       "verifiedStatus": true
-    }
+    },
+    "title": "TikTok & Reels Trending Audio Scraper: Viral [🎁 1,000 Free]"
   },
   {
     "slug": "airbnb-vrbo-short-term-rental-market-analyzer",
@@ -1016,7 +1049,8 @@
       "recordId": "900100200",
       "title": "Airbnb & VRBO Rental Scraper: Nightly Rates & Fees",
       "verifiedStatus": true
-    }
+    },
+    "title": "Airbnb & VRBO Rental Scraper: Nightly Rates [🎁 1,000 Free]"
   },
   {
     "slug": "indeed-jobs-scraper",
@@ -1041,7 +1075,8 @@
       "recordId": "900100200",
       "title": "Indeed Jobs Scraper - Global Job Postings & Salaries",
       "verifiedStatus": true
-    }
+    },
+    "title": "Indeed Jobs Scraper - Global Job Postings & [🎁 1,000 Free]"
   },
   {
     "slug": "justdial-business-scraper",
@@ -1066,7 +1101,8 @@
       "recordId": "900100200",
       "title": "JustDial Business Scraper - Verified India B2B Leads",
       "verifiedStatus": true
-    }
+    },
+    "title": "JustDial Business Scraper - Verified India B [🎁 1,000 Free]"
   },
   {
     "slug": "google-maps-reviews-scraper",
@@ -1091,7 +1127,8 @@
       "recordId": "900100200",
       "title": "Google Maps Reviews Scraper - Ratings, Text & Replies",
       "verifiedStatus": true
-    }
+    },
+    "title": "Google Maps Reviews Scraper - Ratings, Text [🎁 1,000 Free]"
   },
   {
     "slug": "naukri-jobs-scraper",
@@ -1116,7 +1153,8 @@
       "recordId": "900100200",
       "title": "Naukri Jobs Scraper - India & Gulf Jobs & Salaries",
       "verifiedStatus": true
-    }
+    },
+    "title": "Naukri Jobs Scraper - India & Gulf Jobs & Sa [🎁 1,000 Free]"
   },
   {
     "slug": "youtube-comments-scraper",
@@ -1141,7 +1179,8 @@
       "recordId": "900100200",
       "title": "YouTube Comments Scraper - Viewer Sentiment & Leads",
       "verifiedStatus": true
-    }
+    },
+    "title": "YouTube Comments Scraper - Viewer Sentiment [🎁 1,000 Free]"
   },
   {
     "slug": "linkedin-profile-scraper",
@@ -1166,7 +1205,8 @@
       "recordId": "900100200",
       "title": "LinkedIn Profile Scraper + Work Email (No Cookies)",
       "verifiedStatus": true
-    }
+    },
+    "title": "LinkedIn Profile Scraper + Work Email (No Co [🎁 1,000 Free]"
   },
   {
     "slug": "linkedin-jobs-scraper",
@@ -1191,7 +1231,8 @@
       "recordId": "900100200",
       "title": "LinkedIn Jobs Scraper - Hiring Companies & Salaries",
       "verifiedStatus": true
-    }
+    },
+    "title": "LinkedIn Jobs Scraper - Hiring Companies & S [🎁 1,000 Free]"
   },
   {
     "slug": "twitter-x-tweet-scraper",
@@ -1216,7 +1257,8 @@
       "recordId": "900100200",
       "title": "Tweet Scraper V2 - X / Twitter Posts, Metrics & Threads",
       "verifiedStatus": true
-    }
+    },
+    "title": "Tweet Scraper V2 - X / Twitter Posts, Metric [🎁 1,000 Free]"
   },
   {
     "slug": "tiktok-comments-scraper",
@@ -1241,7 +1283,8 @@
       "recordId": "900100200",
       "title": "TikTok Comments Scraper - Viral Video Audience Insights",
       "verifiedStatus": true
-    }
+    },
+    "title": "TikTok Comments Scraper - Viral Video Audien [🎁 1,000 Free]"
   },
   {
     "slug": "tiktok-profile-scraper",
@@ -1266,7 +1309,8 @@
       "recordId": "900100200",
       "title": "TikTok Profile & Creator Scraper - Emails & Engagement",
       "verifiedStatus": true
-    }
+    },
+    "title": "TikTok Profile & Creator Scraper - Emails & [🎁 1,000 Free]"
   },
   {
     "slug": "us-new-business-llc-incorporations-scraper",
@@ -1291,7 +1335,8 @@
       "recordId": "900100200",
       "title": "US New Business & LLC Incorporations Scraper",
       "verifiedStatus": true
-    }
+    },
+    "title": "US New Business & LLC Incorporations Scraper [🎁 1,000 Free]"
   },
   {
     "slug": "zillow-fsbo-motivated-seller-leads-scraper",
@@ -1316,7 +1361,8 @@
       "recordId": "900100200",
       "title": "Zillow FSBO & Motivated Seller Real Estate Leads",
       "verifiedStatus": true
-    }
+    },
+    "title": "Zillow FSBO Motivated Seller Leads [🎁 1,000 Free]"
   },
   {
     "slug": "us-home-services-contractor-leads-scraper",
@@ -1341,7 +1387,8 @@
       "recordId": "900100200",
       "title": "US Contractor Leads Scraper: Roofers, HVAC & Plumbers",
       "verifiedStatus": true
-    }
+    },
+    "title": "US Contractor Leads Scraper: Roofers, HVAC & [🎁 1,000 Free]"
   },
   {
     "slug": "ziprecruiter-us-remote-tech-salaries-scraper",
@@ -1366,7 +1413,8 @@
       "recordId": "900100200",
       "title": "ZipRecruiter US Tech Jobs & Salary Benchmark Scraper",
       "verifiedStatus": true
-    }
+    },
+    "title": "ZipRecruiter US Tech Jobs & Salary Benchmark [🎁 1,000 Free]"
   },
   {
     "slug": "amazon-us-bsr-fba-arbitrage-product-tracker",
@@ -1391,7 +1439,8 @@
       "recordId": "900100200",
       "title": "Amazon US BSR & Movers and Shakers Product Tracker",
       "verifiedStatus": true
-    }
+    },
+    "title": "Amazon US BSR & Movers and Shakers Product T [🎁 1,000 Free]"
   },
   {
     "slug": "remoteok-us-remote-jobs-scraper",
@@ -1416,7 +1465,8 @@
       "recordId": "900100200",
       "title": "RemoteOK Scraper: US High-Paying Remote Tech Jobs & Salaries",
       "verifiedStatus": true
-    }
+    },
+    "title": "RemoteOK US Remote Tech Jobs Scraper [🎁 1,000 Free]"
   },
   {
     "slug": "nobroker-scraper",
@@ -1441,7 +1491,8 @@
       "recordId": "900100200",
       "title": "NoBroker India Scraper - Owner Properties & Rentals",
       "verifiedStatus": true
-    }
+    },
+    "title": "NoBroker India Scraper - Owner Properties & [🎁 1,000 Free]"
   },
   {
     "slug": "sec-edgar-form-d-fundraising-scraper",
@@ -1466,7 +1517,8 @@
       "recordId": "900100200",
       "title": "SEC EDGAR Form D Scraper: Startup & Private Capital Leads",
       "verifiedStatus": true
-    }
+    },
+    "title": "SEC EDGAR Form D Scraper: Deals [🎁 1,000 Free]"
   },
   {
     "slug": "acres99-scraper",
@@ -1491,7 +1543,8 @@
       "recordId": "900100200",
       "title": "99acres India Property Scraper - Commercial & Residential",
       "verifiedStatus": true
-    }
+    },
+    "title": "99acres India Property Scraper - Commercial [🎁 1,000 Free]"
   },
   {
     "slug": "magicbricks-scraper",
@@ -1516,7 +1569,8 @@
       "recordId": "900100200",
       "title": "MagicBricks India Scraper - Rent & Buy Property Comps",
       "verifiedStatus": true
-    }
+    },
+    "title": "MagicBricks India Scraper - Rent & Buy Prope [🎁 1,000 Free]"
   },
   {
     "slug": "noon-scraper",
@@ -1541,7 +1595,8 @@
       "recordId": "900100200",
       "title": "Noon.com Scraper - UAE & KSA E-Commerce Prices & Sellers",
       "verifiedStatus": true
-    }
+    },
+    "title": "Noon.com Scraper - UAE & KSA E-Commerce Pric [🎁 1,000 Free]"
   },
   {
     "slug": "adzuna-jobs-scraper",
@@ -1566,7 +1621,8 @@
       "recordId": "900100200",
       "title": "Adzuna Jobs Scraper - Global Job Aggregator & Salaries",
       "verifiedStatus": true
-    }
+    },
+    "title": "Adzuna Jobs Scraper - Global Job Aggregator [🎁 1,000 Free]"
   },
   {
     "slug": "talabat-scraper",
@@ -1591,7 +1647,8 @@
       "recordId": "900100200",
       "title": "Talabat Scraper - MENA Restaurant Menus, Prices & Promos",
       "verifiedStatus": true
-    }
+    },
+    "title": "Talabat Scraper - MENA Restaurant Menus, Pri [🎁 1,000 Free]"
   },
   {
     "slug": "zomato-swiggy-restaurant-scraper",
@@ -1616,7 +1673,8 @@
       "recordId": "900100200",
       "title": "Zomato & Swiggy Restaurant Menu, Rating & Discount Scraper",
       "verifiedStatus": true
-    }
+    },
+    "title": "Zomato & Swiggy Restaurant Menu, Rating & Di [🎁 1,000 Free]"
   },
   {
     "slug": "deliveroo-menu-scraper",
@@ -1641,7 +1699,8 @@
       "recordId": "900100200",
       "title": "Deliveroo Restaurant & Menu Scraper - UK, EU & UAE Prices",
       "verifiedStatus": true
-    }
+    },
+    "title": "Deliveroo Restaurant & Menu Scraper - UK, EU [🎁 1,000 Free]"
   },
   {
     "slug": "linkedin-post-search-scraper",
@@ -1666,7 +1725,8 @@
       "recordId": "900100200",
       "title": "LinkedIn Post Search Scraper - Viral Posts & Authors",
       "verifiedStatus": true
-    }
+    },
+    "title": "LinkedIn Post Search Scraper - Viral Posts & [🎁 1,000 Free]"
   },
   {
     "slug": "blinkit-zepto-instamart-price-scraper",
@@ -1691,7 +1751,8 @@
       "recordId": "900100200",
       "title": "Blinkit, Zepto & Instamart Quick-Commerce Price Tracker",
       "verifiedStatus": true
-    }
+    },
+    "title": "Blinkit, Zepto & Instamart Quick-Commerce Pr [🎁 1,000 Free]"
   },
   {
     "slug": "uber-eats-doordash-menu-scraper",
@@ -1716,7 +1777,8 @@
       "recordId": "900100200",
       "title": "UberEats & DoorDash Menu Price & Delivery Fee Scraper",
       "verifiedStatus": true
-    }
+    },
+    "title": "UberEats & DoorDash Menu Price & Delivery Fe [🎁 1,000 Free]"
   },
   {
     "slug": "bulk-email-verifier-cleaner",
@@ -1740,6 +1802,132 @@
     "sampleOutput": {
       "recordId": "900100200",
       "title": "Bulk Email Verifier & Validator - MX, SMTP & Catch-All",
+      "verifiedStatus": true
+    },
+    "title": "Bulk Email Verifier & Validator [🎁 1,000 Free]"
+  },
+  {
+    "slug": "apollo-io-lead-alternative-scraper",
+    "name": "B2B Decision-Maker & Verified Email Finder ( [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first B2B Decision-Maker & Verified Email Finder (Apollo Style). Extract structured, normalized records from apollo.io with sub-5s execution, zero cookies ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "B2B Decision-Maker & Verified Email Finder ( [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "ebay-sold-listings-price-comp-scraper",
+    "name": "eBay Sold Listings & Terapeak Comps Scraper - Resale Prices",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first eBay Sold Listings & Terapeak Comps Scraper - Resale Prices. Extract structured, normalized records from ebay.com with sub-5s execution, zero cookies",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "eBay Sold Listings & Terapeak Comps Scraper - Resale Prices",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "walmart-product-price-review-scraper",
+    "name": "Walmart Product & Price Scraper - Inventory, Ratings & Selle",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Walmart Product & Price Scraper - Inventory, Ratings & Sellers. Extract structured, normalized records from walmart.com with sub-5s execution, zero c",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Walmart Product & Price Scraper - Inventory, Ratings & Selle",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "pdf-table-financial-report-markdown-extractor",
+    "name": "PDF Financial Report & Table Extractor: Markdown",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract high-density financial tables, balance sheets, and narrative text from PDF earnings reports and SEC filings into clean Markdown.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "PDF Financial Report & Table Extractor: Markdown",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "angies-thumbtack-contractor-lead-scraper",
+    "name": "Local Contractor Lead Scraper: Plumbers & Roofers",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract verified phone numbers, business names, trade specializations, review counts, and service areas for local home contractors.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Local Contractor Lead Scraper: Plumbers & Roofers",
       "verifiedStatus": true
     }
   }
