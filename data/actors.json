@@ -1930,5 +1930,130 @@
       "title": "Local Contractor Lead Scraper: Plumbers & Roofers",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "flipkart-product-price-review-scraper",
+    "name": "Flipkart Product & Review Scraper - India E [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Flipkart Product & Review Scraper - India E-Commerce Intelligence. Extract structured, normalized records from flipkart.com with sub-5s execution, ze",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Flipkart Product & Review Scraper - India E [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "capterra-software-reviews-pricing-scraper",
+    "name": "Capterra & GetApp Software Reviews & Buyer Intent Scraper",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Capterra & GetApp Software Reviews & Buyer Intent Scraper. Extract structured, normalized records from capterra.com with sub-5s execution, zero cooki",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Capterra & GetApp Software Reviews & Buyer Intent Scraper",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "alibaba-wholesale-supplier-moq-scraper",
+    "name": "Alibaba B2B Wholesale Supplier & Factory MOQ Price Scraper",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Alibaba B2B Wholesale Supplier & Factory MOQ Price Scraper. Extract structured, normalized records from alibaba.com with sub-5s execution, zero cooki",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Alibaba B2B Wholesale Supplier & Factory MOQ Price Scraper",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "shopify-store-product-catalog-scraper",
+    "name": "Shopify Store Scraper - Full Product Catalog, Variants & Pri",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Shopify Store Scraper - Full Product Catalog, Variants & Prices. Extract structured, normalized records from myshopify.com with sub-5s execution, zer",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Shopify Store Scraper - Full Product Catalog, Variants & Pri",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "trustpilot-company-reviews-scraper",
+    "name": "Trustpilot Reviews Scraper - Company Ratings & Complaints",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Trustpilot Reviews Scraper - Company Ratings & Complaints. Extract structured, normalized records from trustpilot.com with sub-5s execution, zero coo",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Trustpilot Reviews Scraper - Company Ratings & Complaints",
+      "verifiedStatus": true
+    }
   }
 ]
