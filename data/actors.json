@@ -2055,5 +2055,105 @@
       "title": "Trustpilot Reviews Scraper - Company Ratings & Complaints",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "glassdoor-company-reviews-salary-scraper",
+    "name": "Glassdoor Company Reviews, Salaries & Interv [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Glassdoor Company Reviews, Salaries & Interview Questions. Extract structured, normalized records from glassdoor.com with sub-5s execution, zero cook",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Glassdoor Company Reviews, Salaries & Interv [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "ambitionbox-india-salaries-reviews-scraper",
+    "name": "AmbitionBox India Company Salaries, Reviews & Culture Scrape",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first AmbitionBox India Company Salaries, Reviews & Culture Scraper. Extract structured, normalized records from ambitionbox.com with sub-5s execution, zer",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "AmbitionBox India Company Salaries, Reviews & Culture Scrape",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "appstore-googleplay-app-reviews-scraper",
+    "name": "App Store & Google Play Mobile App Reviews & Bug Miner",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first App Store & Google Play Mobile App Reviews & Bug Miner. Extract structured, normalized records from play.google.com with sub-5s execution, zero cooki",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "App Store & Google Play Mobile App Reviews & Bug Miner",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "booking-com-hotel-rates-reviews-scraper",
+    "name": "Booking.com Hotel Prices, Occupancy & Guest Reviews Scraper",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Booking.com Hotel Prices, Occupancy & Guest Reviews Scraper. Extract structured, normalized records from booking.com with sub-5s execution, zero cook",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Booking.com Hotel Prices, Occupancy & Guest Reviews Scraper",
+      "verifiedStatus": true
+    }
   }
 ]
