@@ -2155,5 +2155,130 @@
       "title": "Booking.com Hotel Prices, Occupancy & Guest Reviews Scraper",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "makemytrip-goibibo-hotel-flight-scraper",
+    "name": "MakeMyTrip & Goibibo Hotel Tariff & Flight F [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first MakeMyTrip & Goibibo Hotel Tariff & Flight Fare Monitor. Extract structured, normalized records from makemytrip.com with sub-5s execution, zero cooki",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "MakeMyTrip & Goibibo Hotel Tariff & Flight F [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "tripadvisor-hotels-attractions-reviews-scraper",
+    "name": "TripAdvisor Hotels, Restaurants & Attraction [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first TripAdvisor Hotels, Restaurants & Attractions Review Scraper. Extract structured, normalized records from tripadvisor.com with sub-5s execution, zero",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "TripAdvisor Hotels, Restaurants & Attraction [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "agoda-expedia-hotel-rate-parity-scraper",
+    "name": "Agoda & Expedia Hotel Rate Parity & Room Inventory Scraper",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Agoda & Expedia Hotel Rate Parity & Room Inventory Scraper. Extract structured, normalized records from agoda.com with sub-5s execution, zero cookies",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Agoda & Expedia Hotel Rate Parity & Room Inventory Scraper",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "skyscanner-google-flights-route-price-monitor",
+    "name": "Flight Route Fare & Airline Pricing Intelligence Scraper",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Flight Route Fare & Airline Pricing Intelligence Scraper. Extract structured, normalized records from skyscanner.net with sub-5s execution, zero cook",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Flight Route Fare & Airline Pricing Intelligence Scraper",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "crunchbase-company-funding-rounds-scraper",
+    "name": "Startup Funding Rounds, Investors & Founder Contact Scraper",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Startup Funding Rounds, Investors & Founder Contact Scraper. Extract structured, normalized records from crunchbase.com with sub-5s execution, zero c",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Startup Funding Rounds, Investors & Founder Contact Scraper",
+      "verifiedStatus": true
+    }
   }
 ]
