@@ -2280,5 +2280,55 @@
       "title": "Startup Funding Rounds, Investors & Founder Contact Scraper",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "wellfound-angellist-startup-jobs-founders-scraper",
+    "name": "Wellfound (AngelList) Startup Jobs, Equity & [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Wellfound (AngelList) Startup Jobs, Equity & Founder Scraper. Extract structured, normalized records from wellfound.com with sub-5s execution, zero c",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Wellfound (AngelList) Startup Jobs, Equity & [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "ycombinator-startup-founder-directory-scraper",
+    "name": "Y Combinator (YC) Startup Directory, Batch & [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Y Combinator (YC) Startup Directory, Batch & Founder Scraper. Extract structured, normalized records from ycombinator.com/companies with sub-5s execu",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Y Combinator (YC) Startup Directory, Batch & [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
   }
 ]
