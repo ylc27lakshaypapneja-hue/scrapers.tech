@@ -2330,5 +2330,255 @@
       "title": "Y Combinator (YC) Startup Directory, Batch & [🎁 1,000 Free]",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "tiktok-transcript-extractor-api",
+    "name": "TikTok Transcript & Viral Script Extractor A [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first TikTok Transcript & Viral Script Extractor A [🎁 1,000 Free]. Extract structured, normalized records from tiktok.com with sub-5s execution, zero cook",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "TikTok Transcript & Viral Script Extractor A [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "linkedin-company-posts-scraper",
+    "name": "LinkedIn Company Posts Scraper (No Cookies) [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first LinkedIn Company Posts Scraper (No Cookies) [🎁 1,000 Free]. Extract structured, normalized records from linkedin.com/company with sub-5s execution, ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "LinkedIn Company Posts Scraper (No Cookies) [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "linkedin-post-comments-reactions-scraper",
+    "name": "LinkedIn Post Comments & Reactions (No Cooki [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first LinkedIn Post Comments & Reactions (No Cooki [🎁 1,000 Free]. Extract structured, normalized records from linkedin.com/feed with sub-5s execution, ze",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "LinkedIn Post Comments & Reactions (No Cooki [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "google-keyword-search-volume-cpc-bulk-scraper",
+    "name": "Keyword Search Volume, CPC & SEO Difficulty [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Keyword Search Volume, CPC & SEO Difficulty [🎁 1,000 Free]. Extract structured, normalized records from ads.google.com with sub-5s execution, zero c",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Keyword Search Volume, CPC & SEO Difficulty [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "linkedin-company-details-search-scraper",
+    "name": "LinkedIn Company Details & Search (No Cookie [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first LinkedIn Company Details & Search (No Cookie [🎁 1,000 Free]. Extract structured, normalized records from linkedin.com/company with sub-5s execution,",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "LinkedIn Company Details & Search (No Cookie [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "instagram-reels-transcript-scraper",
+    "name": "Instagram Reels Transcript & Script Scraper [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Instagram Reels Transcript & Script Scraper [🎁 1,000 Free]. Extract structured, normalized records from instagram.com/reels with sub-5s execution, z",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Instagram Reels Transcript & Script Scraper [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "google-ads-transparency-center-scraper",
+    "name": "Google Ads Transparency Center Scraper & API [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Google Ads Transparency Center - Competitor Search & YouTube Ads. Extract structured, normalized records from adstransparency.google.com with sub-5s ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Google Ads Transparency Center Scraper & API [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "linkedin-profile-posts-scraper",
+    "name": "LinkedIn Profile Posts Scraper (No Cookies) [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first LinkedIn Profile Posts Scraper (No Cookies) [🎁 1,000 Free]. Extract structured, normalized records from linkedin.com/in with sub-5s execution, zero ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "LinkedIn Profile Posts Scraper (No Cookies) [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "similarweb-website-traffic-rank-keywords-scraper",
+    "name": "SimilarWeb Fast Traffic, Rank & Keywords Scr [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first SimilarWeb Fast Traffic, Rank & Keywords Scr [🎁 1,000 Free]. Extract structured, normalized records from similarweb.com with sub-5s execution, zero ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "SimilarWeb Fast Traffic, Rank & Keywords Scr [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "linkedin-profile-search-scraper",
+    "name": "LinkedIn Profile Search Scraper (No Cookies) [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first LinkedIn Profile Search Scraper (No Cookies) [🎁 1,000 Free]. Extract structured, normalized records from linkedin.com/search with sub-5s execution, ",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "LinkedIn Profile Search Scraper (No Cookies) [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
   }
 ]
