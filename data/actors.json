@@ -2580,5 +2580,130 @@
       "title": "LinkedIn Profile Search Scraper (No Cookies) [🎁 1,000 Free]",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "reddit-post-comments-bulk-thread-scraper",
+    "name": "Reddit Post Comments & Bulk Thread Export [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Reddit Post Comments & Bulk Thread Export [🎁 1,000 Free]. Extract structured, normalized records from reddit.com with sub-5s execution, zero cookies",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Reddit Post Comments & Bulk Thread Export [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "reddit-keyword-search-buyer-intent-monitor",
+    "name": "Reddit Search Scraper — Keyword Buyer Intent [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Reddit Search Scraper — Keyword Buyer Intent [🎁 1,000 Free]. Extract structured, normalized records from reddit.com with sub-5s execution, zero cook",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Reddit Search Scraper — Keyword Buyer Intent [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "meta-threads-posts-profiles-search-scraper",
+    "name": "Threads Scraper — Posts, Profiles & Search [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Threads Scraper — Posts, Profiles & Search [🎁 1,000 Free]. Extract structured, normalized records from threads.net with sub-5s execution, zero cooki",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Threads Scraper — Posts, Profiles & Search [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "instagram-followers-following-no-login-scraper",
+    "name": "Instagram Followers & Following (No Login) [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Instagram Followers & Following (No Login) [🎁 1,000 Free]. Extract structured, normalized records from instagram.com with sub-5s execution, zero coo",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Instagram Followers & Following (No Login) [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "instagram-reels-search-viral-finder",
+    "name": "Instagram Reels Search & Viral Finder (No Lo [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "HTTP-first Instagram Reels Search & Viral Finder (No Lo [🎁 1,000 Free]. Extract structured, normalized records from instagram.com with sub-5s execution, zero c",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Instagram Reels Search & Viral Finder (No Lo [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
   }
 ]
