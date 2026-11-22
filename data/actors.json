@@ -2705,5 +2705,130 @@
       "title": "Instagram Reels Search & Viral Finder (No Lo [🎁 1,000 Free]",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "tiktok-shop-us-viral-product-gmv-tracker",
+    "name": "TikTok Shop US Top Products & GMV Scraper [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract structured TikTok Shop US Top Products & GMV data with sub-5-second HTTP execution and zero login cookies required. Built for AI agents (MCP, Claude, Cursor), Clay, Make, and n8n automation workflows with clean JSON/CSV and 1,000 free records.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "TikTok Shop US Top Products & GMV Scraper [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "meta-facebook-instagram-ad-reach-spend-scraper",
+    "name": "Meta (FB & IG) Ad Library & Spend Scraper [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract structured Meta (FB & IG) Ad Library & Spend data with sub-5-second HTTP execution and zero login cookies required. Built for AI agents (MCP, Claude, Cursor), Clay, Make, and n8n automation workflows with clean JSON/CSV and 1,000 free records.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Meta (FB & IG) Ad Library & Spend Scraper [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "linkedin-ad-library-b2b-creatives-scraper",
+    "name": "LinkedIn Ad Library B2B Creatives Scraper [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract structured LinkedIn Ad Library B2B Creatives data with sub-5-second HTTP execution and zero login cookies required. Built for AI agents (MCP, Claude, Cursor), Clay, Make, and n8n automation workflows with clean JSON/CSV and 1,000 free records.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "LinkedIn Ad Library B2B Creatives Scraper [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "tiktok-creative-center-ad-library-scraper",
+    "name": "TikTok Creative Center Top Ads Scraper [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract structured TikTok Creative Center Top Ads data with sub-5-second HTTP execution and zero login cookies required. Built for AI agents (MCP, Claude, Cursor), Clay, Make, and n8n automation workflows with clean JSON/CSV and 1,000 free records.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "TikTok Creative Center Top Ads Scraper [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "etsy-shop-revenue-sales-keyword-analyzer",
+    "name": "Etsy Shop Revenue, Sales & Keyword Analyzer [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract structured Etsy Shop Revenue, Sales & Keyword Analyzer data with sub-5-second HTTP execution and zero login cookies required. Built for AI agents (MCP, Claude, Cursor), Clay, Make, and n8n automation workflows with clean JSON/CSV and 1,000 free records.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Etsy Shop Revenue, Sales & Keyword Analyzer [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
   }
 ]
