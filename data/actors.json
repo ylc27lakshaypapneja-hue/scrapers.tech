@@ -2830,5 +2830,130 @@
       "title": "Etsy Shop Revenue, Sales & Keyword Analyzer [🎁 1,000 Free]",
       "verifiedStatus": true
     }
+  },
+  {
+    "slug": "linkedin-profile-search-by-name-no-cookies",
+    "name": "LinkedIn Profile Search By Name (No Cookies) [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract structured LinkedIn Profile Search By Name (No Cookies) data with sub-5-second HTTP execution and zero login cookies required. Built for AI agents (MCP, Claude, Cursor), Clay, Make, and n8n automation workflows with clean JSON/CSV and 1,000 free records.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "LinkedIn Profile Search By Name (No Cookies) [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "facebook-public-group-posts-comments-scraper",
+    "name": "Facebook Public Group Posts (No Cookies) [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract structured Facebook Public Group Posts (No Cookies) data with sub-5-second HTTP execution and zero login cookies required. Built for AI agents (MCP, Claude, Cursor), Clay, Make, and n8n automation workflows with clean JSON/CSV and 1,000 free records.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Facebook Public Group Posts (No Cookies) [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "twitter-x-followers-following-profile-scraper",
+    "name": "Fast X (Twitter) User & Followers Scraper [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract structured Fast X (Twitter) User & Followers data with sub-5-second HTTP execution and zero login cookies required. Built for AI agents (MCP, Claude, Cursor), Clay, Make, and n8n automation workflows with clean JSON/CSV and 1,000 free records.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Fast X (Twitter) User & Followers Scraper [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "linkedin-company-search-no-cookies-scraper",
+    "name": "LinkedIn Company Search Scraper (No Cookies) [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract structured LinkedIn Company Search data with sub-5-second HTTP execution and zero login cookies required. Built for AI agents (MCP, Claude, Cursor), Clay, Make, and n8n automation workflows with clean JSON/CSV and 1,000 free records.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "LinkedIn Company Search Scraper (No Cookies) [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
+  },
+  {
+    "slug": "instagram-posts-reels-comments-engagers-scraper",
+    "name": "Fast Instagram Comments Scraper (No Login) [🎁 1,000 Free]",
+    "category": "B2B & Leads",
+    "badge": "New",
+    "price": "$0.003 / record",
+    "pricePer1k": "$3.00 / 1k",
+    "description": "Extract structured Fast Instagram Comments data with sub-5-second HTTP execution and zero login cookies required. Built for AI agents (MCP, Claude, Cursor), Clay, Make, and n8n automation workflows with clean JSON/CSV and 1,000 free records.",
+    "tags": [
+      "Automation",
+      "MCP Ready",
+      "Fast HTTP"
+    ],
+    "features": [
+      "Sub-5s execution",
+      "Cookie-free extraction",
+      "JSON/CSV/Excel export",
+      "Pay-Per-Event"
+    ],
+    "sampleOutput": {
+      "recordId": "900100200",
+      "title": "Fast Instagram Comments Scraper (No Login) [🎁 1,000 Free]",
+      "verifiedStatus": true
+    }
   }
 ]
