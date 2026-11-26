@@ -897,5 +897,605 @@
     "useCase": "Extract complex financial tables from PDF reports into structured Markdown and JSON for automated AI financial analysis.",
     "downloadUrl": "https://scrapers.tech/n8n-templates/60-pdf-sec-financial-tables-to-clean-markdown-extractor.json",
     "actorUrl": "https://apify.com/laborious_rumor/pdf-table-financial-report-markdown-extractor"
+  },
+  {
+    "id": 61,
+    "file": "61-b2b-lead-scraper-verified-emails-phones-to-clay.json",
+    "name": "Verified B2B Business & Contact Lead Scraper to Clay / HubSpot Pipeline",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "lead-scraper",
+    "actorTitle": "B2B Business & Contact Lead Scraper",
+    "defaultQueries": [
+      "B2B SaaS marketing agencies New York",
+      "managed IT services providers Austin TX"
+    ],
+    "useCase": "Extract verified B2B decision-maker emails, phone numbers, and company websites and route them directly into Clay or HubSpot.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/61-b2b-lead-scraper-verified-emails-phones-to-clay.json",
+    "actorUrl": "https://apify.com/laborious_rumor/lead-scraper"
+  },
+  {
+    "id": 62,
+    "file": "62-domain-tech-stack-mx-deliverability-lead-enricher.json",
+    "name": "Company Domain MX Record, Email Deliverability & 100+ Tech Stack Enricher",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "b2b-lead-contact-tech-enricher",
+    "actorTitle": "B2B Lead Contact & Tech Stack Enricher",
+    "defaultQueries": [
+      "stripe.com",
+      "linear.app"
+    ],
+    "useCase": "Enrich raw company domains with DNS MX deliverability signals, social links, and detected web technologies before outreach.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/62-domain-tech-stack-mx-deliverability-lead-enricher.json",
+    "actorUrl": "https://apify.com/laborious_rumor/b2b-lead-contact-tech-enricher"
+  },
+  {
+    "id": 63,
+    "file": "63-clutch-g2-verified-agency-buyer-reviews-lead-miner.json",
+    "name": "Clutch & G2 B2B Agency Reviews, Project Budgets & Client Lead Extractor",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "clutch-g2-b2b-agency-reviews-scraper",
+    "actorTitle": "Clutch & G2 B2B Agency Reviews Scraper",
+    "defaultQueries": [
+      "custom software development agencies US",
+      "B2B performance marketing agencies"
+    ],
+    "useCase": "Scrape Clutch and G2 agency profiles, verified client review budgets, and decision-maker contacts for B2B partnership outreach.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/63-clutch-g2-verified-agency-buyer-reviews-lead-miner.json",
+    "actorUrl": "https://apify.com/laborious_rumor/clutch-g2-b2b-agency-reviews-scraper"
+  },
+  {
+    "id": 64,
+    "file": "64-trustpilot-competitor-1-star-complaint-churn-alerter.json",
+    "name": "Trustpilot 1-Star & 2-Star Competitor Complaint Monitor for Sales Poaching",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "trustpilot-company-reviews-scraper",
+    "actorTitle": "Trustpilot Reviews Scraper - Ratings & Text",
+    "defaultQueries": [
+      "zendesk.com",
+      "mailchimp.com"
+    ],
+    "useCase": "Monitor competitor Trustpilot pages for angry customer reviews and trigger immediate switch-offer campaigns.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/64-trustpilot-competitor-1-star-complaint-churn-alerter.json",
+    "actorUrl": "https://apify.com/laborious_rumor/trustpilot-company-reviews-scraper"
+  },
+  {
+    "id": 65,
+    "file": "65-glassdoor-company-salary-benchmarks-culture-red-flags.json",
+    "name": "Glassdoor Company Salary Benchmarks, Interview Questions & Executive Ratings",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "glassdoor-company-reviews-salary-scraper",
+    "actorTitle": "Glassdoor Company Reviews & Salary Scraper",
+    "defaultQueries": [
+      "Snowflake software engineer salaries",
+      "Databricks product manager reviews"
+    ],
+    "useCase": "Extract verified compensation bands, employee morale trends, and interview questions from Glassdoor for recruiting intelligence.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/65-glassdoor-company-salary-benchmarks-culture-red-flags.json",
+    "actorUrl": "https://apify.com/laborious_rumor/glassdoor-company-reviews-salary-scraper"
+  },
+  {
+    "id": 66,
+    "file": "66-substack-beehiiv-newsletter-creators-sponsor-outreach.json",
+    "name": "Substack & Beehiiv Newsletter Creator Directory & Sponsorship Lead Finder",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "substack-beehiiv-newsletter-directory-scraper",
+    "actorTitle": "Substack & Beehiiv Newsletter Lead Scraper",
+    "defaultQueries": [
+      "AI & B2B SaaS newsletters",
+      "fintech weekly newsletters US"
+    ],
+    "useCase": "Build a database of high-subscriber Substack and Beehiiv newsletter writers with contact emails for B2B sponsorship deals.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/66-substack-beehiiv-newsletter-creators-sponsor-outreach.json",
+    "actorUrl": "https://apify.com/laborious_rumor/substack-beehiiv-newsletter-directory-scraper"
+  },
+  {
+    "id": 67,
+    "file": "67-podcast-rss-active-sponsors-promo-codes-guest-booker.json",
+    "name": "Podcast RSS Active Brand Sponsors, Promo Codes & Guest Contact Extractor",
+    "category": "Social & Creator",
+    "actorSlug": "podcast-rss-sponsor-guest-extractor",
+    "actorTitle": "Podcast RSS Sponsor, Promo & Guest Extractor",
+    "defaultQueries": [
+      "B2B SaaS growth podcasts",
+      "health & longevity top podcasts"
+    ],
+    "useCase": "Discover brands actively paying to sponsor podcasts via promo code detection in episode show notes, plus host booking emails.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/67-podcast-rss-active-sponsors-promo-codes-guest-booker.json",
+    "actorUrl": "https://apify.com/laborious_rumor/podcast-rss-sponsor-guest-extractor"
+  },
+  {
+    "id": 68,
+    "file": "68-twitch-kick-streamer-brand-sponsorship-deal-tracker.json",
+    "name": "Twitch & Kick Streamer Concurrent Viewership & Brand Sponsor Monitor",
+    "category": "Social & Creator",
+    "actorSlug": "twitch-kick-streamer-stats-sponsorship-monitor",
+    "actorTitle": "Twitch & Kick Streamer & Sponsor Tracker",
+    "defaultQueries": [
+      "gaming peripherals sponsored streams",
+      "energy drink creator sponsorships"
+    ],
+    "useCase": "Track live streamer CCV metrics, chat velocity, and active brand sponsor panels across Twitch and Kick.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/68-twitch-kick-streamer-brand-sponsorship-deal-tracker.json",
+    "actorUrl": "https://apify.com/laborious_rumor/twitch-kick-streamer-stats-sponsorship-monitor"
+  },
+  {
+    "id": 69,
+    "file": "69-meta-threads-viral-posts-creator-profile-lead-scraper.json",
+    "name": "Meta Threads Viral Posts, Keyword Search & Creator Profile Extractor",
+    "category": "Social & Creator",
+    "actorSlug": "meta-threads-posts-profiles-search-scraper",
+    "actorTitle": "Threads Scraper — Posts, Profiles & Search",
+    "defaultQueries": [
+      "AI agents workflow automation",
+      "DTC ecommerce founder threads"
+    ],
+    "useCase": "Monitor emerging B2B and creator conversations on Meta Threads and extract high-engagement posts and author profiles.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/69-meta-threads-viral-posts-creator-profile-lead-scraper.json",
+    "actorUrl": "https://apify.com/laborious_rumor/meta-threads-posts-profiles-search-scraper"
+  },
+  {
+    "id": 70,
+    "file": "70-discord-public-server-community-questions-trend-miner.json",
+    "name": "Discord Public Community Channels & Developer Question Miner",
+    "category": "Social & Creator",
+    "actorSlug": "discord-public-server-channels-messages-scraper",
+    "actorTitle": "Discord Public Channels & Community Scraper",
+    "defaultQueries": [
+      "AI agent developer community discussions",
+      "NoCode automation help threads"
+    ],
+    "useCase": "Index public Discord community announcements and developer pain points into a searchable knowledge base or Slack digest.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/70-discord-public-server-community-questions-trend-miner.json",
+    "actorUrl": "https://apify.com/laborious_rumor/discord-public-server-channels-messages-scraper"
+  },
+  {
+    "id": 71,
+    "file": "71-tiktok-search-viral-videos-by-keyword-us-region.json",
+    "name": "TikTok Keyword & US Region Viral Video Search Automation",
+    "category": "Social & Creator",
+    "actorSlug": "tiktok-search-videos-by-keyword-region-scraper",
+    "actorTitle": "TikTok Search Scraper: Videos by Keyword",
+    "defaultQueries": [
+      "best AI tools for business 2026",
+      "Amazon must haves home office"
+    ],
+    "useCase": "Search TikTok by exact keyword and US region to capture breakout videos, play-to-like ratios, and creator handles.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/71-tiktok-search-viral-videos-by-keyword-us-region.json",
+    "actorUrl": "https://apify.com/laborious_rumor/tiktok-search-videos-by-keyword-region-scraper"
+  },
+  {
+    "id": 72,
+    "file": "72-facebook-video-reels-spoken-transcript-ai-repurposer.json",
+    "name": "Facebook Video & Reels Spoken Transcript Extractor for Content Repurposing",
+    "category": "Social & Creator",
+    "actorSlug": "facebook-video-reels-ai-transcript-extractor",
+    "actorTitle": "Facebook Video & Reel AI Transcript Scraper",
+    "defaultQueries": [
+      "viral Facebook business reels",
+      "direct response video ad scripts"
+    ],
+    "useCase": "Extract clean spoken word transcripts from high-performing Facebook Reels and video ads to feed into AI scriptwriters.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/72-facebook-video-reels-spoken-transcript-ai-repurposer.json",
+    "actorUrl": "https://apify.com/laborious_rumor/facebook-video-reels-ai-transcript-extractor"
+  },
+  {
+    "id": 73,
+    "file": "73-youtube-channel-growth-subscriber-velocity-sponsor-audit.json",
+    "name": "YouTube Channel Subscriber Velocity, Avg Views & Sponsorship ROI Auditor",
+    "category": "Social & Creator",
+    "actorSlug": "youtube-channel-videos-growth-scraper",
+    "actorTitle": "Fast YouTube Channel Scraper: Subs & Stats",
+    "defaultQueries": [
+      "AI automation YouTube channels",
+      "B2B SaaS review YouTubers"
+    ],
+    "useCase": "Audit YouTube channels for real view-to-subscriber consistency across their last 30 videos before negotiating sponsorships.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/73-youtube-channel-growth-subscriber-velocity-sponsor-audit.json",
+    "actorUrl": "https://apify.com/laborious_rumor/youtube-channel-videos-growth-scraper"
+  },
+  {
+    "id": 74,
+    "file": "74-instagram-profile-posts-engagement-rate-brand-auditor.json",
+    "name": "Instagram Creator Profile & Posts Engagement Rate Calculator (No Login)",
+    "category": "Social & Creator",
+    "actorSlug": "instagram-reels-profile-posts-scraper",
+    "actorTitle": "Instagram Profile & Posts Scraper (No Login)",
+    "defaultQueries": [
+      "hubspot",
+      "gymshark"
+    ],
+    "useCase": "Pull an Instagram profile’s latest posts, Reels view counts, and true engagement rate without any Instagram login cookies.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/74-instagram-profile-posts-engagement-rate-brand-auditor.json",
+    "actorUrl": "https://apify.com/laborious_rumor/instagram-reels-profile-posts-scraper"
+  },
+  {
+    "id": 75,
+    "file": "75-facebook-page-posts-reels-competitor-engagement-tracker.json",
+    "name": "Facebook Brand Page Posts, Reels & Comment Velocity Competitor Tracker",
+    "category": "Social & Creator",
+    "actorSlug": "facebook-page-posts-reels-engagement-scraper",
+    "actorTitle": "Facebook Page Posts & Engagement Scraper",
+    "defaultQueries": [
+      "shopify",
+      "airbnb"
+    ],
+    "useCase": "Benchmark competitor Facebook Page posting frequency, Reel reach, and audience share ratios on a weekly schedule.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/75-facebook-page-posts-reels-competitor-engagement-tracker.json",
+    "actorUrl": "https://apify.com/laborious_rumor/facebook-page-posts-reels-engagement-scraper"
+  },
+  {
+    "id": 76,
+    "file": "76-tiktok-instagram-trending-audio-sounds-virality-alerter.json",
+    "name": "TikTok & Instagram Reels Breakout Audio & Hashtag Virality Early-Warning Bot",
+    "category": "Social & Creator",
+    "actorSlug": "tiktok-instagram-sound-hashtag-virality-tracker",
+    "actorTitle": "TikTok & Reels Trending Audio & Hashtags",
+    "defaultQueries": [
+      "trending commercial background audio",
+      "breakout ecommerce TikTok sounds"
+    ],
+    "useCase": "Alert your social media team on Slack when a commercial-safe TikTok or Reels audio track surges in 24-hour creator adoption.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/76-tiktok-instagram-trending-audio-sounds-virality-alerter.json",
+    "actorUrl": "https://apify.com/laborious_rumor/tiktok-instagram-sound-hashtag-virality-tracker"
+  },
+  {
+    "id": 77,
+    "file": "77-youtube-tiktok-timestamped-transcript-hook-library.json",
+    "name": "YouTube & TikTok Timestamped Transcript + Opening Hook Swipe File to Notion",
+    "category": "Social & Creator",
+    "actorSlug": "youtube-tiktok-transcript-hook-extractor",
+    "actorTitle": "YouTube & TikTok Transcript Hook Extractor",
+    "defaultQueries": [
+      "Alex Hormozi VSL hooks",
+      "MrBeast retention editing breakdown"
+    ],
+    "useCase": "Build an automated Notion swipe file of opening 5-second video hooks and full transcripts from YouTube and TikTok.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/77-youtube-tiktok-timestamped-transcript-hook-library.json",
+    "actorUrl": "https://apify.com/laborious_rumor/youtube-tiktok-transcript-hook-extractor"
+  },
+  {
+    "id": 78,
+    "file": "78-reddit-hackernews-breakout-tech-trend-pulse-digest.json",
+    "name": "Daily Reddit & Hacker News Breakout Tech Trend & Sentiment Pulse Digest",
+    "category": "Social & Creator",
+    "actorSlug": "social-viral-trend-reddit-hn-pulse-scraper",
+    "actorTitle": "Social Viral Trend & HN Pulse Scraper",
+    "defaultQueries": [
+      "MCP server AI agents",
+      "open source LLM benchmarks"
+    ],
+    "useCase": "Combine front-page Hacker News upvote velocity with Reddit discussion spikes to spot viral developer tools early.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/78-reddit-hackernews-breakout-tech-trend-pulse-digest.json",
+    "actorUrl": "https://apify.com/laborious_rumor/social-viral-trend-reddit-hn-pulse-scraper"
+  },
+  {
+    "id": 79,
+    "file": "79-producthunt-daily-launches-maker-contacts-outreach.json",
+    "name": "Product Hunt Daily Top Launches & Maker Founder Contact Outreach Pipeline",
+    "category": "Startups & Real Estate",
+    "actorSlug": "producthunt-launch-upvote-maker-monitor",
+    "actorTitle": "Product Hunt Launch & Maker Intelligence",
+    "defaultQueries": [
+      "AI developer tools Product Hunt",
+      "B2B SaaS launches today"
+    ],
+    "useCase": "Scrape every new Product Hunt launch daily along with maker X/LinkedIn links and website domains for warm founder outreach.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/79-producthunt-daily-launches-maker-contacts-outreach.json",
+    "actorUrl": "https://apify.com/laborious_rumor/producthunt-launch-upvote-maker-monitor"
+  },
+  {
+    "id": 80,
+    "file": "80-crunchbase-newly-funded-series-a-b-startups-to-hubspot.json",
+    "name": "Crunchbase Newly Funded Seed, Series A & Series B Startups to HubSpot CRM",
+    "category": "Startups & Real Estate",
+    "actorSlug": "crunchbase-company-funding-rounds-scraper",
+    "actorTitle": "Crunchbase Startup Funding & Founder Scraper",
+    "defaultQueries": [
+      "Series A B2B SaaS United States",
+      "Seed round AI startups San Francisco"
+    ],
+    "useCase": "Automatically sync companies announcing new venture funding rounds into HubSpot so your sales team pitches them first.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/80-crunchbase-newly-funded-series-a-b-startups-to-hubspot.json",
+    "actorUrl": "https://apify.com/laborious_rumor/crunchbase-company-funding-rounds-scraper"
+  },
+  {
+    "id": 81,
+    "file": "81-wellfound-angellist-funded-startup-hiring-founders-leads.json",
+    "name": "Wellfound (AngelList) Hiring Startups, Equity Ranges & Founder Lead Miner",
+    "category": "Startups & Real Estate",
+    "actorSlug": "wellfound-angellist-startup-jobs-founders-scraper",
+    "actorTitle": "Wellfound (AngelList) Startup Jobs Scraper",
+    "defaultQueries": [
+      "AI engineer equity startups US",
+      "Founding account executive SaaS"
+    ],
+    "useCase": "Extract fast-growing startups actively hiring on Wellfound along with salary/equity bands and founding team contacts.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/81-wellfound-angellist-funded-startup-hiring-founders-leads.json",
+    "actorUrl": "https://apify.com/laborious_rumor/wellfound-angellist-startup-jobs-founders-scraper"
+  },
+  {
+    "id": 82,
+    "file": "82-zillow-redfin-sold-property-comps-tax-history-underwriter.json",
+    "name": "Zillow & Redfin Sold Property Comps, Price-Per-SqFt & Tax History Underwriter",
+    "category": "Startups & Real Estate",
+    "actorSlug": "zillow-redfin-real-estate-comps-property-analyzer",
+    "actorTitle": "Real Estate Comps Scraper: Price & Tax",
+    "defaultQueries": [
+      "Austin TX 78704 sold comps",
+      "Miami FL multifamly property valuations"
+    ],
+    "useCase": "Pull residential real estate comparables, tax assessment histories, and price cuts into Google Sheets for deal underwriting.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/82-zillow-redfin-sold-property-comps-tax-history-underwriter.json",
+    "actorUrl": "https://apify.com/laborious_rumor/zillow-redfin-real-estate-comps-property-analyzer"
+  },
+  {
+    "id": 83,
+    "file": "83-streeteasy-nyc-manhattan-brooklyn-rental-condo-comps.json",
+    "name": "StreetEasy NYC (Manhattan & Brooklyn) Condo Sales & No-Fee Rental Comps Tracker",
+    "category": "Startups & Real Estate",
+    "actorSlug": "streeteasy-nyc-real-estate-listings-comps-scraper",
+    "actorTitle": "StreetEasy NYC Real Estate & Rentals Scraper",
+    "defaultQueries": [
+      "Williamsburg Brooklyn no-fee rentals",
+      "Tribeca Manhattan condo price drops"
+    ],
+    "useCase": "Monitor New York City apartment listings, days on market, and listing agent contacts across StreetEasy.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/83-streeteasy-nyc-manhattan-brooklyn-rental-condo-comps.json",
+    "actorUrl": "https://apify.com/laborious_rumor/streeteasy-nyc-real-estate-listings-comps-scraper"
+  },
+  {
+    "id": 84,
+    "file": "84-airbnb-vrbo-short-term-rental-nightly-rates-adr-revpar.json",
+    "name": "Airbnb & VRBO Short-Term Rental Nightly Rates, Cleaning Fees & Occupancy Comps",
+    "category": "Startups & Real Estate",
+    "actorSlug": "airbnb-vrbo-short-term-rental-market-analyzer",
+    "actorTitle": "Airbnb & VRBO Nightly Rates & Fees Scraper",
+    "defaultQueries": [
+      "Scottsdale AZ pool villa Airbnb comps",
+      "Nashville TN downtown STR nightly rates"
+    ],
+    "useCase": "Analyze competitor Airbnb and VRBO listings for nightly pricing, Superhost status, and review velocity in any US market.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/84-airbnb-vrbo-short-term-rental-nightly-rates-adr-revpar.json",
+    "actorUrl": "https://apify.com/laborious_rumor/airbnb-vrbo-short-term-rental-market-analyzer"
+  },
+  {
+    "id": 85,
+    "file": "85-booking-expedia-tripadvisor-hotel-rate-parity-monitor.json",
+    "name": "Booking.com, Expedia & TripAdvisor Hotel Rate Parity & Guest Review Monitor",
+    "category": "Local & Maps",
+    "actorSlug": "booking-com-hotel-rates-reviews-scraper",
+    "actorTitle": "Booking.com Hotel Rates & Reviews Scraper",
+    "defaultQueries": [
+      "boutique hotels Miami Beach rates",
+      "New York Times Square hotel occupancy"
+    ],
+    "useCase": "Track daily room tariffs, OTA rate parity discrepancies, and guest review scores across Booking.com and TripAdvisor.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/85-booking-expedia-tripadvisor-hotel-rate-parity-monitor.json",
+    "actorUrl": "https://apify.com/laborious_rumor/booking-com-hotel-rates-reviews-scraper"
+  },
+  {
+    "id": 86,
+    "file": "86-skyscanner-google-flights-airline-route-fare-drop-alerter.json",
+    "name": "Skyscanner & Google Flights Airline Route Fare Drop & Competitor Pricing Monitor",
+    "category": "Local & Maps",
+    "actorSlug": "skyscanner-google-flights-route-price-monitor",
+    "actorTitle": "Skyscanner & Google Flights Fare Monitor",
+    "defaultQueries": [
+      "JFK to LHR business class fare",
+      "SFO to NRT direct flight prices"
+    ],
+    "useCase": "Monitor airline fare fluctuations across key US and international routes and trigger automated price-drop notifications.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/86-skyscanner-google-flights-airline-route-fare-drop-alerter.json",
+    "actorUrl": "https://apify.com/laborious_rumor/skyscanner-google-flights-route-price-monitor"
+  },
+  {
+    "id": 87,
+    "file": "87-angies-thumbtack-local-home-service-pro-lead-scraper.json",
+    "name": "Angi & Thumbtack Verified Local Home Service Pros & Contractor Lead Extractor",
+    "category": "Local & Maps",
+    "actorSlug": "angies-thumbtack-contractor-lead-scraper",
+    "actorTitle": "Local Contractor Lead Scraper: Plumbers & Roofers",
+    "defaultQueries": [
+      "licensed electricians Houston TX",
+      "general contractors Denver CO"
+    ],
+    "useCase": "Extract active home service professionals advertising on Angi and Thumbtack to pitch local SEO and lead-handling software.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/87-angies-thumbtack-local-home-service-pro-lead-scraper.json",
+    "actorUrl": "https://apify.com/laborious_rumor/angies-thumbtack-contractor-lead-scraper"
+  },
+  {
+    "id": 88,
+    "file": "88-yelp-tripadvisor-restaurant-menu-prices-inflation-tracker.json",
+    "name": "Yelp & TripAdvisor Restaurant Menu Item Prices & Local Hospitality Leads",
+    "category": "Local & Maps",
+    "actorSlug": "yelp-tripadvisor-restaurant-menu-pricing-scraper",
+    "actorTitle": "Restaurant Menu & Price Scraper: Yelp",
+    "defaultQueries": [
+      "independent steakhouses Chicago menus",
+      "fast casual restaurants Los Angeles"
+    ],
+    "useCase": "Extract restaurant menu pricing, dish categories, and POS/ordering links for F&B suppliers and restaurant SaaS sales.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/88-yelp-tripadvisor-restaurant-menu-prices-inflation-tracker.json",
+    "actorUrl": "https://apify.com/laborious_rumor/yelp-tripadvisor-restaurant-menu-pricing-scraper"
+  },
+  {
+    "id": 89,
+    "file": "89-ubereats-doordash-competitor-delivery-menu-markup-auditor.json",
+    "name": "UberEats & DoorDash Restaurant Menu Price Markup, Promo & Delivery Fee Tracker",
+    "category": "Local & Maps",
+    "actorSlug": "uber-eats-doordash-menu-scraper",
+    "actorTitle": "UberEats & DoorDash Menu & Fee Scraper",
+    "defaultQueries": [
+      "burger chains Austin UberEats prices",
+      "pizza delivery promos New York DoorDash"
+    ],
+    "useCase": "Compare competitor delivery menu prices, BOGO promotions, and delivery fee tiers across UberEats and DoorDash.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/89-ubereats-doordash-competitor-delivery-menu-markup-auditor.json",
+    "actorUrl": "https://apify.com/laborious_rumor/uber-eats-doordash-menu-scraper"
+  },
+  {
+    "id": 90,
+    "file": "90-amazon-product-reviews-defect-aspect-sentiment-miner.json",
+    "name": "Amazon Product Reviews Aspect Sentiment & Competitor Defect R&D Miner",
+    "category": "E-Commerce",
+    "actorSlug": "amazon-product-review-aspect-sentiment-miner",
+    "actorTitle": "Amazon Product Reviews & Sentiment Scraper",
+    "defaultQueries": [
+      "wireless earbuds battery life complaints",
+      "standing desk wobble negative reviews"
+    ],
+    "useCase": "Mine thousands of Amazon customer reviews to quantify exact product defect rates and feature requests before manufacturing.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/90-amazon-product-reviews-defect-aspect-sentiment-miner.json",
+    "actorUrl": "https://apify.com/laborious_rumor/amazon-product-review-aspect-sentiment-miner"
+  },
+  {
+    "id": 91,
+    "file": "91-etsy-trending-handmade-print-on-demand-keyword-finder.json",
+    "name": "Etsy Trending Print-on-Demand & Digital Product Keyword Opportunity Finder",
+    "category": "E-Commerce",
+    "actorSlug": "etsy-trending-handmade-product-keyword-scraper",
+    "actorTitle": "Etsy Trending Product & Keyword Scraper",
+    "defaultQueries": [
+      "personalized bridesmaid gift box",
+      "minimalist wall art digital download"
+    ],
+    "useCase": "Spot fast-rising Etsy search keywords with high bestseller velocity and low competing listing counts.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/91-etsy-trending-handmade-print-on-demand-keyword-finder.json",
+    "actorUrl": "https://apify.com/laborious_rumor/etsy-trending-handmade-product-keyword-scraper"
+  },
+  {
+    "id": 92,
+    "file": "92-poshmark-depop-secondhand-streetwear-luxury-arbitrage.json",
+    "name": "Depop & Poshmark Vintage, Streetwear & Luxury Resale Arbitrage Price Tracker",
+    "category": "E-Commerce",
+    "actorSlug": "poshmark-depop-reseller-pricing-tracker",
+    "actorTitle": "Depop & Poshmark Resale Price Tracker",
+    "defaultQueries": [
+      "Arc’teryx Beta LT jacket resale",
+      "vintage Carhartt Detroit jacket sold"
+    ],
+    "useCase": "Monitor underpriced designer and vintage listings across Depop and Poshmark for instant resale arbitrage.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/92-poshmark-depop-secondhand-streetwear-luxury-arbitrage.json",
+    "actorUrl": "https://apify.com/laborious_rumor/poshmark-depop-reseller-pricing-tracker"
+  },
+  {
+    "id": 93,
+    "file": "93-alibaba-b2b-wholesale-factory-moq-unit-cost-comparer.json",
+    "name": "Alibaba Verified Factory Suppliers, MOQ Tiers & Unit Cost Sourcing Pipeline",
+    "category": "E-Commerce",
+    "actorSlug": "alibaba-wholesale-supplier-moq-scraper",
+    "actorTitle": "Alibaba B2B Wholesale Supplier & MOQ Scraper",
+    "defaultQueries": [
+      "custom private label stainless tumbler",
+      " biodegradable packaging manufacturer"
+    ],
+    "useCase": "Compare verified Alibaba Gold Suppliers, minimum order quantities (MOQs), and FOB unit pricing inside Google Sheets.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/93-alibaba-b2b-wholesale-factory-moq-unit-cost-comparer.json",
+    "actorUrl": "https://apify.com/laborious_rumor/alibaba-wholesale-supplier-moq-scraper"
+  },
+  {
+    "id": 94,
+    "file": "94-saas-stripe-lemonsqueezy-competitor-pricing-tier-monitor.json",
+    "name": "SaaS Competitor Pricing Page, Plan Tiers & Feature Gate Change Monitor",
+    "category": "E-Commerce",
+    "actorSlug": "saas-stripe-lemonsqueezy-pricing-comparer",
+    "actorTitle": "SaaS Stripe & LemonSqueezy Pricing Comparer",
+    "defaultQueries": [
+      "AI copywriting SaaS pricing pages",
+      "CRM per-seat pricing tiers"
+    ],
+    "useCase": "Track whenever a SaaS competitor changes their monthly/annual pricing tiers, free trial limits, or enterprise add-ons.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/94-saas-stripe-lemonsqueezy-competitor-pricing-tier-monitor.json",
+    "actorUrl": "https://apify.com/laborious_rumor/saas-stripe-lemonsqueezy-pricing-comparer"
+  },
+  {
+    "id": 95,
+    "file": "95-facebook-marketplace-local-flipped-electronics-cars-deals.json",
+    "name": "Facebook Marketplace US Local Underpriced Deals & Flipping Alert Bot",
+    "category": "E-Commerce",
+    "actorSlug": "facebook-marketplace-us-listings-price-scraper",
+    "actorTitle": "Facebook Marketplace US Newest Deals Scraper",
+    "defaultQueries": [
+      "Herman Miller Aeron chair local",
+      "MacBook Pro M3 Max local listing"
+    ],
+    "useCase": "Scan Facebook Marketplace for newly listed underpriced electronics, furniture, and vehicles and send instant Telegram alerts.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/95-facebook-marketplace-local-flipped-electronics-cars-deals.json",
+    "actorUrl": "https://apify.com/laborious_rumor/facebook-marketplace-us-listings-price-scraper"
+  },
+  {
+    "id": 96,
+    "file": "96-multi-ats-greenhouse-lever-ashby-tech-hiring-aggregator.json",
+    "name": "Greenhouse, Lever & Ashby ATS Direct Startup Job Board Aggregator",
+    "category": "AI, RAG & Tech",
+    "actorSlug": "multi-ats-tech-jobs-hiring-aggregator",
+    "actorTitle": "Multi-ATS Tech Jobs & Hiring Aggregator",
+    "defaultQueries": [
+      "Founding AI Engineer Greenhouse",
+      "Staff Backend Engineer Lever ATS"
+    ],
+    "useCase": "Scrape tech job openings directly from company Greenhouse and Lever ATS portals hours before they syndicate to job boards.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/96-multi-ats-greenhouse-lever-ashby-tech-hiring-aggregator.json",
+    "actorUrl": "https://apify.com/laborious_rumor/multi-ats-tech-jobs-hiring-aggregator"
+  },
+  {
+    "id": 97,
+    "file": "97-hackernews-who-is-hiring-monthly-founder-cto-leads.json",
+    "name": "Hacker News \"Who Is Hiring\" Monthly Thread Parser for Direct CTO/Founder Emails",
+    "category": "AI, RAG & Tech",
+    "actorSlug": "hackernews-who-is-hiring-job-lead-parser",
+    "actorTitle": "HackerNews Who is Hiring Lead Parser",
+    "defaultQueries": [
+      "Ask HN: Who is hiring Remote AI Rust Python",
+      "YC startup direct founder email hiring"
+    ],
+    "useCase": "Parse Hacker News monthly hiring threads into structured company records with tech stacks, salaries, and direct founder emails.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/97-hackernews-who-is-hiring-monthly-founder-cto-leads.json",
+    "actorUrl": "https://apify.com/laborious_rumor/hackernews-who-is-hiring-job-lead-parser"
+  },
+  {
+    "id": 98,
+    "file": "98-google-jobs-indeed-ziprecruiter-us-salary-benchmark-feed.json",
+    "name": "Google Jobs, Indeed & ZipRecruiter US Salary Benchmark & Hiring Velocity Pipeline",
+    "category": "AI, RAG & Tech",
+    "actorSlug": "google-jobs-us-hiring-salary-scraper",
+    "actorTitle": "Google Jobs Scraper: US Hiring & Salaries",
+    "defaultQueries": [
+      "Machine Learning Engineer salary New York",
+      "VP of Sales remote US compensation"
+    ],
+    "useCase": "Aggregate disclosed US salary ranges and active hiring volume across Google Jobs, Indeed, and ZipRecruiter.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/98-google-jobs-indeed-ziprecruiter-us-salary-benchmark-feed.json",
+    "actorUrl": "https://apify.com/laborious_rumor/google-jobs-us-hiring-salary-scraper"
+  },
+  {
+    "id": 99,
+    "file": "99-arxiv-huggingface-daily-ai-research-papers-to-slack.json",
+    "name": "Daily arXiv & Hugging Face Trending AI Research Papers Summary Digest to Slack",
+    "category": "AI, RAG & Tech",
+    "actorSlug": "arxiv-hf-paper-summary-citation-extractor",
+    "actorTitle": "arXiv & Hugging Face AI Paper Extractor",
+    "defaultQueries": [
+      "multi-agent LLM orchestration",
+      "retrieval augmented generation reasoning"
+    ],
+    "useCase": "Fetch the top trending AI papers from arXiv and Hugging Face daily, summarize key findings with an LLM, and post to Slack.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/99-arxiv-huggingface-daily-ai-research-papers-to-slack.json",
+    "actorUrl": "https://apify.com/laborious_rumor/arxiv-hf-paper-summary-citation-extractor"
+  },
+  {
+    "id": 100,
+    "file": "100-appstore-googleplay-mobile-app-bug-feature-review-miner.json",
+    "name": "iOS App Store & Google Play Mobile App Reviews Bug & Feature Request Miner",
+    "category": "AI, RAG & Tech",
+    "actorSlug": "appstore-googleplay-app-reviews-scraper",
+    "actorTitle": "App Store & Google Play App Reviews Scraper",
+    "defaultQueries": [
+      "fintech mobile app crash reviews",
+      "AI note taking app feature requests"
+    ],
+    "useCase": "Monitor iOS App Store and Google Play reviews after every app release to flag crash reports and competitor feature gaps.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/100-appstore-googleplay-mobile-app-bug-feature-review-miner.json",
+    "actorUrl": "https://apify.com/laborious_rumor/appstore-googleplay-app-reviews-scraper"
   }
 ]
