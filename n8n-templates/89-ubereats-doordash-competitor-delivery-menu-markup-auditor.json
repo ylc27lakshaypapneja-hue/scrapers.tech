@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ UberEats & DoorDash Restaurant Menu Price Markup, Promo & Delivery Fee Tracker\n\n**What this workflow does:**\nCompare competitor delivery menu prices, BOGO promotions, and delivery fee tiers across UberEats and DoorDash.\n\n**Powered by Apify Actor:** [`laborious_rumor/uber-eats-doordash-menu-scraper`](https://apify.com/laborious_rumor/uber-eats-doordash-menu-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify UberEats & DoorDash Menu & Fee Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ UberEats & DoorDash Restaurant Menu Price Markup, Promo & Delivery Fee Tracker\n\n**What this workflow does:**\nCompare competitor delivery menu prices, BOGO promotions, and delivery fee tiers across UberEats and DoorDash.\n\n**Powered by Apify Actor:** [`laborious_rumor/uber-eats-doordash-menu-scraper`](https://apify.com/laborious_rumor/uber-eats-doordash-menu-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify UberEats & DoorDash Menu & Fee Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract, deduplicate, and score live structured JSON records!",
         "height": 300,
         "width": 640
       },
@@ -13,7 +13,37 @@
       "typeVersion": 1,
       "position": [
         180,
-        80
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🔎 Stage 1: Schedule, Target Queries & Apify Extraction\nTriggers daily, sets your target search queries and `maxItems`, and runs the cookie-free **UberEats & DoorDash Menu & Fee Scraper** Actor synchronously via the Apify REST API.",
+        "height": 220,
+        "width": 740
+      },
+      "id": "68f0dd68-63d2-4961-abac-59b408278c19",
+      "name": "Sticky Note: Stage 1 Extraction",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🧹 Stage 2: Quality Filtering, Deduplication, Lead Scoring & Export\nFilters verified records, deduplicates by URL/ID, normalizes and scores each record with JavaScript, summarizes the batch, and routes high-priority items downstream.",
+        "height": 220,
+        "width": 980
+      },
+      "id": "c40f646d-dd12-4a19-a425-4941c6c10aba",
+      "name": "Sticky Note: Stage 2 Processing",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        950,
+        380
       ]
     },
     {
@@ -33,7 +63,7 @@
       "typeVersion": 1.2,
       "position": [
         200,
-        440
+        460
       ]
     },
     {
@@ -51,6 +81,12 @@
               "name": "maxItems",
               "value": 25,
               "type": "number"
+            },
+            {
+              "id": "771503d4-e360-4c2a-ae3a-f738d8b3f88e",
+              "name": "pipelineCategory",
+              "value": "Local & Maps",
+              "type": "string"
             }
           ]
         },
@@ -62,7 +98,7 @@
       "typeVersion": 3.4,
       "position": [
         440,
-        440
+        460
       ]
     },
     {
@@ -91,7 +127,7 @@
       "typeVersion": 4.2,
       "position": [
         700,
-        440
+        460
       ]
     },
     {
@@ -106,7 +142,7 @@
           "conditions": [
             {
               "id": "0809a849-463b-4e32-a863-6cb0aef3348e",
-              "leftValue": "={{ $json.verifiedStatus }}",
+              "leftValue": "={{ $json.verifiedStatus ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -123,8 +159,124 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
       "position": [
-        960,
-        440
+        980,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "url, title, recordId",
+        "options": {}
+      },
+      "id": "83cbb399-f82f-4a75-aa89-9d63ff83e245",
+      "name": "Deduplicate Extracted Items",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 1.1,
+      "position": [
+        1220,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "language": "javaScript",
+        "jsCode": "const items = $input.all();\nreturn items.map((item, index) => {\n  const d = item.json || {};\n  const hasEmail = Boolean(d.email || d.workEmailPattern || (Array.isArray(d.emails) && d.emails.length > 0));\n  const hasUrl = Boolean(d.url || d.website || d.sourceUrl);\n  const qualityScore = (hasEmail ? 50 : 20) + (hasUrl ? 30 : 10) + (d.verifiedStatus ? 20 : 10);\n  return {\n    json: {\n      ...d,\n      normalizedTitle: d.title || d.fullName || d.businessName || d.name || 'Extracted Record #' + (index + 1),\n      primaryUrl: d.url || d.website || d.sourceUrl || '',\n      primaryContact: d.email || d.workEmailPattern || (Array.isArray(d.emails) ? d.emails[0] : '') || d.phone || '',\n      leadQualityScore: qualityScore,\n      priorityTier: qualityScore >= 80 ? 'HIGH_PRIORITY' : 'STANDARD',\n      actorSource: 'uber-eats-doordash-menu-scraper',\n      processedAt: new Date().toISOString()\n    }\n  };\n});"
+      },
+      "id": "7104e1c2-e5ac-4ed3-ad30-1cc2047a06d2",
+      "name": "Normalize and Score Records",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "971cb1b3-7a94-4d57-a02c-b7b3cee29d2a",
+              "leftValue": "={{ $json.leadQualityScore }}",
+              "rightValue": 60,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "7337877b-b015-4ce4-addc-e6f38cdb573b",
+      "name": "Route High-Quality Records",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1700,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fe5a43b3-c900-4184-a198-c30dabf1bec4",
+              "name": "title",
+              "value": "={{ $json.normalizedTitle }}",
+              "type": "string"
+            },
+            {
+              "id": "7aaaebed-7a29-4896-a392-d44b74fd22b3",
+              "name": "url",
+              "value": "={{ $json.primaryUrl }}",
+              "type": "string"
+            },
+            {
+              "id": "6f08255e-b1e3-4345-a045-783ee12f4ddc",
+              "name": "contact",
+              "value": "={{ $json.primaryContact }}",
+              "type": "string"
+            },
+            {
+              "id": "51408535-69b7-4c68-a108-1fbd54e659be",
+              "name": "score",
+              "value": "={{ $json.leadQualityScore }}",
+              "type": "number"
+            },
+            {
+              "id": "8cd4bb09-8049-49e5-aef9-c41c9293dfd9",
+              "name": "tier",
+              "value": "={{ $json.priorityTier }}",
+              "type": "string"
+            },
+            {
+              "id": "2686f619-2c4f-48a4-a27c-b824296069d0",
+              "name": "exportedAt",
+              "value": "={{ $json.processedAt }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "a1eede93-fd28-47d2-a1ac-a5a53d2eac63",
+      "name": "Format Final CRM and Sheets Payload",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1940,
+        400
       ]
     }
   ],
@@ -162,13 +314,58 @@
           }
         ]
       ]
+    },
+    "Filter Verified Records": {
+      "main": [
+        [
+          {
+            "node": "Deduplicate Extracted Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deduplicate Extracted Items": {
+      "main": [
+        [
+          {
+            "node": "Normalize and Score Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize and Score Records": {
+      "main": [
+        [
+          {
+            "node": "Route High-Quality Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route High-Quality Records": {
+      "main": [
+        [
+          {
+            "node": "Format Final CRM and Sheets Payload",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "61a0201f-14a3-4b6f-a96b-07fe4ced1fa3",
+  "versionId": "e5a02828-b4bd-4e87-acfe-ba3b97a24594",
   "meta": {
     "templateCredsSetupCompleted": true
   },

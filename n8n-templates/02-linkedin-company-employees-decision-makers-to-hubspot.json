@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Extract LinkedIn Company Employees & Decision-Makers to HubSpot (No Cookies)\n\n**What this workflow does:**\nAutomatically pull VP, Director, and C-Level decision-makers from target companies on LinkedIn (100% cookie-free) and push leads to HubSpot, Clay, or Slack.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-company-employees-scraper`](https://apify.com/laborious_rumor/linkedin-company-employees-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify LinkedIn Company Employees & People Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Extract LinkedIn Company Employees & Decision-Makers to HubSpot (No Cookies)\n\n**What this workflow does:**\nAutomatically pull VP, Director, and C-Level decision-makers from target companies on LinkedIn (100% cookie-free) and push leads to HubSpot, Clay, or Slack.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-company-employees-scraper`](https://apify.com/laborious_rumor/linkedin-company-employees-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify LinkedIn Company Employees & People Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract, deduplicate, and score live structured JSON records!",
         "height": 300,
         "width": 640
       },
@@ -13,7 +13,37 @@
       "typeVersion": 1,
       "position": [
         180,
-        80
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🔎 Stage 1: Schedule, Target Queries & Apify Extraction\nTriggers daily, sets your target search queries and `maxItems`, and runs the cookie-free **LinkedIn Company Employees & People Scraper** Actor synchronously via the Apify REST API.",
+        "height": 220,
+        "width": 740
+      },
+      "id": "beecb747-1b0c-44b1-ad8b-7329e90b662f",
+      "name": "Sticky Note: Stage 1 Extraction",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🧹 Stage 2: Quality Filtering, Deduplication, Lead Scoring & Export\nFilters verified records, deduplicates by URL/ID, normalizes and scores each record with JavaScript, summarizes the batch, and routes high-priority items downstream.",
+        "height": 220,
+        "width": 980
+      },
+      "id": "9165af1c-04ed-4b26-a8c8-35b2b5bd84f4",
+      "name": "Sticky Note: Stage 2 Processing",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        950,
+        380
       ]
     },
     {
@@ -33,7 +63,7 @@
       "typeVersion": 1.2,
       "position": [
         200,
-        440
+        460
       ]
     },
     {
@@ -51,6 +81,12 @@
               "name": "maxItems",
               "value": 25,
               "type": "number"
+            },
+            {
+              "id": "49d8b973-b5d0-4311-af5d-5ef0e141560c",
+              "name": "pipelineCategory",
+              "value": "LinkedIn & B2B",
+              "type": "string"
             }
           ]
         },
@@ -62,7 +98,7 @@
       "typeVersion": 3.4,
       "position": [
         440,
-        440
+        460
       ]
     },
     {
@@ -91,7 +127,7 @@
       "typeVersion": 4.2,
       "position": [
         700,
-        440
+        460
       ]
     },
     {
@@ -106,7 +142,7 @@
           "conditions": [
             {
               "id": "0ec53a08-9d80-4879-a15e-17ce6d39cdb6",
-              "leftValue": "={{ $json.verifiedStatus }}",
+              "leftValue": "={{ $json.verifiedStatus ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -123,8 +159,124 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
       "position": [
-        960,
-        440
+        980,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "url, title, recordId",
+        "options": {}
+      },
+      "id": "cd01fc6d-1a93-4624-ac8a-8c312b6989bc",
+      "name": "Deduplicate Extracted Items",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 1.1,
+      "position": [
+        1220,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "language": "javaScript",
+        "jsCode": "const items = $input.all();\nreturn items.map((item, index) => {\n  const d = item.json || {};\n  const hasEmail = Boolean(d.email || d.workEmailPattern || (Array.isArray(d.emails) && d.emails.length > 0));\n  const hasUrl = Boolean(d.url || d.website || d.sourceUrl);\n  const qualityScore = (hasEmail ? 50 : 20) + (hasUrl ? 30 : 10) + (d.verifiedStatus ? 20 : 10);\n  return {\n    json: {\n      ...d,\n      normalizedTitle: d.title || d.fullName || d.businessName || d.name || 'Extracted Record #' + (index + 1),\n      primaryUrl: d.url || d.website || d.sourceUrl || '',\n      primaryContact: d.email || d.workEmailPattern || (Array.isArray(d.emails) ? d.emails[0] : '') || d.phone || '',\n      leadQualityScore: qualityScore,\n      priorityTier: qualityScore >= 80 ? 'HIGH_PRIORITY' : 'STANDARD',\n      actorSource: 'linkedin-company-employees-scraper',\n      processedAt: new Date().toISOString()\n    }\n  };\n});"
+      },
+      "id": "87df13ae-da5f-4deb-af60-da19e6540c69",
+      "name": "Normalize and Score Records",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "81ffdfe2-9a7d-46d1-a379-904461059014",
+              "leftValue": "={{ $json.leadQualityScore }}",
+              "rightValue": 60,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "66b73842-28d6-4e8a-a3d3-abc8b43f5ca9",
+      "name": "Route High-Quality Records",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1700,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "521dcf21-f325-496a-a9bb-d9b1a83472d4",
+              "name": "title",
+              "value": "={{ $json.normalizedTitle }}",
+              "type": "string"
+            },
+            {
+              "id": "a780f3a9-48af-47bc-afd2-35d5797852fa",
+              "name": "url",
+              "value": "={{ $json.primaryUrl }}",
+              "type": "string"
+            },
+            {
+              "id": "6066d56e-0998-46b4-a9d9-cd1067df83e4",
+              "name": "contact",
+              "value": "={{ $json.primaryContact }}",
+              "type": "string"
+            },
+            {
+              "id": "80256d59-277d-4bda-a057-506437e90f71",
+              "name": "score",
+              "value": "={{ $json.leadQualityScore }}",
+              "type": "number"
+            },
+            {
+              "id": "7ad61d31-fc3b-4480-a993-5aec76e87c25",
+              "name": "tier",
+              "value": "={{ $json.priorityTier }}",
+              "type": "string"
+            },
+            {
+              "id": "f66242ed-a300-4b28-a9e9-23b909751983",
+              "name": "exportedAt",
+              "value": "={{ $json.processedAt }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "6e0c3203-e6eb-4177-a648-7d185fcffe6b",
+      "name": "Format Final CRM and Sheets Payload",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1940,
+        400
       ]
     }
   ],
@@ -162,13 +314,58 @@
           }
         ]
       ]
+    },
+    "Filter Verified Records": {
+      "main": [
+        [
+          {
+            "node": "Deduplicate Extracted Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deduplicate Extracted Items": {
+      "main": [
+        [
+          {
+            "node": "Normalize and Score Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize and Score Records": {
+      "main": [
+        [
+          {
+            "node": "Route High-Quality Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route High-Quality Records": {
+      "main": [
+        [
+          {
+            "node": "Format Final CRM and Sheets Payload",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "603a67fd-80e1-44c6-a069-2e03b2512229",
+  "versionId": "fe152003-95c6-4e88-a665-de57fccba27e",
   "meta": {
     "templateCredsSetupCompleted": true
   },

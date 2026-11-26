@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ eBay Sold Listings & Completed Terapeak Price Comps Arbitrage Calculator\n\n**What this workflow does:**\nCalculate exact market clearing prices and sell-through rates from actual sold eBay items before bidding or Flipping.\n\n**Powered by Apify Actor:** [`laborious_rumor/ebay-sold-listings-price-comp-scraper`](https://apify.com/laborious_rumor/ebay-sold-listings-price-comp-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify eBay Sold Listings & Terapeak Comps Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ eBay Sold Listings & Completed Terapeak Price Comps Arbitrage Calculator\n\n**What this workflow does:**\nCalculate exact market clearing prices and sell-through rates from actual sold eBay items before bidding or Flipping.\n\n**Powered by Apify Actor:** [`laborious_rumor/ebay-sold-listings-price-comp-scraper`](https://apify.com/laborious_rumor/ebay-sold-listings-price-comp-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify eBay Sold Listings & Terapeak Comps Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract, deduplicate, and score live structured JSON records!",
         "height": 300,
         "width": 640
       },
@@ -13,7 +13,37 @@
       "typeVersion": 1,
       "position": [
         180,
-        80
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🔎 Stage 1: Schedule, Target Queries & Apify Extraction\nTriggers daily, sets your target search queries and `maxItems`, and runs the cookie-free **eBay Sold Listings & Terapeak Comps Scraper** Actor synchronously via the Apify REST API.",
+        "height": 220,
+        "width": 740
+      },
+      "id": "4ada386e-acc4-48b8-a29e-cb1661f08394",
+      "name": "Sticky Note: Stage 1 Extraction",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🧹 Stage 2: Quality Filtering, Deduplication, Lead Scoring & Export\nFilters verified records, deduplicates by URL/ID, normalizes and scores each record with JavaScript, summarizes the batch, and routes high-priority items downstream.",
+        "height": 220,
+        "width": 980
+      },
+      "id": "ac282e84-8431-4a34-aca6-56f15c8f9753",
+      "name": "Sticky Note: Stage 2 Processing",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        950,
+        380
       ]
     },
     {
@@ -33,7 +63,7 @@
       "typeVersion": 1.2,
       "position": [
         200,
-        440
+        460
       ]
     },
     {
@@ -51,6 +81,12 @@
               "name": "maxItems",
               "value": 25,
               "type": "number"
+            },
+            {
+              "id": "143a8d9d-1666-4fb2-af9b-b9ff794bda36",
+              "name": "pipelineCategory",
+              "value": "E-Commerce",
+              "type": "string"
             }
           ]
         },
@@ -62,7 +98,7 @@
       "typeVersion": 3.4,
       "position": [
         440,
-        440
+        460
       ]
     },
     {
@@ -91,7 +127,7 @@
       "typeVersion": 4.2,
       "position": [
         700,
-        440
+        460
       ]
     },
     {
@@ -106,7 +142,7 @@
           "conditions": [
             {
               "id": "0870994c-69f2-4241-a73f-e53670695b63",
-              "leftValue": "={{ $json.verifiedStatus }}",
+              "leftValue": "={{ $json.verifiedStatus ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -123,8 +159,124 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
       "position": [
-        960,
-        440
+        980,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "url, title, recordId",
+        "options": {}
+      },
+      "id": "f35dde4e-9d3f-4a8a-a069-2138fb987c34",
+      "name": "Deduplicate Extracted Items",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 1.1,
+      "position": [
+        1220,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "language": "javaScript",
+        "jsCode": "const items = $input.all();\nreturn items.map((item, index) => {\n  const d = item.json || {};\n  const hasEmail = Boolean(d.email || d.workEmailPattern || (Array.isArray(d.emails) && d.emails.length > 0));\n  const hasUrl = Boolean(d.url || d.website || d.sourceUrl);\n  const qualityScore = (hasEmail ? 50 : 20) + (hasUrl ? 30 : 10) + (d.verifiedStatus ? 20 : 10);\n  return {\n    json: {\n      ...d,\n      normalizedTitle: d.title || d.fullName || d.businessName || d.name || 'Extracted Record #' + (index + 1),\n      primaryUrl: d.url || d.website || d.sourceUrl || '',\n      primaryContact: d.email || d.workEmailPattern || (Array.isArray(d.emails) ? d.emails[0] : '') || d.phone || '',\n      leadQualityScore: qualityScore,\n      priorityTier: qualityScore >= 80 ? 'HIGH_PRIORITY' : 'STANDARD',\n      actorSource: 'ebay-sold-listings-price-comp-scraper',\n      processedAt: new Date().toISOString()\n    }\n  };\n});"
+      },
+      "id": "6b5c29cf-00a4-4681-a8ac-57e6a0acf314",
+      "name": "Normalize and Score Records",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7aec3860-a6f9-458e-a7fd-ffb13ce735a8",
+              "leftValue": "={{ $json.leadQualityScore }}",
+              "rightValue": 60,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ca68fbdf-ccb0-4331-ae58-5cda901c8106",
+      "name": "Route High-Quality Records",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1700,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c7e82717-eeeb-4bc3-ae8b-d67564ed746f",
+              "name": "title",
+              "value": "={{ $json.normalizedTitle }}",
+              "type": "string"
+            },
+            {
+              "id": "b690d886-cf92-4897-a949-48885f24edeb",
+              "name": "url",
+              "value": "={{ $json.primaryUrl }}",
+              "type": "string"
+            },
+            {
+              "id": "8ea94511-11c0-4f33-a370-d3a5b534203c",
+              "name": "contact",
+              "value": "={{ $json.primaryContact }}",
+              "type": "string"
+            },
+            {
+              "id": "2586920f-462b-4e24-abc6-56f7ff573b03",
+              "name": "score",
+              "value": "={{ $json.leadQualityScore }}",
+              "type": "number"
+            },
+            {
+              "id": "92531043-4259-46ba-a5f4-a0a5d3fbcdec",
+              "name": "tier",
+              "value": "={{ $json.priorityTier }}",
+              "type": "string"
+            },
+            {
+              "id": "8c8cc117-672a-424b-a3f8-62d8eb1758bb",
+              "name": "exportedAt",
+              "value": "={{ $json.processedAt }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "ebb2ed3c-b0d8-4f6c-ad48-f2314fa0d5f6",
+      "name": "Format Final CRM and Sheets Payload",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1940,
+        400
       ]
     }
   ],
@@ -162,13 +314,58 @@
           }
         ]
       ]
+    },
+    "Filter Verified Records": {
+      "main": [
+        [
+          {
+            "node": "Deduplicate Extracted Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deduplicate Extracted Items": {
+      "main": [
+        [
+          {
+            "node": "Normalize and Score Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize and Score Records": {
+      "main": [
+        [
+          {
+            "node": "Route High-Quality Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route High-Quality Records": {
+      "main": [
+        [
+          {
+            "node": "Format Final CRM and Sheets Payload",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "f6688f06-a0d7-4c21-acb1-ad0b3ff019f5",
+  "versionId": "367c6fac-cb55-4901-a42f-3bd0412de62b",
   "meta": {
     "templateCredsSetupCompleted": true
   },

@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ TikTok Video Transcript & Viral Hook Extractor to AI LinkedIn/X Posts\n\n**What this workflow does:**\nTranscribe viral TikTok videos automatically and use an LLM in n8n to rewrite them into LinkedIn threads and newsletter issues.\n\n**Powered by Apify Actor:** [`laborious_rumor/tiktok-transcript-extractor-api`](https://apify.com/laborious_rumor/tiktok-transcript-extractor-api) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify TikTok Transcript & Viral Script Extractor API** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ TikTok Video Transcript & Viral Hook Extractor to AI LinkedIn/X Posts\n\n**What this workflow does:**\nTranscribe viral TikTok videos automatically and use an LLM in n8n to rewrite them into LinkedIn threads and newsletter issues.\n\n**Powered by Apify Actor:** [`laborious_rumor/tiktok-transcript-extractor-api`](https://apify.com/laborious_rumor/tiktok-transcript-extractor-api) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify TikTok Transcript & Viral Script Extractor API** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract, deduplicate, and score live structured JSON records!",
         "height": 300,
         "width": 640
       },
@@ -13,7 +13,37 @@
       "typeVersion": 1,
       "position": [
         180,
-        80
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🔎 Stage 1: Schedule, Target Queries & Apify Extraction\nTriggers daily, sets your target search queries and `maxItems`, and runs the cookie-free **TikTok Transcript & Viral Script Extractor API** Actor synchronously via the Apify REST API.",
+        "height": 220,
+        "width": 740
+      },
+      "id": "c2ea6e08-6e5f-4449-a5f7-58270babfae9",
+      "name": "Sticky Note: Stage 1 Extraction",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🧹 Stage 2: Quality Filtering, Deduplication, Lead Scoring & Export\nFilters verified records, deduplicates by URL/ID, normalizes and scores each record with JavaScript, summarizes the batch, and routes high-priority items downstream.",
+        "height": 220,
+        "width": 980
+      },
+      "id": "72c7b469-ca96-40bf-a378-fc4d2a207900",
+      "name": "Sticky Note: Stage 2 Processing",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        950,
+        380
       ]
     },
     {
@@ -33,7 +63,7 @@
       "typeVersion": 1.2,
       "position": [
         200,
-        440
+        460
       ]
     },
     {
@@ -51,6 +81,12 @@
               "name": "maxItems",
               "value": 25,
               "type": "number"
+            },
+            {
+              "id": "779f8c24-ff0b-46d3-a273-7941cb7038a6",
+              "name": "pipelineCategory",
+              "value": "Social & Creator",
+              "type": "string"
             }
           ]
         },
@@ -62,7 +98,7 @@
       "typeVersion": 3.4,
       "position": [
         440,
-        440
+        460
       ]
     },
     {
@@ -91,7 +127,7 @@
       "typeVersion": 4.2,
       "position": [
         700,
-        440
+        460
       ]
     },
     {
@@ -106,7 +142,7 @@
           "conditions": [
             {
               "id": "6cb246e2-cba5-471f-a0ee-2c1bff2eb7b6",
-              "leftValue": "={{ $json.verifiedStatus }}",
+              "leftValue": "={{ $json.verifiedStatus ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -123,8 +159,124 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
       "position": [
-        960,
-        440
+        980,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "url, title, recordId",
+        "options": {}
+      },
+      "id": "98c476f0-ce50-4aff-a6f6-bfdb5540aeb2",
+      "name": "Deduplicate Extracted Items",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 1.1,
+      "position": [
+        1220,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "language": "javaScript",
+        "jsCode": "const items = $input.all();\nreturn items.map((item, index) => {\n  const d = item.json || {};\n  const hasEmail = Boolean(d.email || d.workEmailPattern || (Array.isArray(d.emails) && d.emails.length > 0));\n  const hasUrl = Boolean(d.url || d.website || d.sourceUrl);\n  const qualityScore = (hasEmail ? 50 : 20) + (hasUrl ? 30 : 10) + (d.verifiedStatus ? 20 : 10);\n  return {\n    json: {\n      ...d,\n      normalizedTitle: d.title || d.fullName || d.businessName || d.name || 'Extracted Record #' + (index + 1),\n      primaryUrl: d.url || d.website || d.sourceUrl || '',\n      primaryContact: d.email || d.workEmailPattern || (Array.isArray(d.emails) ? d.emails[0] : '') || d.phone || '',\n      leadQualityScore: qualityScore,\n      priorityTier: qualityScore >= 80 ? 'HIGH_PRIORITY' : 'STANDARD',\n      actorSource: 'tiktok-transcript-extractor-api',\n      processedAt: new Date().toISOString()\n    }\n  };\n});"
+      },
+      "id": "03f97bf8-b43f-44c7-a733-c689fe878018",
+      "name": "Normalize and Score Records",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "076469e6-3958-4c53-aa6e-6d36cc734633",
+              "leftValue": "={{ $json.leadQualityScore }}",
+              "rightValue": 60,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5e660d5c-6847-4fc3-a120-c8ebdd5fe85d",
+      "name": "Route High-Quality Records",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1700,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f3f216de-a268-45a8-a1d7-f40949ecf380",
+              "name": "title",
+              "value": "={{ $json.normalizedTitle }}",
+              "type": "string"
+            },
+            {
+              "id": "bcf200b8-4a34-4d7f-a5c8-72f4a01246ab",
+              "name": "url",
+              "value": "={{ $json.primaryUrl }}",
+              "type": "string"
+            },
+            {
+              "id": "6ec429d0-929a-40af-a124-580e544fe91f",
+              "name": "contact",
+              "value": "={{ $json.primaryContact }}",
+              "type": "string"
+            },
+            {
+              "id": "06204c21-0b44-42f0-adf7-81f7431b3fbc",
+              "name": "score",
+              "value": "={{ $json.leadQualityScore }}",
+              "type": "number"
+            },
+            {
+              "id": "2fbdc647-6767-4c39-a2b8-9fc638e0be68",
+              "name": "tier",
+              "value": "={{ $json.priorityTier }}",
+              "type": "string"
+            },
+            {
+              "id": "b11e962e-ad85-44cc-a137-2e92060c757d",
+              "name": "exportedAt",
+              "value": "={{ $json.processedAt }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "b849e36f-08a7-40d5-a004-00e106c362b9",
+      "name": "Format Final CRM and Sheets Payload",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1940,
+        400
       ]
     }
   ],
@@ -162,13 +314,58 @@
           }
         ]
       ]
+    },
+    "Filter Verified Records": {
+      "main": [
+        [
+          {
+            "node": "Deduplicate Extracted Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deduplicate Extracted Items": {
+      "main": [
+        [
+          {
+            "node": "Normalize and Score Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize and Score Records": {
+      "main": [
+        [
+          {
+            "node": "Route High-Quality Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route High-Quality Records": {
+      "main": [
+        [
+          {
+            "node": "Format Final CRM and Sheets Payload",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "ef09a0ff-9af9-4baf-a1c0-afd33301af10",
+  "versionId": "35f13ffa-16cd-4496-a54b-248c8d9fc5bc",
   "meta": {
     "templateCredsSetupCompleted": true
   },

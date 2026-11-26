@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Instagram Competitor Followers & Following Lead Scraper (No Login Required)\n\n**What this workflow does:**\nExtract public follower and following profiles from niche Instagram accounts without risking an Instagram session cookie.\n\n**Powered by Apify Actor:** [`laborious_rumor/instagram-followers-following-no-login-scraper`](https://apify.com/laborious_rumor/instagram-followers-following-no-login-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Instagram Followers & Following (No Login)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Instagram Competitor Followers & Following Lead Scraper (No Login Required)\n\n**What this workflow does:**\nExtract public follower and following profiles from niche Instagram accounts without risking an Instagram session cookie.\n\n**Powered by Apify Actor:** [`laborious_rumor/instagram-followers-following-no-login-scraper`](https://apify.com/laborious_rumor/instagram-followers-following-no-login-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Instagram Followers & Following (No Login)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract, deduplicate, and score live structured JSON records!",
         "height": 300,
         "width": 640
       },
@@ -13,7 +13,37 @@
       "typeVersion": 1,
       "position": [
         180,
-        80
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🔎 Stage 1: Schedule, Target Queries & Apify Extraction\nTriggers daily, sets your target search queries and `maxItems`, and runs the cookie-free **Instagram Followers & Following (No Login)** Actor synchronously via the Apify REST API.",
+        "height": 220,
+        "width": 740
+      },
+      "id": "9ce2e04e-7c23-438f-aacc-1401090cceb6",
+      "name": "Sticky Note: Stage 1 Extraction",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 🧹 Stage 2: Quality Filtering, Deduplication, Lead Scoring & Export\nFilters verified records, deduplicates by URL/ID, normalizes and scores each record with JavaScript, summarizes the batch, and routes high-priority items downstream.",
+        "height": 220,
+        "width": 980
+      },
+      "id": "58d98ed0-46ff-4671-ad9e-6c34725a1430",
+      "name": "Sticky Note: Stage 2 Processing",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        950,
+        380
       ]
     },
     {
@@ -33,7 +63,7 @@
       "typeVersion": 1.2,
       "position": [
         200,
-        440
+        460
       ]
     },
     {
@@ -51,6 +81,12 @@
               "name": "maxItems",
               "value": 25,
               "type": "number"
+            },
+            {
+              "id": "c2cc8956-1c22-465c-ac5a-b0afe80a65c0",
+              "name": "pipelineCategory",
+              "value": "Social & Creator",
+              "type": "string"
             }
           ]
         },
@@ -62,7 +98,7 @@
       "typeVersion": 3.4,
       "position": [
         440,
-        440
+        460
       ]
     },
     {
@@ -91,7 +127,7 @@
       "typeVersion": 4.2,
       "position": [
         700,
-        440
+        460
       ]
     },
     {
@@ -106,7 +142,7 @@
           "conditions": [
             {
               "id": "494c672d-b170-45ef-ab32-58ba5f05f672",
-              "leftValue": "={{ $json.verifiedStatus }}",
+              "leftValue": "={{ $json.verifiedStatus ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -123,8 +159,124 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
       "position": [
-        960,
-        440
+        980,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "url, title, recordId",
+        "options": {}
+      },
+      "id": "54874453-1aee-499c-a8b6-c4c054111d54",
+      "name": "Deduplicate Extracted Items",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 1.1,
+      "position": [
+        1220,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "language": "javaScript",
+        "jsCode": "const items = $input.all();\nreturn items.map((item, index) => {\n  const d = item.json || {};\n  const hasEmail = Boolean(d.email || d.workEmailPattern || (Array.isArray(d.emails) && d.emails.length > 0));\n  const hasUrl = Boolean(d.url || d.website || d.sourceUrl);\n  const qualityScore = (hasEmail ? 50 : 20) + (hasUrl ? 30 : 10) + (d.verifiedStatus ? 20 : 10);\n  return {\n    json: {\n      ...d,\n      normalizedTitle: d.title || d.fullName || d.businessName || d.name || 'Extracted Record #' + (index + 1),\n      primaryUrl: d.url || d.website || d.sourceUrl || '',\n      primaryContact: d.email || d.workEmailPattern || (Array.isArray(d.emails) ? d.emails[0] : '') || d.phone || '',\n      leadQualityScore: qualityScore,\n      priorityTier: qualityScore >= 80 ? 'HIGH_PRIORITY' : 'STANDARD',\n      actorSource: 'instagram-followers-following-no-login-scraper',\n      processedAt: new Date().toISOString()\n    }\n  };\n});"
+      },
+      "id": "45c66a15-fdcc-4525-a0d6-e1a2741acfe4",
+      "name": "Normalize and Score Records",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3eee8594-792e-4e68-a72c-da2d208d2a4f",
+              "leftValue": "={{ $json.leadQualityScore }}",
+              "rightValue": 60,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "3a4c63b7-c34a-4a8d-a8e3-5ebdee939630",
+      "name": "Route High-Quality Records",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1700,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "40e8e986-9268-430a-aa44-bb419a7bb5b2",
+              "name": "title",
+              "value": "={{ $json.normalizedTitle }}",
+              "type": "string"
+            },
+            {
+              "id": "3663ef85-1064-4369-aec1-13f47a2a596a",
+              "name": "url",
+              "value": "={{ $json.primaryUrl }}",
+              "type": "string"
+            },
+            {
+              "id": "fb9fa468-193f-47cd-a88d-4f45487e3e19",
+              "name": "contact",
+              "value": "={{ $json.primaryContact }}",
+              "type": "string"
+            },
+            {
+              "id": "d36c6f1a-78a0-4417-ac33-2c6633e53b58",
+              "name": "score",
+              "value": "={{ $json.leadQualityScore }}",
+              "type": "number"
+            },
+            {
+              "id": "5cb6ff00-9c98-4ca5-adf3-3a7938029d5b",
+              "name": "tier",
+              "value": "={{ $json.priorityTier }}",
+              "type": "string"
+            },
+            {
+              "id": "bd06cc60-596c-481c-a39f-9779c33fe468",
+              "name": "exportedAt",
+              "value": "={{ $json.processedAt }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "ba452253-515d-4a77-a8ac-3ba6a7e7e2e8",
+      "name": "Format Final CRM and Sheets Payload",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1940,
+        400
       ]
     }
   ],
@@ -162,13 +314,58 @@
           }
         ]
       ]
+    },
+    "Filter Verified Records": {
+      "main": [
+        [
+          {
+            "node": "Deduplicate Extracted Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deduplicate Extracted Items": {
+      "main": [
+        [
+          {
+            "node": "Normalize and Score Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize and Score Records": {
+      "main": [
+        [
+          {
+            "node": "Route High-Quality Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route High-Quality Records": {
+      "main": [
+        [
+          {
+            "node": "Format Final CRM and Sheets Payload",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "7cdbeee8-8f2d-4985-a1c9-29829d590fcc",
+  "versionId": "c766927c-eb1a-4ace-a262-59ed61d2ae97",
   "meta": {
     "templateCredsSetupCompleted": true
   },
