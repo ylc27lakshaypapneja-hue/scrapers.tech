@@ -1,0 +1,901 @@
+[
+  {
+    "id": 1,
+    "file": "01-linkedin-profile-email-enrichment-to-google-sheets.json",
+    "name": "Cookie-Free LinkedIn Profile & Work Email Enrichment to Google Sheets",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "linkedin-profile-scraper",
+    "actorTitle": "LinkedIn Profile & Email Scraper: No Cookies",
+    "defaultQueries": [
+      "https://www.linkedin.com/in/satyanadella",
+      "VP of Sales B2B SaaS San Francisco"
+    ],
+    "useCase": "Enrich LinkedIn profile URLs or executive search queries with verified work emails and titles without LinkedIn cookies, then append directly to Google Sheets / Clay.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/01-linkedin-profile-email-enrichment-to-google-sheets.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-profile-scraper"
+  },
+  {
+    "id": 2,
+    "file": "02-linkedin-company-employees-decision-makers-to-hubspot.json",
+    "name": "Extract LinkedIn Company Employees & Decision-Makers to HubSpot (No Cookies)",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "linkedin-company-employees-scraper",
+    "actorTitle": "LinkedIn Company Employees & People Scraper",
+    "defaultQueries": [
+      "stripe.com",
+      "anthropic.com"
+    ],
+    "useCase": "Automatically pull VP, Director, and C-Level decision-makers from target companies on LinkedIn (100% cookie-free) and push leads to HubSpot, Clay, or Slack.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/02-linkedin-company-employees-decision-makers-to-hubspot.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-company-employees-scraper"
+  },
+  {
+    "id": 3,
+    "file": "03-google-maps-local-business-email-lead-generator.json",
+    "name": "Google Maps Local Business Email & Phone Lead Extractor to CSV / Sheets",
+    "category": "Local & Maps",
+    "actorSlug": "local-business-directory-maps-lead-enricher",
+    "actorTitle": "Google Maps Email & Business Leads Extractor",
+    "defaultQueries": [
+      "roofing contractors austin texas",
+      "medspa clinics miami florida"
+    ],
+    "useCase": "Scrape local SMB leads from Google Maps with verified email addresses, phone numbers, star ratings, and booking tech stack.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/03-google-maps-local-business-email-lead-generator.json",
+    "actorUrl": "https://apify.com/laborious_rumor/local-business-directory-maps-lead-enricher"
+  },
+  {
+    "id": 4,
+    "file": "04-reddit-high-intent-buyer-alert-to-slack.json",
+    "name": "Real-Time Reddit High-Intent Buyer & Competitor Mention Alert Bot",
+    "category": "Social & Creator",
+    "actorSlug": "reddit-keyword-search-buyer-intent-monitor",
+    "actorTitle": "Reddit Keyword Search & Buyer Intent Scraper",
+    "defaultQueries": [
+      "best crm alternative for startup",
+      "looking for b2b lead generation tool"
+    ],
+    "useCase": "Monitor Reddit 24/7 for high-buying-intent threads asking for software recommendations or competitor alternatives and send instant Slack/Discord alerts.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/04-reddit-high-intent-buyer-alert-to-slack.json",
+    "actorUrl": "https://apify.com/laborious_rumor/reddit-keyword-search-buyer-intent-monitor"
+  },
+  {
+    "id": 5,
+    "file": "05-website-to-clean-markdown-rag-vector-pipeline.json",
+    "name": "Crawl Any Website or Docs into Clean Markdown Chunks for AI Agents & RAG",
+    "category": "AI, RAG & Tech",
+    "actorSlug": "ai-web-to-markdown-rag-scraper",
+    "actorTitle": "Website to Markdown & RAG Context Crawler",
+    "defaultQueries": [
+      "https://docs.apify.com/platform/integrations/mcp"
+    ],
+    "useCase": "Convert documentation or competitor websites into clean, token-optimized Markdown chunks ready for OpenAI, Claude, Pinecone, or Qdrant vector databases.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/05-website-to-clean-markdown-rag-vector-pipeline.json",
+    "actorUrl": "https://apify.com/laborious_rumor/ai-web-to-markdown-rag-scraper"
+  },
+  {
+    "id": 6,
+    "file": "06-google-ads-transparency-competitor-ad-spy.json",
+    "name": "Competitor Google Search & YouTube Ad Spy Automation (Google Ads Transparency)",
+    "category": "Ad Spy & SEO",
+    "actorSlug": "google-ads-transparency-center-scraper",
+    "actorTitle": "Google Ads Transparency Center Scraper API",
+    "defaultQueries": [
+      "hubspot.com",
+      "monday.com"
+    ],
+    "useCase": "Track active Google Search, YouTube, and Display ad creatives run by any competitor domain via the Google Ads Transparency Center.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/06-google-ads-transparency-competitor-ad-spy.json",
+    "actorUrl": "https://apify.com/laborious_rumor/google-ads-transparency-center-scraper"
+  },
+  {
+    "id": 7,
+    "file": "07-instagram-reels-tiktok-viral-transcript-hook-extractor.json",
+    "name": "Viral Instagram Reels & TikTok Transcript + 3-Second Hook Extractor",
+    "category": "Social & Creator",
+    "actorSlug": "instagram-reels-transcript-scraper",
+    "actorTitle": "Instagram Reels Transcript & Script Scraper",
+    "defaultQueries": [
+      "ai automation agency hooks",
+      "b2b saas founder reels"
+    ],
+    "useCase": "Extract spoken transcripts and opening viral hooks from top Instagram Reels to repurpose into high-converting UGC scripts with ChatGPT/Claude.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/07-instagram-reels-tiktok-viral-transcript-hook-extractor.json",
+    "actorUrl": "https://apify.com/laborious_rumor/instagram-reels-transcript-scraper"
+  },
+  {
+    "id": 8,
+    "file": "08-sec-edgar-form-d-newly-funded-startup-leads.json",
+    "name": "Daily SEC EDGAR Form D Newly Funded US Startup Leads to CRM",
+    "category": "Startups & Real Estate",
+    "actorSlug": "sec-edgar-form-d-fundraising-scraper",
+    "actorTitle": "SEC EDGAR Form D Startup Funding Scraper",
+    "defaultQueries": [
+      "artificial intelligence seed round",
+      "b2b software series a"
+    ],
+    "useCase": "Capture newly funded US startups filing SEC Form D venture rounds before they appear in TechCrunch or Crunchbase.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/08-sec-edgar-form-d-newly-funded-startup-leads.json",
+    "actorUrl": "https://apify.com/laborious_rumor/sec-edgar-form-d-fundraising-scraper"
+  },
+  {
+    "id": 9,
+    "file": "09-shopify-competitor-price-stock-drop-monitor.json",
+    "name": "Shopify Competitor Price Drop & Inventory Stock Monitor",
+    "category": "E-Commerce",
+    "actorSlug": "universal-ecommerce-product-price-tracker",
+    "actorTitle": "Shopify Product Scraper: Prices, Stock & SKU",
+    "defaultQueries": [
+      "gymshark.com",
+      "allbirds.com"
+    ],
+    "useCase": "Track product prices, variant SKUs, and out-of-stock signals across any competitor Shopify store on a daily schedule.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/09-shopify-competitor-price-stock-drop-monitor.json",
+    "actorUrl": "https://apify.com/laborious_rumor/universal-ecommerce-product-price-tracker"
+  },
+  {
+    "id": 10,
+    "file": "10-x-twitter-viral-posts-followers-lead-miner.json",
+    "name": "X (Twitter) Viral Posts, Threads & Audience Lead Scraper",
+    "category": "Social & Creator",
+    "actorSlug": "twitter-x-tweet-scraper",
+    "actorTitle": "X (Twitter) Posts, Metrics & Thread Scraper",
+    "defaultQueries": [
+      "building in public ai agent",
+      "mcp server claude cursor"
+    ],
+    "useCase": "Extract high-engagement X/Twitter posts, threads, and creator metrics for social listening and warm outbound prospecting.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/10-x-twitter-viral-posts-followers-lead-miner.json",
+    "actorUrl": "https://apify.com/laborious_rumor/twitter-x-tweet-scraper"
+  },
+  {
+    "id": 11,
+    "file": "11-linkedin-post-search-viral-content-lead-miner.json",
+    "name": "LinkedIn Viral Post Search & Thought-Leader Content Miner (No Cookies)",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "linkedin-post-search-scraper",
+    "actorTitle": "LinkedIn Post Search Scraper (No Cookies)",
+    "defaultQueries": [
+      "outbound sales automation clay n8n",
+      "hiring growth marketing agency"
+    ],
+    "useCase": "Find high-intent LinkedIn posts by keyword without session cookies to trigger warm social selling outreach and AI comment generation.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/11-linkedin-post-search-viral-content-lead-miner.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-post-search-scraper"
+  },
+  {
+    "id": 12,
+    "file": "12-linkedin-profile-search-b2b-prospect-builder.json",
+    "name": "LinkedIn Profile Search by Title, Industry & US City (No Cookies)",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "linkedin-profile-search-scraper",
+    "actorTitle": "LinkedIn Profile Search Scraper (No Cookies)",
+    "defaultQueries": [
+      "Head of Revenue Operations New York",
+      "Founder AI SaaS Austin Texas"
+    ],
+    "useCase": "Build targeted B2B prospect lists directly from LinkedIn search filters without risking your personal LinkedIn account.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/12-linkedin-profile-search-b2b-prospect-builder.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-profile-search-scraper"
+  },
+  {
+    "id": 13,
+    "file": "13-linkedin-profile-posts-activity-personalized-icebreakers.json",
+    "name": "LinkedIn Prospect Recent Posts Scraper for AI Cold Email Icebreakers",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "linkedin-profile-posts-scraper",
+    "actorTitle": "LinkedIn Profile Posts Scraper (No Cookies)",
+    "defaultQueries": [
+      "https://www.linkedin.com/in/garrytan",
+      "https://www.linkedin.com/in/dharmesh"
+    ],
+    "useCase": "Fetch a prospect’s latest LinkedIn posts before sending an outbound sequence so GPT-4o/Claude can write hyper-personalized first lines.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/13-linkedin-profile-posts-activity-personalized-icebreakers.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-profile-posts-scraper"
+  },
+  {
+    "id": 14,
+    "file": "14-linkedin-company-details-firmographics-crm-enricher.json",
+    "name": "LinkedIn Company Firmographics, Headcount & Industry CRM Enricher",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "linkedin-company-details-search-scraper",
+    "actorTitle": "LinkedIn Company Details & Search (No Cookies)",
+    "defaultQueries": [
+      "vercel.com",
+      "scale.com"
+    ],
+    "useCase": "Automatically enrich CRM company domains with LinkedIn headcount, industry classification, headquarters, and follower velocity.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/14-linkedin-company-details-firmographics-crm-enricher.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-company-details-search-scraper"
+  },
+  {
+    "id": 15,
+    "file": "15-linkedin-company-posts-competitor-pr-tracker.json",
+    "name": "LinkedIn Competitor Company Page Posts & Product Launch Monitor",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "linkedin-company-posts-scraper",
+    "actorTitle": "LinkedIn Company Posts Scraper (No Cookies)",
+    "defaultQueries": [
+      "https://www.linkedin.com/company/openai",
+      "https://www.linkedin.com/company/anthropicresearch"
+    ],
+    "useCase": "Track every official announcement, hiring push, and product release published on competitor LinkedIn company pages.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/15-linkedin-company-posts-competitor-pr-tracker.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-company-posts-scraper"
+  },
+  {
+    "id": 16,
+    "file": "16-linkedin-post-comments-reactions-warm-engager-leads.json",
+    "name": "Scrape LinkedIn Post Commenters & Liquify Competitor Audience into Leads",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "linkedin-post-comments-reactions-scraper",
+    "actorTitle": "LinkedIn Post Comments & Reactions (No Cookies)",
+    "defaultQueries": [
+      "linkedin post comments b2b saas lead magnet",
+      "commenters on viral cold email post"
+    ],
+    "useCase": "Extract every user who commented on or reacted to a competitor’s viral LinkedIn post and route them into your outbound sequence.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/16-linkedin-post-comments-reactions-warm-engager-leads.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-post-comments-reactions-scraper"
+  },
+  {
+    "id": 17,
+    "file": "17-linkedin-profile-search-by-name-domain-resolver.json",
+    "name": "Find Exact LinkedIn Profile URL from Full Name & Company Name (No Cookies)",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "linkedin-profile-search-by-name-no-cookies",
+    "actorTitle": "LinkedIn Profile Search By Name (No Cookies)",
+    "defaultQueries": [
+      "Patrick Collison Stripe",
+      "Guillermo Rauch Vercel"
+    ],
+    "useCase": "Resolve raw contact names and company names from webinar signups or event lists into verified LinkedIn profile URLs.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/17-linkedin-profile-search-by-name-domain-resolver.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-profile-search-by-name-no-cookies"
+  },
+  {
+    "id": 18,
+    "file": "18-linkedin-company-search-icp-account-list-builder.json",
+    "name": "LinkedIn ICP Account Discovery by Vertical & Headcount (No Cookies)",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "linkedin-company-search-no-cookies-scraper",
+    "actorTitle": "LinkedIn Company Search Scraper (No Cookies)",
+    "defaultQueries": [
+      "FinTech software companies United States",
+      "Healthcare AI startups Boston"
+    ],
+    "useCase": "Discover target B2B accounts matching your Ideal Customer Profile on LinkedIn and push company domains to Clay or Apollo.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/18-linkedin-company-search-icp-account-list-builder.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-company-search-no-cookies-scraper"
+  },
+  {
+    "id": 19,
+    "file": "19-linkedin-sales-navigator-cookie-free-lead-exporter.json",
+    "name": "LinkedIn Sales Navigator Lead List Exporter to Clay / HubSpot (No Cookies)",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "linkedin-sales-navigator-lead-exporter",
+    "actorTitle": "LinkedIn Sales Navigator Lead Exporter (No Cookies)",
+    "defaultQueries": [
+      "VP Engineering Series B SaaS US",
+      "Chief Marketing Officer E-Commerce New York"
+    ],
+    "useCase": "Export high-converting Sales Navigator lead criteria with verified corporate email patterns without browser extensions or cookie bans.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/19-linkedin-sales-navigator-cookie-free-lead-exporter.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-sales-navigator-lead-exporter"
+  },
+  {
+    "id": 20,
+    "file": "20-reverse-email-to-linkedin-profile-enrichment.json",
+    "name": "Reverse Work Email to LinkedIn Profile & Executive Bio Lookup",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "reverse-email-to-linkedin-profile-lookup",
+    "actorTitle": "Reverse Email Lookup to LinkedIn Profile API",
+    "defaultQueries": [
+      "founders@stripe.com",
+      "press@anthropic.com"
+    ],
+    "useCase": "Turn inbound Stripe/Typeform signup emails into full LinkedIn profiles, job titles, and company firmographics automatically.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/20-reverse-email-to-linkedin-profile-enrichment.json",
+    "actorUrl": "https://apify.com/laborious_rumor/reverse-email-to-linkedin-profile-lookup"
+  },
+  {
+    "id": 21,
+    "file": "21-apollo-alternative-b2b-decision-maker-email-finder.json",
+    "name": "Zero-Subscription Apollo.io Alternative Decision-Maker & Email Finder",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "apollo-io-lead-alternative-scraper",
+    "actorTitle": "B2B Decision-Maker & Verified Email Finder",
+    "defaultQueries": [
+      "B2B SaaS Founders San Francisco",
+      "Agency Owners Chicago Illinois"
+    ],
+    "useCase": "Replace expensive monthly Apollo subscriptions with on-demand Pay-Per-Event B2B decision-maker contact extraction.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/21-apollo-alternative-b2b-decision-maker-email-finder.json",
+    "actorUrl": "https://apify.com/laborious_rumor/apollo-io-lead-alternative-scraper"
+  },
+  {
+    "id": 22,
+    "file": "22-bulk-email-verifier-mx-smtp-catchall-cleaner.json",
+    "name": "Bulk Cold Email List Verifier (MX, SMTP & Catch-All Filter Before Instantly/Smartlead)",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "bulk-email-verifier-cleaner",
+    "actorTitle": "Bulk Email Verifier & Validator - MX & SMTP",
+    "defaultQueries": [
+      "alex@stripe.com",
+      "contact@vercel.com"
+    ],
+    "useCase": "Verify email deliverability, DNS MX records, and catch-all status inside n8n before pushing leads to Instantly or Smartlead.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/22-bulk-email-verifier-mx-smtp-catchall-cleaner.json",
+    "actorUrl": "https://apify.com/laborious_rumor/bulk-email-verifier-cleaner"
+  },
+  {
+    "id": 23,
+    "file": "23-facebook-ads-library-winning-evergreen-creatives-spy.json",
+    "name": "Meta / Facebook Ad Library Evergreen Winning Ad Creative Spy Bot",
+    "category": "Ad Spy & SEO",
+    "actorSlug": "facebook-ads-library-scraper",
+    "actorTitle": "Facebook Ad Library Scraper: Competitor Ads",
+    "defaultQueries": [
+      "Athletic Greens AG1",
+      "Ridge Wallet"
+    ],
+    "useCase": "Monitor competitor Facebook & Instagram ads running for 30+ days to extract winning hooks, CTAs, and landing page funnels.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/23-facebook-ads-library-winning-evergreen-creatives-spy.json",
+    "actorUrl": "https://apify.com/laborious_rumor/facebook-ads-library-scraper"
+  },
+  {
+    "id": 24,
+    "file": "24-meta-ad-library-reach-spend-estimator-alert.json",
+    "name": "Meta (Facebook & IG) Competitor Ad Spend & Impression Reach Tracker",
+    "category": "Ad Spy & SEO",
+    "actorSlug": "meta-facebook-instagram-ad-reach-spend-scraper",
+    "actorTitle": "Meta (FB & IG) Ad Library & Spend Scraper",
+    "defaultQueries": [
+      "Notion",
+      "Linear App"
+    ],
+    "useCase": "Track estimated ad spend, regional impression distribution, and active creative scaling across Meta platforms.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/24-meta-ad-library-reach-spend-estimator-alert.json",
+    "actorUrl": "https://apify.com/laborious_rumor/meta-facebook-instagram-ad-reach-spend-scraper"
+  },
+  {
+    "id": 25,
+    "file": "25-linkedin-ad-library-b2b-sponsored-creatives-spy.json",
+    "name": "LinkedIn Ad Library B2B Competitor Sponsored Content & Lead Gen Ad Spy",
+    "category": "Ad Spy & SEO",
+    "actorSlug": "linkedin-ad-library-b2b-creatives-scraper",
+    "actorTitle": "LinkedIn Ad Library B2B Creatives Scraper",
+    "defaultQueries": [
+      "Gong.io",
+      "Deel"
+    ],
+    "useCase": "Extract every active B2B LinkedIn ad creative, headline, and offer run by enterprise SaaS competitors.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/25-linkedin-ad-library-b2b-sponsored-creatives-spy.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-ad-library-b2b-creatives-scraper"
+  },
+  {
+    "id": 26,
+    "file": "26-tiktok-creative-center-top-converting-ugc-ads.json",
+    "name": "TikTok Creative Center Top-Performing UGC Ads & Hook Swipe File Builder",
+    "category": "Ad Spy & SEO",
+    "actorSlug": "tiktok-creative-center-ad-library-scraper",
+    "actorTitle": "TikTok Creative Center Top Ads Scraper",
+    "defaultQueries": [
+      "skincare serum TikTok shop",
+      "AI productivity app UGC"
+    ],
+    "useCase": "Pull top-converting TikTok ads sorted by CTR and 3-second retention rate into an Airtable creative swipe file.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/26-tiktok-creative-center-top-converting-ugc-ads.json",
+    "actorUrl": "https://apify.com/laborious_rumor/tiktok-creative-center-ad-library-scraper"
+  },
+  {
+    "id": 27,
+    "file": "27-google-keyword-search-volume-cpc-seo-difficulty.json",
+    "name": "Bulk Google Keyword Search Volume, CPC & SEO Difficulty Research Pipeline",
+    "category": "Ad Spy & SEO",
+    "actorSlug": "google-keyword-search-volume-cpc-bulk-scraper",
+    "actorTitle": "Keyword Search Volume, CPC & SEO Difficulty",
+    "defaultQueries": [
+      "ai voice agent platform",
+      "b2b cold email software"
+    ],
+    "useCase": "Enrich seed keyword lists with monthly US search volume, Google Ads CPC, and ranking competition scores.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/27-google-keyword-search-volume-cpc-seo-difficulty.json",
+    "actorUrl": "https://apify.com/laborious_rumor/google-keyword-search-volume-cpc-bulk-scraper"
+  },
+  {
+    "id": 28,
+    "file": "28-similarweb-competitor-website-traffic-channel-breakdown.json",
+    "name": "SimilarWeb Competitor Monthly Visits, Traffic Sources & Top Keywords Monitor",
+    "category": "Ad Spy & SEO",
+    "actorSlug": "similarweb-website-traffic-rank-keywords-scraper",
+    "actorTitle": "SimilarWeb Fast Traffic, Rank & Keywords Scraper",
+    "defaultQueries": [
+      "clay.com",
+      "apify.com"
+    ],
+    "useCase": "Qualify B2B domains by monthly web traffic volume, bounce rate, and top organic/paid traffic channels.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/28-similarweb-competitor-website-traffic-channel-breakdown.json",
+    "actorUrl": "https://apify.com/laborious_rumor/similarweb-website-traffic-rank-keywords-scraper"
+  },
+  {
+    "id": 29,
+    "file": "29-seo-serp-competitor-content-gap-ai-brief-generator.json",
+    "name": "Google SERP Content Gap Analyzer to Automated AI SEO Article Briefs",
+    "category": "Ad Spy & SEO",
+    "actorSlug": "seo-serp-competitor-content-gap-analyzer",
+    "actorTitle": "SEO Competitor SERP & Content Gap Analyzer",
+    "defaultQueries": [
+      "best mcp servers for claude",
+      "how to automate linkedin outreach n8n"
+    ],
+    "useCase": "Analyze top 10 Google SERP headings, word counts, and missing semantic entities to generate rank-ready content briefs.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/29-seo-serp-competitor-content-gap-ai-brief-generator.json",
+    "actorUrl": "https://apify.com/laborious_rumor/seo-serp-competitor-content-gap-analyzer"
+  },
+  {
+    "id": 30,
+    "file": "30-google-search-fast-serp-api-for-ai-agents.json",
+    "name": "Ultra-Fast Google Search SERP API Grounding for n8n AI Agents",
+    "category": "Ad Spy & SEO",
+    "actorSlug": "google-search-results-fast-serp-api",
+    "actorTitle": "Google Search Results Fast SERP Scraper API",
+    "defaultQueries": [
+      "latest series A funding announcements US 2026",
+      "top Shopify plus agencies Los Angeles"
+    ],
+    "useCase": "Give your n8n AI Agents live Google Search grounding with structured organic results, snippets, and related questions.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/30-google-search-fast-serp-api-for-ai-agents.json",
+    "actorUrl": "https://apify.com/laborious_rumor/google-search-results-fast-serp-api"
+  },
+  {
+    "id": 31,
+    "file": "31-semrush-ahrefs-domain-authority-backlink-auditor.json",
+    "name": "Automated Domain Authority, Backlinks & SEO Health Prospect Scorer",
+    "category": "Ad Spy & SEO",
+    "actorSlug": "semrush-ahrefs-domain-backlinks-seo-metrics",
+    "actorTitle": "Domain Authority, Backlinks & Traffic SEO API",
+    "defaultQueries": [
+      "scrapers.tech",
+      "n8n.io"
+    ],
+    "useCase": "Audit prospect websites for domain authority, backlink velocity, and SEO gaps to pitch high-ticket SEO agency retainers.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/31-semrush-ahrefs-domain-authority-backlink-auditor.json",
+    "actorUrl": "https://apify.com/laborious_rumor/semrush-ahrefs-domain-backlinks-seo-metrics"
+  },
+  {
+    "id": 32,
+    "file": "32-builtwith-wappalyzer-tech-stack-sales-triggers.json",
+    "name": "BuiltWith / Wappalyzer Tech Stack Detector (Find Sites Using Shopify, HubSpot, Stripe)",
+    "category": "Ad Spy & SEO",
+    "actorSlug": "builtwith-wappalyzer-deep-tech-detector",
+    "actorTitle": "Deep Tech Stack & CMS Fingerprinter",
+    "defaultQueries": [
+      "gymshark.com",
+      "linear.app"
+    ],
+    "useCase": "Detect 100+ web technologies, pixels, and payment processors on any domain to build technographic outbound lists.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/32-builtwith-wappalyzer-tech-stack-sales-triggers.json",
+    "actorUrl": "https://apify.com/laborious_rumor/builtwith-wappalyzer-deep-tech-detector"
+  },
+  {
+    "id": 33,
+    "file": "33-tiktok-transcript-viral-script-repurposer.json",
+    "name": "TikTok Video Transcript & Viral Hook Extractor to AI LinkedIn/X Posts",
+    "category": "Social & Creator",
+    "actorSlug": "tiktok-transcript-extractor-api",
+    "actorTitle": "TikTok Transcript & Viral Script Extractor API",
+    "defaultQueries": [
+      "ai side hustle workflow",
+      "saas growth hacks 2026"
+    ],
+    "useCase": "Transcribe viral TikTok videos automatically and use an LLM in n8n to rewrite them into LinkedIn threads and newsletter issues.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/33-tiktok-transcript-viral-script-repurposer.json",
+    "actorUrl": "https://apify.com/laborious_rumor/tiktok-transcript-extractor-api"
+  },
+  {
+    "id": 34,
+    "file": "34-tiktok-profile-creator-email-influencer-outreach.json",
+    "name": "TikTok Creator Bio Email & Engagement Rate Finder for UGC Influencer Outreach",
+    "category": "Social & Creator",
+    "actorSlug": "tiktok-profile-scraper",
+    "actorTitle": "TikTok Profile & Creator Scraper - Emails",
+    "defaultQueries": [
+      "tech reviewer US creator",
+      "beauty UGC creator Los Angeles"
+    ],
+    "useCase": "Find TikTok creators in your niche with public business emails in bio and high engagement-to-follower ratios.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/34-tiktok-profile-creator-email-influencer-outreach.json",
+    "actorUrl": "https://apify.com/laborious_rumor/tiktok-profile-scraper"
+  },
+  {
+    "id": 35,
+    "file": "35-tiktok-comments-audience-pain-point-miner.json",
+    "name": "TikTok Viral Video Comments & Buyer Question Miner",
+    "category": "Social & Creator",
+    "actorSlug": "tiktok-comments-scraper",
+    "actorTitle": "TikTok Comments Scraper - Audience Insights",
+    "defaultQueries": [
+      "where to buy ergonomic office chair",
+      "best protein powder comments"
+    ],
+    "useCase": "Scrape thousands of TikTok comments on viral product videos to uncover raw customer objections and \"where can I buy\" leads.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/35-tiktok-comments-audience-pain-point-miner.json",
+    "actorUrl": "https://apify.com/laborious_rumor/tiktok-comments-scraper"
+  },
+  {
+    "id": 36,
+    "file": "36-instagram-followers-following-competitor-audience-scraper.json",
+    "name": "Instagram Competitor Followers & Following Lead Scraper (No Login Required)",
+    "category": "Social & Creator",
+    "actorSlug": "instagram-followers-following-no-login-scraper",
+    "actorTitle": "Instagram Followers & Following (No Login)",
+    "defaultQueries": [
+      "hubspot",
+      "shopify"
+    ],
+    "useCase": "Extract public follower and following profiles from niche Instagram accounts without risking an Instagram session cookie.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/36-instagram-followers-following-competitor-audience-scraper.json",
+    "actorUrl": "https://apify.com/laborious_rumor/instagram-followers-following-no-login-scraper"
+  },
+  {
+    "id": 37,
+    "file": "37-instagram-reels-viral-search-trend-alerter.json",
+    "name": "Instagram Reels Keyword Search & Breakout Viral Video Finder (No Login)",
+    "category": "Social & Creator",
+    "actorSlug": "instagram-reels-search-viral-finder",
+    "actorTitle": "Instagram Reels Search & Viral Finder",
+    "defaultQueries": [
+      "n8n ai agent tutorial",
+      "cold email lead gen tips"
+    ],
+    "useCase": "Discover outlier Instagram Reels outperforming their creator’s average views by 5x+ in any keyword niche.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/37-instagram-reels-viral-search-trend-alerter.json",
+    "actorUrl": "https://apify.com/laborious_rumor/instagram-reels-search-viral-finder"
+  },
+  {
+    "id": 38,
+    "file": "38-instagram-post-comments-engager-dm-lead-extractor.json",
+    "name": "Instagram Post & Reel Commenters Lead Extractor (No Login)",
+    "category": "Social & Creator",
+    "actorSlug": "instagram-posts-reels-comments-engagers-scraper",
+    "actorTitle": "Fast Instagram Comments Scraper (No Login)",
+    "defaultQueries": [
+      "commenters asking for link in bio",
+      "instagram giveaway participants"
+    ],
+    "useCase": "Scrape users commenting keywords or questions on competitor Instagram Reels for high-converting warm outreach.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/38-instagram-post-comments-engager-dm-lead-extractor.json",
+    "actorUrl": "https://apify.com/laborious_rumor/instagram-posts-reels-comments-engagers-scraper"
+  },
+  {
+    "id": 39,
+    "file": "39-youtube-comments-viewer-sentiment-feature-requests.json",
+    "name": "YouTube Video Comments Sentiment & Competitor Product Complaint Miner",
+    "category": "Social & Creator",
+    "actorSlug": "youtube-comments-scraper",
+    "actorTitle": "YouTube Comments Scraper - Viewer Sentiment",
+    "defaultQueries": [
+      "best CRM review 2026 comments",
+      "n8n vs make automation comments"
+    ],
+    "useCase": "Analyze viewer comments on top YouTube reviews in your industry to extract feature requests and competitor pain points.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/39-youtube-comments-viewer-sentiment-feature-requests.json",
+    "actorUrl": "https://apify.com/laborious_rumor/youtube-comments-scraper"
+  },
+  {
+    "id": 40,
+    "file": "40-reddit-bulk-thread-comments-ai-market-research.json",
+    "name": "Reddit Full Thread & Nested Comments Exporter for Deep LLM Market Research",
+    "category": "Social & Creator",
+    "actorSlug": "reddit-post-comments-bulk-thread-scraper",
+    "actorTitle": "Reddit Post Comments & Bulk Thread Export",
+    "defaultQueries": [
+      "https://www.reddit.com/r/n8n/",
+      "r/saas pricing feedback discussions"
+    ],
+    "useCase": "Export complete Reddit threads and top-voted comment trees into clean JSON for AI persona research and product positioning.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/40-reddit-bulk-thread-comments-ai-market-research.json",
+    "actorUrl": "https://apify.com/laborious_rumor/reddit-post-comments-bulk-thread-scraper"
+  },
+  {
+    "id": 41,
+    "file": "41-twitter-x-followers-profile-bio-lead-enricher.json",
+    "name": "X (Twitter) Account Followers & Bio Website/Email Lead Scraper",
+    "category": "Social & Creator",
+    "actorSlug": "twitter-x-followers-following-profile-scraper",
+    "actorTitle": "Fast X (Twitter) User & Followers Scraper",
+    "defaultQueries": [
+      "levelsio followers",
+      "garrytan founders"
+    ],
+    "useCase": "Extract founder and developer profiles following top tech accounts on X, complete with bio links and DM openness.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/41-twitter-x-followers-profile-bio-lead-enricher.json",
+    "actorUrl": "https://apify.com/laborious_rumor/twitter-x-followers-following-profile-scraper"
+  },
+  {
+    "id": 42,
+    "file": "42-facebook-public-group-posts-community-lead-monitor.json",
+    "name": "Facebook Public Group Posts & Buyer Recommendation Monitor (No Cookies)",
+    "category": "Social & Creator",
+    "actorSlug": "facebook-public-group-posts-comments-scraper",
+    "actorTitle": "Facebook Public Group Posts (No Cookies)",
+    "defaultQueries": [
+      "SaaS founders growth group posts",
+      "real estate wholesalers US group"
+    ],
+    "useCase": "Monitor public Facebook groups for members asking for service providers, agencies, or software tools without account login.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/42-facebook-public-group-posts-community-lead-monitor.json",
+    "actorUrl": "https://apify.com/laborious_rumor/facebook-public-group-posts-comments-scraper"
+  },
+  {
+    "id": 43,
+    "file": "43-amazon-us-bsr-movers-shakers-fba-arbitrage-alert.json",
+    "name": "Amazon US Best Sellers Rank (BSR) & Movers/Shakers FBA Arbitrage Tracker",
+    "category": "E-Commerce",
+    "actorSlug": "amazon-us-bsr-fba-arbitrage-product-tracker",
+    "actorTitle": "Amazon US BSR & Movers and Shakers Tracker",
+    "defaultQueries": [
+      "home office desk accessories",
+      "pet grooming supplies BSR"
+    ],
+    "useCase": "Track breakout Amazon US products with surging BSR velocity, buy-box price shifts, and low review competition.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/43-amazon-us-bsr-movers-shakers-fba-arbitrage-alert.json",
+    "actorUrl": "https://apify.com/laborious_rumor/amazon-us-bsr-fba-arbitrage-product-tracker"
+  },
+  {
+    "id": 44,
+    "file": "44-tiktok-shop-us-viral-products-daily-gmv-tracker.json",
+    "name": "TikTok Shop US Top-Selling Viral Products & Daily GMV Revenue Monitor",
+    "category": "E-Commerce",
+    "actorSlug": "tiktok-shop-us-viral-product-gmv-tracker",
+    "actorTitle": "TikTok Shop US Top Products & GMV Scraper",
+    "defaultQueries": [
+      "beauty & personal care trending",
+      "smart home gadgets TikTok Shop"
+    ],
+    "useCase": "Spot viral TikTok Shop US products doing $10k+/day in GMV along with their affiliate commission rates and creator counts.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/44-tiktok-shop-us-viral-products-daily-gmv-tracker.json",
+    "actorUrl": "https://apify.com/laborious_rumor/tiktok-shop-us-viral-product-gmv-tracker"
+  },
+  {
+    "id": 45,
+    "file": "45-aliexpress-winning-dropshipping-product-orders-tracker.json",
+    "name": "AliExpress Winning Product Order Volume & Supplier Price Margin Finder",
+    "category": "E-Commerce",
+    "actorSlug": "aliexpress-product-scraper",
+    "actorTitle": "AliExpress Product Scraper: Prices & Orders",
+    "defaultQueries": [
+      "portable espresso maker",
+      "magnetic wireless power bank"
+    ],
+    "useCase": "Compare AliExpress supplier factory pricing and 7-day order growth against US DTC retail prices for high-margin sourcing.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/45-aliexpress-winning-dropshipping-product-orders-tracker.json",
+    "actorUrl": "https://apify.com/laborious_rumor/aliexpress-product-scraper"
+  },
+  {
+    "id": 46,
+    "file": "46-etsy-shop-revenue-bestsellers-keyword-tag-analyzer.json",
+    "name": "Etsy Competitor Shop Monthly Revenue, Best-Selling Listings & Tag Spy",
+    "category": "E-Commerce",
+    "actorSlug": "etsy-shop-revenue-sales-keyword-analyzer",
+    "actorTitle": "Etsy Shop Revenue, Sales & Keyword Analyzer",
+    "defaultQueries": [
+      "digital planner notion template",
+      "custom neon sign wedding"
+    ],
+    "useCase": "Reverse-engineer top Etsy shops to see estimated monthly revenue, high-converting listing tags, and pricing tiers.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/46-etsy-shop-revenue-bestsellers-keyword-tag-analyzer.json",
+    "actorUrl": "https://apify.com/laborious_rumor/etsy-shop-revenue-sales-keyword-analyzer"
+  },
+  {
+    "id": 47,
+    "file": "47-walmart-us-marketplace-price-inventory-seller-monitor.json",
+    "name": "Walmart US Marketplace Competitor Price, Buy-Box & Stock Alert Pipeline",
+    "category": "E-Commerce",
+    "actorSlug": "walmart-product-price-review-scraper",
+    "actorTitle": "Walmart Product & Price Scraper - Inventory",
+    "defaultQueries": [
+      "ninja creami ice cream maker",
+      "apple airpods pro 2"
+    ],
+    "useCase": "Monitor Walmart.com product listings for third-party seller price undercutting, rollback discounts, and inventory depletion.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/47-walmart-us-marketplace-price-inventory-seller-monitor.json",
+    "actorUrl": "https://apify.com/laborious_rumor/walmart-product-price-review-scraper"
+  },
+  {
+    "id": 48,
+    "file": "48-ebay-sold-listings-terapeak-resale-price-comps.json",
+    "name": "eBay Sold Listings & Completed Terapeak Price Comps Arbitrage Calculator",
+    "category": "E-Commerce",
+    "actorSlug": "ebay-sold-listings-price-comp-scraper",
+    "actorTitle": "eBay Sold Listings & Terapeak Comps Scraper",
+    "defaultQueries": [
+      "rolex datejust 16234 sold",
+      "nvidia rtx 4090 fe sold"
+    ],
+    "useCase": "Calculate exact market clearing prices and sell-through rates from actual sold eBay items before bidding or Flipping.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/48-ebay-sold-listings-terapeak-resale-price-comps.json",
+    "actorUrl": "https://apify.com/laborious_rumor/ebay-sold-listings-price-comp-scraper"
+  },
+  {
+    "id": 49,
+    "file": "49-shopify-full-store-catalog-variants-export-to-sheets.json",
+    "name": "Full Shopify Store Product Catalog, Variants & SKU Exporter to Google Sheets",
+    "category": "E-Commerce",
+    "actorSlug": "shopify-store-product-catalog-scraper",
+    "actorTitle": "Shopify Store Scraper - Full Product Catalog",
+    "defaultQueries": [
+      "kith.com",
+      "brooklinen.com"
+    ],
+    "useCase": "Export any Shopify store’s entire product catalog including images, variant prices, SKU codes, and stock timestamps.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/49-shopify-full-store-catalog-variants-export-to-sheets.json",
+    "actorUrl": "https://apify.com/laborious_rumor/shopify-store-product-catalog-scraper"
+  },
+  {
+    "id": 50,
+    "file": "50-pinterest-viral-pins-ecommerce-trend-forecaster.json",
+    "name": "Pinterest Viral Pin Save Velocity & Outbound DTC Store Link Discovery",
+    "category": "E-Commerce",
+    "actorSlug": "pinterest-scraper",
+    "actorTitle": "Pinterest Scraper & Monitor: Pins & Saves",
+    "defaultQueries": [
+      "minimalist home decor 2026",
+      "summer capsule wardrobe aesthetic"
+    ],
+    "useCase": "Track rapidly saved Pinterest pins and extract their outbound e-commerce product links to spot retail trends 60 days early.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/50-pinterest-viral-pins-ecommerce-trend-forecaster.json",
+    "actorUrl": "https://apify.com/laborious_rumor/pinterest-scraper"
+  },
+  {
+    "id": 51,
+    "file": "51-us-new-business-llc-incorporations-daily-lead-feed.json",
+    "name": "Daily New US Business & LLC Incorporations Filing Alert for B2B Services",
+    "category": "Startups & Real Estate",
+    "actorSlug": "us-new-business-llc-incorporations-scraper",
+    "actorTitle": "US New Business & LLC Incorporations Scraper",
+    "defaultQueries": [
+      "newly registered LLC Texas",
+      "new Delaware corporation filings"
+    ],
+    "useCase": "Reach brand-new US business owners within 48 hours of LLC formation to pitch accounting, banking, insurance, or web design.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/51-us-new-business-llc-incorporations-daily-lead-feed.json",
+    "actorUrl": "https://apify.com/laborious_rumor/us-new-business-llc-incorporations-scraper"
+  },
+  {
+    "id": 52,
+    "file": "52-zillow-fsbo-motivated-seller-real-estate-leads.json",
+    "name": "Zillow FSBO (For Sale By Owner) & Price-Cut Motivated Seller Lead Pipeline",
+    "category": "Startups & Real Estate",
+    "actorSlug": "zillow-fsbo-motivated-seller-leads-scraper",
+    "actorTitle": "Zillow FSBO & Motivated Seller Real Estate Leads",
+    "defaultQueries": [
+      "Austin TX FSBO homes",
+      "Phoenix AZ price cut 30+ days on Zillow"
+    ],
+    "useCase": "Deliver daily FSBO and distressed/price-reduced residential property leads directly to real estate agents and wholesalers.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/52-zillow-fsbo-motivated-seller-real-estate-leads.json",
+    "actorUrl": "https://apify.com/laborious_rumor/zillow-fsbo-motivated-seller-leads-scraper"
+  },
+  {
+    "id": 53,
+    "file": "53-us-home-services-contractors-roofers-hvac-lead-list.json",
+    "name": "US Home Services Contractors (Roofers, HVAC, Plumbers) Outbound Lead Builder",
+    "category": "Local & Maps",
+    "actorSlug": "us-home-services-contractor-leads-scraper",
+    "actorTitle": "US Contractor Leads: Roofers, HVAC & Plumbers",
+    "defaultQueries": [
+      "commercial roofing contractors Dallas TX",
+      "emergency HVAC companies Atlanta GA"
+    ],
+    "useCase": "Build verified phone and email lists of high-ticket US home service contractors for GoHighLevel and AI voice agent agencies.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/53-us-home-services-contractors-roofers-hvac-lead-list.json",
+    "actorUrl": "https://apify.com/laborious_rumor/us-home-services-contractor-leads-scraper"
+  },
+  {
+    "id": 54,
+    "file": "54-crunchbase-ycombinator-newly-funded-founders-outreach.json",
+    "name": "Y Combinator & Newly Funded Startup Founders Outbound Deal Flow Pipeline",
+    "category": "Startups & Real Estate",
+    "actorSlug": "ycombinator-startup-founder-directory-scraper",
+    "actorTitle": "Y Combinator (YC) Startup Directory & Founders",
+    "defaultQueries": [
+      "YC W26 AI infrastructure startups",
+      "YC B2B SaaS founders San Francisco"
+    ],
+    "useCase": "Extract Y Combinator batch companies, founder LinkedIn URLs, and launch descriptions for VC deal sourcing or dev-agency sales.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/54-crunchbase-ycombinator-newly-funded-founders-outreach.json",
+    "actorUrl": "https://apify.com/laborious_rumor/ycombinator-startup-founder-directory-scraper"
+  },
+  {
+    "id": 55,
+    "file": "55-google-maps-negative-reviews-reputation-agency-leads.json",
+    "name": "Google Maps 1-3 Star Negative Review Monitor to Pitch Reputation Management",
+    "category": "Local & Maps",
+    "actorSlug": "google-maps-reviews-scraper",
+    "actorTitle": "Google Maps Reviews Scraper - Ratings & Text",
+    "defaultQueries": [
+      "dental clinics Chicago recent reviews",
+      "auto repair shops Miami reviews"
+    ],
+    "useCase": "Find local businesses receiving unanswered 1-star or 2-star Google Maps reviews and automatically pitch reputation management.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/55-google-maps-negative-reviews-reputation-agency-leads.json",
+    "actorUrl": "https://apify.com/laborious_rumor/google-maps-reviews-scraper"
+  },
+  {
+    "id": 56,
+    "file": "56-linkedin-indeed-hiring-signal-b2b-sales-trigger.json",
+    "name": "Company Hiring Intent Signal Scraper (Pitch Agencies to Companies Hiring Now)",
+    "category": "AI, RAG & Tech",
+    "actorSlug": "linkedin-jobs-scraper",
+    "actorTitle": "LinkedIn Jobs Scraper - Hiring Companies",
+    "defaultQueries": [
+      "Hiring Senior DevOps Engineer Remote US",
+      "Hiring Head of Paid Acquisition New York"
+    ],
+    "useCase": "Detect companies actively paying to promote job openings and pitch your recruiting agency or fractional consultancy immediately.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/56-linkedin-indeed-hiring-signal-b2b-sales-trigger.json",
+    "actorUrl": "https://apify.com/laborious_rumor/linkedin-jobs-scraper"
+  },
+  {
+    "id": 57,
+    "file": "57-capterra-g2-competitor-negative-reviews-churn-leads.json",
+    "name": "Capterra & G2 Competitor Unhappy Customer Review Scraper for Churn Poaching",
+    "category": "LinkedIn & B2B",
+    "actorSlug": "capterra-software-reviews-pricing-scraper",
+    "actorTitle": "Capterra & GetApp Software Reviews Scraper",
+    "defaultQueries": [
+      "Salesforce CRM 2-star reviews expensive",
+      "HubSpot pricing complaint reviews"
+    ],
+    "useCase": "Mine verified 1-to-3 star software reviews on Capterra/G2 to identify frustrated users ready to switch to your SaaS.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/57-capterra-g2-competitor-negative-reviews-churn-leads.json",
+    "actorUrl": "https://apify.com/laborious_rumor/capterra-software-reviews-pricing-scraper"
+  },
+  {
+    "id": 58,
+    "file": "58-github-repo-codebase-to-llm-context-markdown-packer.json",
+    "name": "GitHub Repository Codebase to Single LLM Context Prompt Packer for AI Coding",
+    "category": "AI, RAG & Tech",
+    "actorSlug": "github-repo-codebase-llm-packer",
+    "actorTitle": "GitHub Repo Codebase LLM Context Packer",
+    "defaultQueries": [
+      "https://github.com/n8n-io/n8n",
+      "https://github.com/modelcontextprotocol/servers"
+    ],
+    "useCase": "Pack any public GitHub repository architecture and README documentation into clean token-counted context for Claude/GPT-4o.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/58-github-repo-codebase-to-llm-context-markdown-packer.json",
+    "actorUrl": "https://apify.com/laborious_rumor/github-repo-codebase-llm-packer"
+  },
+  {
+    "id": 59,
+    "file": "59-sitemap-xml-full-docs-to-pinecone-qdrant-rag-sync.json",
+    "name": "Nightly XML Sitemap Crawler to Keep AI Vector Knowledgebase 100% Fresh",
+    "category": "AI, RAG & Tech",
+    "actorSlug": "sitemap-xml-llm-knowledgebase-crawler",
+    "actorTitle": "XML Sitemap Crawler & Knowledgebase Builder",
+    "defaultQueries": [
+      "https://docs.n8n.io/sitemap.xml",
+      "https://docs.apify.com/sitemap.xml"
+    ],
+    "useCase": "Automatically crawl any site’s sitemap.xml every night and sync updated pages into your customer support RAG vector database.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/59-sitemap-xml-full-docs-to-pinecone-qdrant-rag-sync.json",
+    "actorUrl": "https://apify.com/laborious_rumor/sitemap-xml-llm-knowledgebase-crawler"
+  },
+  {
+    "id": 60,
+    "file": "60-pdf-sec-financial-tables-to-clean-markdown-extractor.json",
+    "name": "PDF Financial Reports & Earnings Tables to Clean Markdown / JSON Extractor",
+    "category": "AI, RAG & Tech",
+    "actorSlug": "pdf-table-financial-report-markdown-extractor",
+    "actorTitle": "PDF Financial Report & Table Extractor",
+    "defaultQueries": [
+      "Q4 10-K financial tables revenue breakdown",
+      "SaaS investor deck ARR metrics PDF"
+    ],
+    "useCase": "Extract complex financial tables from PDF reports into structured Markdown and JSON for automated AI financial analysis.",
+    "downloadUrl": "https://scrapers.tech/n8n-templates/60-pdf-sec-financial-tables-to-clean-markdown-extractor.json",
+    "actorUrl": "https://apify.com/laborious_rumor/pdf-table-financial-report-markdown-extractor"
+  }
+]

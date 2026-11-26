@@ -3,9 +3,9 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Competitor Google Search & YouTube Ad Spy Automation (Google Ads Transparency)\n\n**What this workflow does:**\nTrack active Google Search, YouTube, and Display ad creatives run by any competitor domain via the Google Ads Transparency Center.\n\n**Powered by Apify Actor:** [`laborious_rumor/google-ads-transparency-center-scraper`](https://apify.com/laborious_rumor/google-ads-transparency-center-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Actor (google-ads-transparency-center-scraper)** HTTP Request node and paste your `APIFY_API_TOKEN` in the query parameter.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Competitor Google Search & YouTube Ad Spy Automation (Google Ads Transparency)\n\n**What this workflow does:**\nTrack active Google Search, YouTube, and Display ad creatives run by any competitor domain via the Google Ads Transparency Center.\n\n**Powered by Apify Actor:** [`laborious_rumor/google-ads-transparency-center-scraper`](https://apify.com/laborious_rumor/google-ads-transparency-center-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Google Ads Transparency Center Scraper API** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
-        "width": 620
+        "width": 640
       },
       "id": "sticky-note-1",
       "name": "Setup Instructions",
@@ -160,6 +160,7 @@
   },
   "meta": {
     "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/google-ads-transparency-center-scraper"
+    "apifyActorUrl": "https://apify.com/laborious_rumor/google-ads-transparency-center-scraper",
+    "category": "Ad Spy & SEO"
   }
 }

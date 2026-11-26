@@ -1,11 +1,11 @@
 {
-  "name": "Cookie-Free LinkedIn Profile & Work Email Enrichment to Google Sheets (via Apify)",
+  "name": "Cookie-Free LinkedIn Profile & Work Email Enrichment to Google Sheets",
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Cookie-Free LinkedIn Profile & Work Email Enrichment to Google Sheets (via Apify)\n\n**What this workflow does:**\nEnrich LinkedIn profile URLs or executive search queries with verified work emails and titles without LinkedIn cookies, then append directly to Google Sheets / Clay.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-profile-scraper`](https://apify.com/laborious_rumor/linkedin-profile-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Actor (linkedin-profile-scraper)** HTTP Request node and paste your `APIFY_API_TOKEN` in the query parameter.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Cookie-Free LinkedIn Profile & Work Email Enrichment to Google Sheets\n\n**What this workflow does:**\nEnrich LinkedIn profile URLs or executive search queries with verified work emails and titles without LinkedIn cookies, then append directly to Google Sheets / Clay.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-profile-scraper`](https://apify.com/laborious_rumor/linkedin-profile-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: LinkedIn Profile & Email Scraper: No Cookies** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
-        "width": 620
+        "width": 640
       },
       "id": "sticky-note-1",
       "name": "Setup Instructions",
@@ -160,6 +160,7 @@
   },
   "meta": {
     "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/linkedin-profile-scraper"
+    "apifyActorUrl": "https://apify.com/laborious_rumor/linkedin-profile-scraper",
+    "category": "LinkedIn & B2B"
   }
 }

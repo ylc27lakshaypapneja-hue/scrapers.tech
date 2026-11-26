@@ -1,0 +1,166 @@
+{
+  "name": "Reddit Full Thread & Nested Comments Exporter for Deep LLM Market Research",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## ⚡ Reddit Full Thread & Nested Comments Exporter for Deep LLM Market Research\n\n**What this workflow does:**\nExport complete Reddit threads and top-voted comment trees into clean JSON for AI persona research and product positioning.\n\n**Powered by Apify Actor:** [`laborious_rumor/reddit-post-comments-bulk-thread-scraper`](https://apify.com/laborious_rumor/reddit-post-comments-bulk-thread-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Reddit Post Comments & Bulk Thread Export** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "height": 300,
+        "width": 640
+      },
+      "id": "sticky-note-1",
+      "name": "Setup Instructions",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger-1",
+      "name": "Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "queries-field",
+              "name": "queries",
+              "value": "[\"https://www.reddit.com/r/n8n/\",\"r/saas pricing feedback discussions\"]",
+              "type": "array"
+            },
+            {
+              "id": "max-items-field",
+              "name": "maxItems",
+              "value": 25,
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "id": "set-search-queries-1",
+      "name": "Configure Target Queries",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        440,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~reddit-post-comments-bulk-thread-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "YOUR_APIFY_API_TOKEN"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ queries: $json.queries, maxItems: $json.maxItems }) }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "apify-actor-node-1",
+      "name": "Run Apify: Reddit Post Comments & Bulk Thread Export",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        700,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false
+          },
+          "conditions": [
+            {
+              "id": "verified-check",
+              "leftValue": "={{ $json.verifiedStatus }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "filter-verified-1",
+      "name": "Filter Verified Records",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        960,
+        440
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Configure Target Queries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configure Target Queries": {
+      "main": [
+        [
+          {
+            "node": "Run Apify: Reddit Post Comments & Bulk Thread Export",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run Apify: Reddit Post Comments & Bulk Thread Export": {
+      "main": [
+        [
+          {
+            "node": "Filter Verified Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "apifyActorUrl": "https://apify.com/laborious_rumor/reddit-post-comments-bulk-thread-scraper",
+    "category": "Social & Creator"
+  }
+}

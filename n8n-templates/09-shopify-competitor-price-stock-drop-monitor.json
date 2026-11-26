@@ -3,9 +3,9 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Shopify Competitor Price Drop & Inventory Stock Monitor\n\n**What this workflow does:**\nTrack product prices, variant SKUs, and out-of-stock signals across any competitor Shopify store on a daily schedule.\n\n**Powered by Apify Actor:** [`laborious_rumor/universal-ecommerce-product-price-tracker`](https://apify.com/laborious_rumor/universal-ecommerce-product-price-tracker) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Actor (universal-ecommerce-product-price-tracker)** HTTP Request node and paste your `APIFY_API_TOKEN` in the query parameter.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Shopify Competitor Price Drop & Inventory Stock Monitor\n\n**What this workflow does:**\nTrack product prices, variant SKUs, and out-of-stock signals across any competitor Shopify store on a daily schedule.\n\n**Powered by Apify Actor:** [`laborious_rumor/universal-ecommerce-product-price-tracker`](https://apify.com/laborious_rumor/universal-ecommerce-product-price-tracker) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Shopify Product Scraper: Prices, Stock & SKU** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
-        "width": 620
+        "width": 640
       },
       "id": "sticky-note-1",
       "name": "Setup Instructions",
@@ -160,6 +160,7 @@
   },
   "meta": {
     "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/universal-ecommerce-product-price-tracker"
+    "apifyActorUrl": "https://apify.com/laborious_rumor/universal-ecommerce-product-price-tracker",
+    "category": "E-Commerce"
   }
 }
