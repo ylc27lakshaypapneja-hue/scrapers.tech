@@ -1,0 +1,3692 @@
+{
+  "name": "Master 100-in-1 B2B Lead Gen, Web Scraping & AI/RAG Automation Suite (via Apify)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## 🚀 Master 100-in-1 Web Scraping, B2B Lead Gen & AI/RAG Suite (Scrapers.tech)\n\nThis master n8n workflow connects **100 production Pay-Per-Event Apify Actors** (`@laborious_rumor`) across 7 categories: LinkedIn & B2B, Social & Creator, E-Commerce, Ad Spy & SEO, Startups & Real Estate, Local & Maps, and AI/RAG.\n\n### Quick Setup:\n1. Grab your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations) (*includes /mo free credit — 1,000 free records per Actor*).\n2. Set your `apifyToken` once in the **Master Config & API Token** node below.\n3. Enable or trigger any of the 100 scraper pipelines!",
+        "height": 260,
+        "width": 1100
+      },
+      "id": "master-sticky-header",
+      "name": "Master 100-in-1 Suite Overview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        100,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "id": "master-schedule-trigger",
+      "name": "Master Daily Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        100,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "apify-token-field",
+              "name": "apifyToken",
+              "value": "YOUR_APIFY_API_TOKEN",
+              "type": "string"
+            },
+            {
+              "id": "max-items-field",
+              "name": "maxItems",
+              "value": 25,
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "id": "master-config-node",
+      "name": "Master Config & API Token",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        380,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-profile-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"https://www.linkedin.com/in/satyanadella\",\"VP of Sales B2B SaaS San Francisco\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-1",
+      "name": "#01 LinkedIn Profile & Email Scraper: No Cookies",
+      "notesInFlow": true,
+      "notes": "Enrich LinkedIn profile URLs or executive search queries with verified work emails and titles without LinkedIn cookies, then append directly to Google Sheets / Clay.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-company-employees-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"stripe.com\",\"anthropic.com\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-2",
+      "name": "#02 LinkedIn Company Employees & People Scraper",
+      "notesInFlow": true,
+      "notes": "Automatically pull VP, Director, and C-Level decision-makers from target companies on LinkedIn (100% cookie-free) and push leads to HubSpot, Clay, or Slack.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~local-business-directory-maps-lead-enricher/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"roofing contractors austin texas\",\"medspa clinics miami florida\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-3",
+      "name": "#03 Google Maps Email & Business Leads Extractor",
+      "notesInFlow": true,
+      "notes": "Scrape local SMB leads from Google Maps with verified email addresses, phone numbers, star ratings, and booking tech stack.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~reddit-keyword-search-buyer-intent-monitor/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"best crm alternative for startup\",\"looking for b2b lead generation tool\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-4",
+      "name": "#04 Reddit Keyword Search & Buyer Intent Scraper",
+      "notesInFlow": true,
+      "notes": "Monitor Reddit 24/7 for high-buying-intent threads asking for software recommendations or competitor alternatives and send instant Slack/Discord alerts.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~ai-web-to-markdown-rag-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"https://docs.apify.com/platform/integrations/mcp\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-5",
+      "name": "#05 Website to Markdown & RAG Context Crawler",
+      "notesInFlow": true,
+      "notes": "Convert documentation or competitor websites into clean, token-optimized Markdown chunks ready for OpenAI, Claude, Pinecone, or Qdrant vector databases.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~google-ads-transparency-center-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"hubspot.com\",\"monday.com\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-6",
+      "name": "#06 Google Ads Transparency Center Scraper API",
+      "notesInFlow": true,
+      "notes": "Track active Google Search, YouTube, and Display ad creatives run by any competitor domain via the Google Ads Transparency Center.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~instagram-reels-transcript-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"ai automation agency hooks\",\"b2b saas founder reels\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-7",
+      "name": "#07 Instagram Reels Transcript & Script Scraper",
+      "notesInFlow": true,
+      "notes": "Extract spoken transcripts and opening viral hooks from top Instagram Reels to repurpose into high-converting UGC scripts with ChatGPT/Claude.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~sec-edgar-form-d-fundraising-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"artificial intelligence seed round\",\"b2b software series a\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-8",
+      "name": "#08 SEC EDGAR Form D Startup Funding Scraper",
+      "notesInFlow": true,
+      "notes": "Capture newly funded US startups filing SEC Form D venture rounds before they appear in TechCrunch or Crunchbase.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~universal-ecommerce-product-price-tracker/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"gymshark.com\",\"allbirds.com\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-9",
+      "name": "#09 Shopify Product Scraper: Prices, Stock & SKU",
+      "notesInFlow": true,
+      "notes": "Track product prices, variant SKUs, and out-of-stock signals across any competitor Shopify store on a daily schedule.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        2120
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~twitter-x-tweet-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"building in public ai agent\",\"mcp server claude cursor\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-10",
+      "name": "#10 X (Twitter) Posts, Metrics & Thread Scraper",
+      "notesInFlow": true,
+      "notes": "Extract high-engagement X/Twitter posts, threads, and creator metrics for social listening and warm outbound prospecting.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-post-search-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"outbound sales automation clay n8n\",\"hiring growth marketing agency\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-11",
+      "name": "#11 LinkedIn Post Search Scraper (No Cookies)",
+      "notesInFlow": true,
+      "notes": "Find high-intent LinkedIn posts by keyword without session cookies to trigger warm social selling outreach and AI comment generation.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        2560
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-profile-search-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Head of Revenue Operations New York\",\"Founder AI SaaS Austin Texas\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-12",
+      "name": "#12 LinkedIn Profile Search Scraper (No Cookies)",
+      "notesInFlow": true,
+      "notes": "Build targeted B2B prospect lists directly from LinkedIn search filters without risking your personal LinkedIn account.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        2780
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-profile-posts-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"https://www.linkedin.com/in/garrytan\",\"https://www.linkedin.com/in/dharmesh\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-13",
+      "name": "#13 LinkedIn Profile Posts Scraper (No Cookies)",
+      "notesInFlow": true,
+      "notes": "Fetch a prospect’s latest LinkedIn posts before sending an outbound sequence so GPT-4o/Claude can write hyper-personalized first lines.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        3000
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-company-details-search-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"vercel.com\",\"scale.com\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-14",
+      "name": "#14 LinkedIn Company Details & Search (No Cookies)",
+      "notesInFlow": true,
+      "notes": "Automatically enrich CRM company domains with LinkedIn headcount, industry classification, headquarters, and follower velocity.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        3220
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-company-posts-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"https://www.linkedin.com/company/openai\",\"https://www.linkedin.com/company/anthropicresearch\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-15",
+      "name": "#15 LinkedIn Company Posts Scraper (No Cookies)",
+      "notesInFlow": true,
+      "notes": "Track every official announcement, hiring push, and product release published on competitor LinkedIn company pages.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        3440
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-post-comments-reactions-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"linkedin post comments b2b saas lead magnet\",\"commenters on viral cold email post\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-16",
+      "name": "#16 LinkedIn Post Comments & Reactions (No Cookies)",
+      "notesInFlow": true,
+      "notes": "Extract every user who commented on or reacted to a competitor’s viral LinkedIn post and route them into your outbound sequence.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        3660
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-profile-search-by-name-no-cookies/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Patrick Collison Stripe\",\"Guillermo Rauch Vercel\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-17",
+      "name": "#17 LinkedIn Profile Search By Name (No Cookies)",
+      "notesInFlow": true,
+      "notes": "Resolve raw contact names and company names from webinar signups or event lists into verified LinkedIn profile URLs.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        3880
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-company-search-no-cookies-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"FinTech software companies United States\",\"Healthcare AI startups Boston\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-18",
+      "name": "#18 LinkedIn Company Search Scraper (No Cookies)",
+      "notesInFlow": true,
+      "notes": "Discover target B2B accounts matching your Ideal Customer Profile on LinkedIn and push company domains to Clay or Apollo.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        4100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-sales-navigator-lead-exporter/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"VP Engineering Series B SaaS US\",\"Chief Marketing Officer E-Commerce New York\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-19",
+      "name": "#19 LinkedIn Sales Navigator Lead Exporter (No Cookies)",
+      "notesInFlow": true,
+      "notes": "Export high-converting Sales Navigator lead criteria with verified corporate email patterns without browser extensions or cookie bans.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        4320
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~reverse-email-to-linkedin-profile-lookup/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"founders@stripe.com\",\"press@anthropic.com\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-20",
+      "name": "#20 Reverse Email Lookup to LinkedIn Profile API",
+      "notesInFlow": true,
+      "notes": "Turn inbound Stripe/Typeform signup emails into full LinkedIn profiles, job titles, and company firmographics automatically.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        4540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~apollo-io-lead-alternative-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"B2B SaaS Founders San Francisco\",\"Agency Owners Chicago Illinois\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-21",
+      "name": "#21 B2B Decision-Maker & Verified Email Finder",
+      "notesInFlow": true,
+      "notes": "Replace expensive monthly Apollo subscriptions with on-demand Pay-Per-Event B2B decision-maker contact extraction.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~bulk-email-verifier-cleaner/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"alex@stripe.com\",\"contact@vercel.com\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-22",
+      "name": "#22 Bulk Email Verifier & Validator - MX & SMTP",
+      "notesInFlow": true,
+      "notes": "Verify email deliverability, DNS MX records, and catch-all status inside n8n before pushing leads to Instantly or Smartlead.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~facebook-ads-library-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Athletic Greens AG1\",\"Ridge Wallet\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-23",
+      "name": "#23 Facebook Ad Library Scraper: Competitor Ads",
+      "notesInFlow": true,
+      "notes": "Monitor competitor Facebook & Instagram ads running for 30+ days to extract winning hooks, CTAs, and landing page funnels.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~meta-facebook-instagram-ad-reach-spend-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Notion\",\"Linear App\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-24",
+      "name": "#24 Meta (FB & IG) Ad Library & Spend Scraper",
+      "notesInFlow": true,
+      "notes": "Track estimated ad spend, regional impression distribution, and active creative scaling across Meta platforms.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-ad-library-b2b-creatives-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Gong.io\",\"Deel\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-25",
+      "name": "#25 LinkedIn Ad Library B2B Creatives Scraper",
+      "notesInFlow": true,
+      "notes": "Extract every active B2B LinkedIn ad creative, headline, and offer run by enterprise SaaS competitors.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~tiktok-creative-center-ad-library-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"skincare serum TikTok shop\",\"AI productivity app UGC\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-26",
+      "name": "#26 TikTok Creative Center Top Ads Scraper",
+      "notesInFlow": true,
+      "notes": "Pull top-converting TikTok ads sorted by CTR and 3-second retention rate into an Airtable creative swipe file.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~google-keyword-search-volume-cpc-bulk-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"ai voice agent platform\",\"b2b cold email software\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-27",
+      "name": "#27 Keyword Search Volume, CPC & SEO Difficulty",
+      "notesInFlow": true,
+      "notes": "Enrich seed keyword lists with monthly US search volume, Google Ads CPC, and ranking competition scores.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~similarweb-website-traffic-rank-keywords-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"clay.com\",\"apify.com\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-28",
+      "name": "#28 SimilarWeb Fast Traffic, Rank & Keywords Scraper",
+      "notesInFlow": true,
+      "notes": "Qualify B2B domains by monthly web traffic volume, bounce rate, and top organic/paid traffic channels.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~seo-serp-competitor-content-gap-analyzer/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"best mcp servers for claude\",\"how to automate linkedin outreach n8n\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-29",
+      "name": "#29 SEO Competitor SERP & Content Gap Analyzer",
+      "notesInFlow": true,
+      "notes": "Analyze top 10 Google SERP headings, word counts, and missing semantic entities to generate rank-ready content briefs.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        2120
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~google-search-results-fast-serp-api/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"latest series A funding announcements US 2026\",\"top Shopify plus agencies Los Angeles\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-30",
+      "name": "#30 Google Search Results Fast SERP Scraper API",
+      "notesInFlow": true,
+      "notes": "Give your n8n AI Agents live Google Search grounding with structured organic results, snippets, and related questions.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~semrush-ahrefs-domain-backlinks-seo-metrics/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"scrapers.tech\",\"n8n.io\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-31",
+      "name": "#31 Domain Authority, Backlinks & Traffic SEO API",
+      "notesInFlow": true,
+      "notes": "Audit prospect websites for domain authority, backlink velocity, and SEO gaps to pitch high-ticket SEO agency retainers.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        2560
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~builtwith-wappalyzer-deep-tech-detector/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"gymshark.com\",\"linear.app\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-32",
+      "name": "#32 Deep Tech Stack & CMS Fingerprinter",
+      "notesInFlow": true,
+      "notes": "Detect 100+ web technologies, pixels, and payment processors on any domain to build technographic outbound lists.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        2780
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~tiktok-transcript-extractor-api/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"ai side hustle workflow\",\"saas growth hacks 2026\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-33",
+      "name": "#33 TikTok Transcript & Viral Script Extractor API",
+      "notesInFlow": true,
+      "notes": "Transcribe viral TikTok videos automatically and use an LLM in n8n to rewrite them into LinkedIn threads and newsletter issues.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        3000
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~tiktok-profile-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"tech reviewer US creator\",\"beauty UGC creator Los Angeles\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-34",
+      "name": "#34 TikTok Profile & Creator Scraper - Emails",
+      "notesInFlow": true,
+      "notes": "Find TikTok creators in your niche with public business emails in bio and high engagement-to-follower ratios.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        3220
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~tiktok-comments-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"where to buy ergonomic office chair\",\"best protein powder comments\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-35",
+      "name": "#35 TikTok Comments Scraper - Audience Insights",
+      "notesInFlow": true,
+      "notes": "Scrape thousands of TikTok comments on viral product videos to uncover raw customer objections and \"where can I buy\" leads.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        3440
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~instagram-followers-following-no-login-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"hubspot\",\"shopify\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-36",
+      "name": "#36 Instagram Followers & Following (No Login)",
+      "notesInFlow": true,
+      "notes": "Extract public follower and following profiles from niche Instagram accounts without risking an Instagram session cookie.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        3660
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~instagram-reels-search-viral-finder/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"n8n ai agent tutorial\",\"cold email lead gen tips\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-37",
+      "name": "#37 Instagram Reels Search & Viral Finder",
+      "notesInFlow": true,
+      "notes": "Discover outlier Instagram Reels outperforming their creator’s average views by 5x+ in any keyword niche.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        3880
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~instagram-posts-reels-comments-engagers-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"commenters asking for link in bio\",\"instagram giveaway participants\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-38",
+      "name": "#38 Fast Instagram Comments Scraper (No Login)",
+      "notesInFlow": true,
+      "notes": "Scrape users commenting keywords or questions on competitor Instagram Reels for high-converting warm outreach.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        4100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~youtube-comments-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"best CRM review 2026 comments\",\"n8n vs make automation comments\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-39",
+      "name": "#39 YouTube Comments Scraper - Viewer Sentiment",
+      "notesInFlow": true,
+      "notes": "Analyze viewer comments on top YouTube reviews in your industry to extract feature requests and competitor pain points.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        4320
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~reddit-post-comments-bulk-thread-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"https://www.reddit.com/r/n8n/\",\"r/saas pricing feedback discussions\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-40",
+      "name": "#40 Reddit Post Comments & Bulk Thread Export",
+      "notesInFlow": true,
+      "notes": "Export complete Reddit threads and top-voted comment trees into clean JSON for AI persona research and product positioning.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1270,
+        4540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~twitter-x-followers-following-profile-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"levelsio followers\",\"garrytan founders\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-41",
+      "name": "#41 Fast X (Twitter) User & Followers Scraper",
+      "notesInFlow": true,
+      "notes": "Extract founder and developer profiles following top tech accounts on X, complete with bio links and DM openness.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~facebook-public-group-posts-comments-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"SaaS founders growth group posts\",\"real estate wholesalers US group\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-42",
+      "name": "#42 Facebook Public Group Posts (No Cookies)",
+      "notesInFlow": true,
+      "notes": "Monitor public Facebook groups for members asking for service providers, agencies, or software tools without account login.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~amazon-us-bsr-fba-arbitrage-product-tracker/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"home office desk accessories\",\"pet grooming supplies BSR\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-43",
+      "name": "#43 Amazon US BSR & Movers and Shakers Tracker",
+      "notesInFlow": true,
+      "notes": "Track breakout Amazon US products with surging BSR velocity, buy-box price shifts, and low review competition.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~tiktok-shop-us-viral-product-gmv-tracker/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"beauty & personal care trending\",\"smart home gadgets TikTok Shop\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-44",
+      "name": "#44 TikTok Shop US Top Products & GMV Scraper",
+      "notesInFlow": true,
+      "notes": "Spot viral TikTok Shop US products doing $10k+/day in GMV along with their affiliate commission rates and creator counts.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~aliexpress-product-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"portable espresso maker\",\"magnetic wireless power bank\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-45",
+      "name": "#45 AliExpress Product Scraper: Prices & Orders",
+      "notesInFlow": true,
+      "notes": "Compare AliExpress supplier factory pricing and 7-day order growth against US DTC retail prices for high-margin sourcing.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~etsy-shop-revenue-sales-keyword-analyzer/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"digital planner notion template\",\"custom neon sign wedding\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-46",
+      "name": "#46 Etsy Shop Revenue, Sales & Keyword Analyzer",
+      "notesInFlow": true,
+      "notes": "Reverse-engineer top Etsy shops to see estimated monthly revenue, high-converting listing tags, and pricing tiers.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~walmart-product-price-review-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"ninja creami ice cream maker\",\"apple airpods pro 2\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-47",
+      "name": "#47 Walmart Product & Price Scraper - Inventory",
+      "notesInFlow": true,
+      "notes": "Monitor Walmart.com product listings for third-party seller price undercutting, rollback discounts, and inventory depletion.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~ebay-sold-listings-price-comp-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"rolex datejust 16234 sold\",\"nvidia rtx 4090 fe sold\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-48",
+      "name": "#48 eBay Sold Listings & Terapeak Comps Scraper",
+      "notesInFlow": true,
+      "notes": "Calculate exact market clearing prices and sell-through rates from actual sold eBay items before bidding or Flipping.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~shopify-store-product-catalog-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"kith.com\",\"brooklinen.com\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-49",
+      "name": "#49 Shopify Store Scraper - Full Product Catalog",
+      "notesInFlow": true,
+      "notes": "Export any Shopify store’s entire product catalog including images, variant prices, SKU codes, and stock timestamps.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        2120
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~pinterest-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"minimalist home decor 2026\",\"summer capsule wardrobe aesthetic\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-50",
+      "name": "#50 Pinterest Scraper & Monitor: Pins & Saves",
+      "notesInFlow": true,
+      "notes": "Track rapidly saved Pinterest pins and extract their outbound e-commerce product links to spot retail trends 60 days early.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~us-new-business-llc-incorporations-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"newly registered LLC Texas\",\"new Delaware corporation filings\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-51",
+      "name": "#51 US New Business & LLC Incorporations Scraper",
+      "notesInFlow": true,
+      "notes": "Reach brand-new US business owners within 48 hours of LLC formation to pitch accounting, banking, insurance, or web design.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        2560
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~zillow-fsbo-motivated-seller-leads-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Austin TX FSBO homes\",\"Phoenix AZ price cut 30+ days on Zillow\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-52",
+      "name": "#52 Zillow FSBO & Motivated Seller Real Estate Leads",
+      "notesInFlow": true,
+      "notes": "Deliver daily FSBO and distressed/price-reduced residential property leads directly to real estate agents and wholesalers.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        2780
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~us-home-services-contractor-leads-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"commercial roofing contractors Dallas TX\",\"emergency HVAC companies Atlanta GA\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-53",
+      "name": "#53 US Contractor Leads: Roofers, HVAC & Plumbers",
+      "notesInFlow": true,
+      "notes": "Build verified phone and email lists of high-ticket US home service contractors for GoHighLevel and AI voice agent agencies.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        3000
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~ycombinator-startup-founder-directory-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"YC W26 AI infrastructure startups\",\"YC B2B SaaS founders San Francisco\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-54",
+      "name": "#54 Y Combinator (YC) Startup Directory & Founders",
+      "notesInFlow": true,
+      "notes": "Extract Y Combinator batch companies, founder LinkedIn URLs, and launch descriptions for VC deal sourcing or dev-agency sales.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        3220
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~google-maps-reviews-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"dental clinics Chicago recent reviews\",\"auto repair shops Miami reviews\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-55",
+      "name": "#55 Google Maps Reviews Scraper - Ratings & Text",
+      "notesInFlow": true,
+      "notes": "Find local businesses receiving unanswered 1-star or 2-star Google Maps reviews and automatically pitch reputation management.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        3440
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~linkedin-jobs-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Hiring Senior DevOps Engineer Remote US\",\"Hiring Head of Paid Acquisition New York\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-56",
+      "name": "#56 LinkedIn Jobs Scraper - Hiring Companies",
+      "notesInFlow": true,
+      "notes": "Detect companies actively paying to promote job openings and pitch your recruiting agency or fractional consultancy immediately.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        3660
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~capterra-software-reviews-pricing-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Salesforce CRM 2-star reviews expensive\",\"HubSpot pricing complaint reviews\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-57",
+      "name": "#57 Capterra & GetApp Software Reviews Scraper",
+      "notesInFlow": true,
+      "notes": "Mine verified 1-to-3 star software reviews on Capterra/G2 to identify frustrated users ready to switch to your SaaS.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        3880
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~github-repo-codebase-llm-packer/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"https://github.com/n8n-io/n8n\",\"https://github.com/modelcontextprotocol/servers\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-58",
+      "name": "#58 GitHub Repo Codebase LLM Context Packer",
+      "notesInFlow": true,
+      "notes": "Pack any public GitHub repository architecture and README documentation into clean token-counted context for Claude/GPT-4o.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        4100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~sitemap-xml-llm-knowledgebase-crawler/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"https://docs.n8n.io/sitemap.xml\",\"https://docs.apify.com/sitemap.xml\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-59",
+      "name": "#59 XML Sitemap Crawler & Knowledgebase Builder",
+      "notesInFlow": true,
+      "notes": "Automatically crawl any site’s sitemap.xml every night and sync updated pages into your customer support RAG vector database.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        4320
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~pdf-table-financial-report-markdown-extractor/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Q4 10-K financial tables revenue breakdown\",\"SaaS investor deck ARR metrics PDF\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-60",
+      "name": "#60 PDF Financial Report & Table Extractor",
+      "notesInFlow": true,
+      "notes": "Extract complex financial tables from PDF reports into structured Markdown and JSON for automated AI financial analysis.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1790,
+        4540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~lead-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"B2B SaaS marketing agencies New York\",\"managed IT services providers Austin TX\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-61",
+      "name": "#61 B2B Business & Contact Lead Scraper",
+      "notesInFlow": true,
+      "notes": "Extract verified B2B decision-maker emails, phone numbers, and company websites and route them directly into Clay or HubSpot.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~b2b-lead-contact-tech-enricher/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"stripe.com\",\"linear.app\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-62",
+      "name": "#62 B2B Lead Contact & Tech Stack Enricher",
+      "notesInFlow": true,
+      "notes": "Enrich raw company domains with DNS MX deliverability signals, social links, and detected web technologies before outreach.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~clutch-g2-b2b-agency-reviews-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"custom software development agencies US\",\"B2B performance marketing agencies\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-63",
+      "name": "#63 Clutch & G2 B2B Agency Reviews Scraper",
+      "notesInFlow": true,
+      "notes": "Scrape Clutch and G2 agency profiles, verified client review budgets, and decision-maker contacts for B2B partnership outreach.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~trustpilot-company-reviews-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"zendesk.com\",\"mailchimp.com\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-64",
+      "name": "#64 Trustpilot Reviews Scraper - Ratings & Text",
+      "notesInFlow": true,
+      "notes": "Monitor competitor Trustpilot pages for angry customer reviews and trigger immediate switch-offer campaigns.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~glassdoor-company-reviews-salary-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Snowflake software engineer salaries\",\"Databricks product manager reviews\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-65",
+      "name": "#65 Glassdoor Company Reviews & Salary Scraper",
+      "notesInFlow": true,
+      "notes": "Extract verified compensation bands, employee morale trends, and interview questions from Glassdoor for recruiting intelligence.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~substack-beehiiv-newsletter-directory-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"AI & B2B SaaS newsletters\",\"fintech weekly newsletters US\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-66",
+      "name": "#66 Substack & Beehiiv Newsletter Lead Scraper",
+      "notesInFlow": true,
+      "notes": "Build a database of high-subscriber Substack and Beehiiv newsletter writers with contact emails for B2B sponsorship deals.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~podcast-rss-sponsor-guest-extractor/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"B2B SaaS growth podcasts\",\"health & longevity top podcasts\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-67",
+      "name": "#67 Podcast RSS Sponsor, Promo & Guest Extractor",
+      "notesInFlow": true,
+      "notes": "Discover brands actively paying to sponsor podcasts via promo code detection in episode show notes, plus host booking emails.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~twitch-kick-streamer-stats-sponsorship-monitor/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"gaming peripherals sponsored streams\",\"energy drink creator sponsorships\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-68",
+      "name": "#68 Twitch & Kick Streamer & Sponsor Tracker",
+      "notesInFlow": true,
+      "notes": "Track live streamer CCV metrics, chat velocity, and active brand sponsor panels across Twitch and Kick.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~meta-threads-posts-profiles-search-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"AI agents workflow automation\",\"DTC ecommerce founder threads\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-69",
+      "name": "#69 Threads Scraper — Posts, Profiles & Search",
+      "notesInFlow": true,
+      "notes": "Monitor emerging B2B and creator conversations on Meta Threads and extract high-engagement posts and author profiles.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        2120
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~discord-public-server-channels-messages-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"AI agent developer community discussions\",\"NoCode automation help threads\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-70",
+      "name": "#70 Discord Public Channels & Community Scraper",
+      "notesInFlow": true,
+      "notes": "Index public Discord community announcements and developer pain points into a searchable knowledge base or Slack digest.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~tiktok-search-videos-by-keyword-region-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"best AI tools for business 2026\",\"Amazon must haves home office\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-71",
+      "name": "#71 TikTok Search Scraper: Videos by Keyword",
+      "notesInFlow": true,
+      "notes": "Search TikTok by exact keyword and US region to capture breakout videos, play-to-like ratios, and creator handles.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        2560
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~facebook-video-reels-ai-transcript-extractor/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"viral Facebook business reels\",\"direct response video ad scripts\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-72",
+      "name": "#72 Facebook Video & Reel AI Transcript Scraper",
+      "notesInFlow": true,
+      "notes": "Extract clean spoken word transcripts from high-performing Facebook Reels and video ads to feed into AI scriptwriters.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        2780
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~youtube-channel-videos-growth-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"AI automation YouTube channels\",\"B2B SaaS review YouTubers\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-73",
+      "name": "#73 Fast YouTube Channel Scraper: Subs & Stats",
+      "notesInFlow": true,
+      "notes": "Audit YouTube channels for real view-to-subscriber consistency across their last 30 videos before negotiating sponsorships.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        3000
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~instagram-reels-profile-posts-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"hubspot\",\"gymshark\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-74",
+      "name": "#74 Instagram Profile & Posts Scraper (No Login)",
+      "notesInFlow": true,
+      "notes": "Pull an Instagram profile’s latest posts, Reels view counts, and true engagement rate without any Instagram login cookies.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        3220
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~facebook-page-posts-reels-engagement-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"shopify\",\"airbnb\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-75",
+      "name": "#75 Facebook Page Posts & Engagement Scraper",
+      "notesInFlow": true,
+      "notes": "Benchmark competitor Facebook Page posting frequency, Reel reach, and audience share ratios on a weekly schedule.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        3440
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~tiktok-instagram-sound-hashtag-virality-tracker/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"trending commercial background audio\",\"breakout ecommerce TikTok sounds\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-76",
+      "name": "#76 TikTok & Reels Trending Audio & Hashtags",
+      "notesInFlow": true,
+      "notes": "Alert your social media team on Slack when a commercial-safe TikTok or Reels audio track surges in 24-hour creator adoption.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        3660
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~youtube-tiktok-transcript-hook-extractor/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Alex Hormozi VSL hooks\",\"MrBeast retention editing breakdown\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-77",
+      "name": "#77 YouTube & TikTok Transcript Hook Extractor",
+      "notesInFlow": true,
+      "notes": "Build an automated Notion swipe file of opening 5-second video hooks and full transcripts from YouTube and TikTok.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        3880
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~social-viral-trend-reddit-hn-pulse-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"MCP server AI agents\",\"open source LLM benchmarks\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-78",
+      "name": "#78 Social Viral Trend & HN Pulse Scraper",
+      "notesInFlow": true,
+      "notes": "Combine front-page Hacker News upvote velocity with Reddit discussion spikes to spot viral developer tools early.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        4100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~producthunt-launch-upvote-maker-monitor/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"AI developer tools Product Hunt\",\"B2B SaaS launches today\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-79",
+      "name": "#79 Product Hunt Launch & Maker Intelligence",
+      "notesInFlow": true,
+      "notes": "Scrape every new Product Hunt launch daily along with maker X/LinkedIn links and website domains for warm founder outreach.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        4320
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~crunchbase-company-funding-rounds-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Series A B2B SaaS United States\",\"Seed round AI startups San Francisco\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-80",
+      "name": "#80 Crunchbase Startup Funding & Founder Scraper",
+      "notesInFlow": true,
+      "notes": "Automatically sync companies announcing new venture funding rounds into HubSpot so your sales team pitches them first.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        4540
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~wellfound-angellist-startup-jobs-founders-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"AI engineer equity startups US\",\"Founding account executive SaaS\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-81",
+      "name": "#81 Wellfound (AngelList) Startup Jobs Scraper",
+      "notesInFlow": true,
+      "notes": "Extract fast-growing startups actively hiring on Wellfound along with salary/equity bands and founding team contacts.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~zillow-redfin-real-estate-comps-property-analyzer/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Austin TX 78704 sold comps\",\"Miami FL multifamly property valuations\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-82",
+      "name": "#82 Real Estate Comps Scraper: Price & Tax",
+      "notesInFlow": true,
+      "notes": "Pull residential real estate comparables, tax assessment histories, and price cuts into Google Sheets for deal underwriting.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~streeteasy-nyc-real-estate-listings-comps-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Williamsburg Brooklyn no-fee rentals\",\"Tribeca Manhattan condo price drops\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-83",
+      "name": "#83 StreetEasy NYC Real Estate & Rentals Scraper",
+      "notesInFlow": true,
+      "notes": "Monitor New York City apartment listings, days on market, and listing agent contacts across StreetEasy.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~airbnb-vrbo-short-term-rental-market-analyzer/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Scottsdale AZ pool villa Airbnb comps\",\"Nashville TN downtown STR nightly rates\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-84",
+      "name": "#84 Airbnb & VRBO Nightly Rates & Fees Scraper",
+      "notesInFlow": true,
+      "notes": "Analyze competitor Airbnb and VRBO listings for nightly pricing, Superhost status, and review velocity in any US market.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~booking-com-hotel-rates-reviews-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"boutique hotels Miami Beach rates\",\"New York Times Square hotel occupancy\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-85",
+      "name": "#85 Booking.com Hotel Rates & Reviews Scraper",
+      "notesInFlow": true,
+      "notes": "Track daily room tariffs, OTA rate parity discrepancies, and guest review scores across Booking.com and TripAdvisor.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~skyscanner-google-flights-route-price-monitor/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"JFK to LHR business class fare\",\"SFO to NRT direct flight prices\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-86",
+      "name": "#86 Skyscanner & Google Flights Fare Monitor",
+      "notesInFlow": true,
+      "notes": "Monitor airline fare fluctuations across key US and international routes and trigger automated price-drop notifications.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~angies-thumbtack-contractor-lead-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"licensed electricians Houston TX\",\"general contractors Denver CO\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-87",
+      "name": "#87 Local Contractor Lead Scraper: Plumbers & Roofers",
+      "notesInFlow": true,
+      "notes": "Extract active home service professionals advertising on Angi and Thumbtack to pitch local SEO and lead-handling software.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~yelp-tripadvisor-restaurant-menu-pricing-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"independent steakhouses Chicago menus\",\"fast casual restaurants Los Angeles\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-88",
+      "name": "#88 Restaurant Menu & Price Scraper: Yelp",
+      "notesInFlow": true,
+      "notes": "Extract restaurant menu pricing, dish categories, and POS/ordering links for F&B suppliers and restaurant SaaS sales.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~uber-eats-doordash-menu-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"burger chains Austin UberEats prices\",\"pizza delivery promos New York DoorDash\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-89",
+      "name": "#89 UberEats & DoorDash Menu & Fee Scraper",
+      "notesInFlow": true,
+      "notes": "Compare competitor delivery menu prices, BOGO promotions, and delivery fee tiers across UberEats and DoorDash.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        2120
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~amazon-product-review-aspect-sentiment-miner/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"wireless earbuds battery life complaints\",\"standing desk wobble negative reviews\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-90",
+      "name": "#90 Amazon Product Reviews & Sentiment Scraper",
+      "notesInFlow": true,
+      "notes": "Mine thousands of Amazon customer reviews to quantify exact product defect rates and feature requests before manufacturing.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~etsy-trending-handmade-product-keyword-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"personalized bridesmaid gift box\",\"minimalist wall art digital download\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-91",
+      "name": "#91 Etsy Trending Product & Keyword Scraper",
+      "notesInFlow": true,
+      "notes": "Spot fast-rising Etsy search keywords with high bestseller velocity and low competing listing counts.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        2560
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~poshmark-depop-reseller-pricing-tracker/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Arc’teryx Beta LT jacket resale\",\"vintage Carhartt Detroit jacket sold\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-92",
+      "name": "#92 Depop & Poshmark Resale Price Tracker",
+      "notesInFlow": true,
+      "notes": "Monitor underpriced designer and vintage listings across Depop and Poshmark for instant resale arbitrage.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        2780
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~alibaba-wholesale-supplier-moq-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"custom private label stainless tumbler\",\" biodegradable packaging manufacturer\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-93",
+      "name": "#93 Alibaba B2B Wholesale Supplier & MOQ Scraper",
+      "notesInFlow": true,
+      "notes": "Compare verified Alibaba Gold Suppliers, minimum order quantities (MOQs), and FOB unit pricing inside Google Sheets.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        3000
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~saas-stripe-lemonsqueezy-pricing-comparer/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"AI copywriting SaaS pricing pages\",\"CRM per-seat pricing tiers\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-94",
+      "name": "#94 SaaS Stripe & LemonSqueezy Pricing Comparer",
+      "notesInFlow": true,
+      "notes": "Track whenever a SaaS competitor changes their monthly/annual pricing tiers, free trial limits, or enterprise add-ons.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        3220
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~facebook-marketplace-us-listings-price-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Herman Miller Aeron chair local\",\"MacBook Pro M3 Max local listing\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-95",
+      "name": "#95 Facebook Marketplace US Newest Deals Scraper",
+      "notesInFlow": true,
+      "notes": "Scan Facebook Marketplace for newly listed underpriced electronics, furniture, and vehicles and send instant Telegram alerts.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        3440
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~multi-ats-tech-jobs-hiring-aggregator/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Founding AI Engineer Greenhouse\",\"Staff Backend Engineer Lever ATS\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-96",
+      "name": "#96 Multi-ATS Tech Jobs & Hiring Aggregator",
+      "notesInFlow": true,
+      "notes": "Scrape tech job openings directly from company Greenhouse and Lever ATS portals hours before they syndicate to job boards.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        3660
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~hackernews-who-is-hiring-job-lead-parser/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Ask HN: Who is hiring Remote AI Rust Python\",\"YC startup direct founder email hiring\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-97",
+      "name": "#97 HackerNews Who is Hiring Lead Parser",
+      "notesInFlow": true,
+      "notes": "Parse Hacker News monthly hiring threads into structured company records with tech stacks, salaries, and direct founder emails.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        3880
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~google-jobs-us-hiring-salary-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"Machine Learning Engineer salary New York\",\"VP of Sales remote US compensation\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-98",
+      "name": "#98 Google Jobs Scraper: US Hiring & Salaries",
+      "notesInFlow": true,
+      "notes": "Aggregate disclosed US salary ranges and active hiring volume across Google Jobs, Indeed, and ZipRecruiter.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        4100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~arxiv-hf-paper-summary-citation-extractor/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"multi-agent LLM orchestration\",\"retrieval augmented generation reasoning\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-99",
+      "name": "#99 arXiv & Hugging Face AI Paper Extractor",
+      "notesInFlow": true,
+      "notes": "Fetch the top trending AI papers from arXiv and Hugging Face daily, summarize key findings with an LLM, and post to Slack.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        4320
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/laborious_rumor~appstore-googleplay-app-reviews-scraper/run-sync-get-dataset-items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"queries\":[\"fintech mobile app crash reviews\",\"AI note taking app feature requests\"],\"maxItems\":25}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "scraper-node-100",
+      "name": "#100 App Store & Google Play App Reviews Scraper",
+      "notesInFlow": true,
+      "notes": "Monitor iOS App Store and Google Play reviews after every app release to flag crash reports and competitor feature gaps.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        4540
+      ]
+    }
+  ],
+  "connections": {
+    "Master Daily Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Master Config & API Token",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Master Config & API Token": {
+      "main": [
+        [
+          {
+            "node": "#01 LinkedIn Profile & Email Scraper: No Cookies",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#02 LinkedIn Company Employees & People Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#03 Google Maps Email & Business Leads Extractor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#04 Reddit Keyword Search & Buyer Intent Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#05 Website to Markdown & RAG Context Crawler",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#06 Google Ads Transparency Center Scraper API",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#07 Instagram Reels Transcript & Script Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#08 SEC EDGAR Form D Startup Funding Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#09 Shopify Product Scraper: Prices, Stock & SKU",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#10 X (Twitter) Posts, Metrics & Thread Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#11 LinkedIn Post Search Scraper (No Cookies)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#12 LinkedIn Profile Search Scraper (No Cookies)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#13 LinkedIn Profile Posts Scraper (No Cookies)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#14 LinkedIn Company Details & Search (No Cookies)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#15 LinkedIn Company Posts Scraper (No Cookies)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#16 LinkedIn Post Comments & Reactions (No Cookies)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#17 LinkedIn Profile Search By Name (No Cookies)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#18 LinkedIn Company Search Scraper (No Cookies)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#19 LinkedIn Sales Navigator Lead Exporter (No Cookies)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#20 Reverse Email Lookup to LinkedIn Profile API",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#21 B2B Decision-Maker & Verified Email Finder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#22 Bulk Email Verifier & Validator - MX & SMTP",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#23 Facebook Ad Library Scraper: Competitor Ads",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#24 Meta (FB & IG) Ad Library & Spend Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#25 LinkedIn Ad Library B2B Creatives Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#26 TikTok Creative Center Top Ads Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#27 Keyword Search Volume, CPC & SEO Difficulty",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#28 SimilarWeb Fast Traffic, Rank & Keywords Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#29 SEO Competitor SERP & Content Gap Analyzer",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#30 Google Search Results Fast SERP Scraper API",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#31 Domain Authority, Backlinks & Traffic SEO API",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#32 Deep Tech Stack & CMS Fingerprinter",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#33 TikTok Transcript & Viral Script Extractor API",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#34 TikTok Profile & Creator Scraper - Emails",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#35 TikTok Comments Scraper - Audience Insights",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#36 Instagram Followers & Following (No Login)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#37 Instagram Reels Search & Viral Finder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#38 Fast Instagram Comments Scraper (No Login)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#39 YouTube Comments Scraper - Viewer Sentiment",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#40 Reddit Post Comments & Bulk Thread Export",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#41 Fast X (Twitter) User & Followers Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#42 Facebook Public Group Posts (No Cookies)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#43 Amazon US BSR & Movers and Shakers Tracker",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#44 TikTok Shop US Top Products & GMV Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#45 AliExpress Product Scraper: Prices & Orders",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#46 Etsy Shop Revenue, Sales & Keyword Analyzer",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#47 Walmart Product & Price Scraper - Inventory",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#48 eBay Sold Listings & Terapeak Comps Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#49 Shopify Store Scraper - Full Product Catalog",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#50 Pinterest Scraper & Monitor: Pins & Saves",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#51 US New Business & LLC Incorporations Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#52 Zillow FSBO & Motivated Seller Real Estate Leads",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#53 US Contractor Leads: Roofers, HVAC & Plumbers",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#54 Y Combinator (YC) Startup Directory & Founders",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#55 Google Maps Reviews Scraper - Ratings & Text",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#56 LinkedIn Jobs Scraper - Hiring Companies",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#57 Capterra & GetApp Software Reviews Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#58 GitHub Repo Codebase LLM Context Packer",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#59 XML Sitemap Crawler & Knowledgebase Builder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#60 PDF Financial Report & Table Extractor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#61 B2B Business & Contact Lead Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#62 B2B Lead Contact & Tech Stack Enricher",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#63 Clutch & G2 B2B Agency Reviews Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#64 Trustpilot Reviews Scraper - Ratings & Text",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#65 Glassdoor Company Reviews & Salary Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#66 Substack & Beehiiv Newsletter Lead Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#67 Podcast RSS Sponsor, Promo & Guest Extractor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#68 Twitch & Kick Streamer & Sponsor Tracker",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#69 Threads Scraper — Posts, Profiles & Search",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#70 Discord Public Channels & Community Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#71 TikTok Search Scraper: Videos by Keyword",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#72 Facebook Video & Reel AI Transcript Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#73 Fast YouTube Channel Scraper: Subs & Stats",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#74 Instagram Profile & Posts Scraper (No Login)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#75 Facebook Page Posts & Engagement Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#76 TikTok & Reels Trending Audio & Hashtags",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#77 YouTube & TikTok Transcript Hook Extractor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#78 Social Viral Trend & HN Pulse Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#79 Product Hunt Launch & Maker Intelligence",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#80 Crunchbase Startup Funding & Founder Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#81 Wellfound (AngelList) Startup Jobs Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#82 Real Estate Comps Scraper: Price & Tax",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#83 StreetEasy NYC Real Estate & Rentals Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#84 Airbnb & VRBO Nightly Rates & Fees Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#85 Booking.com Hotel Rates & Reviews Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#86 Skyscanner & Google Flights Fare Monitor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#87 Local Contractor Lead Scraper: Plumbers & Roofers",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#88 Restaurant Menu & Price Scraper: Yelp",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#89 UberEats & DoorDash Menu & Fee Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#90 Amazon Product Reviews & Sentiment Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#91 Etsy Trending Product & Keyword Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#92 Depop & Poshmark Resale Price Tracker",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#93 Alibaba B2B Wholesale Supplier & MOQ Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#94 SaaS Stripe & LemonSqueezy Pricing Comparer",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#95 Facebook Marketplace US Newest Deals Scraper",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#96 Multi-ATS Tech Jobs & Hiring Aggregator",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#97 HackerNews Who is Hiring Lead Parser",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#98 Google Jobs Scraper: US Hiring & Salaries",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#99 arXiv & Hugging Face AI Paper Extractor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "#100 App Store & Google Play App Reviews Scraper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "catalogUrl": "https://scrapers.tech/#n8n-workflows",
+    "totalScrapersConnected": 100
+  }
+}
