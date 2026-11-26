@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Shopify Competitor Price Drop & Inventory Stock Monitor\n\n**What this workflow does:**\nTrack product prices, variant SKUs, and out-of-stock signals across any competitor Shopify store on a daily schedule.\n\n**Powered by Apify Actor:** [`laborious_rumor/universal-ecommerce-product-price-tracker`](https://apify.com/laborious_rumor/universal-ecommerce-product-price-tracker) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Shopify Product Scraper: Prices, Stock & SKU** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Shopify Competitor Price Drop & Inventory Stock Monitor\n\n**What this workflow does:**\nTrack product prices, variant SKUs, and out-of-stock signals across any competitor Shopify store on a daily schedule.\n\n**Powered by Apify Actor:** [`laborious_rumor/universal-ecommerce-product-price-tracker`](https://apify.com/laborious_rumor/universal-ecommerce-product-price-tracker) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Shopify Product Scraper Prices, Stock & SKU** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "efcad0bc-d0fc-4b1c-a24a-2df5e472176d",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "244cb7ec-d167-4f9f-a637-41348792ce31",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "7178c01f-e477-4a70-a834-62f9e48280a2",
               "name": "queries",
               "value": "[\"gymshark.com\",\"allbirds.com\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "10c726ca-023f-4f94-ae29-34ecfda95536",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "00ffec57-0271-4742-a411-83e20d8b2aea",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Shopify Product Scraper: Prices, Stock & SKU",
+      "id": "dd556896-2db3-4422-a4a6-ccffb2fba7dc",
+      "name": "Run Apify Shopify Product Scraper Prices, Stock & SKU",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "64a4b1b7-2050-47cf-a3a9-bf8738ec85f9",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "3b6eddd8-0181-48aa-a844-df3d37db33be",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Shopify Product Scraper: Prices, Stock & SKU",
+            "node": "Run Apify Shopify Product Scraper Prices, Stock & SKU",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Shopify Product Scraper: Prices, Stock & SKU": {
+    "Run Apify Shopify Product Scraper Prices, Stock & SKU": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a32f6e88-48cb-4d0c-a072-3d063f4bb3bc",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/universal-ecommerce-product-price-tracker",
-    "category": "E-Commerce"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

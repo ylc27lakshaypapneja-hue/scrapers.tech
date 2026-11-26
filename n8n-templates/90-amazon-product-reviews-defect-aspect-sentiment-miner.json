@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Amazon Product Reviews Aspect Sentiment & Competitor Defect R&D Miner\n\n**What this workflow does:**\nMine thousands of Amazon customer reviews to quantify exact product defect rates and feature requests before manufacturing.\n\n**Powered by Apify Actor:** [`laborious_rumor/amazon-product-review-aspect-sentiment-miner`](https://apify.com/laborious_rumor/amazon-product-review-aspect-sentiment-miner) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Amazon Product Reviews & Sentiment Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Amazon Product Reviews Aspect Sentiment & Competitor Defect R&D Miner\n\n**What this workflow does:**\nMine thousands of Amazon customer reviews to quantify exact product defect rates and feature requests before manufacturing.\n\n**Powered by Apify Actor:** [`laborious_rumor/amazon-product-review-aspect-sentiment-miner`](https://apify.com/laborious_rumor/amazon-product-review-aspect-sentiment-miner) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Amazon Product Reviews & Sentiment Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "447d5cb9-b3fe-4fb9-a5b3-18dff08c6f33",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "760654d6-2889-4be8-acf0-c0d4337721f3",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "9809aaa8-a398-447f-ac02-142e9b6df757",
               "name": "queries",
               "value": "[\"wireless earbuds battery life complaints\",\"standing desk wobble negative reviews\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "d40a58f6-fdd2-4154-a735-19cd072fbbb0",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "955b4295-26b3-4ffa-a363-6a4fd729ae54",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Amazon Product Reviews & Sentiment Scraper",
+      "id": "85d7d5d1-b2d8-4012-a831-63fe6d0f20c2",
+      "name": "Run Apify Amazon Product Reviews & Sentiment Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "b32ff6ac-0b3e-4a3d-ae25-6cb5881c8332",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "5b97d66f-e0c5-441e-af91-ce5618e8a181",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Amazon Product Reviews & Sentiment Scraper",
+            "node": "Run Apify Amazon Product Reviews & Sentiment Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Amazon Product Reviews & Sentiment Scraper": {
+    "Run Apify Amazon Product Reviews & Sentiment Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "29bffeea-3458-4627-a68f-d34abaad1a1a",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/amazon-product-review-aspect-sentiment-miner",
-    "category": "E-Commerce"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

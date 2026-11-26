@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Facebook Brand Page Posts, Reels & Comment Velocity Competitor Tracker\n\n**What this workflow does:**\nBenchmark competitor Facebook Page posting frequency, Reel reach, and audience share ratios on a weekly schedule.\n\n**Powered by Apify Actor:** [`laborious_rumor/facebook-page-posts-reels-engagement-scraper`](https://apify.com/laborious_rumor/facebook-page-posts-reels-engagement-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Facebook Page Posts & Engagement Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Facebook Brand Page Posts, Reels & Comment Velocity Competitor Tracker\n\n**What this workflow does:**\nBenchmark competitor Facebook Page posting frequency, Reel reach, and audience share ratios on a weekly schedule.\n\n**Powered by Apify Actor:** [`laborious_rumor/facebook-page-posts-reels-engagement-scraper`](https://apify.com/laborious_rumor/facebook-page-posts-reels-engagement-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Facebook Page Posts & Engagement Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "9b590e27-033f-4ce1-acde-fcb03cbdd757",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "a1b7735f-1063-47ab-aeb1-d4ea5b3f2613",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "361ecb24-71c4-480d-a6c4-f398e64814f3",
               "name": "queries",
               "value": "[\"shopify\",\"airbnb\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "8395db2e-b305-475b-a548-98ab68dbd9c7",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "2dd9516c-6041-4a44-ac7b-7420db13beee",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Facebook Page Posts & Engagement Scraper",
+      "id": "f8a228e2-6afb-46d5-a8ec-e4c68bf9761b",
+      "name": "Run Apify Facebook Page Posts & Engagement Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "2c272fe2-e6a9-4f67-aad5-8871c3f217e6",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "8260b7ce-51e1-4000-a51d-69b9c748fbeb",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Facebook Page Posts & Engagement Scraper",
+            "node": "Run Apify Facebook Page Posts & Engagement Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Facebook Page Posts & Engagement Scraper": {
+    "Run Apify Facebook Page Posts & Engagement Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "eb8d2813-fcde-4eed-a1e9-2af8f1567af5",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/facebook-page-posts-reels-engagement-scraper",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

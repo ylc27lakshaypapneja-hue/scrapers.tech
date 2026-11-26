@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ LinkedIn Profile Search by Title, Industry & US City (No Cookies)\n\n**What this workflow does:**\nBuild targeted B2B prospect lists directly from LinkedIn search filters without risking your personal LinkedIn account.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-profile-search-scraper`](https://apify.com/laborious_rumor/linkedin-profile-search-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: LinkedIn Profile Search Scraper (No Cookies)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ LinkedIn Profile Search by Title, Industry & US City (No Cookies)\n\n**What this workflow does:**\nBuild targeted B2B prospect lists directly from LinkedIn search filters without risking your personal LinkedIn account.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-profile-search-scraper`](https://apify.com/laborious_rumor/linkedin-profile-search-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify LinkedIn Profile Search Scraper (No Cookies)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "c50b478f-a021-4503-a73b-85984ed76c35",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "6aadbe39-51ae-4188-a286-87aba9333301",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "224f2a57-428b-4bb6-a6a9-57aca8e9e9b2",
               "name": "queries",
               "value": "[\"Head of Revenue Operations New York\",\"Founder AI SaaS Austin Texas\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "9ac5f629-a2b0-4d22-a586-edbe89d1ed81",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "81ba317e-1e11-4d87-a6a1-61f40c1b3cdb",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: LinkedIn Profile Search Scraper (No Cookies)",
+      "id": "7b898c0a-a5fb-437a-a40e-a8aa5cc6a2c4",
+      "name": "Run Apify LinkedIn Profile Search Scraper (No Cookies)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "efc1b963-6670-4f2e-ade7-8614f98faa1a",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "69bc89ba-f80d-4adb-a38f-0fe70eca6f13",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: LinkedIn Profile Search Scraper (No Cookies)",
+            "node": "Run Apify LinkedIn Profile Search Scraper (No Cookies)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: LinkedIn Profile Search Scraper (No Cookies)": {
+    "Run Apify LinkedIn Profile Search Scraper (No Cookies)": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "29cd0d54-4749-4957-a19c-c918453022b9",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/linkedin-profile-search-scraper",
-    "category": "LinkedIn & B2B"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

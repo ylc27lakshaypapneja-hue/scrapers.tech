@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Yelp & TripAdvisor Restaurant Menu Item Prices & Local Hospitality Leads\n\n**What this workflow does:**\nExtract restaurant menu pricing, dish categories, and POS/ordering links for F&B suppliers and restaurant SaaS sales.\n\n**Powered by Apify Actor:** [`laborious_rumor/yelp-tripadvisor-restaurant-menu-pricing-scraper`](https://apify.com/laborious_rumor/yelp-tripadvisor-restaurant-menu-pricing-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Restaurant Menu & Price Scraper: Yelp** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Yelp & TripAdvisor Restaurant Menu Item Prices & Local Hospitality Leads\n\n**What this workflow does:**\nExtract restaurant menu pricing, dish categories, and POS/ordering links for F&B suppliers and restaurant SaaS sales.\n\n**Powered by Apify Actor:** [`laborious_rumor/yelp-tripadvisor-restaurant-menu-pricing-scraper`](https://apify.com/laborious_rumor/yelp-tripadvisor-restaurant-menu-pricing-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Restaurant Menu & Price Scraper Yelp** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "eda1fac4-3cdf-44fd-a710-995369baa3b5",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "9f6ee1ea-aa4f-461a-a73b-96c992c5c8b1",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "9129d1d3-790c-4a58-a729-31785bcd9675",
               "name": "queries",
               "value": "[\"independent steakhouses Chicago menus\",\"fast casual restaurants Los Angeles\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "1a851dc2-f6ec-4493-ae58-17c604478a8b",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "4ff5b81d-300d-4e0e-a8f2-854b7bfc7c3f",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Restaurant Menu & Price Scraper: Yelp",
+      "id": "4812bfda-7d8b-42f5-ad1a-a77a9966417b",
+      "name": "Run Apify Restaurant Menu & Price Scraper Yelp",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "a7fb9baf-ea89-4ca8-a05c-8f6671a96eab",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "19b1f849-74f8-424a-a1c0-89a82861f318",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Restaurant Menu & Price Scraper: Yelp",
+            "node": "Run Apify Restaurant Menu & Price Scraper Yelp",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Restaurant Menu & Price Scraper: Yelp": {
+    "Run Apify Restaurant Menu & Price Scraper Yelp": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "cffa3252-5ae2-40ef-a724-95f375856d06",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/yelp-tripadvisor-restaurant-menu-pricing-scraper",
-    "category": "Local & Maps"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

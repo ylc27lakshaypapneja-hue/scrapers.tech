@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ TikTok Creative Center Top-Performing UGC Ads & Hook Swipe File Builder\n\n**What this workflow does:**\nPull top-converting TikTok ads sorted by CTR and 3-second retention rate into an Airtable creative swipe file.\n\n**Powered by Apify Actor:** [`laborious_rumor/tiktok-creative-center-ad-library-scraper`](https://apify.com/laborious_rumor/tiktok-creative-center-ad-library-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: TikTok Creative Center Top Ads Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ TikTok Creative Center Top-Performing UGC Ads & Hook Swipe File Builder\n\n**What this workflow does:**\nPull top-converting TikTok ads sorted by CTR and 3-second retention rate into an Airtable creative swipe file.\n\n**Powered by Apify Actor:** [`laborious_rumor/tiktok-creative-center-ad-library-scraper`](https://apify.com/laborious_rumor/tiktok-creative-center-ad-library-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify TikTok Creative Center Top Ads Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "5a5fae04-460e-418a-a42c-10736136e218",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "a2371206-f0b2-41e7-a2b8-b228118a8c41",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "e8f52406-8cff-45c6-a6fa-2b908ebdc13d",
               "name": "queries",
               "value": "[\"skincare serum TikTok shop\",\"AI productivity app UGC\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "5868ca2c-690e-4676-a5af-754834d22d12",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "2602806d-a75a-450d-a617-c208495d4a65",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: TikTok Creative Center Top Ads Scraper",
+      "id": "e83168b6-6ed3-45f2-a1d3-f640b414b2d0",
+      "name": "Run Apify TikTok Creative Center Top Ads Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "f295bd45-edcc-4768-adc9-c65a0a6cc842",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "c85960de-b1a1-48f1-ace7-dc4be8e022df",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: TikTok Creative Center Top Ads Scraper",
+            "node": "Run Apify TikTok Creative Center Top Ads Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: TikTok Creative Center Top Ads Scraper": {
+    "Run Apify TikTok Creative Center Top Ads Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "178acc5d-4c3e-43d3-a465-6d18927736e5",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/tiktok-creative-center-ad-library-scraper",
-    "category": "Ad Spy & SEO"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

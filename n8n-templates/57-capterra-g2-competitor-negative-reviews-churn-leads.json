@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Capterra & G2 Competitor Unhappy Customer Review Scraper for Churn Poaching\n\n**What this workflow does:**\nMine verified 1-to-3 star software reviews on Capterra/G2 to identify frustrated users ready to switch to your SaaS.\n\n**Powered by Apify Actor:** [`laborious_rumor/capterra-software-reviews-pricing-scraper`](https://apify.com/laborious_rumor/capterra-software-reviews-pricing-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Capterra & GetApp Software Reviews Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Capterra & G2 Competitor Unhappy Customer Review Scraper for Churn Poaching\n\n**What this workflow does:**\nMine verified 1-to-3 star software reviews on Capterra/G2 to identify frustrated users ready to switch to your SaaS.\n\n**Powered by Apify Actor:** [`laborious_rumor/capterra-software-reviews-pricing-scraper`](https://apify.com/laborious_rumor/capterra-software-reviews-pricing-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Capterra & GetApp Software Reviews Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "7cddd8d1-a986-4d24-a2c8-734628d67c79",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "c5a1a644-06c0-49a7-a4d3-c3b2673ec3eb",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "4a50dbfc-2331-4829-a3b0-2c56187e7aba",
               "name": "queries",
               "value": "[\"Salesforce CRM 2-star reviews expensive\",\"HubSpot pricing complaint reviews\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "bf17861b-6919-46e2-a57e-ca445a042bdc",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "06022314-6b8d-42c4-a0be-a21995f8f3e6",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Capterra & GetApp Software Reviews Scraper",
+      "id": "fba6cf8c-3255-4217-aae1-250e5d3812ff",
+      "name": "Run Apify Capterra & GetApp Software Reviews Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "e4ffe98d-f242-47d8-a8c2-475465668004",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "c28037a5-f4f3-46bf-acc7-90d81d9dd422",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Capterra & GetApp Software Reviews Scraper",
+            "node": "Run Apify Capterra & GetApp Software Reviews Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Capterra & GetApp Software Reviews Scraper": {
+    "Run Apify Capterra & GetApp Software Reviews Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a6de6a65-9ce7-41bc-a859-b0dcf9d57635",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/capterra-software-reviews-pricing-scraper",
-    "category": "LinkedIn & B2B"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Product Hunt Daily Top Launches & Maker Founder Contact Outreach Pipeline\n\n**What this workflow does:**\nScrape every new Product Hunt launch daily along with maker X/LinkedIn links and website domains for warm founder outreach.\n\n**Powered by Apify Actor:** [`laborious_rumor/producthunt-launch-upvote-maker-monitor`](https://apify.com/laborious_rumor/producthunt-launch-upvote-maker-monitor) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Product Hunt Launch & Maker Intelligence** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Product Hunt Daily Top Launches & Maker Founder Contact Outreach Pipeline\n\n**What this workflow does:**\nScrape every new Product Hunt launch daily along with maker X/LinkedIn links and website domains for warm founder outreach.\n\n**Powered by Apify Actor:** [`laborious_rumor/producthunt-launch-upvote-maker-monitor`](https://apify.com/laborious_rumor/producthunt-launch-upvote-maker-monitor) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Product Hunt Launch & Maker Intelligence** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "657d8d08-8f40-452d-a946-dd814599e569",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "79184700-d520-472a-a980-4c949c1e9c11",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "0acc1e91-2b5b-48f8-ab04-54173080d27d",
               "name": "queries",
               "value": "[\"AI developer tools Product Hunt\",\"B2B SaaS launches today\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "a747b087-fea7-46aa-abc9-23b90afedc90",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "ab040946-f16c-4af5-a5ab-414300d27ba0",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Product Hunt Launch & Maker Intelligence",
+      "id": "4989613c-7e6a-4735-a54a-5f6e0dfb105f",
+      "name": "Run Apify Product Hunt Launch & Maker Intelligence",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "b0664443-0cb7-4ac4-a59c-ae2d6e742bdb",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "a2beafdc-4d5c-49ba-a41b-69bedb71998f",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Product Hunt Launch & Maker Intelligence",
+            "node": "Run Apify Product Hunt Launch & Maker Intelligence",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Product Hunt Launch & Maker Intelligence": {
+    "Run Apify Product Hunt Launch & Maker Intelligence": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "cbec32cf-751a-4056-a41d-260b013686cd",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/producthunt-launch-upvote-maker-monitor",
-    "category": "Startups & Real Estate"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ StreetEasy NYC (Manhattan & Brooklyn) Condo Sales & No-Fee Rental Comps Tracker\n\n**What this workflow does:**\nMonitor New York City apartment listings, days on market, and listing agent contacts across StreetEasy.\n\n**Powered by Apify Actor:** [`laborious_rumor/streeteasy-nyc-real-estate-listings-comps-scraper`](https://apify.com/laborious_rumor/streeteasy-nyc-real-estate-listings-comps-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: StreetEasy NYC Real Estate & Rentals Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ StreetEasy NYC (Manhattan & Brooklyn) Condo Sales & No-Fee Rental Comps Tracker\n\n**What this workflow does:**\nMonitor New York City apartment listings, days on market, and listing agent contacts across StreetEasy.\n\n**Powered by Apify Actor:** [`laborious_rumor/streeteasy-nyc-real-estate-listings-comps-scraper`](https://apify.com/laborious_rumor/streeteasy-nyc-real-estate-listings-comps-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify StreetEasy NYC Real Estate & Rentals Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "4018072f-e909-47a8-a066-a1d4dc2aee7c",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "935911e6-afe8-4fad-a391-7622be969e55",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "eb601f32-92f4-4eb7-a9d6-9a63aa84c611",
               "name": "queries",
               "value": "[\"Williamsburg Brooklyn no-fee rentals\",\"Tribeca Manhattan condo price drops\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "1a82b696-d609-4600-a5c3-9b0ac9a028cc",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "4a25724b-5b46-4f21-aa91-061400e2b220",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: StreetEasy NYC Real Estate & Rentals Scraper",
+      "id": "1f966c24-3057-48b7-a699-d2f23f2827e9",
+      "name": "Run Apify StreetEasy NYC Real Estate & Rentals Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "ff36e289-71d1-4697-a66e-387cbabd6a34",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "82785e31-cec2-433b-aa0c-658d02fe03f1",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: StreetEasy NYC Real Estate & Rentals Scraper",
+            "node": "Run Apify StreetEasy NYC Real Estate & Rentals Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: StreetEasy NYC Real Estate & Rentals Scraper": {
+    "Run Apify StreetEasy NYC Real Estate & Rentals Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "971141e9-cf84-4863-a7fd-93d2d2a4bf91",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/streeteasy-nyc-real-estate-listings-comps-scraper",
-    "category": "Startups & Real Estate"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Instagram Competitor Followers & Following Lead Scraper (No Login Required)\n\n**What this workflow does:**\nExtract public follower and following profiles from niche Instagram accounts without risking an Instagram session cookie.\n\n**Powered by Apify Actor:** [`laborious_rumor/instagram-followers-following-no-login-scraper`](https://apify.com/laborious_rumor/instagram-followers-following-no-login-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Instagram Followers & Following (No Login)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Instagram Competitor Followers & Following Lead Scraper (No Login Required)\n\n**What this workflow does:**\nExtract public follower and following profiles from niche Instagram accounts without risking an Instagram session cookie.\n\n**Powered by Apify Actor:** [`laborious_rumor/instagram-followers-following-no-login-scraper`](https://apify.com/laborious_rumor/instagram-followers-following-no-login-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Instagram Followers & Following (No Login)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "75c350d4-abac-40f7-a190-cbcc189adbed",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "10cd0a7a-6cbc-4d86-a130-e03c1a72f20a",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "41e21cad-e7d2-4dc1-a272-e0fa76fa5252",
               "name": "queries",
               "value": "[\"hubspot\",\"shopify\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "a95d3e56-0d10-4e03-a819-45582285e7bc",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "54b9deb3-a6e3-45d9-a03e-3ce3cf9a61c3",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Instagram Followers & Following (No Login)",
+      "id": "6366a826-55f8-4bc6-a814-e2b8a9c11a7a",
+      "name": "Run Apify Instagram Followers & Following (No Login)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "494c672d-b170-45ef-ab32-58ba5f05f672",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "6ae7b0bc-2f33-4acf-ac54-5640bd003e49",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Instagram Followers & Following (No Login)",
+            "node": "Run Apify Instagram Followers & Following (No Login)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Instagram Followers & Following (No Login)": {
+    "Run Apify Instagram Followers & Following (No Login)": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7cdbeee8-8f2d-4985-a1c9-29829d590fcc",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/instagram-followers-following-no-login-scraper",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Zillow FSBO (For Sale By Owner) & Price-Cut Motivated Seller Lead Pipeline\n\n**What this workflow does:**\nDeliver daily FSBO and distressed/price-reduced residential property leads directly to real estate agents and wholesalers.\n\n**Powered by Apify Actor:** [`laborious_rumor/zillow-fsbo-motivated-seller-leads-scraper`](https://apify.com/laborious_rumor/zillow-fsbo-motivated-seller-leads-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Zillow FSBO & Motivated Seller Real Estate Leads** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Zillow FSBO (For Sale By Owner) & Price-Cut Motivated Seller Lead Pipeline\n\n**What this workflow does:**\nDeliver daily FSBO and distressed/price-reduced residential property leads directly to real estate agents and wholesalers.\n\n**Powered by Apify Actor:** [`laborious_rumor/zillow-fsbo-motivated-seller-leads-scraper`](https://apify.com/laborious_rumor/zillow-fsbo-motivated-seller-leads-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Zillow FSBO & Motivated Seller Real Estate Leads** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "f1e84575-7470-482d-a911-88ccf52f132f",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "271b5c59-1216-4b10-a3d8-213ffc980974",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "5e1e6bc3-e3cb-408d-a4ee-8de3ee99a98b",
               "name": "queries",
               "value": "[\"Austin TX FSBO homes\",\"Phoenix AZ price cut 30+ days on Zillow\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "cafa9a45-bd67-4f41-a425-179e8e865124",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "10a42ec1-72f7-4f18-a746-147bcaa3247f",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Zillow FSBO & Motivated Seller Real Estate Leads",
+      "id": "cfcb4916-3789-4b6f-a3e3-60be97e78319",
+      "name": "Run Apify Zillow FSBO & Motivated Seller Real Estate Leads",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "60662ff7-d080-4789-aef0-07a19b0b1d1f",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "aa7ba872-6dd0-4d1d-a908-7ebe65c05765",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Zillow FSBO & Motivated Seller Real Estate Leads",
+            "node": "Run Apify Zillow FSBO & Motivated Seller Real Estate Leads",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Zillow FSBO & Motivated Seller Real Estate Leads": {
+    "Run Apify Zillow FSBO & Motivated Seller Real Estate Leads": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f438306e-072f-443f-ae5f-fdd0328209a3",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/zillow-fsbo-motivated-seller-leads-scraper",
-    "category": "Startups & Real Estate"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

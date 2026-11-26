@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## 🚀 Master 100-in-1 Web Scraping, B2B Lead Gen & AI/RAG Suite (Scrapers.tech)\n\nThis master n8n workflow connects **100 production Pay-Per-Event Apify Actors** (`@laborious_rumor`) across 7 categories: LinkedIn & B2B, Social & Creator, E-Commerce, Ad Spy & SEO, Startups & Real Estate, Local & Maps, and AI/RAG.\n\n### Quick Setup:\n1. Grab your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations) (*includes /mo free credit — 1,000 free records per Actor*).\n2. Set your `apifyToken` once in the **Master Config & API Token** node below.\n3. Enable or trigger any of the 100 scraper pipelines!",
+        "content": "## 🚀 Master 100-in-1 Web Scraping, B2B Lead Gen & AI/RAG Suite (Scrapers.tech)\n\nThis master n8n workflow connects **100 production Pay-Per-Event Apify Actors** (`@laborious_rumor`) across 7 categories: LinkedIn & B2B, Social & Creator, E-Commerce, Ad Spy & SEO, Startups & Real Estate, Local & Maps, and AI/RAG.\n\n### Quick Setup:\n1. Grab your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations) (*includes $5/mo free credit — 1,000 free records per Actor*).\n2. Set your `apifyToken` once in the **Master Config and API Token** node below.\n3. Enable or trigger any of the 100 scraper pipelines!",
         "height": 260,
         "width": 1100
       },
-      "id": "master-sticky-header",
-      "name": "Sticky Note: Master Suite Overview",
+      "id": "69ecfec3-a7fc-4890-adb7-82d9a9a2caf6",
+      "name": "Sticky Note Master Suite Overview",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -18,12 +18,12 @@
     },
     {
       "parameters": {
-        "content": "### ⏱️ Step 1: Trigger & Global Credentials\nRuns on a 24-hour schedule and injects your  and default  limit into all downstream Apify scraper nodes.",
+        "content": "### ⏱️ Step 1: Trigger & Global Credentials\nRuns on a 24-hour schedule and injects your `apifyToken` and default `maxItems` limit into all downstream Apify scraper nodes.",
         "height": 200,
         "width": 520
       },
-      "id": "sticky-step-1",
-      "name": "Sticky Note: Trigger & Config",
+      "id": "3135ac2f-5636-4124-ab2b-f82c934d6696",
+      "name": "Sticky Note Trigger and Config",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -42,7 +42,7 @@
           ]
         }
       },
-      "id": "master-schedule-trigger",
+      "id": "d4f9aef6-2eda-4f38-aeae-1cc8139b56a9",
       "name": "Master Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -56,22 +56,23 @@
         "assignments": {
           "assignments": [
             {
-              "id": "apify-token-field",
+              "id": "12a3cea2-dc40-4c1a-a12d-8b73d2405e06",
               "name": "apifyToken",
               "value": "YOUR_APIFY_API_TOKEN",
               "type": "string"
             },
             {
-              "id": "max-items-field",
+              "id": "bd8bd3f9-0ba0-44f1-a22a-38d82820d1fd",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "master-config-node",
-      "name": "Master Config & API Token",
+      "id": "0bf3bb51-74aa-47f9-ac64-17883a04bbe6",
+      "name": "Master Config and API Token",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
@@ -81,12 +82,12 @@
     },
     {
       "parameters": {
-        "content": "### 📦 Column 1 (#01–#20): LinkedIn & B2B Outbound Pipelines\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
+        "content": "### 📦 Column 1 (01 to 20) LinkedIn and B2B Outbound Pipelines\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
         "height": 140,
         "width": 460
       },
-      "id": "sticky-col-1",
-      "name": "Sticky Note: Column 1 (#01–#20)",
+      "id": "082b9944-1095-4581-a4be-eaa71f09fc78",
+      "name": "Sticky Note Column 1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -96,12 +97,12 @@
     },
     {
       "parameters": {
-        "content": "### 📦 Column 2 (#21–#40): Ad Spy, SEO & Creator Intelligence\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
+        "content": "### 📦 Column 2 (21 to 40) Ad Spy SEO and Creator Intelligence\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
         "height": 140,
         "width": 460
       },
-      "id": "sticky-col-2",
-      "name": "Sticky Note: Column 2 (#21–#40)",
+      "id": "7bb28c05-8366-47ee-aead-ff2a1224c360",
+      "name": "Sticky Note Column 2",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -111,12 +112,12 @@
     },
     {
       "parameters": {
-        "content": "### 📦 Column 3 (#41–#60): E-Commerce, Startups & AI/RAG\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
+        "content": "### 📦 Column 3 (41 to 60) E-Commerce Startups and AI RAG\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
         "height": 140,
         "width": 460
       },
-      "id": "sticky-col-3",
-      "name": "Sticky Note: Column 3 (#41–#60)",
+      "id": "38007fa2-a0a5-46fa-aa34-887b31453de8",
+      "name": "Sticky Note Column 3",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -126,12 +127,12 @@
     },
     {
       "parameters": {
-        "content": "### 📦 Column 4 (#61–#80): Reviews, Podcasts, Video & VC Deals\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
+        "content": "### 📦 Column 4 (61 to 80) Reviews Podcasts Video and VC Deals\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
         "height": 140,
         "width": 460
       },
-      "id": "sticky-col-4",
-      "name": "Sticky Note: Column 4 (#61–#80)",
+      "id": "894f751f-ade5-4e56-a409-e977733289e6",
+      "name": "Sticky Note Column 4",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -141,12 +142,12 @@
     },
     {
       "parameters": {
-        "content": "### 📦 Column 5 (#81–#100): Real Estate, Local Maps & ATS Jobs\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
+        "content": "### 📦 Column 5 (81 to 100) Real Estate Local Maps and ATS Jobs\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
         "height": 140,
         "width": 460
       },
-      "id": "sticky-col-5",
-      "name": "Sticky Note: Column 5 (#81–#100)",
+      "id": "b51e7881-0f84-45d5-af31-fe8e5a46a8c1",
+      "name": "Sticky Note Column 5",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -163,7 +164,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -174,8 +175,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-1",
-      "name": "#01 LinkedIn Profile & Email Scraper: No Cookies",
+      "id": "682f9021-f7ad-4ed9-a3bd-8ded7af31f38",
+      "name": "Scraper 01 LinkedIn Profile Email Scraper No Cookies",
       "notesInFlow": true,
       "notes": "Enrich LinkedIn profile URLs or executive search queries with verified work emails and titles without LinkedIn cookies, then append directly to Google Sheets / Clay.",
       "type": "n8n-nodes-base.httpRequest",
@@ -194,7 +195,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -205,8 +206,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-2",
-      "name": "#02 LinkedIn Company Employees & People Scraper",
+      "id": "7c9442f1-88cd-44d5-a98b-487c5fec41d3",
+      "name": "Scraper 02 LinkedIn Company Employees People Scraper",
       "notesInFlow": true,
       "notes": "Automatically pull VP, Director, and C-Level decision-makers from target companies on LinkedIn (100% cookie-free) and push leads to HubSpot, Clay, or Slack.",
       "type": "n8n-nodes-base.httpRequest",
@@ -225,7 +226,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -236,8 +237,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-3",
-      "name": "#03 Google Maps Email & Business Leads Extractor",
+      "id": "34eccebb-0474-4416-a073-7cc79385278c",
+      "name": "Scraper 03 Google Maps Email Business Leads Extractor",
       "notesInFlow": true,
       "notes": "Scrape local SMB leads from Google Maps with verified email addresses, phone numbers, star ratings, and booking tech stack.",
       "type": "n8n-nodes-base.httpRequest",
@@ -256,7 +257,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -267,8 +268,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-4",
-      "name": "#04 Reddit Keyword Search & Buyer Intent Scraper",
+      "id": "0a84d579-0f6b-48ce-a1ee-0ef3f6f1b8c6",
+      "name": "Scraper 04 Reddit Keyword Search Buyer Intent Scraper",
       "notesInFlow": true,
       "notes": "Monitor Reddit 24/7 for high-buying-intent threads asking for software recommendations or competitor alternatives and send instant Slack/Discord alerts.",
       "type": "n8n-nodes-base.httpRequest",
@@ -287,7 +288,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -298,8 +299,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-5",
-      "name": "#05 Website to Markdown & RAG Context Crawler",
+      "id": "f20b186f-065f-43d8-a4e4-ae788b64ebb9",
+      "name": "Scraper 05 Website to Markdown RAG Context Crawler",
       "notesInFlow": true,
       "notes": "Convert documentation or competitor websites into clean, token-optimized Markdown chunks ready for OpenAI, Claude, Pinecone, or Qdrant vector databases.",
       "type": "n8n-nodes-base.httpRequest",
@@ -318,7 +319,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -329,8 +330,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-6",
-      "name": "#06 Google Ads Transparency Center Scraper API",
+      "id": "f158bfb1-fc52-44ff-ad1c-071fde07f93a",
+      "name": "Scraper 06 Google Ads Transparency Center Scraper API",
       "notesInFlow": true,
       "notes": "Track active Google Search, YouTube, and Display ad creatives run by any competitor domain via the Google Ads Transparency Center.",
       "type": "n8n-nodes-base.httpRequest",
@@ -349,7 +350,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -360,8 +361,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-7",
-      "name": "#07 Instagram Reels Transcript & Script Scraper",
+      "id": "6b9fe5f3-cec6-431a-a0ec-7673381972f0",
+      "name": "Scraper 07 Instagram Reels Transcript Script Scraper",
       "notesInFlow": true,
       "notes": "Extract spoken transcripts and opening viral hooks from top Instagram Reels to repurpose into high-converting UGC scripts with ChatGPT/Claude.",
       "type": "n8n-nodes-base.httpRequest",
@@ -380,7 +381,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -391,8 +392,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-8",
-      "name": "#08 SEC EDGAR Form D Startup Funding Scraper",
+      "id": "35569c89-9247-4147-a8ac-5b9db4208ac4",
+      "name": "Scraper 08 SEC EDGAR Form D Startup Funding Scraper",
       "notesInFlow": true,
       "notes": "Capture newly funded US startups filing SEC Form D venture rounds before they appear in TechCrunch or Crunchbase.",
       "type": "n8n-nodes-base.httpRequest",
@@ -411,7 +412,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -422,8 +423,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-9",
-      "name": "#09 Shopify Product Scraper: Prices, Stock & SKU",
+      "id": "8fdf6bd5-3180-4139-adc9-35897fa8be36",
+      "name": "Scraper 09 Shopify Product Scraper Prices, Stock SKU",
       "notesInFlow": true,
       "notes": "Track product prices, variant SKUs, and out-of-stock signals across any competitor Shopify store on a daily schedule.",
       "type": "n8n-nodes-base.httpRequest",
@@ -442,7 +443,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -453,8 +454,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-10",
-      "name": "#10 X (Twitter) Posts, Metrics & Thread Scraper",
+      "id": "37a96aa3-3c14-491e-a817-7365f0062475",
+      "name": "Scraper 10 X (Twitter) Posts, Metrics Thread Scraper",
       "notesInFlow": true,
       "notes": "Extract high-engagement X/Twitter posts, threads, and creator metrics for social listening and warm outbound prospecting.",
       "type": "n8n-nodes-base.httpRequest",
@@ -473,7 +474,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -484,8 +485,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-11",
-      "name": "#11 LinkedIn Post Search Scraper (No Cookies)",
+      "id": "848b41eb-5bb6-4593-af7f-b6fa5a6f4eca",
+      "name": "Scraper 11 LinkedIn Post Search Scraper (No Cookies)",
       "notesInFlow": true,
       "notes": "Find high-intent LinkedIn posts by keyword without session cookies to trigger warm social selling outreach and AI comment generation.",
       "type": "n8n-nodes-base.httpRequest",
@@ -504,7 +505,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -515,8 +516,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-12",
-      "name": "#12 LinkedIn Profile Search Scraper (No Cookies)",
+      "id": "323eb5e4-ed14-4d38-adc4-bce0daec5525",
+      "name": "Scraper 12 LinkedIn Profile Search Scraper (No Cookies)",
       "notesInFlow": true,
       "notes": "Build targeted B2B prospect lists directly from LinkedIn search filters without risking your personal LinkedIn account.",
       "type": "n8n-nodes-base.httpRequest",
@@ -535,7 +536,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -546,8 +547,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-13",
-      "name": "#13 LinkedIn Profile Posts Scraper (No Cookies)",
+      "id": "be49ddc1-5b57-4914-afd2-3a6b21d6169a",
+      "name": "Scraper 13 LinkedIn Profile Posts Scraper (No Cookies)",
       "notesInFlow": true,
       "notes": "Fetch a prospect’s latest LinkedIn posts before sending an outbound sequence so GPT-4o/Claude can write hyper-personalized first lines.",
       "type": "n8n-nodes-base.httpRequest",
@@ -566,7 +567,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -577,8 +578,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-14",
-      "name": "#14 LinkedIn Company Details & Search (No Cookies)",
+      "id": "6e642a9a-ad49-4460-aad5-e12102f037ec",
+      "name": "Scraper 14 LinkedIn Company Details Search (No Cookies)",
       "notesInFlow": true,
       "notes": "Automatically enrich CRM company domains with LinkedIn headcount, industry classification, headquarters, and follower velocity.",
       "type": "n8n-nodes-base.httpRequest",
@@ -597,7 +598,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -608,8 +609,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-15",
-      "name": "#15 LinkedIn Company Posts Scraper (No Cookies)",
+      "id": "5afd8442-a350-4460-ab2d-1a8f900c2a84",
+      "name": "Scraper 15 LinkedIn Company Posts Scraper (No Cookies)",
       "notesInFlow": true,
       "notes": "Track every official announcement, hiring push, and product release published on competitor LinkedIn company pages.",
       "type": "n8n-nodes-base.httpRequest",
@@ -628,7 +629,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -639,8 +640,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-16",
-      "name": "#16 LinkedIn Post Comments & Reactions (No Cookies)",
+      "id": "49e4cf0f-fc61-4784-a23f-4ec098b31f0a",
+      "name": "Scraper 16 LinkedIn Post Comments Reactions (No Cookies)",
       "notesInFlow": true,
       "notes": "Extract every user who commented on or reacted to a competitor’s viral LinkedIn post and route them into your outbound sequence.",
       "type": "n8n-nodes-base.httpRequest",
@@ -659,7 +660,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -670,8 +671,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-17",
-      "name": "#17 LinkedIn Profile Search By Name (No Cookies)",
+      "id": "165c911c-7475-4333-ae65-9a7d7ed806b0",
+      "name": "Scraper 17 LinkedIn Profile Search By Name (No Cookies)",
       "notesInFlow": true,
       "notes": "Resolve raw contact names and company names from webinar signups or event lists into verified LinkedIn profile URLs.",
       "type": "n8n-nodes-base.httpRequest",
@@ -690,7 +691,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -701,8 +702,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-18",
-      "name": "#18 LinkedIn Company Search Scraper (No Cookies)",
+      "id": "cdca4c61-ca9b-4420-a517-68b3ce44d4aa",
+      "name": "Scraper 18 LinkedIn Company Search Scraper (No Cookies)",
       "notesInFlow": true,
       "notes": "Discover target B2B accounts matching your Ideal Customer Profile on LinkedIn and push company domains to Clay or Apollo.",
       "type": "n8n-nodes-base.httpRequest",
@@ -721,7 +722,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -732,8 +733,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-19",
-      "name": "#19 LinkedIn Sales Navigator Lead Exporter (No Cookies)",
+      "id": "30cef833-2a9d-4175-a8a0-e23608e9f869",
+      "name": "Scraper 19 LinkedIn Sales Navigator Lead Exporter (No Cookies)",
       "notesInFlow": true,
       "notes": "Export high-converting Sales Navigator lead criteria with verified corporate email patterns without browser extensions or cookie bans.",
       "type": "n8n-nodes-base.httpRequest",
@@ -752,7 +753,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -763,8 +764,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-20",
-      "name": "#20 Reverse Email Lookup to LinkedIn Profile API",
+      "id": "99a9cbf9-33e2-494d-a5db-1a84477e5d19",
+      "name": "Scraper 20 Reverse Email Lookup to LinkedIn Profile API",
       "notesInFlow": true,
       "notes": "Turn inbound Stripe/Typeform signup emails into full LinkedIn profiles, job titles, and company firmographics automatically.",
       "type": "n8n-nodes-base.httpRequest",
@@ -783,7 +784,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -794,8 +795,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-21",
-      "name": "#21 B2B Decision-Maker & Verified Email Finder",
+      "id": "d10b16f9-22a7-447e-a1c4-865c24e83b95",
+      "name": "Scraper 21 B2B Decision-Maker Verified Email Finder",
       "notesInFlow": true,
       "notes": "Replace expensive monthly Apollo subscriptions with on-demand Pay-Per-Event B2B decision-maker contact extraction.",
       "type": "n8n-nodes-base.httpRequest",
@@ -814,7 +815,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -825,8 +826,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-22",
-      "name": "#22 Bulk Email Verifier & Validator - MX & SMTP",
+      "id": "2e36ffbd-7c0c-4d1f-a2de-cef379857009",
+      "name": "Scraper 22 Bulk Email Verifier Validator - MX SMTP",
       "notesInFlow": true,
       "notes": "Verify email deliverability, DNS MX records, and catch-all status inside n8n before pushing leads to Instantly or Smartlead.",
       "type": "n8n-nodes-base.httpRequest",
@@ -845,7 +846,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -856,8 +857,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-23",
-      "name": "#23 Facebook Ad Library Scraper: Competitor Ads",
+      "id": "bf740f6e-38b9-4c78-af41-dfa1fdcbb4df",
+      "name": "Scraper 23 Facebook Ad Library Scraper Competitor Ads",
       "notesInFlow": true,
       "notes": "Monitor competitor Facebook & Instagram ads running for 30+ days to extract winning hooks, CTAs, and landing page funnels.",
       "type": "n8n-nodes-base.httpRequest",
@@ -876,7 +877,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -887,8 +888,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-24",
-      "name": "#24 Meta (FB & IG) Ad Library & Spend Scraper",
+      "id": "85b8fb61-e340-49ea-a060-00a460d8c672",
+      "name": "Scraper 24 Meta (FB IG) Ad Library Spend Scraper",
       "notesInFlow": true,
       "notes": "Track estimated ad spend, regional impression distribution, and active creative scaling across Meta platforms.",
       "type": "n8n-nodes-base.httpRequest",
@@ -907,7 +908,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -918,8 +919,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-25",
-      "name": "#25 LinkedIn Ad Library B2B Creatives Scraper",
+      "id": "f6d4cfb4-dbf2-4322-a3ef-35e4193d3256",
+      "name": "Scraper 25 LinkedIn Ad Library B2B Creatives Scraper",
       "notesInFlow": true,
       "notes": "Extract every active B2B LinkedIn ad creative, headline, and offer run by enterprise SaaS competitors.",
       "type": "n8n-nodes-base.httpRequest",
@@ -938,7 +939,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -949,8 +950,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-26",
-      "name": "#26 TikTok Creative Center Top Ads Scraper",
+      "id": "854261bb-6e60-4318-a584-cb6bc5d36c01",
+      "name": "Scraper 26 TikTok Creative Center Top Ads Scraper",
       "notesInFlow": true,
       "notes": "Pull top-converting TikTok ads sorted by CTR and 3-second retention rate into an Airtable creative swipe file.",
       "type": "n8n-nodes-base.httpRequest",
@@ -969,7 +970,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -980,8 +981,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-27",
-      "name": "#27 Keyword Search Volume, CPC & SEO Difficulty",
+      "id": "7467dee9-a26f-4e06-a232-749d83e1a427",
+      "name": "Scraper 27 Keyword Search Volume, CPC SEO Difficulty",
       "notesInFlow": true,
       "notes": "Enrich seed keyword lists with monthly US search volume, Google Ads CPC, and ranking competition scores.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1000,7 +1001,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1011,8 +1012,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-28",
-      "name": "#28 SimilarWeb Fast Traffic, Rank & Keywords Scraper",
+      "id": "c193cc02-08f4-43ef-a13c-082353cdfcb8",
+      "name": "Scraper 28 SimilarWeb Fast Traffic, Rank Keywords Scraper",
       "notesInFlow": true,
       "notes": "Qualify B2B domains by monthly web traffic volume, bounce rate, and top organic/paid traffic channels.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1031,7 +1032,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1042,8 +1043,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-29",
-      "name": "#29 SEO Competitor SERP & Content Gap Analyzer",
+      "id": "e6f7a41d-ff4d-44cc-a090-a4d972568c12",
+      "name": "Scraper 29 SEO Competitor SERP Content Gap Analyzer",
       "notesInFlow": true,
       "notes": "Analyze top 10 Google SERP headings, word counts, and missing semantic entities to generate rank-ready content briefs.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1062,7 +1063,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1073,8 +1074,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-30",
-      "name": "#30 Google Search Results Fast SERP Scraper API",
+      "id": "e6a459a1-a0e6-4437-a3b9-2c504135003c",
+      "name": "Scraper 30 Google Search Results Fast SERP Scraper API",
       "notesInFlow": true,
       "notes": "Give your n8n AI Agents live Google Search grounding with structured organic results, snippets, and related questions.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1093,7 +1094,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1104,8 +1105,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-31",
-      "name": "#31 Domain Authority, Backlinks & Traffic SEO API",
+      "id": "3819d1eb-a2cd-4deb-a5bd-ec13cbac3619",
+      "name": "Scraper 31 Domain Authority, Backlinks Traffic SEO API",
       "notesInFlow": true,
       "notes": "Audit prospect websites for domain authority, backlink velocity, and SEO gaps to pitch high-ticket SEO agency retainers.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1124,7 +1125,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1135,8 +1136,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-32",
-      "name": "#32 Deep Tech Stack & CMS Fingerprinter",
+      "id": "0a0f33a6-9b31-4a31-ac18-e4fbad5faa4d",
+      "name": "Scraper 32 Deep Tech Stack CMS Fingerprinter",
       "notesInFlow": true,
       "notes": "Detect 100+ web technologies, pixels, and payment processors on any domain to build technographic outbound lists.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1155,7 +1156,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1166,8 +1167,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-33",
-      "name": "#33 TikTok Transcript & Viral Script Extractor API",
+      "id": "fa280666-c23d-4c05-a45e-f46bfc5c9750",
+      "name": "Scraper 33 TikTok Transcript Viral Script Extractor API",
       "notesInFlow": true,
       "notes": "Transcribe viral TikTok videos automatically and use an LLM in n8n to rewrite them into LinkedIn threads and newsletter issues.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1186,7 +1187,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1197,8 +1198,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-34",
-      "name": "#34 TikTok Profile & Creator Scraper - Emails",
+      "id": "d6d2891b-ec4d-4f4d-a24f-cfd72ea9340d",
+      "name": "Scraper 34 TikTok Profile Creator Scraper - Emails",
       "notesInFlow": true,
       "notes": "Find TikTok creators in your niche with public business emails in bio and high engagement-to-follower ratios.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1217,7 +1218,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1228,8 +1229,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-35",
-      "name": "#35 TikTok Comments Scraper - Audience Insights",
+      "id": "bc9f425a-2319-4756-a991-2086a940a80a",
+      "name": "Scraper 35 TikTok Comments Scraper - Audience Insights",
       "notesInFlow": true,
       "notes": "Scrape thousands of TikTok comments on viral product videos to uncover raw customer objections and \"where can I buy\" leads.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1248,7 +1249,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1259,8 +1260,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-36",
-      "name": "#36 Instagram Followers & Following (No Login)",
+      "id": "e7b17ef1-498d-4a2d-a232-3d5791a31249",
+      "name": "Scraper 36 Instagram Followers Following (No Login)",
       "notesInFlow": true,
       "notes": "Extract public follower and following profiles from niche Instagram accounts without risking an Instagram session cookie.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1279,7 +1280,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1290,8 +1291,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-37",
-      "name": "#37 Instagram Reels Search & Viral Finder",
+      "id": "9b4ed084-88b1-45a2-ad66-2c977a65b54f",
+      "name": "Scraper 37 Instagram Reels Search Viral Finder",
       "notesInFlow": true,
       "notes": "Discover outlier Instagram Reels outperforming their creator’s average views by 5x+ in any keyword niche.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1310,7 +1311,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1321,8 +1322,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-38",
-      "name": "#38 Fast Instagram Comments Scraper (No Login)",
+      "id": "c42bb804-0b61-4da4-a3bd-14a9c74c6095",
+      "name": "Scraper 38 Fast Instagram Comments Scraper (No Login)",
       "notesInFlow": true,
       "notes": "Scrape users commenting keywords or questions on competitor Instagram Reels for high-converting warm outreach.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1341,7 +1342,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1352,8 +1353,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-39",
-      "name": "#39 YouTube Comments Scraper - Viewer Sentiment",
+      "id": "551d8fa8-a878-4ed2-ab6f-e7106f5e49aa",
+      "name": "Scraper 39 YouTube Comments Scraper - Viewer Sentiment",
       "notesInFlow": true,
       "notes": "Analyze viewer comments on top YouTube reviews in your industry to extract feature requests and competitor pain points.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1372,7 +1373,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1383,8 +1384,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-40",
-      "name": "#40 Reddit Post Comments & Bulk Thread Export",
+      "id": "afacdc57-2a64-4a0e-af2a-b5ef1341c932",
+      "name": "Scraper 40 Reddit Post Comments Bulk Thread Export",
       "notesInFlow": true,
       "notes": "Export complete Reddit threads and top-voted comment trees into clean JSON for AI persona research and product positioning.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1403,7 +1404,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1414,8 +1415,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-41",
-      "name": "#41 Fast X (Twitter) User & Followers Scraper",
+      "id": "67f468d8-f9a3-4ec3-ac5c-f8b5cceebf84",
+      "name": "Scraper 41 Fast X (Twitter) User Followers Scraper",
       "notesInFlow": true,
       "notes": "Extract founder and developer profiles following top tech accounts on X, complete with bio links and DM openness.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1434,7 +1435,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1445,8 +1446,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-42",
-      "name": "#42 Facebook Public Group Posts (No Cookies)",
+      "id": "8f719c5e-61aa-4525-aad2-bafd334a3fa5",
+      "name": "Scraper 42 Facebook Public Group Posts (No Cookies)",
       "notesInFlow": true,
       "notes": "Monitor public Facebook groups for members asking for service providers, agencies, or software tools without account login.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1465,7 +1466,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1476,8 +1477,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-43",
-      "name": "#43 Amazon US BSR & Movers and Shakers Tracker",
+      "id": "0e1ae296-df43-4e10-a49a-2615eaae084c",
+      "name": "Scraper 43 Amazon US BSR Movers and Shakers Tracker",
       "notesInFlow": true,
       "notes": "Track breakout Amazon US products with surging BSR velocity, buy-box price shifts, and low review competition.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1496,7 +1497,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1507,8 +1508,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-44",
-      "name": "#44 TikTok Shop US Top Products & GMV Scraper",
+      "id": "9d749312-b1bf-4f84-ac48-2326cf1406bd",
+      "name": "Scraper 44 TikTok Shop US Top Products GMV Scraper",
       "notesInFlow": true,
       "notes": "Spot viral TikTok Shop US products doing $10k+/day in GMV along with their affiliate commission rates and creator counts.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1527,7 +1528,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1538,8 +1539,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-45",
-      "name": "#45 AliExpress Product Scraper: Prices & Orders",
+      "id": "7319cb83-078d-4f31-a398-b0d03429f94d",
+      "name": "Scraper 45 AliExpress Product Scraper Prices Orders",
       "notesInFlow": true,
       "notes": "Compare AliExpress supplier factory pricing and 7-day order growth against US DTC retail prices for high-margin sourcing.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1558,7 +1559,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1569,8 +1570,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-46",
-      "name": "#46 Etsy Shop Revenue, Sales & Keyword Analyzer",
+      "id": "c44fff8e-5466-4bd1-a800-d55ecf3f26c2",
+      "name": "Scraper 46 Etsy Shop Revenue, Sales Keyword Analyzer",
       "notesInFlow": true,
       "notes": "Reverse-engineer top Etsy shops to see estimated monthly revenue, high-converting listing tags, and pricing tiers.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1589,7 +1590,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1600,8 +1601,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-47",
-      "name": "#47 Walmart Product & Price Scraper - Inventory",
+      "id": "df271fd4-83a3-41e6-af7c-0f8b2963cceb",
+      "name": "Scraper 47 Walmart Product Price Scraper - Inventory",
       "notesInFlow": true,
       "notes": "Monitor Walmart.com product listings for third-party seller price undercutting, rollback discounts, and inventory depletion.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1620,7 +1621,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1631,8 +1632,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-48",
-      "name": "#48 eBay Sold Listings & Terapeak Comps Scraper",
+      "id": "ec029fef-051b-4797-a55e-d9a072782e8b",
+      "name": "Scraper 48 eBay Sold Listings Terapeak Comps Scraper",
       "notesInFlow": true,
       "notes": "Calculate exact market clearing prices and sell-through rates from actual sold eBay items before bidding or Flipping.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1651,7 +1652,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1662,8 +1663,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-49",
-      "name": "#49 Shopify Store Scraper - Full Product Catalog",
+      "id": "4ecdc217-79c1-4b02-a370-85419ae2ca33",
+      "name": "Scraper 49 Shopify Store Scraper - Full Product Catalog",
       "notesInFlow": true,
       "notes": "Export any Shopify store’s entire product catalog including images, variant prices, SKU codes, and stock timestamps.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1682,7 +1683,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1693,8 +1694,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-50",
-      "name": "#50 Pinterest Scraper & Monitor: Pins & Saves",
+      "id": "22b46ebd-6ade-45a1-aa39-dec15074858c",
+      "name": "Scraper 50 Pinterest Scraper Monitor Pins Saves",
       "notesInFlow": true,
       "notes": "Track rapidly saved Pinterest pins and extract their outbound e-commerce product links to spot retail trends 60 days early.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1713,7 +1714,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1724,8 +1725,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-51",
-      "name": "#51 US New Business & LLC Incorporations Scraper",
+      "id": "15979805-4a83-402b-a9a4-b6c7c961671e",
+      "name": "Scraper 51 US New Business LLC Incorporations Scraper",
       "notesInFlow": true,
       "notes": "Reach brand-new US business owners within 48 hours of LLC formation to pitch accounting, banking, insurance, or web design.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1744,7 +1745,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1755,8 +1756,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-52",
-      "name": "#52 Zillow FSBO & Motivated Seller Real Estate Leads",
+      "id": "1b322a69-846a-44f5-a035-fdb7a0a14cd2",
+      "name": "Scraper 52 Zillow FSBO Motivated Seller Real Estate Leads",
       "notesInFlow": true,
       "notes": "Deliver daily FSBO and distressed/price-reduced residential property leads directly to real estate agents and wholesalers.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1775,7 +1776,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1786,8 +1787,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-53",
-      "name": "#53 US Contractor Leads: Roofers, HVAC & Plumbers",
+      "id": "e811b006-ad5b-4753-a926-efcdbf0dfc6b",
+      "name": "Scraper 53 US Contractor Leads Roofers, HVAC Plumbers",
       "notesInFlow": true,
       "notes": "Build verified phone and email lists of high-ticket US home service contractors for GoHighLevel and AI voice agent agencies.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1806,7 +1807,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1817,8 +1818,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-54",
-      "name": "#54 Y Combinator (YC) Startup Directory & Founders",
+      "id": "7cc26180-1ce9-4487-a211-9d5c32942321",
+      "name": "Scraper 54 Y Combinator (YC) Startup Directory Founders",
       "notesInFlow": true,
       "notes": "Extract Y Combinator batch companies, founder LinkedIn URLs, and launch descriptions for VC deal sourcing or dev-agency sales.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1837,7 +1838,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1848,8 +1849,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-55",
-      "name": "#55 Google Maps Reviews Scraper - Ratings & Text",
+      "id": "0c12bab8-ddbb-4699-a77e-0efa7c920934",
+      "name": "Scraper 55 Google Maps Reviews Scraper - Ratings Text",
       "notesInFlow": true,
       "notes": "Find local businesses receiving unanswered 1-star or 2-star Google Maps reviews and automatically pitch reputation management.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1868,7 +1869,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1879,8 +1880,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-56",
-      "name": "#56 LinkedIn Jobs Scraper - Hiring Companies",
+      "id": "1ccc9369-cafe-46b7-afea-a105a05d830c",
+      "name": "Scraper 56 LinkedIn Jobs Scraper - Hiring Companies",
       "notesInFlow": true,
       "notes": "Detect companies actively paying to promote job openings and pitch your recruiting agency or fractional consultancy immediately.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1899,7 +1900,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1910,8 +1911,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-57",
-      "name": "#57 Capterra & GetApp Software Reviews Scraper",
+      "id": "ee51b92e-262f-43ae-a4c9-8d994c627db8",
+      "name": "Scraper 57 Capterra GetApp Software Reviews Scraper",
       "notesInFlow": true,
       "notes": "Mine verified 1-to-3 star software reviews on Capterra/G2 to identify frustrated users ready to switch to your SaaS.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1930,7 +1931,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1941,8 +1942,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-58",
-      "name": "#58 GitHub Repo Codebase LLM Context Packer",
+      "id": "b0717107-2ea2-425f-a80a-0b2d1ecc5243",
+      "name": "Scraper 58 GitHub Repo Codebase LLM Context Packer",
       "notesInFlow": true,
       "notes": "Pack any public GitHub repository architecture and README documentation into clean token-counted context for Claude/GPT-4o.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1961,7 +1962,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -1972,8 +1973,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-59",
-      "name": "#59 XML Sitemap Crawler & Knowledgebase Builder",
+      "id": "8b662744-39b3-4775-a9fd-b43fea346e78",
+      "name": "Scraper 59 XML Sitemap Crawler Knowledgebase Builder",
       "notesInFlow": true,
       "notes": "Automatically crawl any site’s sitemap.xml every night and sync updated pages into your customer support RAG vector database.",
       "type": "n8n-nodes-base.httpRequest",
@@ -1992,7 +1993,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2003,8 +2004,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-60",
-      "name": "#60 PDF Financial Report & Table Extractor",
+      "id": "dd4a8b15-7575-45c0-ae04-b5a22f20eb0a",
+      "name": "Scraper 60 PDF Financial Report Table Extractor",
       "notesInFlow": true,
       "notes": "Extract complex financial tables from PDF reports into structured Markdown and JSON for automated AI financial analysis.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2023,7 +2024,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2034,8 +2035,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-61",
-      "name": "#61 B2B Business & Contact Lead Scraper",
+      "id": "2b36df5f-bbcb-4933-a9c7-326005f3ff6a",
+      "name": "Scraper 61 B2B Business Contact Lead Scraper",
       "notesInFlow": true,
       "notes": "Extract verified B2B decision-maker emails, phone numbers, and company websites and route them directly into Clay or HubSpot.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2054,7 +2055,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2065,8 +2066,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-62",
-      "name": "#62 B2B Lead Contact & Tech Stack Enricher",
+      "id": "6b9729d1-84b7-44c6-af7b-9230ff93769f",
+      "name": "Scraper 62 B2B Lead Contact Tech Stack Enricher",
       "notesInFlow": true,
       "notes": "Enrich raw company domains with DNS MX deliverability signals, social links, and detected web technologies before outreach.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2085,7 +2086,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2096,8 +2097,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-63",
-      "name": "#63 Clutch & G2 B2B Agency Reviews Scraper",
+      "id": "4df242ac-2445-4071-a292-1ddb1e0c3b7a",
+      "name": "Scraper 63 Clutch G2 B2B Agency Reviews Scraper",
       "notesInFlow": true,
       "notes": "Scrape Clutch and G2 agency profiles, verified client review budgets, and decision-maker contacts for B2B partnership outreach.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2116,7 +2117,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2127,8 +2128,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-64",
-      "name": "#64 Trustpilot Reviews Scraper - Ratings & Text",
+      "id": "bc6a7865-581e-41e0-adc7-76dd1effd2ea",
+      "name": "Scraper 64 Trustpilot Reviews Scraper - Ratings Text",
       "notesInFlow": true,
       "notes": "Monitor competitor Trustpilot pages for angry customer reviews and trigger immediate switch-offer campaigns.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2147,7 +2148,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2158,8 +2159,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-65",
-      "name": "#65 Glassdoor Company Reviews & Salary Scraper",
+      "id": "34f7b702-bb15-4b75-a6c1-37c2ed812b46",
+      "name": "Scraper 65 Glassdoor Company Reviews Salary Scraper",
       "notesInFlow": true,
       "notes": "Extract verified compensation bands, employee morale trends, and interview questions from Glassdoor for recruiting intelligence.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2178,7 +2179,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2189,8 +2190,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-66",
-      "name": "#66 Substack & Beehiiv Newsletter Lead Scraper",
+      "id": "c9bfaa80-7969-4442-ae0a-e669761d245c",
+      "name": "Scraper 66 Substack Beehiiv Newsletter Lead Scraper",
       "notesInFlow": true,
       "notes": "Build a database of high-subscriber Substack and Beehiiv newsletter writers with contact emails for B2B sponsorship deals.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2209,7 +2210,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2220,8 +2221,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-67",
-      "name": "#67 Podcast RSS Sponsor, Promo & Guest Extractor",
+      "id": "1681af53-47bc-460e-ab40-c70c028bce13",
+      "name": "Scraper 67 Podcast RSS Sponsor, Promo Guest Extractor",
       "notesInFlow": true,
       "notes": "Discover brands actively paying to sponsor podcasts via promo code detection in episode show notes, plus host booking emails.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2240,7 +2241,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2251,8 +2252,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-68",
-      "name": "#68 Twitch & Kick Streamer & Sponsor Tracker",
+      "id": "1c920f70-fcdb-4ecf-a193-9277f57045dc",
+      "name": "Scraper 68 Twitch Kick Streamer Sponsor Tracker",
       "notesInFlow": true,
       "notes": "Track live streamer CCV metrics, chat velocity, and active brand sponsor panels across Twitch and Kick.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2271,7 +2272,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2282,8 +2283,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-69",
-      "name": "#69 Threads Scraper — Posts, Profiles & Search",
+      "id": "c61e6e81-bbda-4601-a59b-fe35817abf74",
+      "name": "Scraper 69 Threads Scraper — Posts, Profiles Search",
       "notesInFlow": true,
       "notes": "Monitor emerging B2B and creator conversations on Meta Threads and extract high-engagement posts and author profiles.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2302,7 +2303,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2313,8 +2314,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-70",
-      "name": "#70 Discord Public Channels & Community Scraper",
+      "id": "7594006f-64e5-4921-acc7-10d705bb0d10",
+      "name": "Scraper 70 Discord Public Channels Community Scraper",
       "notesInFlow": true,
       "notes": "Index public Discord community announcements and developer pain points into a searchable knowledge base or Slack digest.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2333,7 +2334,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2344,8 +2345,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-71",
-      "name": "#71 TikTok Search Scraper: Videos by Keyword",
+      "id": "f9eb9a5f-2057-480a-a6bb-285b3b9cedb1",
+      "name": "Scraper 71 TikTok Search Scraper Videos by Keyword",
       "notesInFlow": true,
       "notes": "Search TikTok by exact keyword and US region to capture breakout videos, play-to-like ratios, and creator handles.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2364,7 +2365,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2375,8 +2376,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-72",
-      "name": "#72 Facebook Video & Reel AI Transcript Scraper",
+      "id": "88e666d3-e2c4-4883-a7f1-d408bea57f26",
+      "name": "Scraper 72 Facebook Video Reel AI Transcript Scraper",
       "notesInFlow": true,
       "notes": "Extract clean spoken word transcripts from high-performing Facebook Reels and video ads to feed into AI scriptwriters.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2395,7 +2396,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2406,8 +2407,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-73",
-      "name": "#73 Fast YouTube Channel Scraper: Subs & Stats",
+      "id": "c24431aa-6f0f-47a4-aa6c-64201b1f46f0",
+      "name": "Scraper 73 Fast YouTube Channel Scraper Subs Stats",
       "notesInFlow": true,
       "notes": "Audit YouTube channels for real view-to-subscriber consistency across their last 30 videos before negotiating sponsorships.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2426,7 +2427,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2437,8 +2438,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-74",
-      "name": "#74 Instagram Profile & Posts Scraper (No Login)",
+      "id": "1ce74506-1a01-45c2-a29f-73b1245f42e7",
+      "name": "Scraper 74 Instagram Profile Posts Scraper (No Login)",
       "notesInFlow": true,
       "notes": "Pull an Instagram profile’s latest posts, Reels view counts, and true engagement rate without any Instagram login cookies.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2457,7 +2458,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2468,8 +2469,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-75",
-      "name": "#75 Facebook Page Posts & Engagement Scraper",
+      "id": "097bf17e-5bcc-4aed-a5de-578ddb77dd1c",
+      "name": "Scraper 75 Facebook Page Posts Engagement Scraper",
       "notesInFlow": true,
       "notes": "Benchmark competitor Facebook Page posting frequency, Reel reach, and audience share ratios on a weekly schedule.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2488,7 +2489,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2499,8 +2500,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-76",
-      "name": "#76 TikTok & Reels Trending Audio & Hashtags",
+      "id": "f6092ae9-61df-4343-a6cc-c077913817f7",
+      "name": "Scraper 76 TikTok Reels Trending Audio Hashtags",
       "notesInFlow": true,
       "notes": "Alert your social media team on Slack when a commercial-safe TikTok or Reels audio track surges in 24-hour creator adoption.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2519,7 +2520,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2530,8 +2531,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-77",
-      "name": "#77 YouTube & TikTok Transcript Hook Extractor",
+      "id": "02b6aef4-39b6-411a-abf1-4acaef0fb3ad",
+      "name": "Scraper 77 YouTube TikTok Transcript Hook Extractor",
       "notesInFlow": true,
       "notes": "Build an automated Notion swipe file of opening 5-second video hooks and full transcripts from YouTube and TikTok.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2550,7 +2551,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2561,8 +2562,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-78",
-      "name": "#78 Social Viral Trend & HN Pulse Scraper",
+      "id": "80cf7db9-a7f2-4ca5-a8f8-d9f241faebe2",
+      "name": "Scraper 78 Social Viral Trend HN Pulse Scraper",
       "notesInFlow": true,
       "notes": "Combine front-page Hacker News upvote velocity with Reddit discussion spikes to spot viral developer tools early.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2581,7 +2582,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2592,8 +2593,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-79",
-      "name": "#79 Product Hunt Launch & Maker Intelligence",
+      "id": "49448c40-d78b-411c-aea5-66d0940fd25a",
+      "name": "Scraper 79 Product Hunt Launch Maker Intelligence",
       "notesInFlow": true,
       "notes": "Scrape every new Product Hunt launch daily along with maker X/LinkedIn links and website domains for warm founder outreach.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2612,7 +2613,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2623,8 +2624,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-80",
-      "name": "#80 Crunchbase Startup Funding & Founder Scraper",
+      "id": "be18c9bf-e1f1-422f-aa8f-8c395a61b8fe",
+      "name": "Scraper 80 Crunchbase Startup Funding Founder Scraper",
       "notesInFlow": true,
       "notes": "Automatically sync companies announcing new venture funding rounds into HubSpot so your sales team pitches them first.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2643,7 +2644,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2654,8 +2655,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-81",
-      "name": "#81 Wellfound (AngelList) Startup Jobs Scraper",
+      "id": "dd460022-4933-4087-a78f-7da9aa958443",
+      "name": "Scraper 81 Wellfound (AngelList) Startup Jobs Scraper",
       "notesInFlow": true,
       "notes": "Extract fast-growing startups actively hiring on Wellfound along with salary/equity bands and founding team contacts.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2674,7 +2675,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2685,8 +2686,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-82",
-      "name": "#82 Real Estate Comps Scraper: Price & Tax",
+      "id": "0e77f875-51d0-4536-a0cf-4bf40de1c34b",
+      "name": "Scraper 82 Real Estate Comps Scraper Price Tax",
       "notesInFlow": true,
       "notes": "Pull residential real estate comparables, tax assessment histories, and price cuts into Google Sheets for deal underwriting.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2705,7 +2706,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2716,8 +2717,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-83",
-      "name": "#83 StreetEasy NYC Real Estate & Rentals Scraper",
+      "id": "c735cbcc-4ae9-419c-a337-5bc6133ada1c",
+      "name": "Scraper 83 StreetEasy NYC Real Estate Rentals Scraper",
       "notesInFlow": true,
       "notes": "Monitor New York City apartment listings, days on market, and listing agent contacts across StreetEasy.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2736,7 +2737,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2747,8 +2748,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-84",
-      "name": "#84 Airbnb & VRBO Nightly Rates & Fees Scraper",
+      "id": "05d91823-27f7-438d-a9a9-88d5a6454d19",
+      "name": "Scraper 84 Airbnb VRBO Nightly Rates Fees Scraper",
       "notesInFlow": true,
       "notes": "Analyze competitor Airbnb and VRBO listings for nightly pricing, Superhost status, and review velocity in any US market.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2767,7 +2768,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2778,8 +2779,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-85",
-      "name": "#85 Booking.com Hotel Rates & Reviews Scraper",
+      "id": "be0f88dd-fcdf-496e-a567-6e2bc9ac6e83",
+      "name": "Scraper 85 Booking.com Hotel Rates Reviews Scraper",
       "notesInFlow": true,
       "notes": "Track daily room tariffs, OTA rate parity discrepancies, and guest review scores across Booking.com and TripAdvisor.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2798,7 +2799,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2809,8 +2810,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-86",
-      "name": "#86 Skyscanner & Google Flights Fare Monitor",
+      "id": "69b6c66b-752f-47dc-ab58-21b0a9c5cba4",
+      "name": "Scraper 86 Skyscanner Google Flights Fare Monitor",
       "notesInFlow": true,
       "notes": "Monitor airline fare fluctuations across key US and international routes and trigger automated price-drop notifications.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2829,7 +2830,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2840,8 +2841,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-87",
-      "name": "#87 Local Contractor Lead Scraper: Plumbers & Roofers",
+      "id": "8c4cf659-d334-4688-a1a1-4b79569fbda3",
+      "name": "Scraper 87 Local Contractor Lead Scraper Plumbers Roofers",
       "notesInFlow": true,
       "notes": "Extract active home service professionals advertising on Angi and Thumbtack to pitch local SEO and lead-handling software.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2860,7 +2861,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2871,8 +2872,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-88",
-      "name": "#88 Restaurant Menu & Price Scraper: Yelp",
+      "id": "52c163bc-bbb1-44a7-af03-9401876c9052",
+      "name": "Scraper 88 Restaurant Menu Price Scraper Yelp",
       "notesInFlow": true,
       "notes": "Extract restaurant menu pricing, dish categories, and POS/ordering links for F&B suppliers and restaurant SaaS sales.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2891,7 +2892,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2902,8 +2903,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-89",
-      "name": "#89 UberEats & DoorDash Menu & Fee Scraper",
+      "id": "786bb26d-3ea5-42e1-a1e6-fb7d63f9f722",
+      "name": "Scraper 89 UberEats DoorDash Menu Fee Scraper",
       "notesInFlow": true,
       "notes": "Compare competitor delivery menu prices, BOGO promotions, and delivery fee tiers across UberEats and DoorDash.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2922,7 +2923,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2933,8 +2934,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-90",
-      "name": "#90 Amazon Product Reviews & Sentiment Scraper",
+      "id": "b40a29e7-76b9-479a-a2bb-c730374384a4",
+      "name": "Scraper 90 Amazon Product Reviews Sentiment Scraper",
       "notesInFlow": true,
       "notes": "Mine thousands of Amazon customer reviews to quantify exact product defect rates and feature requests before manufacturing.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2953,7 +2954,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2964,8 +2965,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-91",
-      "name": "#91 Etsy Trending Product & Keyword Scraper",
+      "id": "77b5e2a0-4c17-4a91-af98-d9a1bf1e71cd",
+      "name": "Scraper 91 Etsy Trending Product Keyword Scraper",
       "notesInFlow": true,
       "notes": "Spot fast-rising Etsy search keywords with high bestseller velocity and low competing listing counts.",
       "type": "n8n-nodes-base.httpRequest",
@@ -2984,7 +2985,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -2995,8 +2996,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-92",
-      "name": "#92 Depop & Poshmark Resale Price Tracker",
+      "id": "84b33d56-ceb9-4877-ae98-4b13d6e3d4cb",
+      "name": "Scraper 92 Depop Poshmark Resale Price Tracker",
       "notesInFlow": true,
       "notes": "Monitor underpriced designer and vintage listings across Depop and Poshmark for instant resale arbitrage.",
       "type": "n8n-nodes-base.httpRequest",
@@ -3015,7 +3016,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -3026,8 +3027,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-93",
-      "name": "#93 Alibaba B2B Wholesale Supplier & MOQ Scraper",
+      "id": "f33d5b44-c00f-424e-aa1a-8784d0f9ef82",
+      "name": "Scraper 93 Alibaba B2B Wholesale Supplier MOQ Scraper",
       "notesInFlow": true,
       "notes": "Compare verified Alibaba Gold Suppliers, minimum order quantities (MOQs), and FOB unit pricing inside Google Sheets.",
       "type": "n8n-nodes-base.httpRequest",
@@ -3046,7 +3047,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -3057,8 +3058,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-94",
-      "name": "#94 SaaS Stripe & LemonSqueezy Pricing Comparer",
+      "id": "bdeff2fa-da99-4a25-a5fd-5329f7a9105f",
+      "name": "Scraper 94 SaaS Stripe LemonSqueezy Pricing Comparer",
       "notesInFlow": true,
       "notes": "Track whenever a SaaS competitor changes their monthly/annual pricing tiers, free trial limits, or enterprise add-ons.",
       "type": "n8n-nodes-base.httpRequest",
@@ -3077,7 +3078,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -3088,8 +3089,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-95",
-      "name": "#95 Facebook Marketplace US Newest Deals Scraper",
+      "id": "4692cbb4-1e66-4d60-a1f6-86acdfcb913c",
+      "name": "Scraper 95 Facebook Marketplace US Newest Deals Scraper",
       "notesInFlow": true,
       "notes": "Scan Facebook Marketplace for newly listed underpriced electronics, furniture, and vehicles and send instant Telegram alerts.",
       "type": "n8n-nodes-base.httpRequest",
@@ -3108,7 +3109,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -3119,8 +3120,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-96",
-      "name": "#96 Multi-ATS Tech Jobs & Hiring Aggregator",
+      "id": "83b4dea0-deb5-4063-a8a0-0d17a0148de8",
+      "name": "Scraper 96 Multi-ATS Tech Jobs Hiring Aggregator",
       "notesInFlow": true,
       "notes": "Scrape tech job openings directly from company Greenhouse and Lever ATS portals hours before they syndicate to job boards.",
       "type": "n8n-nodes-base.httpRequest",
@@ -3139,7 +3140,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -3150,8 +3151,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-97",
-      "name": "#97 HackerNews Who is Hiring Lead Parser",
+      "id": "d2f92c1f-ba8f-4b66-afa2-b1ed32850fdb",
+      "name": "Scraper 97 HackerNews Who is Hiring Lead Parser",
       "notesInFlow": true,
       "notes": "Parse Hacker News monthly hiring threads into structured company records with tech stacks, salaries, and direct founder emails.",
       "type": "n8n-nodes-base.httpRequest",
@@ -3170,7 +3171,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -3181,8 +3182,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-98",
-      "name": "#98 Google Jobs Scraper: US Hiring & Salaries",
+      "id": "a77c892a-27a2-415e-a24c-78493a27ebf8",
+      "name": "Scraper 98 Google Jobs Scraper US Hiring Salaries",
       "notesInFlow": true,
       "notes": "Aggregate disclosed US salary ranges and active hiring volume across Google Jobs, Indeed, and ZipRecruiter.",
       "type": "n8n-nodes-base.httpRequest",
@@ -3201,7 +3202,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -3212,8 +3213,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-99",
-      "name": "#99 arXiv & Hugging Face AI Paper Extractor",
+      "id": "a4af37fe-b37b-4eae-a34c-509097dea781",
+      "name": "Scraper 99 arXiv Hugging Face AI Paper Extractor",
       "notesInFlow": true,
       "notes": "Fetch the top trending AI papers from arXiv and Hugging Face daily, summarize key findings with an LLM, and post to Slack.",
       "type": "n8n-nodes-base.httpRequest",
@@ -3232,7 +3233,7 @@
           "parameters": [
             {
               "name": "token",
-              "value": "={{ $node[\"Master Config & API Token\"].json.apifyToken }}"
+              "value": "={{ $json.apifyToken }}"
             }
           ]
         },
@@ -3243,8 +3244,8 @@
           "timeout": 60000
         }
       },
-      "id": "scraper-node-100",
-      "name": "#100 App Store & Google Play App Reviews Scraper",
+      "id": "ef1756dd-98b5-4b28-aceb-eef8bbb61003",
+      "name": "Scraper 100 App Store Google Play App Reviews Scraper",
       "notesInFlow": true,
       "notes": "Monitor iOS App Store and Google Play reviews after every app release to flag crash reports and competitor feature gaps.",
       "type": "n8n-nodes-base.httpRequest",
@@ -3255,518 +3256,519 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Master Daily Schedule Trigger": {
       "main": [
         [
           {
-            "node": "Master Config & API Token",
+            "node": "Master Config and API Token",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Master Config & API Token": {
+    "Master Config and API Token": {
       "main": [
         [
           {
-            "node": "#01 LinkedIn Profile & Email Scraper: No Cookies",
+            "node": "Scraper 01 LinkedIn Profile Email Scraper No Cookies",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#02 LinkedIn Company Employees & People Scraper",
+            "node": "Scraper 02 LinkedIn Company Employees People Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#03 Google Maps Email & Business Leads Extractor",
+            "node": "Scraper 03 Google Maps Email Business Leads Extractor",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#04 Reddit Keyword Search & Buyer Intent Scraper",
+            "node": "Scraper 04 Reddit Keyword Search Buyer Intent Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#05 Website to Markdown & RAG Context Crawler",
+            "node": "Scraper 05 Website to Markdown RAG Context Crawler",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#06 Google Ads Transparency Center Scraper API",
+            "node": "Scraper 06 Google Ads Transparency Center Scraper API",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#07 Instagram Reels Transcript & Script Scraper",
+            "node": "Scraper 07 Instagram Reels Transcript Script Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#08 SEC EDGAR Form D Startup Funding Scraper",
+            "node": "Scraper 08 SEC EDGAR Form D Startup Funding Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#09 Shopify Product Scraper: Prices, Stock & SKU",
+            "node": "Scraper 09 Shopify Product Scraper Prices, Stock SKU",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#10 X (Twitter) Posts, Metrics & Thread Scraper",
+            "node": "Scraper 10 X (Twitter) Posts, Metrics Thread Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#11 LinkedIn Post Search Scraper (No Cookies)",
+            "node": "Scraper 11 LinkedIn Post Search Scraper (No Cookies)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#12 LinkedIn Profile Search Scraper (No Cookies)",
+            "node": "Scraper 12 LinkedIn Profile Search Scraper (No Cookies)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#13 LinkedIn Profile Posts Scraper (No Cookies)",
+            "node": "Scraper 13 LinkedIn Profile Posts Scraper (No Cookies)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#14 LinkedIn Company Details & Search (No Cookies)",
+            "node": "Scraper 14 LinkedIn Company Details Search (No Cookies)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#15 LinkedIn Company Posts Scraper (No Cookies)",
+            "node": "Scraper 15 LinkedIn Company Posts Scraper (No Cookies)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#16 LinkedIn Post Comments & Reactions (No Cookies)",
+            "node": "Scraper 16 LinkedIn Post Comments Reactions (No Cookies)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#17 LinkedIn Profile Search By Name (No Cookies)",
+            "node": "Scraper 17 LinkedIn Profile Search By Name (No Cookies)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#18 LinkedIn Company Search Scraper (No Cookies)",
+            "node": "Scraper 18 LinkedIn Company Search Scraper (No Cookies)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#19 LinkedIn Sales Navigator Lead Exporter (No Cookies)",
+            "node": "Scraper 19 LinkedIn Sales Navigator Lead Exporter (No Cookies)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#20 Reverse Email Lookup to LinkedIn Profile API",
+            "node": "Scraper 20 Reverse Email Lookup to LinkedIn Profile API",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#21 B2B Decision-Maker & Verified Email Finder",
+            "node": "Scraper 21 B2B Decision-Maker Verified Email Finder",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#22 Bulk Email Verifier & Validator - MX & SMTP",
+            "node": "Scraper 22 Bulk Email Verifier Validator - MX SMTP",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#23 Facebook Ad Library Scraper: Competitor Ads",
+            "node": "Scraper 23 Facebook Ad Library Scraper Competitor Ads",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#24 Meta (FB & IG) Ad Library & Spend Scraper",
+            "node": "Scraper 24 Meta (FB IG) Ad Library Spend Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#25 LinkedIn Ad Library B2B Creatives Scraper",
+            "node": "Scraper 25 LinkedIn Ad Library B2B Creatives Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#26 TikTok Creative Center Top Ads Scraper",
+            "node": "Scraper 26 TikTok Creative Center Top Ads Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#27 Keyword Search Volume, CPC & SEO Difficulty",
+            "node": "Scraper 27 Keyword Search Volume, CPC SEO Difficulty",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#28 SimilarWeb Fast Traffic, Rank & Keywords Scraper",
+            "node": "Scraper 28 SimilarWeb Fast Traffic, Rank Keywords Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#29 SEO Competitor SERP & Content Gap Analyzer",
+            "node": "Scraper 29 SEO Competitor SERP Content Gap Analyzer",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#30 Google Search Results Fast SERP Scraper API",
+            "node": "Scraper 30 Google Search Results Fast SERP Scraper API",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#31 Domain Authority, Backlinks & Traffic SEO API",
+            "node": "Scraper 31 Domain Authority, Backlinks Traffic SEO API",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#32 Deep Tech Stack & CMS Fingerprinter",
+            "node": "Scraper 32 Deep Tech Stack CMS Fingerprinter",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#33 TikTok Transcript & Viral Script Extractor API",
+            "node": "Scraper 33 TikTok Transcript Viral Script Extractor API",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#34 TikTok Profile & Creator Scraper - Emails",
+            "node": "Scraper 34 TikTok Profile Creator Scraper - Emails",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#35 TikTok Comments Scraper - Audience Insights",
+            "node": "Scraper 35 TikTok Comments Scraper - Audience Insights",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#36 Instagram Followers & Following (No Login)",
+            "node": "Scraper 36 Instagram Followers Following (No Login)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#37 Instagram Reels Search & Viral Finder",
+            "node": "Scraper 37 Instagram Reels Search Viral Finder",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#38 Fast Instagram Comments Scraper (No Login)",
+            "node": "Scraper 38 Fast Instagram Comments Scraper (No Login)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#39 YouTube Comments Scraper - Viewer Sentiment",
+            "node": "Scraper 39 YouTube Comments Scraper - Viewer Sentiment",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#40 Reddit Post Comments & Bulk Thread Export",
+            "node": "Scraper 40 Reddit Post Comments Bulk Thread Export",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#41 Fast X (Twitter) User & Followers Scraper",
+            "node": "Scraper 41 Fast X (Twitter) User Followers Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#42 Facebook Public Group Posts (No Cookies)",
+            "node": "Scraper 42 Facebook Public Group Posts (No Cookies)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#43 Amazon US BSR & Movers and Shakers Tracker",
+            "node": "Scraper 43 Amazon US BSR Movers and Shakers Tracker",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#44 TikTok Shop US Top Products & GMV Scraper",
+            "node": "Scraper 44 TikTok Shop US Top Products GMV Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#45 AliExpress Product Scraper: Prices & Orders",
+            "node": "Scraper 45 AliExpress Product Scraper Prices Orders",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#46 Etsy Shop Revenue, Sales & Keyword Analyzer",
+            "node": "Scraper 46 Etsy Shop Revenue, Sales Keyword Analyzer",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#47 Walmart Product & Price Scraper - Inventory",
+            "node": "Scraper 47 Walmart Product Price Scraper - Inventory",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#48 eBay Sold Listings & Terapeak Comps Scraper",
+            "node": "Scraper 48 eBay Sold Listings Terapeak Comps Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#49 Shopify Store Scraper - Full Product Catalog",
+            "node": "Scraper 49 Shopify Store Scraper - Full Product Catalog",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#50 Pinterest Scraper & Monitor: Pins & Saves",
+            "node": "Scraper 50 Pinterest Scraper Monitor Pins Saves",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#51 US New Business & LLC Incorporations Scraper",
+            "node": "Scraper 51 US New Business LLC Incorporations Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#52 Zillow FSBO & Motivated Seller Real Estate Leads",
+            "node": "Scraper 52 Zillow FSBO Motivated Seller Real Estate Leads",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#53 US Contractor Leads: Roofers, HVAC & Plumbers",
+            "node": "Scraper 53 US Contractor Leads Roofers, HVAC Plumbers",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#54 Y Combinator (YC) Startup Directory & Founders",
+            "node": "Scraper 54 Y Combinator (YC) Startup Directory Founders",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#55 Google Maps Reviews Scraper - Ratings & Text",
+            "node": "Scraper 55 Google Maps Reviews Scraper - Ratings Text",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#56 LinkedIn Jobs Scraper - Hiring Companies",
+            "node": "Scraper 56 LinkedIn Jobs Scraper - Hiring Companies",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#57 Capterra & GetApp Software Reviews Scraper",
+            "node": "Scraper 57 Capterra GetApp Software Reviews Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#58 GitHub Repo Codebase LLM Context Packer",
+            "node": "Scraper 58 GitHub Repo Codebase LLM Context Packer",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#59 XML Sitemap Crawler & Knowledgebase Builder",
+            "node": "Scraper 59 XML Sitemap Crawler Knowledgebase Builder",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#60 PDF Financial Report & Table Extractor",
+            "node": "Scraper 60 PDF Financial Report Table Extractor",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#61 B2B Business & Contact Lead Scraper",
+            "node": "Scraper 61 B2B Business Contact Lead Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#62 B2B Lead Contact & Tech Stack Enricher",
+            "node": "Scraper 62 B2B Lead Contact Tech Stack Enricher",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#63 Clutch & G2 B2B Agency Reviews Scraper",
+            "node": "Scraper 63 Clutch G2 B2B Agency Reviews Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#64 Trustpilot Reviews Scraper - Ratings & Text",
+            "node": "Scraper 64 Trustpilot Reviews Scraper - Ratings Text",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#65 Glassdoor Company Reviews & Salary Scraper",
+            "node": "Scraper 65 Glassdoor Company Reviews Salary Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#66 Substack & Beehiiv Newsletter Lead Scraper",
+            "node": "Scraper 66 Substack Beehiiv Newsletter Lead Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#67 Podcast RSS Sponsor, Promo & Guest Extractor",
+            "node": "Scraper 67 Podcast RSS Sponsor, Promo Guest Extractor",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#68 Twitch & Kick Streamer & Sponsor Tracker",
+            "node": "Scraper 68 Twitch Kick Streamer Sponsor Tracker",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#69 Threads Scraper — Posts, Profiles & Search",
+            "node": "Scraper 69 Threads Scraper — Posts, Profiles Search",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#70 Discord Public Channels & Community Scraper",
+            "node": "Scraper 70 Discord Public Channels Community Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#71 TikTok Search Scraper: Videos by Keyword",
+            "node": "Scraper 71 TikTok Search Scraper Videos by Keyword",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#72 Facebook Video & Reel AI Transcript Scraper",
+            "node": "Scraper 72 Facebook Video Reel AI Transcript Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#73 Fast YouTube Channel Scraper: Subs & Stats",
+            "node": "Scraper 73 Fast YouTube Channel Scraper Subs Stats",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#74 Instagram Profile & Posts Scraper (No Login)",
+            "node": "Scraper 74 Instagram Profile Posts Scraper (No Login)",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#75 Facebook Page Posts & Engagement Scraper",
+            "node": "Scraper 75 Facebook Page Posts Engagement Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#76 TikTok & Reels Trending Audio & Hashtags",
+            "node": "Scraper 76 TikTok Reels Trending Audio Hashtags",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#77 YouTube & TikTok Transcript Hook Extractor",
+            "node": "Scraper 77 YouTube TikTok Transcript Hook Extractor",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#78 Social Viral Trend & HN Pulse Scraper",
+            "node": "Scraper 78 Social Viral Trend HN Pulse Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#79 Product Hunt Launch & Maker Intelligence",
+            "node": "Scraper 79 Product Hunt Launch Maker Intelligence",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#80 Crunchbase Startup Funding & Founder Scraper",
+            "node": "Scraper 80 Crunchbase Startup Funding Founder Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#81 Wellfound (AngelList) Startup Jobs Scraper",
+            "node": "Scraper 81 Wellfound (AngelList) Startup Jobs Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#82 Real Estate Comps Scraper: Price & Tax",
+            "node": "Scraper 82 Real Estate Comps Scraper Price Tax",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#83 StreetEasy NYC Real Estate & Rentals Scraper",
+            "node": "Scraper 83 StreetEasy NYC Real Estate Rentals Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#84 Airbnb & VRBO Nightly Rates & Fees Scraper",
+            "node": "Scraper 84 Airbnb VRBO Nightly Rates Fees Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#85 Booking.com Hotel Rates & Reviews Scraper",
+            "node": "Scraper 85 Booking.com Hotel Rates Reviews Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#86 Skyscanner & Google Flights Fare Monitor",
+            "node": "Scraper 86 Skyscanner Google Flights Fare Monitor",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#87 Local Contractor Lead Scraper: Plumbers & Roofers",
+            "node": "Scraper 87 Local Contractor Lead Scraper Plumbers Roofers",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#88 Restaurant Menu & Price Scraper: Yelp",
+            "node": "Scraper 88 Restaurant Menu Price Scraper Yelp",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#89 UberEats & DoorDash Menu & Fee Scraper",
+            "node": "Scraper 89 UberEats DoorDash Menu Fee Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#90 Amazon Product Reviews & Sentiment Scraper",
+            "node": "Scraper 90 Amazon Product Reviews Sentiment Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#91 Etsy Trending Product & Keyword Scraper",
+            "node": "Scraper 91 Etsy Trending Product Keyword Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#92 Depop & Poshmark Resale Price Tracker",
+            "node": "Scraper 92 Depop Poshmark Resale Price Tracker",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#93 Alibaba B2B Wholesale Supplier & MOQ Scraper",
+            "node": "Scraper 93 Alibaba B2B Wholesale Supplier MOQ Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#94 SaaS Stripe & LemonSqueezy Pricing Comparer",
+            "node": "Scraper 94 SaaS Stripe LemonSqueezy Pricing Comparer",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#95 Facebook Marketplace US Newest Deals Scraper",
+            "node": "Scraper 95 Facebook Marketplace US Newest Deals Scraper",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#96 Multi-ATS Tech Jobs & Hiring Aggregator",
+            "node": "Scraper 96 Multi-ATS Tech Jobs Hiring Aggregator",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#97 HackerNews Who is Hiring Lead Parser",
+            "node": "Scraper 97 HackerNews Who is Hiring Lead Parser",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#98 Google Jobs Scraper: US Hiring & Salaries",
+            "node": "Scraper 98 Google Jobs Scraper US Hiring Salaries",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#99 arXiv & Hugging Face AI Paper Extractor",
+            "node": "Scraper 99 arXiv Hugging Face AI Paper Extractor",
             "type": "main",
             "index": 0
           },
           {
-            "node": "#100 App Store & Google Play App Reviews Scraper",
+            "node": "Scraper 100 App Store Google Play App Reviews Scraper",
             "type": "main",
             "index": 0
           }
@@ -3774,9 +3776,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1e0e7c76-85bf-48e2-a7b0-fc7d9df69c3f",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "catalogUrl": "https://scrapers.tech/#n8n-workflows",
-    "totalScrapersConnected": 100
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

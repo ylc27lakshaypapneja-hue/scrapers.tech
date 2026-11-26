@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ TikTok Shop US Top-Selling Viral Products & Daily GMV Revenue Monitor\n\n**What this workflow does:**\nSpot viral TikTok Shop US products doing $10k+/day in GMV along with their affiliate commission rates and creator counts.\n\n**Powered by Apify Actor:** [`laborious_rumor/tiktok-shop-us-viral-product-gmv-tracker`](https://apify.com/laborious_rumor/tiktok-shop-us-viral-product-gmv-tracker) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: TikTok Shop US Top Products & GMV Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ TikTok Shop US Top-Selling Viral Products & Daily GMV Revenue Monitor\n\n**What this workflow does:**\nSpot viral TikTok Shop US products doing $10k+/day in GMV along with their affiliate commission rates and creator counts.\n\n**Powered by Apify Actor:** [`laborious_rumor/tiktok-shop-us-viral-product-gmv-tracker`](https://apify.com/laborious_rumor/tiktok-shop-us-viral-product-gmv-tracker) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify TikTok Shop US Top Products & GMV Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "17f947ff-f278-4bd3-ae86-5ada2b46bf90",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "328f9b2d-f514-4d46-aee6-fb1d8507f836",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "ee2a7523-c342-4262-ac7f-d176ed6ec8f3",
               "name": "queries",
               "value": "[\"beauty & personal care trending\",\"smart home gadgets TikTok Shop\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "397db794-bd6f-4cfa-a77a-799b58f54cca",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "9015c902-3ef8-4d81-a86d-731928c7628d",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: TikTok Shop US Top Products & GMV Scraper",
+      "id": "77001acb-f9a2-45a4-a2b2-a296fe55cd38",
+      "name": "Run Apify TikTok Shop US Top Products & GMV Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "21595316-a0fd-4112-a0d7-bc0d1c6a3789",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "749d2e60-665e-47b7-a6ab-b4ca01cdb81c",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: TikTok Shop US Top Products & GMV Scraper",
+            "node": "Run Apify TikTok Shop US Top Products & GMV Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: TikTok Shop US Top Products & GMV Scraper": {
+    "Run Apify TikTok Shop US Top Products & GMV Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b8a2cbb5-24f7-4c1a-ad29-0f8b30e3113a",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/tiktok-shop-us-viral-product-gmv-tracker",
-    "category": "E-Commerce"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

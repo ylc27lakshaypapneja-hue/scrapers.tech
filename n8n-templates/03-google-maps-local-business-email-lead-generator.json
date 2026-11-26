@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Google Maps Local Business Email & Phone Lead Extractor to CSV / Sheets\n\n**What this workflow does:**\nScrape local SMB leads from Google Maps with verified email addresses, phone numbers, star ratings, and booking tech stack.\n\n**Powered by Apify Actor:** [`laborious_rumor/local-business-directory-maps-lead-enricher`](https://apify.com/laborious_rumor/local-business-directory-maps-lead-enricher) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Google Maps Email & Business Leads Extractor** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Google Maps Local Business Email & Phone Lead Extractor to CSV / Sheets\n\n**What this workflow does:**\nScrape local SMB leads from Google Maps with verified email addresses, phone numbers, star ratings, and booking tech stack.\n\n**Powered by Apify Actor:** [`laborious_rumor/local-business-directory-maps-lead-enricher`](https://apify.com/laborious_rumor/local-business-directory-maps-lead-enricher) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Google Maps Email & Business Leads Extractor** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "93dc979d-e002-4617-abce-3bdc0ffeb560",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "8c173862-2e3c-4599-a81d-1c7c7314fb47",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "0d657a16-e825-4ba8-a754-5bb8315c9c77",
               "name": "queries",
               "value": "[\"roofing contractors austin texas\",\"medspa clinics miami florida\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "b0ad1192-69bd-441f-a3ad-4604dbb8c3d5",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "d0692062-4c50-4d2d-a35b-2b3f344f92d4",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Google Maps Email & Business Leads Extractor",
+      "id": "28f6139b-fd32-4bed-a84e-24639a6240a0",
+      "name": "Run Apify Google Maps Email & Business Leads Extractor",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "4f552d7a-ef94-4984-a6d6-8340a93f2837",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "02d52d00-6969-43c1-a492-bf787c8dd7f6",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Google Maps Email & Business Leads Extractor",
+            "node": "Run Apify Google Maps Email & Business Leads Extractor",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Google Maps Email & Business Leads Extractor": {
+    "Run Apify Google Maps Email & Business Leads Extractor": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "913a765b-b324-4a5e-a6e0-986b5b2dc550",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/local-business-directory-maps-lead-enricher",
-    "category": "Local & Maps"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

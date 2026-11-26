@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Angi & Thumbtack Verified Local Home Service Pros & Contractor Lead Extractor\n\n**What this workflow does:**\nExtract active home service professionals advertising on Angi and Thumbtack to pitch local SEO and lead-handling software.\n\n**Powered by Apify Actor:** [`laborious_rumor/angies-thumbtack-contractor-lead-scraper`](https://apify.com/laborious_rumor/angies-thumbtack-contractor-lead-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Local Contractor Lead Scraper: Plumbers & Roofers** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Angi & Thumbtack Verified Local Home Service Pros & Contractor Lead Extractor\n\n**What this workflow does:**\nExtract active home service professionals advertising on Angi and Thumbtack to pitch local SEO and lead-handling software.\n\n**Powered by Apify Actor:** [`laborious_rumor/angies-thumbtack-contractor-lead-scraper`](https://apify.com/laborious_rumor/angies-thumbtack-contractor-lead-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Local Contractor Lead Scraper Plumbers & Roofers** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "5df6c76c-91dd-4b4b-a13d-a93ac7bd0421",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "4ae3552a-da6f-4f72-aa3c-59c89e6ce0a6",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "4c687eff-6a1c-4bfd-a566-c15efefe2917",
               "name": "queries",
               "value": "[\"licensed electricians Houston TX\",\"general contractors Denver CO\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "5f2c7c39-f789-45a6-ac65-c78a0f8d5e58",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "23d4435e-b98f-47c1-a02b-dd6c9c78dbdf",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Local Contractor Lead Scraper: Plumbers & Roofers",
+      "id": "a2cd6b0b-aefa-412d-ae52-3981ac289a59",
+      "name": "Run Apify Local Contractor Lead Scraper Plumbers & Roofers",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "b628bebb-02f8-4cf5-af1f-5ac660ac4ca4",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "f82a5fa6-93c3-46c2-a366-d27bae162781",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Local Contractor Lead Scraper: Plumbers & Roofers",
+            "node": "Run Apify Local Contractor Lead Scraper Plumbers & Roofers",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Local Contractor Lead Scraper: Plumbers & Roofers": {
+    "Run Apify Local Contractor Lead Scraper Plumbers & Roofers": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1532dc45-690d-4324-ada1-7ab41fd21812",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/angies-thumbtack-contractor-lead-scraper",
-    "category": "Local & Maps"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

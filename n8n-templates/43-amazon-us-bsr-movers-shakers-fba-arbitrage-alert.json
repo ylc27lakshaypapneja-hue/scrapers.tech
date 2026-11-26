@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Amazon US Best Sellers Rank (BSR) & Movers/Shakers FBA Arbitrage Tracker\n\n**What this workflow does:**\nTrack breakout Amazon US products with surging BSR velocity, buy-box price shifts, and low review competition.\n\n**Powered by Apify Actor:** [`laborious_rumor/amazon-us-bsr-fba-arbitrage-product-tracker`](https://apify.com/laborious_rumor/amazon-us-bsr-fba-arbitrage-product-tracker) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Amazon US BSR & Movers and Shakers Tracker** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Amazon US Best Sellers Rank (BSR) & Movers/Shakers FBA Arbitrage Tracker\n\n**What this workflow does:**\nTrack breakout Amazon US products with surging BSR velocity, buy-box price shifts, and low review competition.\n\n**Powered by Apify Actor:** [`laborious_rumor/amazon-us-bsr-fba-arbitrage-product-tracker`](https://apify.com/laborious_rumor/amazon-us-bsr-fba-arbitrage-product-tracker) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Amazon US BSR & Movers and Shakers Tracker** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "2797cff2-1fc2-4b7e-ae80-b42e1553d8f0",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "d4ff1b06-1217-4243-ab3f-8711f04bc3aa",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "d60bca50-ad91-4438-a627-f96bff3e21f2",
               "name": "queries",
               "value": "[\"home office desk accessories\",\"pet grooming supplies BSR\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "b76ce66d-9840-4260-ac4d-a469bea0a6ed",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "ccca995a-b752-48ce-a772-067a8cf8ad51",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Amazon US BSR & Movers and Shakers Tracker",
+      "id": "6760db6f-a19d-4dc7-acf3-4e5215c585be",
+      "name": "Run Apify Amazon US BSR & Movers and Shakers Tracker",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "4b4680d9-7638-4726-a34e-be13fd9e2636",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "bc1d8113-96a1-4180-ac64-6388d2953e8c",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Amazon US BSR & Movers and Shakers Tracker",
+            "node": "Run Apify Amazon US BSR & Movers and Shakers Tracker",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Amazon US BSR & Movers and Shakers Tracker": {
+    "Run Apify Amazon US BSR & Movers and Shakers Tracker": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a862f84c-57f0-4ab1-ab34-a1a67d6a7337",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/amazon-us-bsr-fba-arbitrage-product-tracker",
-    "category": "E-Commerce"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ eBay Sold Listings & Completed Terapeak Price Comps Arbitrage Calculator\n\n**What this workflow does:**\nCalculate exact market clearing prices and sell-through rates from actual sold eBay items before bidding or Flipping.\n\n**Powered by Apify Actor:** [`laborious_rumor/ebay-sold-listings-price-comp-scraper`](https://apify.com/laborious_rumor/ebay-sold-listings-price-comp-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: eBay Sold Listings & Terapeak Comps Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ eBay Sold Listings & Completed Terapeak Price Comps Arbitrage Calculator\n\n**What this workflow does:**\nCalculate exact market clearing prices and sell-through rates from actual sold eBay items before bidding or Flipping.\n\n**Powered by Apify Actor:** [`laborious_rumor/ebay-sold-listings-price-comp-scraper`](https://apify.com/laborious_rumor/ebay-sold-listings-price-comp-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify eBay Sold Listings & Terapeak Comps Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "03bfd8ee-280f-45f8-a25b-d6e361769772",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "336680db-64d5-4caf-ae2e-bdf6294154ec",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "e3f5bce9-0dd4-41fc-ae87-fbaef5e78782",
               "name": "queries",
               "value": "[\"rolex datejust 16234 sold\",\"nvidia rtx 4090 fe sold\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "a8078ca8-e483-4b46-a2b9-921b8643c7e4",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "f4e7c336-c490-490a-ad57-94d74c152b0e",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: eBay Sold Listings & Terapeak Comps Scraper",
+      "id": "576a5adb-65a4-4fb0-adca-03f77867ff47",
+      "name": "Run Apify eBay Sold Listings & Terapeak Comps Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "0870994c-69f2-4241-a73f-e53670695b63",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "82bde8ff-bf65-46e5-a6ab-924e2502cc54",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: eBay Sold Listings & Terapeak Comps Scraper",
+            "node": "Run Apify eBay Sold Listings & Terapeak Comps Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: eBay Sold Listings & Terapeak Comps Scraper": {
+    "Run Apify eBay Sold Listings & Terapeak Comps Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f6688f06-a0d7-4c21-acb1-ad0b3ff019f5",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/ebay-sold-listings-price-comp-scraper",
-    "category": "E-Commerce"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

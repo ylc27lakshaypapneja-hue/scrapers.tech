@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Clutch & G2 B2B Agency Reviews, Project Budgets & Client Lead Extractor\n\n**What this workflow does:**\nScrape Clutch and G2 agency profiles, verified client review budgets, and decision-maker contacts for B2B partnership outreach.\n\n**Powered by Apify Actor:** [`laborious_rumor/clutch-g2-b2b-agency-reviews-scraper`](https://apify.com/laborious_rumor/clutch-g2-b2b-agency-reviews-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Clutch & G2 B2B Agency Reviews Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Clutch & G2 B2B Agency Reviews, Project Budgets & Client Lead Extractor\n\n**What this workflow does:**\nScrape Clutch and G2 agency profiles, verified client review budgets, and decision-maker contacts for B2B partnership outreach.\n\n**Powered by Apify Actor:** [`laborious_rumor/clutch-g2-b2b-agency-reviews-scraper`](https://apify.com/laborious_rumor/clutch-g2-b2b-agency-reviews-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Clutch & G2 B2B Agency Reviews Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "c1ffc1a1-b8e4-4b98-a1fb-6adebb8fb8ce",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "460002cd-c65f-4aa4-aa0d-facbde93551d",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "90c656f7-735f-4831-a403-c3b7bf65eb9f",
               "name": "queries",
               "value": "[\"custom software development agencies US\",\"B2B performance marketing agencies\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "455ec913-d909-4305-a630-401300863ae7",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "777c5f58-25d3-4ace-a82d-3fe0c6a2d099",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Clutch & G2 B2B Agency Reviews Scraper",
+      "id": "178a45d7-c9e5-4aca-a44e-14611701c55b",
+      "name": "Run Apify Clutch & G2 B2B Agency Reviews Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "cd53dc24-269f-4dcd-ab59-f325bab0c270",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "965b1328-50ec-459b-ac54-bea7f4c0541f",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Clutch & G2 B2B Agency Reviews Scraper",
+            "node": "Run Apify Clutch & G2 B2B Agency Reviews Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Clutch & G2 B2B Agency Reviews Scraper": {
+    "Run Apify Clutch & G2 B2B Agency Reviews Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "97f59352-71b9-4aab-a63f-d432b02d67a1",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/clutch-g2-b2b-agency-reviews-scraper",
-    "category": "LinkedIn & B2B"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

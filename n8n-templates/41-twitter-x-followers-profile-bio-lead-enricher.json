@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ X (Twitter) Account Followers & Bio Website/Email Lead Scraper\n\n**What this workflow does:**\nExtract founder and developer profiles following top tech accounts on X, complete with bio links and DM openness.\n\n**Powered by Apify Actor:** [`laborious_rumor/twitter-x-followers-following-profile-scraper`](https://apify.com/laborious_rumor/twitter-x-followers-following-profile-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Fast X (Twitter) User & Followers Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ X (Twitter) Account Followers & Bio Website/Email Lead Scraper\n\n**What this workflow does:**\nExtract founder and developer profiles following top tech accounts on X, complete with bio links and DM openness.\n\n**Powered by Apify Actor:** [`laborious_rumor/twitter-x-followers-following-profile-scraper`](https://apify.com/laborious_rumor/twitter-x-followers-following-profile-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Fast X (Twitter) User & Followers Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "b41ed321-1ba6-4a94-a44f-e9a366f33faa",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "99ab8115-0649-4b94-af1b-e1276c9fc4f2",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "034659d2-5a1a-4d4a-aec2-5ea085ee1c32",
               "name": "queries",
               "value": "[\"levelsio followers\",\"garrytan founders\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "d097c033-645e-402f-ad3a-c004a42ef067",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "d97879be-008d-4916-abb0-282e0564ed5d",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Fast X (Twitter) User & Followers Scraper",
+      "id": "98b96b8f-8535-4eda-a1a8-ca229cfed543",
+      "name": "Run Apify Fast X (Twitter) User & Followers Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "1d14e935-7156-403f-aadc-139e31b87a3f",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "8e699e1e-00af-423e-a07b-6afcd6a8b6a1",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Fast X (Twitter) User & Followers Scraper",
+            "node": "Run Apify Fast X (Twitter) User & Followers Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Fast X (Twitter) User & Followers Scraper": {
+    "Run Apify Fast X (Twitter) User & Followers Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "61da1b59-961c-4e20-abce-58e651956950",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/twitter-x-followers-following-profile-scraper",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

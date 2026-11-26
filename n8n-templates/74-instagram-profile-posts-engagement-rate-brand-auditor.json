@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Instagram Creator Profile & Posts Engagement Rate Calculator (No Login)\n\n**What this workflow does:**\nPull an Instagram profile’s latest posts, Reels view counts, and true engagement rate without any Instagram login cookies.\n\n**Powered by Apify Actor:** [`laborious_rumor/instagram-reels-profile-posts-scraper`](https://apify.com/laborious_rumor/instagram-reels-profile-posts-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Instagram Profile & Posts Scraper (No Login)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Instagram Creator Profile & Posts Engagement Rate Calculator (No Login)\n\n**What this workflow does:**\nPull an Instagram profile’s latest posts, Reels view counts, and true engagement rate without any Instagram login cookies.\n\n**Powered by Apify Actor:** [`laborious_rumor/instagram-reels-profile-posts-scraper`](https://apify.com/laborious_rumor/instagram-reels-profile-posts-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Instagram Profile & Posts Scraper (No Login)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "6d0890c1-cf6d-4efd-a58f-4c68e55e9e4c",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "e6dcc8d6-1446-4129-a138-13c976d71970",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "48d0f03e-959a-447f-a1dd-92b1e43ad74c",
               "name": "queries",
               "value": "[\"hubspot\",\"gymshark\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "d67667c2-1bd9-400f-afb6-9e6db1e42bd8",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "ace5d6bd-3f85-4170-a9c3-e6d49a02cbb4",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Instagram Profile & Posts Scraper (No Login)",
+      "id": "6ccb4ba9-ebff-4d69-a2c8-b926b9a098be",
+      "name": "Run Apify Instagram Profile & Posts Scraper (No Login)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "ac660ae1-ac43-45a2-a606-6d5653969189",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "e56659a2-7b2a-4f8b-a35c-54b2f67dcb04",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Instagram Profile & Posts Scraper (No Login)",
+            "node": "Run Apify Instagram Profile & Posts Scraper (No Login)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Instagram Profile & Posts Scraper (No Login)": {
+    "Run Apify Instagram Profile & Posts Scraper (No Login)": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f84043e3-2c40-46eb-adb9-8c3efa5840bf",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/instagram-reels-profile-posts-scraper",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

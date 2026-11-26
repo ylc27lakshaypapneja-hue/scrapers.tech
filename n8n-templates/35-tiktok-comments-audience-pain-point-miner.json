@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ TikTok Viral Video Comments & Buyer Question Miner\n\n**What this workflow does:**\nScrape thousands of TikTok comments on viral product videos to uncover raw customer objections and \"where can I buy\" leads.\n\n**Powered by Apify Actor:** [`laborious_rumor/tiktok-comments-scraper`](https://apify.com/laborious_rumor/tiktok-comments-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: TikTok Comments Scraper - Audience Insights** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ TikTok Viral Video Comments & Buyer Question Miner\n\n**What this workflow does:**\nScrape thousands of TikTok comments on viral product videos to uncover raw customer objections and \"where can I buy\" leads.\n\n**Powered by Apify Actor:** [`laborious_rumor/tiktok-comments-scraper`](https://apify.com/laborious_rumor/tiktok-comments-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify TikTok Comments Scraper - Audience Insights** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "178829ba-bda4-481e-ab92-09cc9528812d",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "9dfdf78b-d36c-44fd-af67-aaaceab32b61",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "bd4f11a9-654d-4a3b-a99b-3d940e5c43a5",
               "name": "queries",
               "value": "[\"where to buy ergonomic office chair\",\"best protein powder comments\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "2028a82c-ef06-4c52-a8b1-3f9b20852c92",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "8fd51606-a136-40a4-ae58-876a051dbad8",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: TikTok Comments Scraper - Audience Insights",
+      "id": "e1884c40-30a1-46f5-ada3-c0a969441e2c",
+      "name": "Run Apify TikTok Comments Scraper - Audience Insights",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "d0a544e3-24cf-4426-a1cd-73f22b52f2a3",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "e75e8034-061c-4feb-a8f0-4e7059640ff4",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: TikTok Comments Scraper - Audience Insights",
+            "node": "Run Apify TikTok Comments Scraper - Audience Insights",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: TikTok Comments Scraper - Audience Insights": {
+    "Run Apify TikTok Comments Scraper - Audience Insights": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "89ce4a62-0bc5-4697-aa9e-6beac232b893",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/tiktok-comments-scraper",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

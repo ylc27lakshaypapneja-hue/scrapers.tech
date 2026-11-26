@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Hacker News \"Who Is Hiring\" Monthly Thread Parser for Direct CTO/Founder Emails\n\n**What this workflow does:**\nParse Hacker News monthly hiring threads into structured company records with tech stacks, salaries, and direct founder emails.\n\n**Powered by Apify Actor:** [`laborious_rumor/hackernews-who-is-hiring-job-lead-parser`](https://apify.com/laborious_rumor/hackernews-who-is-hiring-job-lead-parser) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: HackerNews Who is Hiring Lead Parser** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Hacker News \"Who Is Hiring\" Monthly Thread Parser for Direct CTO/Founder Emails\n\n**What this workflow does:**\nParse Hacker News monthly hiring threads into structured company records with tech stacks, salaries, and direct founder emails.\n\n**Powered by Apify Actor:** [`laborious_rumor/hackernews-who-is-hiring-job-lead-parser`](https://apify.com/laborious_rumor/hackernews-who-is-hiring-job-lead-parser) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify HackerNews Who is Hiring Lead Parser** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "cfe33e07-661f-423b-a5d9-c70d26434cd4",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "95cd8e3e-15c3-4276-a2f2-102133797e89",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "d98e4874-6773-4e22-a8f3-e1fc320c1340",
               "name": "queries",
               "value": "[\"Ask HN: Who is hiring Remote AI Rust Python\",\"YC startup direct founder email hiring\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "448d6680-5911-445c-a4e0-73b190c920bb",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "bb910ab2-e6fc-4cdf-af45-e3b41449629d",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: HackerNews Who is Hiring Lead Parser",
+      "id": "ad18edcb-8aed-4380-aaf2-ed54d6ab8028",
+      "name": "Run Apify HackerNews Who is Hiring Lead Parser",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "a5e8eb93-ad4c-45af-a5f5-71b614e61646",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "db9ede5b-75df-4251-a395-8f76a03b6cdd",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: HackerNews Who is Hiring Lead Parser",
+            "node": "Run Apify HackerNews Who is Hiring Lead Parser",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: HackerNews Who is Hiring Lead Parser": {
+    "Run Apify HackerNews Who is Hiring Lead Parser": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "5b5f66fa-2912-4fe7-a207-819eeb294585",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/hackernews-who-is-hiring-job-lead-parser",
-    "category": "AI, RAG & Tech"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

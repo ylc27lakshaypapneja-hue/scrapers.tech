@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Cookie-Free LinkedIn Profile & Work Email Enrichment to Google Sheets\n\n**What this workflow does:**\nEnrich LinkedIn profile URLs or executive search queries with verified work emails and titles without LinkedIn cookies, then append directly to Google Sheets / Clay.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-profile-scraper`](https://apify.com/laborious_rumor/linkedin-profile-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: LinkedIn Profile & Email Scraper: No Cookies** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Cookie-Free LinkedIn Profile & Work Email Enrichment to Google Sheets\n\n**What this workflow does:**\nEnrich LinkedIn profile URLs or executive search queries with verified work emails and titles without LinkedIn cookies, then append directly to Google Sheets / Clay.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-profile-scraper`](https://apify.com/laborious_rumor/linkedin-profile-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify LinkedIn Profile & Email Scraper No Cookies** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "bb9893bf-5967-444a-af9b-99b5b48ad80a",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "afeae00d-735c-41f2-ad72-6ce0ffee59de",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "a824a7df-eba1-4823-a901-5cd0a0b346f4",
               "name": "queries",
               "value": "[\"https://www.linkedin.com/in/satyanadella\",\"VP of Sales B2B SaaS San Francisco\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "d61b0e29-f98f-4b1b-a66b-2b5da0980a78",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "d7cd97fd-68ef-4a78-acbb-fa6309450304",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: LinkedIn Profile & Email Scraper: No Cookies",
+      "id": "ee270a22-6eba-4037-ac86-db0e13c44fbb",
+      "name": "Run Apify LinkedIn Profile & Email Scraper No Cookies",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "f3e552b3-b2ab-41d2-a8d3-9cc63cadf290",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "4847e486-e8d2-45c7-a5d3-d09ffd02a529",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: LinkedIn Profile & Email Scraper: No Cookies",
+            "node": "Run Apify LinkedIn Profile & Email Scraper No Cookies",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: LinkedIn Profile & Email Scraper: No Cookies": {
+    "Run Apify LinkedIn Profile & Email Scraper No Cookies": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b3824331-7fa3-4f4d-a61b-0ca6bd7af739",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/linkedin-profile-scraper",
-    "category": "LinkedIn & B2B"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

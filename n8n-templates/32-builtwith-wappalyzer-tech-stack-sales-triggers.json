@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ BuiltWith / Wappalyzer Tech Stack Detector (Find Sites Using Shopify, HubSpot, Stripe)\n\n**What this workflow does:**\nDetect 100+ web technologies, pixels, and payment processors on any domain to build technographic outbound lists.\n\n**Powered by Apify Actor:** [`laborious_rumor/builtwith-wappalyzer-deep-tech-detector`](https://apify.com/laborious_rumor/builtwith-wappalyzer-deep-tech-detector) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Deep Tech Stack & CMS Fingerprinter** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ BuiltWith / Wappalyzer Tech Stack Detector (Find Sites Using Shopify, HubSpot, Stripe)\n\n**What this workflow does:**\nDetect 100+ web technologies, pixels, and payment processors on any domain to build technographic outbound lists.\n\n**Powered by Apify Actor:** [`laborious_rumor/builtwith-wappalyzer-deep-tech-detector`](https://apify.com/laborious_rumor/builtwith-wappalyzer-deep-tech-detector) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Deep Tech Stack & CMS Fingerprinter** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "9d8870d3-0c49-4367-a3a2-767eedc93a65",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "91b0f816-cdb9-4d28-a672-4621eee27f1e",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "da4e5fed-dce7-4593-a1be-adfae340cc0a",
               "name": "queries",
               "value": "[\"gymshark.com\",\"linear.app\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "fde41574-44d2-41ef-a7c7-4f3e8274b7d4",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "55534ce3-44d9-4cea-a2f6-e190a7b57af8",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Deep Tech Stack & CMS Fingerprinter",
+      "id": "e1bf5b1c-f905-485c-a376-73ee43495616",
+      "name": "Run Apify Deep Tech Stack & CMS Fingerprinter",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "81e4effe-78fc-4b19-a9ac-28259c99dc2e",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "4fcf81fb-93fc-4446-a15e-b2170f2c7d2f",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Deep Tech Stack & CMS Fingerprinter",
+            "node": "Run Apify Deep Tech Stack & CMS Fingerprinter",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Deep Tech Stack & CMS Fingerprinter": {
+    "Run Apify Deep Tech Stack & CMS Fingerprinter": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1ca16722-4ef0-4319-a82b-a8cacbf7d189",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/builtwith-wappalyzer-deep-tech-detector",
-    "category": "Ad Spy & SEO"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

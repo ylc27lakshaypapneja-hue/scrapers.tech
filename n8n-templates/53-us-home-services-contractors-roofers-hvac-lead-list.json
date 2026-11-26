@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ US Home Services Contractors (Roofers, HVAC, Plumbers) Outbound Lead Builder\n\n**What this workflow does:**\nBuild verified phone and email lists of high-ticket US home service contractors for GoHighLevel and AI voice agent agencies.\n\n**Powered by Apify Actor:** [`laborious_rumor/us-home-services-contractor-leads-scraper`](https://apify.com/laborious_rumor/us-home-services-contractor-leads-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: US Contractor Leads: Roofers, HVAC & Plumbers** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ US Home Services Contractors (Roofers, HVAC, Plumbers) Outbound Lead Builder\n\n**What this workflow does:**\nBuild verified phone and email lists of high-ticket US home service contractors for GoHighLevel and AI voice agent agencies.\n\n**Powered by Apify Actor:** [`laborious_rumor/us-home-services-contractor-leads-scraper`](https://apify.com/laborious_rumor/us-home-services-contractor-leads-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify US Contractor Leads Roofers, HVAC & Plumbers** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "0587a957-89a1-439f-a225-2001ca3196d1",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "3cef0c22-23d1-4760-a601-54db770024f3",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "260f93b7-cbe6-4b63-a8c2-d8eed5e960f4",
               "name": "queries",
               "value": "[\"commercial roofing contractors Dallas TX\",\"emergency HVAC companies Atlanta GA\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "69f4f6d8-4064-4cd4-af91-4bb89188055e",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "e72629c3-7009-4cf1-a420-c29a7444c5b7",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: US Contractor Leads: Roofers, HVAC & Plumbers",
+      "id": "39f8f71a-1f16-488a-a4f9-9bbb7323ea2b",
+      "name": "Run Apify US Contractor Leads Roofers, HVAC & Plumbers",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "5b78783a-c924-4a9c-a83c-5fbcecd85152",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "db64277d-f31b-4f25-a10a-8ca4d7a5d386",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: US Contractor Leads: Roofers, HVAC & Plumbers",
+            "node": "Run Apify US Contractor Leads Roofers, HVAC & Plumbers",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: US Contractor Leads: Roofers, HVAC & Plumbers": {
+    "Run Apify US Contractor Leads Roofers, HVAC & Plumbers": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b088732c-b2ca-4d05-afbb-2bfc1d36709b",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/us-home-services-contractor-leads-scraper",
-    "category": "Local & Maps"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

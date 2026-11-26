@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Daily Reddit & Hacker News Breakout Tech Trend & Sentiment Pulse Digest\n\n**What this workflow does:**\nCombine front-page Hacker News upvote velocity with Reddit discussion spikes to spot viral developer tools early.\n\n**Powered by Apify Actor:** [`laborious_rumor/social-viral-trend-reddit-hn-pulse-scraper`](https://apify.com/laborious_rumor/social-viral-trend-reddit-hn-pulse-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Social Viral Trend & HN Pulse Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Daily Reddit & Hacker News Breakout Tech Trend & Sentiment Pulse Digest\n\n**What this workflow does:**\nCombine front-page Hacker News upvote velocity with Reddit discussion spikes to spot viral developer tools early.\n\n**Powered by Apify Actor:** [`laborious_rumor/social-viral-trend-reddit-hn-pulse-scraper`](https://apify.com/laborious_rumor/social-viral-trend-reddit-hn-pulse-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Social Viral Trend & HN Pulse Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "ac72cbe1-11b1-4ea9-a4d1-9bf00ad316ac",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "b5f76848-6db4-49d3-adb8-9d700a2d1c2f",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "b5a5eb8f-2e54-499b-a073-1c8f6863a0e9",
               "name": "queries",
               "value": "[\"MCP server AI agents\",\"open source LLM benchmarks\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "232aa141-bdc5-449e-a5df-bb1f0c79d50c",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "9db376b5-2e87-48ff-ab13-f54d6de26ae4",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Social Viral Trend & HN Pulse Scraper",
+      "id": "6f2d1e2a-321a-481f-af4e-a895a7fd72f0",
+      "name": "Run Apify Social Viral Trend & HN Pulse Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "700a37c5-e490-40e9-a4b7-82282a65c778",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "af2ac5a0-083b-46f2-a238-f5b24f8c0cd9",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Social Viral Trend & HN Pulse Scraper",
+            "node": "Run Apify Social Viral Trend & HN Pulse Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Social Viral Trend & HN Pulse Scraper": {
+    "Run Apify Social Viral Trend & HN Pulse Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "80eec733-4619-42fe-a084-52dcad543dc0",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/social-viral-trend-reddit-hn-pulse-scraper",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

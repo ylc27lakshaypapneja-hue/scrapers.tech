@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Substack & Beehiiv Newsletter Creator Directory & Sponsorship Lead Finder\n\n**What this workflow does:**\nBuild a database of high-subscriber Substack and Beehiiv newsletter writers with contact emails for B2B sponsorship deals.\n\n**Powered by Apify Actor:** [`laborious_rumor/substack-beehiiv-newsletter-directory-scraper`](https://apify.com/laborious_rumor/substack-beehiiv-newsletter-directory-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Substack & Beehiiv Newsletter Lead Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Substack & Beehiiv Newsletter Creator Directory & Sponsorship Lead Finder\n\n**What this workflow does:**\nBuild a database of high-subscriber Substack and Beehiiv newsletter writers with contact emails for B2B sponsorship deals.\n\n**Powered by Apify Actor:** [`laborious_rumor/substack-beehiiv-newsletter-directory-scraper`](https://apify.com/laborious_rumor/substack-beehiiv-newsletter-directory-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Substack & Beehiiv Newsletter Lead Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "33bded49-6eda-4bbc-ab13-a97c635d28ba",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "530213fd-aedf-418f-a1a2-0506bf126aed",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "3b2d4e81-ddc1-46d8-aa6d-a79e5f05be00",
               "name": "queries",
               "value": "[\"AI & B2B SaaS newsletters\",\"fintech weekly newsletters US\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "cfa9852b-16a2-4d00-a67e-9482febb8221",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "caac8fb5-bc8e-4c61-a623-fbde3a9bc64d",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Substack & Beehiiv Newsletter Lead Scraper",
+      "id": "9b0454e0-9ec5-4276-a058-a379e817ea0e",
+      "name": "Run Apify Substack & Beehiiv Newsletter Lead Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "bc8b53c6-ffdb-46da-acc1-5c9ac332f220",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "dca59307-7924-456c-adb8-ae87de250ee0",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Substack & Beehiiv Newsletter Lead Scraper",
+            "node": "Run Apify Substack & Beehiiv Newsletter Lead Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Substack & Beehiiv Newsletter Lead Scraper": {
+    "Run Apify Substack & Beehiiv Newsletter Lead Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "4aa2eb63-ba7e-48d0-a9ca-639644b17b8c",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/substack-beehiiv-newsletter-directory-scraper",
-    "category": "LinkedIn & B2B"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

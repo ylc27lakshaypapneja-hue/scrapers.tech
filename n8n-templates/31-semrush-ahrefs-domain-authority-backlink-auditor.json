@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Automated Domain Authority, Backlinks & SEO Health Prospect Scorer\n\n**What this workflow does:**\nAudit prospect websites for domain authority, backlink velocity, and SEO gaps to pitch high-ticket SEO agency retainers.\n\n**Powered by Apify Actor:** [`laborious_rumor/semrush-ahrefs-domain-backlinks-seo-metrics`](https://apify.com/laborious_rumor/semrush-ahrefs-domain-backlinks-seo-metrics) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Domain Authority, Backlinks & Traffic SEO API** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Automated Domain Authority, Backlinks & SEO Health Prospect Scorer\n\n**What this workflow does:**\nAudit prospect websites for domain authority, backlink velocity, and SEO gaps to pitch high-ticket SEO agency retainers.\n\n**Powered by Apify Actor:** [`laborious_rumor/semrush-ahrefs-domain-backlinks-seo-metrics`](https://apify.com/laborious_rumor/semrush-ahrefs-domain-backlinks-seo-metrics) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Domain Authority, Backlinks & Traffic SEO API** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "c75ec50b-ff6c-4f84-abb4-cc6add6401fd",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "338e375b-481f-4b2d-ad89-2f8702a3e48b",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "20771a67-1767-42b2-a5df-e01afbb9ceba",
               "name": "queries",
               "value": "[\"scrapers.tech\",\"n8n.io\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "aefa2ba8-706c-4537-ad6b-d47b55eaf7ac",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "126e1c3c-b996-4978-a708-cf890ae93b09",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Domain Authority, Backlinks & Traffic SEO API",
+      "id": "d2c6cc63-be24-4e1e-a167-441a7d3ce263",
+      "name": "Run Apify Domain Authority, Backlinks & Traffic SEO API",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "3c81230e-9fb3-4f9f-a316-ae9669416d2d",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "1a24550c-9ec6-406a-ae5f-9a4c784ead5a",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Domain Authority, Backlinks & Traffic SEO API",
+            "node": "Run Apify Domain Authority, Backlinks & Traffic SEO API",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Domain Authority, Backlinks & Traffic SEO API": {
+    "Run Apify Domain Authority, Backlinks & Traffic SEO API": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "6c4c50ca-467c-4d03-aec8-9db39960032e",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/semrush-ahrefs-domain-backlinks-seo-metrics",
-    "category": "Ad Spy & SEO"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

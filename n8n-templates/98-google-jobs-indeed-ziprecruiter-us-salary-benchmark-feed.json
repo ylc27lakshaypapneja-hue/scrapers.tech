@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Google Jobs, Indeed & ZipRecruiter US Salary Benchmark & Hiring Velocity Pipeline\n\n**What this workflow does:**\nAggregate disclosed US salary ranges and active hiring volume across Google Jobs, Indeed, and ZipRecruiter.\n\n**Powered by Apify Actor:** [`laborious_rumor/google-jobs-us-hiring-salary-scraper`](https://apify.com/laborious_rumor/google-jobs-us-hiring-salary-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Google Jobs Scraper: US Hiring & Salaries** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Google Jobs, Indeed & ZipRecruiter US Salary Benchmark & Hiring Velocity Pipeline\n\n**What this workflow does:**\nAggregate disclosed US salary ranges and active hiring volume across Google Jobs, Indeed, and ZipRecruiter.\n\n**Powered by Apify Actor:** [`laborious_rumor/google-jobs-us-hiring-salary-scraper`](https://apify.com/laborious_rumor/google-jobs-us-hiring-salary-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Google Jobs Scraper US Hiring & Salaries** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "d0ab6f31-fbe2-4671-a6c6-f26b156c2106",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "0539238b-dfa6-421f-a077-37d28750c918",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "0d0fa897-fb46-4df2-a468-a10cf6ab59f3",
               "name": "queries",
               "value": "[\"Machine Learning Engineer salary New York\",\"VP of Sales remote US compensation\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "09bce1eb-0293-4468-a924-165df9f1e96f",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "7e23ec2b-74df-46c1-a41e-4ee03ed9fa3e",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Google Jobs Scraper: US Hiring & Salaries",
+      "id": "f36c3a6a-d4ea-4c59-a608-d2326804b94f",
+      "name": "Run Apify Google Jobs Scraper US Hiring & Salaries",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "1c55e5ab-3b80-45b0-aabb-039dbd4fd240",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "89d307eb-2db7-4ecb-a961-93f5070a244c",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Google Jobs Scraper: US Hiring & Salaries",
+            "node": "Run Apify Google Jobs Scraper US Hiring & Salaries",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Google Jobs Scraper: US Hiring & Salaries": {
+    "Run Apify Google Jobs Scraper US Hiring & Salaries": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "df6d41ae-478f-413b-aade-6887d6cdebbe",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/google-jobs-us-hiring-salary-scraper",
-    "category": "AI, RAG & Tech"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

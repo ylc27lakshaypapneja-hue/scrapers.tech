@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Depop & Poshmark Vintage, Streetwear & Luxury Resale Arbitrage Price Tracker\n\n**What this workflow does:**\nMonitor underpriced designer and vintage listings across Depop and Poshmark for instant resale arbitrage.\n\n**Powered by Apify Actor:** [`laborious_rumor/poshmark-depop-reseller-pricing-tracker`](https://apify.com/laborious_rumor/poshmark-depop-reseller-pricing-tracker) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Depop & Poshmark Resale Price Tracker** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Depop & Poshmark Vintage, Streetwear & Luxury Resale Arbitrage Price Tracker\n\n**What this workflow does:**\nMonitor underpriced designer and vintage listings across Depop and Poshmark for instant resale arbitrage.\n\n**Powered by Apify Actor:** [`laborious_rumor/poshmark-depop-reseller-pricing-tracker`](https://apify.com/laborious_rumor/poshmark-depop-reseller-pricing-tracker) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Depop & Poshmark Resale Price Tracker** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "bbe01aba-8bd5-4988-ae65-d9e534fa5e62",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "613afed4-d1dd-44cc-a40f-19425b2f8359",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "126008a2-e3eb-4661-aefc-b39158f624ad",
               "name": "queries",
               "value": "[\"Arc’teryx Beta LT jacket resale\",\"vintage Carhartt Detroit jacket sold\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "264b9a64-ceed-4191-a9cc-9356c38cb282",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "1d676b8d-933d-42f9-a7b4-ae0509cc26af",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Depop & Poshmark Resale Price Tracker",
+      "id": "06c5d971-502d-464d-a423-08fff2551d03",
+      "name": "Run Apify Depop & Poshmark Resale Price Tracker",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "86a023d5-102e-4392-af50-441344b81777",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "ccf80791-56f7-42ec-a61d-1717bd447e59",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Depop & Poshmark Resale Price Tracker",
+            "node": "Run Apify Depop & Poshmark Resale Price Tracker",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Depop & Poshmark Resale Price Tracker": {
+    "Run Apify Depop & Poshmark Resale Price Tracker": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "944f8027-1691-4167-a054-ba5a6f445266",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/poshmark-depop-reseller-pricing-tracker",
-    "category": "E-Commerce"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

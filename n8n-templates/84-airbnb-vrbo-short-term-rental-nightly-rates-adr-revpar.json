@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Airbnb & VRBO Short-Term Rental Nightly Rates, Cleaning Fees & Occupancy Comps\n\n**What this workflow does:**\nAnalyze competitor Airbnb and VRBO listings for nightly pricing, Superhost status, and review velocity in any US market.\n\n**Powered by Apify Actor:** [`laborious_rumor/airbnb-vrbo-short-term-rental-market-analyzer`](https://apify.com/laborious_rumor/airbnb-vrbo-short-term-rental-market-analyzer) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Airbnb & VRBO Nightly Rates & Fees Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Airbnb & VRBO Short-Term Rental Nightly Rates, Cleaning Fees & Occupancy Comps\n\n**What this workflow does:**\nAnalyze competitor Airbnb and VRBO listings for nightly pricing, Superhost status, and review velocity in any US market.\n\n**Powered by Apify Actor:** [`laborious_rumor/airbnb-vrbo-short-term-rental-market-analyzer`](https://apify.com/laborious_rumor/airbnb-vrbo-short-term-rental-market-analyzer) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Airbnb & VRBO Nightly Rates & Fees Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "14e8afa2-a8bd-456f-ab35-a2faea399ba1",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "bc1c4596-2ef2-4426-a228-91a1e1a7d4bf",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "11e28cb9-32c8-436a-ab6d-8d963a74b883",
               "name": "queries",
               "value": "[\"Scottsdale AZ pool villa Airbnb comps\",\"Nashville TN downtown STR nightly rates\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "2d43c366-1208-4d4a-a2e8-cf078a081061",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "417dc4a1-40eb-4def-a372-400dca2a450d",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Airbnb & VRBO Nightly Rates & Fees Scraper",
+      "id": "df01c856-ef6e-48a3-a4c8-636e2b015c09",
+      "name": "Run Apify Airbnb & VRBO Nightly Rates & Fees Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "02af0aaa-e469-44e1-ad8c-4acaf2f71177",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "5cf6d8db-95a5-4fc0-ae8d-888f6914112f",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Airbnb & VRBO Nightly Rates & Fees Scraper",
+            "node": "Run Apify Airbnb & VRBO Nightly Rates & Fees Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Airbnb & VRBO Nightly Rates & Fees Scraper": {
+    "Run Apify Airbnb & VRBO Nightly Rates & Fees Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0892766b-3423-43c9-a42a-e518e0faa890",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/airbnb-vrbo-short-term-rental-market-analyzer",
-    "category": "Startups & Real Estate"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

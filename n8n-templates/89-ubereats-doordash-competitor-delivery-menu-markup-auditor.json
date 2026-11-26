@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ UberEats & DoorDash Restaurant Menu Price Markup, Promo & Delivery Fee Tracker\n\n**What this workflow does:**\nCompare competitor delivery menu prices, BOGO promotions, and delivery fee tiers across UberEats and DoorDash.\n\n**Powered by Apify Actor:** [`laborious_rumor/uber-eats-doordash-menu-scraper`](https://apify.com/laborious_rumor/uber-eats-doordash-menu-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: UberEats & DoorDash Menu & Fee Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ UberEats & DoorDash Restaurant Menu Price Markup, Promo & Delivery Fee Tracker\n\n**What this workflow does:**\nCompare competitor delivery menu prices, BOGO promotions, and delivery fee tiers across UberEats and DoorDash.\n\n**Powered by Apify Actor:** [`laborious_rumor/uber-eats-doordash-menu-scraper`](https://apify.com/laborious_rumor/uber-eats-doordash-menu-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify UberEats & DoorDash Menu & Fee Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "2ad59396-b7ab-4021-a072-1a237a8dde12",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "b2948ac4-b996-4d87-a664-4abc5e61d3b2",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "5003df6a-1a08-4d5b-a0ca-16ad11f305c9",
               "name": "queries",
               "value": "[\"burger chains Austin UberEats prices\",\"pizza delivery promos New York DoorDash\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "b95da399-c553-4b39-a998-c56d6e35eb68",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "c8ed4916-0261-495e-a54c-ae92069c93a6",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: UberEats & DoorDash Menu & Fee Scraper",
+      "id": "f6fc1065-5dc8-4e18-a99a-9c2f76c1abcf",
+      "name": "Run Apify UberEats & DoorDash Menu & Fee Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "0809a849-463b-4e32-a863-6cb0aef3348e",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "74ac9576-778a-4292-a985-7b5407ca08c3",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: UberEats & DoorDash Menu & Fee Scraper",
+            "node": "Run Apify UberEats & DoorDash Menu & Fee Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: UberEats & DoorDash Menu & Fee Scraper": {
+    "Run Apify UberEats & DoorDash Menu & Fee Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "61a0201f-14a3-4b6f-a96b-07fe4ced1fa3",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/uber-eats-doordash-menu-scraper",
-    "category": "Local & Maps"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

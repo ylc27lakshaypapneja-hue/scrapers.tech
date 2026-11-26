@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Facebook Marketplace US Local Underpriced Deals & Flipping Alert Bot\n\n**What this workflow does:**\nScan Facebook Marketplace for newly listed underpriced electronics, furniture, and vehicles and send instant Telegram alerts.\n\n**Powered by Apify Actor:** [`laborious_rumor/facebook-marketplace-us-listings-price-scraper`](https://apify.com/laborious_rumor/facebook-marketplace-us-listings-price-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Facebook Marketplace US Newest Deals Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Facebook Marketplace US Local Underpriced Deals & Flipping Alert Bot\n\n**What this workflow does:**\nScan Facebook Marketplace for newly listed underpriced electronics, furniture, and vehicles and send instant Telegram alerts.\n\n**Powered by Apify Actor:** [`laborious_rumor/facebook-marketplace-us-listings-price-scraper`](https://apify.com/laborious_rumor/facebook-marketplace-us-listings-price-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Facebook Marketplace US Newest Deals Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "2a35ce91-c5b5-4ac9-acd7-59f0eb17c642",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "2337bce8-97ac-4a21-a8af-06172de15b30",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "5f3582ae-0e56-4fa7-a706-44738f9ad3e8",
               "name": "queries",
               "value": "[\"Herman Miller Aeron chair local\",\"MacBook Pro M3 Max local listing\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "34cbb56b-cd16-4e6f-a3c5-75c2cfc1290e",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "2e7e5ede-2c5c-404a-afb0-757fbab26f77",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Facebook Marketplace US Newest Deals Scraper",
+      "id": "2c97d12b-8891-455c-ace5-357e501edfee",
+      "name": "Run Apify Facebook Marketplace US Newest Deals Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "e7f52dd1-6322-4a0f-a653-5e2f64ca8bc1",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "fb0d33ab-41dd-47db-a60e-a10a418acba6",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Facebook Marketplace US Newest Deals Scraper",
+            "node": "Run Apify Facebook Marketplace US Newest Deals Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Facebook Marketplace US Newest Deals Scraper": {
+    "Run Apify Facebook Marketplace US Newest Deals Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "12f4b8db-b4d9-48f9-aa23-60e3107766d9",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/facebook-marketplace-us-listings-price-scraper",
-    "category": "E-Commerce"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

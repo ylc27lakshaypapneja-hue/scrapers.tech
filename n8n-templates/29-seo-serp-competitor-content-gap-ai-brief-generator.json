@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Google SERP Content Gap Analyzer to Automated AI SEO Article Briefs\n\n**What this workflow does:**\nAnalyze top 10 Google SERP headings, word counts, and missing semantic entities to generate rank-ready content briefs.\n\n**Powered by Apify Actor:** [`laborious_rumor/seo-serp-competitor-content-gap-analyzer`](https://apify.com/laborious_rumor/seo-serp-competitor-content-gap-analyzer) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: SEO Competitor SERP & Content Gap Analyzer** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Google SERP Content Gap Analyzer to Automated AI SEO Article Briefs\n\n**What this workflow does:**\nAnalyze top 10 Google SERP headings, word counts, and missing semantic entities to generate rank-ready content briefs.\n\n**Powered by Apify Actor:** [`laborious_rumor/seo-serp-competitor-content-gap-analyzer`](https://apify.com/laborious_rumor/seo-serp-competitor-content-gap-analyzer) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify SEO Competitor SERP & Content Gap Analyzer** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "03625bbb-0414-4658-a110-3044f5867097",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "3c6c2a0b-45c2-4ab7-ab58-800f747f9b58",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "97ca7b41-e35a-41f3-a691-52f4ba96ab51",
               "name": "queries",
               "value": "[\"best mcp servers for claude\",\"how to automate linkedin outreach n8n\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "2aaa0747-3989-42df-a327-dbdb415b980b",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "6b6c1aea-3e20-4e30-a1e0-ca087757cfb5",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: SEO Competitor SERP & Content Gap Analyzer",
+      "id": "65dc7ed1-d255-4b6e-ae5b-6ca421a147d6",
+      "name": "Run Apify SEO Competitor SERP & Content Gap Analyzer",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "f3c6890e-67d5-4828-a499-e21d1f7a16d7",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "b5ebac93-3dee-4244-a013-5f3a130ae96c",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: SEO Competitor SERP & Content Gap Analyzer",
+            "node": "Run Apify SEO Competitor SERP & Content Gap Analyzer",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: SEO Competitor SERP & Content Gap Analyzer": {
+    "Run Apify SEO Competitor SERP & Content Gap Analyzer": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "141af9f3-1842-42b4-a4d2-fa183a4445eb",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/seo-serp-competitor-content-gap-analyzer",
-    "category": "Ad Spy & SEO"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

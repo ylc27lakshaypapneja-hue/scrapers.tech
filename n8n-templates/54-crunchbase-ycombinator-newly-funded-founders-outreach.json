@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Y Combinator & Newly Funded Startup Founders Outbound Deal Flow Pipeline\n\n**What this workflow does:**\nExtract Y Combinator batch companies, founder LinkedIn URLs, and launch descriptions for VC deal sourcing or dev-agency sales.\n\n**Powered by Apify Actor:** [`laborious_rumor/ycombinator-startup-founder-directory-scraper`](https://apify.com/laborious_rumor/ycombinator-startup-founder-directory-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Y Combinator (YC) Startup Directory & Founders** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Y Combinator & Newly Funded Startup Founders Outbound Deal Flow Pipeline\n\n**What this workflow does:**\nExtract Y Combinator batch companies, founder LinkedIn URLs, and launch descriptions for VC deal sourcing or dev-agency sales.\n\n**Powered by Apify Actor:** [`laborious_rumor/ycombinator-startup-founder-directory-scraper`](https://apify.com/laborious_rumor/ycombinator-startup-founder-directory-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Y Combinator (YC) Startup Directory & Founders** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "1161f4ba-6bf7-41ce-a4a4-f8b527252266",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "a04bdb68-9aec-461c-a6cc-b8b4c447d948",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "b8caf56e-5614-4fce-a221-bcc433b46e22",
               "name": "queries",
               "value": "[\"YC W26 AI infrastructure startups\",\"YC B2B SaaS founders San Francisco\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "d2d6ba48-d05c-4930-a669-42ec39842d07",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "2dce5b93-3c97-4fb3-a1ee-a2e6a5963bb4",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Y Combinator (YC) Startup Directory & Founders",
+      "id": "bccd21c5-4def-4cd8-a1a4-ca5e5eaa29b3",
+      "name": "Run Apify Y Combinator (YC) Startup Directory & Founders",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "5805bbb9-d124-484e-a31d-55524bd7e6af",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "a9f46e6e-e543-46b1-a14a-72f02ffb8470",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Y Combinator (YC) Startup Directory & Founders",
+            "node": "Run Apify Y Combinator (YC) Startup Directory & Founders",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Y Combinator (YC) Startup Directory & Founders": {
+    "Run Apify Y Combinator (YC) Startup Directory & Founders": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "91532b67-ffff-4c15-af01-dc09f0219656",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/ycombinator-startup-founder-directory-scraper",
-    "category": "Startups & Real Estate"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

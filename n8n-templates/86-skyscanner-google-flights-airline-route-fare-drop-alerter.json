@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Skyscanner & Google Flights Airline Route Fare Drop & Competitor Pricing Monitor\n\n**What this workflow does:**\nMonitor airline fare fluctuations across key US and international routes and trigger automated price-drop notifications.\n\n**Powered by Apify Actor:** [`laborious_rumor/skyscanner-google-flights-route-price-monitor`](https://apify.com/laborious_rumor/skyscanner-google-flights-route-price-monitor) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Skyscanner & Google Flights Fare Monitor** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Skyscanner & Google Flights Airline Route Fare Drop & Competitor Pricing Monitor\n\n**What this workflow does:**\nMonitor airline fare fluctuations across key US and international routes and trigger automated price-drop notifications.\n\n**Powered by Apify Actor:** [`laborious_rumor/skyscanner-google-flights-route-price-monitor`](https://apify.com/laborious_rumor/skyscanner-google-flights-route-price-monitor) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Skyscanner & Google Flights Fare Monitor** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "ba428f98-b437-4201-a982-bcd5abd0bfd1",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "ffd99136-068e-4355-a203-e03188d507d8",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "1309b6c6-16a0-4a1a-a819-4a7dd92b393b",
               "name": "queries",
               "value": "[\"JFK to LHR business class fare\",\"SFO to NRT direct flight prices\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "7a4263b1-86f6-4322-afb3-5e5fac2cc73c",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "2ea6293d-7334-405f-ab4d-0002e3867060",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Skyscanner & Google Flights Fare Monitor",
+      "id": "fc2f1f54-27e8-47f5-a9ba-0903414b3138",
+      "name": "Run Apify Skyscanner & Google Flights Fare Monitor",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "7dfdec59-1d79-4820-a705-faf3b97d9553",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "a6ee15bd-33c9-49f0-a245-196f9dc2b8d7",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Skyscanner & Google Flights Fare Monitor",
+            "node": "Run Apify Skyscanner & Google Flights Fare Monitor",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Skyscanner & Google Flights Fare Monitor": {
+    "Run Apify Skyscanner & Google Flights Fare Monitor": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "4ad4e9c2-aaf3-4f12-ab83-b4666725c470",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/skyscanner-google-flights-route-price-monitor",
-    "category": "Local & Maps"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

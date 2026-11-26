@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Twitch & Kick Streamer Concurrent Viewership & Brand Sponsor Monitor\n\n**What this workflow does:**\nTrack live streamer CCV metrics, chat velocity, and active brand sponsor panels across Twitch and Kick.\n\n**Powered by Apify Actor:** [`laborious_rumor/twitch-kick-streamer-stats-sponsorship-monitor`](https://apify.com/laborious_rumor/twitch-kick-streamer-stats-sponsorship-monitor) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Twitch & Kick Streamer & Sponsor Tracker** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Twitch & Kick Streamer Concurrent Viewership & Brand Sponsor Monitor\n\n**What this workflow does:**\nTrack live streamer CCV metrics, chat velocity, and active brand sponsor panels across Twitch and Kick.\n\n**Powered by Apify Actor:** [`laborious_rumor/twitch-kick-streamer-stats-sponsorship-monitor`](https://apify.com/laborious_rumor/twitch-kick-streamer-stats-sponsorship-monitor) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Twitch & Kick Streamer & Sponsor Tracker** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "2908e576-294d-4baa-af90-b36d91da4331",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "6e05503e-78bc-4c93-a5a2-1188e82c3892",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "b8d63aa1-7d17-45c2-ad54-b1180079c335",
               "name": "queries",
               "value": "[\"gaming peripherals sponsored streams\",\"energy drink creator sponsorships\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "c7ea7f55-9842-4c99-a313-5044b255c549",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "48f4a382-6cb3-4d44-a440-e69f48cef709",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Twitch & Kick Streamer & Sponsor Tracker",
+      "id": "1e41e393-a469-4690-a17a-7c405bcb9cb3",
+      "name": "Run Apify Twitch & Kick Streamer & Sponsor Tracker",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "6ccbe06a-04f9-4007-a0ba-669e8f8c9947",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "f2794f69-53e1-4f6d-a7cf-c62945786686",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Twitch & Kick Streamer & Sponsor Tracker",
+            "node": "Run Apify Twitch & Kick Streamer & Sponsor Tracker",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Twitch & Kick Streamer & Sponsor Tracker": {
+    "Run Apify Twitch & Kick Streamer & Sponsor Tracker": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "5da4e09f-7bc0-419a-ad19-490563c43734",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/twitch-kick-streamer-stats-sponsorship-monitor",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

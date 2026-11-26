@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Instagram Reels Keyword Search & Breakout Viral Video Finder (No Login)\n\n**What this workflow does:**\nDiscover outlier Instagram Reels outperforming their creator’s average views by 5x+ in any keyword niche.\n\n**Powered by Apify Actor:** [`laborious_rumor/instagram-reels-search-viral-finder`](https://apify.com/laborious_rumor/instagram-reels-search-viral-finder) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Instagram Reels Search & Viral Finder** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Instagram Reels Keyword Search & Breakout Viral Video Finder (No Login)\n\n**What this workflow does:**\nDiscover outlier Instagram Reels outperforming their creator’s average views by 5x+ in any keyword niche.\n\n**Powered by Apify Actor:** [`laborious_rumor/instagram-reels-search-viral-finder`](https://apify.com/laborious_rumor/instagram-reels-search-viral-finder) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Instagram Reels Search & Viral Finder** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "9d8bd90b-217d-4605-aec7-d4937a933b14",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "1ba923d5-307c-4909-a43d-4c788c321353",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "94bb7b09-b4c8-4709-a332-b084e8570692",
               "name": "queries",
               "value": "[\"n8n ai agent tutorial\",\"cold email lead gen tips\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "7286fac1-3212-45cc-a670-72cd1759d66a",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "8cc664dd-2ce2-49be-acfd-317af788b1db",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Instagram Reels Search & Viral Finder",
+      "id": "f86d467f-6009-4918-a9a0-424edfeaf792",
+      "name": "Run Apify Instagram Reels Search & Viral Finder",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "fd0b410e-81e3-4ef6-a78c-71ba855dcc94",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "b71d5646-766d-46ce-aa93-2687a500842d",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Instagram Reels Search & Viral Finder",
+            "node": "Run Apify Instagram Reels Search & Viral Finder",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Instagram Reels Search & Viral Finder": {
+    "Run Apify Instagram Reels Search & Viral Finder": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "903732dd-7ad6-427d-abdd-2cb3f8d4a4ef",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/instagram-reels-search-viral-finder",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Extract LinkedIn Company Employees & Decision-Makers to HubSpot (No Cookies)\n\n**What this workflow does:**\nAutomatically pull VP, Director, and C-Level decision-makers from target companies on LinkedIn (100% cookie-free) and push leads to HubSpot, Clay, or Slack.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-company-employees-scraper`](https://apify.com/laborious_rumor/linkedin-company-employees-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: LinkedIn Company Employees & People Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Extract LinkedIn Company Employees & Decision-Makers to HubSpot (No Cookies)\n\n**What this workflow does:**\nAutomatically pull VP, Director, and C-Level decision-makers from target companies on LinkedIn (100% cookie-free) and push leads to HubSpot, Clay, or Slack.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-company-employees-scraper`](https://apify.com/laborious_rumor/linkedin-company-employees-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify LinkedIn Company Employees & People Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "0e490473-d13b-43eb-abd7-69ffc42b3bdc",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "f6727710-11cf-4947-a63f-933df88266f5",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "bc214521-56af-45cf-adb0-ff6275366396",
               "name": "queries",
               "value": "[\"stripe.com\",\"anthropic.com\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "e9ed90ae-56e7-4ea9-a05f-87212fe9c0ce",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "cb16b262-8e30-4d79-a1b0-2a3a1fd466c0",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: LinkedIn Company Employees & People Scraper",
+      "id": "b12e867d-2bc4-47ce-a2da-ba9863a5cced",
+      "name": "Run Apify LinkedIn Company Employees & People Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "0ec53a08-9d80-4879-a15e-17ce6d39cdb6",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "5e85d6e1-ca77-426a-a134-7fef64a4e8fd",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: LinkedIn Company Employees & People Scraper",
+            "node": "Run Apify LinkedIn Company Employees & People Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: LinkedIn Company Employees & People Scraper": {
+    "Run Apify LinkedIn Company Employees & People Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "603a67fd-80e1-44c6-a069-2e03b2512229",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/linkedin-company-employees-scraper",
-    "category": "LinkedIn & B2B"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

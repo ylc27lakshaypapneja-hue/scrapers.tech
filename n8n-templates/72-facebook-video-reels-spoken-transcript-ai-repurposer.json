@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Facebook Video & Reels Spoken Transcript Extractor for Content Repurposing\n\n**What this workflow does:**\nExtract clean spoken word transcripts from high-performing Facebook Reels and video ads to feed into AI scriptwriters.\n\n**Powered by Apify Actor:** [`laborious_rumor/facebook-video-reels-ai-transcript-extractor`](https://apify.com/laborious_rumor/facebook-video-reels-ai-transcript-extractor) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Facebook Video & Reel AI Transcript Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Facebook Video & Reels Spoken Transcript Extractor for Content Repurposing\n\n**What this workflow does:**\nExtract clean spoken word transcripts from high-performing Facebook Reels and video ads to feed into AI scriptwriters.\n\n**Powered by Apify Actor:** [`laborious_rumor/facebook-video-reels-ai-transcript-extractor`](https://apify.com/laborious_rumor/facebook-video-reels-ai-transcript-extractor) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Facebook Video & Reel AI Transcript Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "fd558c28-11a0-4eea-a88f-e0a917561a81",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "5b0f758b-86ee-4847-a4b3-2ab6fe85944d",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "16dba599-bd10-4125-ab86-65de0e80d6ee",
               "name": "queries",
               "value": "[\"viral Facebook business reels\",\"direct response video ad scripts\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "9215ed9c-c333-4989-a40a-c1f7ca0a390a",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "9509dc2f-1f36-483d-ab39-2743e16183ee",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Facebook Video & Reel AI Transcript Scraper",
+      "id": "32ea1b13-e9fa-4345-a35a-4e1e08c3114e",
+      "name": "Run Apify Facebook Video & Reel AI Transcript Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "89bcaa1b-89f7-469a-aebb-0feb3e63bc60",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "5d1fcbb1-0abe-41ef-aa72-03f742df7c4f",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Facebook Video & Reel AI Transcript Scraper",
+            "node": "Run Apify Facebook Video & Reel AI Transcript Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Facebook Video & Reel AI Transcript Scraper": {
+    "Run Apify Facebook Video & Reel AI Transcript Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "080e357c-5eed-4657-a7ec-8269ffbb6178",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/facebook-video-reels-ai-transcript-extractor",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

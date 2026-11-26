@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ X (Twitter) Viral Posts, Threads & Audience Lead Scraper\n\n**What this workflow does:**\nExtract high-engagement X/Twitter posts, threads, and creator metrics for social listening and warm outbound prospecting.\n\n**Powered by Apify Actor:** [`laborious_rumor/twitter-x-tweet-scraper`](https://apify.com/laborious_rumor/twitter-x-tweet-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: X (Twitter) Posts, Metrics & Thread Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ X (Twitter) Viral Posts, Threads & Audience Lead Scraper\n\n**What this workflow does:**\nExtract high-engagement X/Twitter posts, threads, and creator metrics for social listening and warm outbound prospecting.\n\n**Powered by Apify Actor:** [`laborious_rumor/twitter-x-tweet-scraper`](https://apify.com/laborious_rumor/twitter-x-tweet-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify X (Twitter) Posts, Metrics & Thread Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "a808ddcc-fe71-4397-a455-258a97acec6e",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "f7606f62-361a-49bf-ac5d-d6eb36d9c988",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "80c39ba7-eda9-48ad-a2d3-113e61391ebd",
               "name": "queries",
               "value": "[\"building in public ai agent\",\"mcp server claude cursor\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "fda163dd-94e1-4889-a39e-dc7c8e49eb7d",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "e0c33a37-b81d-4f8e-a2c3-190df4207142",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: X (Twitter) Posts, Metrics & Thread Scraper",
+      "id": "6c7c895a-5ee0-4a10-a818-9254412ee904",
+      "name": "Run Apify X (Twitter) Posts, Metrics & Thread Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "3af242ee-90b8-4cd5-aeca-0f8525b1efb2",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "c2d6f750-8a8d-4057-ae59-7a77c03ba87a",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: X (Twitter) Posts, Metrics & Thread Scraper",
+            "node": "Run Apify X (Twitter) Posts, Metrics & Thread Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: X (Twitter) Posts, Metrics & Thread Scraper": {
+    "Run Apify X (Twitter) Posts, Metrics & Thread Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "36430343-8e38-4d32-a8a1-eb33c4d762b3",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/twitter-x-tweet-scraper",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

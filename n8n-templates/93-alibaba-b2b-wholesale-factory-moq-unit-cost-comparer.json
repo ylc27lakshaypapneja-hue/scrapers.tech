@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Alibaba Verified Factory Suppliers, MOQ Tiers & Unit Cost Sourcing Pipeline\n\n**What this workflow does:**\nCompare verified Alibaba Gold Suppliers, minimum order quantities (MOQs), and FOB unit pricing inside Google Sheets.\n\n**Powered by Apify Actor:** [`laborious_rumor/alibaba-wholesale-supplier-moq-scraper`](https://apify.com/laborious_rumor/alibaba-wholesale-supplier-moq-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Alibaba B2B Wholesale Supplier & MOQ Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Alibaba Verified Factory Suppliers, MOQ Tiers & Unit Cost Sourcing Pipeline\n\n**What this workflow does:**\nCompare verified Alibaba Gold Suppliers, minimum order quantities (MOQs), and FOB unit pricing inside Google Sheets.\n\n**Powered by Apify Actor:** [`laborious_rumor/alibaba-wholesale-supplier-moq-scraper`](https://apify.com/laborious_rumor/alibaba-wholesale-supplier-moq-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Alibaba B2B Wholesale Supplier & MOQ Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "ad311156-2e2a-411b-a68f-632f0c8c77cd",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "f40c24a2-33f6-4ae1-a4a0-be5661e8ea7c",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "4c5ca8bb-b558-4ade-a289-23bfea5a5430",
               "name": "queries",
               "value": "[\"custom private label stainless tumbler\",\" biodegradable packaging manufacturer\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "f1ccaf69-e11e-4b79-a2e0-b35b1f03d383",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "b265d438-6e19-4bf1-a813-f1e7f8349251",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Alibaba B2B Wholesale Supplier & MOQ Scraper",
+      "id": "36426f56-1091-406b-afd8-4b3c9196f3a1",
+      "name": "Run Apify Alibaba B2B Wholesale Supplier & MOQ Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "23230b5c-1995-4fb6-af09-273a203a4cde",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "e7e11e99-df9e-48a7-a32a-aeabc60e4bee",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Alibaba B2B Wholesale Supplier & MOQ Scraper",
+            "node": "Run Apify Alibaba B2B Wholesale Supplier & MOQ Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Alibaba B2B Wholesale Supplier & MOQ Scraper": {
+    "Run Apify Alibaba B2B Wholesale Supplier & MOQ Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "abeb0e7e-5bbe-46f9-ab9d-a504186e773e",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/alibaba-wholesale-supplier-moq-scraper",
-    "category": "E-Commerce"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ LinkedIn Viral Post Search & Thought-Leader Content Miner (No Cookies)\n\n**What this workflow does:**\nFind high-intent LinkedIn posts by keyword without session cookies to trigger warm social selling outreach and AI comment generation.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-post-search-scraper`](https://apify.com/laborious_rumor/linkedin-post-search-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: LinkedIn Post Search Scraper (No Cookies)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ LinkedIn Viral Post Search & Thought-Leader Content Miner (No Cookies)\n\n**What this workflow does:**\nFind high-intent LinkedIn posts by keyword without session cookies to trigger warm social selling outreach and AI comment generation.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-post-search-scraper`](https://apify.com/laborious_rumor/linkedin-post-search-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify LinkedIn Post Search Scraper (No Cookies)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "7b29cb55-6b0b-4e2b-af76-aa977f62e99b",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "77a8930d-8d3e-44f5-a129-e321761ccee9",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "b69b46ab-64f2-453b-aa3e-ab531df763cb",
               "name": "queries",
               "value": "[\"outbound sales automation clay n8n\",\"hiring growth marketing agency\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "1fa44477-c61d-4598-a490-aa056915ebe8",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "86b57c38-b565-498b-ab3e-40835ad17a75",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: LinkedIn Post Search Scraper (No Cookies)",
+      "id": "cd4b4fb2-ef9d-4c4b-aefe-b1546e2a6f9c",
+      "name": "Run Apify LinkedIn Post Search Scraper (No Cookies)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "8bd81cec-61e9-49f6-a29b-4cfcf0a6c91c",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "46e67077-15d9-4c85-a403-f75783cb0a1e",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: LinkedIn Post Search Scraper (No Cookies)",
+            "node": "Run Apify LinkedIn Post Search Scraper (No Cookies)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: LinkedIn Post Search Scraper (No Cookies)": {
+    "Run Apify LinkedIn Post Search Scraper (No Cookies)": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7aff1a1c-d667-4bc9-a300-041ee207df96",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/linkedin-post-search-scraper",
-    "category": "LinkedIn & B2B"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

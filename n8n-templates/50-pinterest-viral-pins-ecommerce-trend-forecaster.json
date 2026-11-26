@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Pinterest Viral Pin Save Velocity & Outbound DTC Store Link Discovery\n\n**What this workflow does:**\nTrack rapidly saved Pinterest pins and extract their outbound e-commerce product links to spot retail trends 60 days early.\n\n**Powered by Apify Actor:** [`laborious_rumor/pinterest-scraper`](https://apify.com/laborious_rumor/pinterest-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Pinterest Scraper & Monitor: Pins & Saves** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Pinterest Viral Pin Save Velocity & Outbound DTC Store Link Discovery\n\n**What this workflow does:**\nTrack rapidly saved Pinterest pins and extract their outbound e-commerce product links to spot retail trends 60 days early.\n\n**Powered by Apify Actor:** [`laborious_rumor/pinterest-scraper`](https://apify.com/laborious_rumor/pinterest-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Pinterest Scraper & Monitor Pins & Saves** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "33e78e35-588b-4e6f-a0d3-c3d9d3a0540e",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "81d00bc4-acaa-4661-aac9-73eb3ddf8eba",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "dd94ebeb-95a8-43a7-ad1b-d4fe7434db14",
               "name": "queries",
               "value": "[\"minimalist home decor 2026\",\"summer capsule wardrobe aesthetic\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "9b11fff8-7dae-4894-a770-b7f27680abe2",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "a9ee69fc-2d51-4962-a881-1b99f0620fbb",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Pinterest Scraper & Monitor: Pins & Saves",
+      "id": "7819bc34-6472-48eb-a42b-2ba5b558221d",
+      "name": "Run Apify Pinterest Scraper & Monitor Pins & Saves",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "da54ce7c-c889-4efc-a630-34e300e26f90",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "d04ea009-e8dc-4feb-adea-b85766ef55f5",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Pinterest Scraper & Monitor: Pins & Saves",
+            "node": "Run Apify Pinterest Scraper & Monitor Pins & Saves",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Pinterest Scraper & Monitor: Pins & Saves": {
+    "Run Apify Pinterest Scraper & Monitor Pins & Saves": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "e6a25da3-990b-4ef5-a6ee-f045ff97bc3a",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/pinterest-scraper",
-    "category": "E-Commerce"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

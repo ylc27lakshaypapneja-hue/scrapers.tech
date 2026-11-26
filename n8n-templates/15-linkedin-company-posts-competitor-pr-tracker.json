@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ LinkedIn Competitor Company Page Posts & Product Launch Monitor\n\n**What this workflow does:**\nTrack every official announcement, hiring push, and product release published on competitor LinkedIn company pages.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-company-posts-scraper`](https://apify.com/laborious_rumor/linkedin-company-posts-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: LinkedIn Company Posts Scraper (No Cookies)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ LinkedIn Competitor Company Page Posts & Product Launch Monitor\n\n**What this workflow does:**\nTrack every official announcement, hiring push, and product release published on competitor LinkedIn company pages.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-company-posts-scraper`](https://apify.com/laborious_rumor/linkedin-company-posts-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify LinkedIn Company Posts Scraper (No Cookies)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "1c8a4daa-92ae-4495-ada0-9f5fccba6ffd",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "2c93a827-3434-41de-ac04-32f3dca8c7e0",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "9a85e136-b965-46f1-aa51-823ac525012a",
               "name": "queries",
               "value": "[\"https://www.linkedin.com/company/openai\",\"https://www.linkedin.com/company/anthropicresearch\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "b4852702-7a6a-486f-a170-53a6485240fb",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "d1a9f157-b12f-4438-a0a4-e6802d0779d7",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: LinkedIn Company Posts Scraper (No Cookies)",
+      "id": "6bd2b4e7-e944-4c4e-a351-a18235fdeaa1",
+      "name": "Run Apify LinkedIn Company Posts Scraper (No Cookies)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "a0ebb3a7-1635-45dc-a769-2c9ecb384064",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "f0ce1fc3-4a2f-47b0-af37-8f9a8a456276",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: LinkedIn Company Posts Scraper (No Cookies)",
+            "node": "Run Apify LinkedIn Company Posts Scraper (No Cookies)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: LinkedIn Company Posts Scraper (No Cookies)": {
+    "Run Apify LinkedIn Company Posts Scraper (No Cookies)": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "6312368b-7105-453b-a70a-bf9e574942bc",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/linkedin-company-posts-scraper",
-    "category": "LinkedIn & B2B"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

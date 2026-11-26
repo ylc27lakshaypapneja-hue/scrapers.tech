@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ TikTok Video Transcript & Viral Hook Extractor to AI LinkedIn/X Posts\n\n**What this workflow does:**\nTranscribe viral TikTok videos automatically and use an LLM in n8n to rewrite them into LinkedIn threads and newsletter issues.\n\n**Powered by Apify Actor:** [`laborious_rumor/tiktok-transcript-extractor-api`](https://apify.com/laborious_rumor/tiktok-transcript-extractor-api) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: TikTok Transcript & Viral Script Extractor API** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ TikTok Video Transcript & Viral Hook Extractor to AI LinkedIn/X Posts\n\n**What this workflow does:**\nTranscribe viral TikTok videos automatically and use an LLM in n8n to rewrite them into LinkedIn threads and newsletter issues.\n\n**Powered by Apify Actor:** [`laborious_rumor/tiktok-transcript-extractor-api`](https://apify.com/laborious_rumor/tiktok-transcript-extractor-api) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify TikTok Transcript & Viral Script Extractor API** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "42b92379-29ad-49fb-a06e-9be865cbd52c",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "a8b20c37-e10f-4915-a9ab-ed746baeb598",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "75a6a656-603e-4b5a-a4bf-576ee0e3cfe0",
               "name": "queries",
               "value": "[\"ai side hustle workflow\",\"saas growth hacks 2026\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "babd9f63-01fa-4068-a7b6-1d4bda3767ef",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "cd5ec308-e1ec-4be8-ae40-bcf0a9e75a56",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: TikTok Transcript & Viral Script Extractor API",
+      "id": "0a728558-0225-4522-a954-948df85f8b0b",
+      "name": "Run Apify TikTok Transcript & Viral Script Extractor API",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "6cb246e2-cba5-471f-a0ee-2c1bff2eb7b6",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "1a2afcae-d2ac-4094-a1d1-29f6550b2420",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: TikTok Transcript & Viral Script Extractor API",
+            "node": "Run Apify TikTok Transcript & Viral Script Extractor API",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: TikTok Transcript & Viral Script Extractor API": {
+    "Run Apify TikTok Transcript & Viral Script Extractor API": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ef09a0ff-9af9-4baf-a1c0-afd33301af10",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/tiktok-transcript-extractor-api",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

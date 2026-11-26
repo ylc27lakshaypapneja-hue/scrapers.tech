@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Reddit Full Thread & Nested Comments Exporter for Deep LLM Market Research\n\n**What this workflow does:**\nExport complete Reddit threads and top-voted comment trees into clean JSON for AI persona research and product positioning.\n\n**Powered by Apify Actor:** [`laborious_rumor/reddit-post-comments-bulk-thread-scraper`](https://apify.com/laborious_rumor/reddit-post-comments-bulk-thread-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Reddit Post Comments & Bulk Thread Export** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Reddit Full Thread & Nested Comments Exporter for Deep LLM Market Research\n\n**What this workflow does:**\nExport complete Reddit threads and top-voted comment trees into clean JSON for AI persona research and product positioning.\n\n**Powered by Apify Actor:** [`laborious_rumor/reddit-post-comments-bulk-thread-scraper`](https://apify.com/laborious_rumor/reddit-post-comments-bulk-thread-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Reddit Post Comments & Bulk Thread Export** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "14d58d76-62af-4ca4-af8f-4a93052ce72a",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "6375c40f-c056-4ecc-a3fe-e78783fd1131",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "d3f3c85b-ee1e-4100-ad3e-f2a84f135f4f",
               "name": "queries",
               "value": "[\"https://www.reddit.com/r/n8n/\",\"r/saas pricing feedback discussions\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "7c0a1ce5-4c0c-448b-a4c4-5aa7403ec482",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "1541dc12-d50b-46f1-afa7-531cfccd5f34",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Reddit Post Comments & Bulk Thread Export",
+      "id": "3c1d034e-7c94-43f0-a9fd-429c575ff6ed",
+      "name": "Run Apify Reddit Post Comments & Bulk Thread Export",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "01cfd8f3-8c24-4001-accf-df6662431470",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "3ecdac52-c642-4550-a1ec-64f1a84184b3",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Reddit Post Comments & Bulk Thread Export",
+            "node": "Run Apify Reddit Post Comments & Bulk Thread Export",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Reddit Post Comments & Bulk Thread Export": {
+    "Run Apify Reddit Post Comments & Bulk Thread Export": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "166a5f61-6b96-472c-a427-ef93365b2b07",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/reddit-post-comments-bulk-thread-scraper",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

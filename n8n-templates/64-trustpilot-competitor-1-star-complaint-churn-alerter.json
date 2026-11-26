@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Trustpilot 1-Star & 2-Star Competitor Complaint Monitor for Sales Poaching\n\n**What this workflow does:**\nMonitor competitor Trustpilot pages for angry customer reviews and trigger immediate switch-offer campaigns.\n\n**Powered by Apify Actor:** [`laborious_rumor/trustpilot-company-reviews-scraper`](https://apify.com/laborious_rumor/trustpilot-company-reviews-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Trustpilot Reviews Scraper - Ratings & Text** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Trustpilot 1-Star & 2-Star Competitor Complaint Monitor for Sales Poaching\n\n**What this workflow does:**\nMonitor competitor Trustpilot pages for angry customer reviews and trigger immediate switch-offer campaigns.\n\n**Powered by Apify Actor:** [`laborious_rumor/trustpilot-company-reviews-scraper`](https://apify.com/laborious_rumor/trustpilot-company-reviews-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Trustpilot Reviews Scraper - Ratings & Text** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "4fb9b0b2-a452-4b5b-a6df-eda671f50716",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "28ffb73c-57d7-4485-aa10-7f0b03873adb",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "bba7763c-1cc1-4b69-a8b4-4ac9d52bd813",
               "name": "queries",
               "value": "[\"zendesk.com\",\"mailchimp.com\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "1a5a60de-c3f4-4780-a3c3-be2e1d123f41",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "3ea1b51f-a79b-41d9-afee-48a38b0570ce",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Trustpilot Reviews Scraper - Ratings & Text",
+      "id": "5b7f192f-52be-48af-af8a-a758538c217f",
+      "name": "Run Apify Trustpilot Reviews Scraper - Ratings & Text",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "54680bc9-0f39-4c0c-affd-225f2de6df0b",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "bc3ef1b5-dab7-483b-a6b6-4ddb3b7a0d1c",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Trustpilot Reviews Scraper - Ratings & Text",
+            "node": "Run Apify Trustpilot Reviews Scraper - Ratings & Text",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Trustpilot Reviews Scraper - Ratings & Text": {
+    "Run Apify Trustpilot Reviews Scraper - Ratings & Text": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "08fc3081-1fa7-4710-a31c-50b9eadc7ea0",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/trustpilot-company-reviews-scraper",
-    "category": "LinkedIn & B2B"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

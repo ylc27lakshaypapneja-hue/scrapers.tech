@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ YouTube Channel Subscriber Velocity, Avg Views & Sponsorship ROI Auditor\n\n**What this workflow does:**\nAudit YouTube channels for real view-to-subscriber consistency across their last 30 videos before negotiating sponsorships.\n\n**Powered by Apify Actor:** [`laborious_rumor/youtube-channel-videos-growth-scraper`](https://apify.com/laborious_rumor/youtube-channel-videos-growth-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Fast YouTube Channel Scraper: Subs & Stats** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ YouTube Channel Subscriber Velocity, Avg Views & Sponsorship ROI Auditor\n\n**What this workflow does:**\nAudit YouTube channels for real view-to-subscriber consistency across their last 30 videos before negotiating sponsorships.\n\n**Powered by Apify Actor:** [`laborious_rumor/youtube-channel-videos-growth-scraper`](https://apify.com/laborious_rumor/youtube-channel-videos-growth-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Fast YouTube Channel Scraper Subs & Stats** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "79eeab5a-4c0e-435f-ab55-616dad64670c",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "07394733-ef5e-41e2-aee3-16d333912ca3",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "435c0013-7536-48f4-a723-e58759d211e6",
               "name": "queries",
               "value": "[\"AI automation YouTube channels\",\"B2B SaaS review YouTubers\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "0ae6b784-78a2-460f-a5f8-4ce9c51fa0ac",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "b6490f0b-c96e-42bf-a29f-ae1a56af1b14",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Fast YouTube Channel Scraper: Subs & Stats",
+      "id": "5f8ae87c-8b3b-41e4-ab9b-30578ac1d5bb",
+      "name": "Run Apify Fast YouTube Channel Scraper Subs & Stats",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "3b055b81-f965-40c0-a3f3-de8d29803d3e",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "27bb18d6-f9ed-480f-a679-e559fdd8513e",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Fast YouTube Channel Scraper: Subs & Stats",
+            "node": "Run Apify Fast YouTube Channel Scraper Subs & Stats",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Fast YouTube Channel Scraper: Subs & Stats": {
+    "Run Apify Fast YouTube Channel Scraper Subs & Stats": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0d4c1f0a-917a-4dbd-a81b-6f507d2eaea0",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/youtube-channel-videos-growth-scraper",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

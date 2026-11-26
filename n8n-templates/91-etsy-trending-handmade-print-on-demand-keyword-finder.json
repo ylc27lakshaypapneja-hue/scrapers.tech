@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Etsy Trending Print-on-Demand & Digital Product Keyword Opportunity Finder\n\n**What this workflow does:**\nSpot fast-rising Etsy search keywords with high bestseller velocity and low competing listing counts.\n\n**Powered by Apify Actor:** [`laborious_rumor/etsy-trending-handmade-product-keyword-scraper`](https://apify.com/laborious_rumor/etsy-trending-handmade-product-keyword-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Etsy Trending Product & Keyword Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Etsy Trending Print-on-Demand & Digital Product Keyword Opportunity Finder\n\n**What this workflow does:**\nSpot fast-rising Etsy search keywords with high bestseller velocity and low competing listing counts.\n\n**Powered by Apify Actor:** [`laborious_rumor/etsy-trending-handmade-product-keyword-scraper`](https://apify.com/laborious_rumor/etsy-trending-handmade-product-keyword-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Etsy Trending Product & Keyword Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "5cd0adf4-8b0a-4a70-af87-e0b36366338f",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "466ed95f-2ce0-46dc-a1b6-708a9c40a0c1",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "0658d7bb-ab77-4312-aee8-5fb7719ab175",
               "name": "queries",
               "value": "[\"personalized bridesmaid gift box\",\"minimalist wall art digital download\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "2d705e33-db56-46b1-afe2-3fe17b91e6b9",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "bbdb2b72-2893-49ae-ae4d-edc08e9af2af",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Etsy Trending Product & Keyword Scraper",
+      "id": "a1bdaf2f-3940-4090-a051-06e69876c26b",
+      "name": "Run Apify Etsy Trending Product & Keyword Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "3b23b868-6e4d-4fa7-aedf-490a8935edc0",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "99b6004b-7a28-4d0f-a286-82842c93e663",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Etsy Trending Product & Keyword Scraper",
+            "node": "Run Apify Etsy Trending Product & Keyword Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Etsy Trending Product & Keyword Scraper": {
+    "Run Apify Etsy Trending Product & Keyword Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7e9d0009-a79c-4872-a865-5beea6c42856",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/etsy-trending-handmade-product-keyword-scraper",
-    "category": "E-Commerce"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

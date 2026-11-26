@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ LinkedIn ICP Account Discovery by Vertical & Headcount (No Cookies)\n\n**What this workflow does:**\nDiscover target B2B accounts matching your Ideal Customer Profile on LinkedIn and push company domains to Clay or Apollo.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-company-search-no-cookies-scraper`](https://apify.com/laborious_rumor/linkedin-company-search-no-cookies-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: LinkedIn Company Search Scraper (No Cookies)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ LinkedIn ICP Account Discovery by Vertical & Headcount (No Cookies)\n\n**What this workflow does:**\nDiscover target B2B accounts matching your Ideal Customer Profile on LinkedIn and push company domains to Clay or Apollo.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-company-search-no-cookies-scraper`](https://apify.com/laborious_rumor/linkedin-company-search-no-cookies-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify LinkedIn Company Search Scraper (No Cookies)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "3d09ea81-f8c7-4283-aa06-9ea5f232445c",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "cd2716b7-fd70-4193-a23c-0bbd8075b395",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "79e27d44-1ca5-413a-a625-995b0bab90f7",
               "name": "queries",
               "value": "[\"FinTech software companies United States\",\"Healthcare AI startups Boston\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "451ffadb-404a-4d58-ac01-26aa15dcead8",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "243bcdd4-e021-4155-a41a-ceca061bdf1f",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: LinkedIn Company Search Scraper (No Cookies)",
+      "id": "37c1bf76-c1ad-46df-a250-a5796c23b7a9",
+      "name": "Run Apify LinkedIn Company Search Scraper (No Cookies)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "8d174087-fb73-4a42-a714-3e8813a9f3c6",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "807ef71f-43e0-45b3-a4f3-1599675c2f60",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: LinkedIn Company Search Scraper (No Cookies)",
+            "node": "Run Apify LinkedIn Company Search Scraper (No Cookies)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: LinkedIn Company Search Scraper (No Cookies)": {
+    "Run Apify LinkedIn Company Search Scraper (No Cookies)": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3bcaf9be-33ed-41da-ae68-682b8c32c939",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/linkedin-company-search-no-cookies-scraper",
-    "category": "LinkedIn & B2B"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

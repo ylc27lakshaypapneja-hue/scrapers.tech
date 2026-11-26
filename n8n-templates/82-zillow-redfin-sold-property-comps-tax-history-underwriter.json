@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Zillow & Redfin Sold Property Comps, Price-Per-SqFt & Tax History Underwriter\n\n**What this workflow does:**\nPull residential real estate comparables, tax assessment histories, and price cuts into Google Sheets for deal underwriting.\n\n**Powered by Apify Actor:** [`laborious_rumor/zillow-redfin-real-estate-comps-property-analyzer`](https://apify.com/laborious_rumor/zillow-redfin-real-estate-comps-property-analyzer) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: Real Estate Comps Scraper: Price & Tax** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Zillow & Redfin Sold Property Comps, Price-Per-SqFt & Tax History Underwriter\n\n**What this workflow does:**\nPull residential real estate comparables, tax assessment histories, and price cuts into Google Sheets for deal underwriting.\n\n**Powered by Apify Actor:** [`laborious_rumor/zillow-redfin-real-estate-comps-property-analyzer`](https://apify.com/laborious_rumor/zillow-redfin-real-estate-comps-property-analyzer) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify Real Estate Comps Scraper Price & Tax** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "b3494268-1984-4549-a6ab-81d0ebbc54ed",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "bbd5de46-2511-4088-a397-94f3abfddc48",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "ffd57342-2b8f-4ed1-afa8-cd0e40269172",
               "name": "queries",
               "value": "[\"Austin TX 78704 sold comps\",\"Miami FL multifamly property valuations\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "bcb8b3ce-245f-4f8f-a84c-3c8eaedd806b",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "9fb00b33-484c-49a7-a8bc-f7dd17420c5f",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: Real Estate Comps Scraper: Price & Tax",
+      "id": "1ee1da9c-938b-483f-af1b-444231c587fe",
+      "name": "Run Apify Real Estate Comps Scraper Price & Tax",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "2b0903ab-7b97-4278-a4d5-4f3e5f589a6c",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "94bd8abb-4b1a-4efc-ab72-9b6796c4d68f",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: Real Estate Comps Scraper: Price & Tax",
+            "node": "Run Apify Real Estate Comps Scraper Price & Tax",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: Real Estate Comps Scraper: Price & Tax": {
+    "Run Apify Real Estate Comps Scraper Price & Tax": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "cab4323f-b106-4f4a-a85c-0b8e8bd5d655",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/zillow-redfin-real-estate-comps-property-analyzer",
-    "category": "Startups & Real Estate"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Nightly XML Sitemap Crawler to Keep AI Vector Knowledgebase 100% Fresh\n\n**What this workflow does:**\nAutomatically crawl any site’s sitemap.xml every night and sync updated pages into your customer support RAG vector database.\n\n**Powered by Apify Actor:** [`laborious_rumor/sitemap-xml-llm-knowledgebase-crawler`](https://apify.com/laborious_rumor/sitemap-xml-llm-knowledgebase-crawler) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: XML Sitemap Crawler & Knowledgebase Builder** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Nightly XML Sitemap Crawler to Keep AI Vector Knowledgebase 100% Fresh\n\n**What this workflow does:**\nAutomatically crawl any site’s sitemap.xml every night and sync updated pages into your customer support RAG vector database.\n\n**Powered by Apify Actor:** [`laborious_rumor/sitemap-xml-llm-knowledgebase-crawler`](https://apify.com/laborious_rumor/sitemap-xml-llm-knowledgebase-crawler) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify XML Sitemap Crawler & Knowledgebase Builder** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "d709ee0d-2f8b-4020-acdd-6eb827901a96",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "ca87f6d3-52b0-48a5-ac58-ad046fe130c5",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "4f5199c2-c029-43e9-a364-e6d31d327c5c",
               "name": "queries",
               "value": "[\"https://docs.n8n.io/sitemap.xml\",\"https://docs.apify.com/sitemap.xml\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "68d8fbb4-d7c0-4a38-aec9-3e177f042093",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "58272bb5-89f1-446d-a179-5db50f3168a4",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: XML Sitemap Crawler & Knowledgebase Builder",
+      "id": "c7953732-8d18-47b6-aa11-941d91b2602b",
+      "name": "Run Apify XML Sitemap Crawler & Knowledgebase Builder",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "34781c3f-37c1-4ec8-a421-bb530d558f6d",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "d9e0e024-1659-4410-a695-409672b07242",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: XML Sitemap Crawler & Knowledgebase Builder",
+            "node": "Run Apify XML Sitemap Crawler & Knowledgebase Builder",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: XML Sitemap Crawler & Knowledgebase Builder": {
+    "Run Apify XML Sitemap Crawler & Knowledgebase Builder": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f753957b-e226-45e3-a9de-3aabb09182f3",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/sitemap-xml-llm-knowledgebase-crawler",
-    "category": "AI, RAG & Tech"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

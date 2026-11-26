@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ LinkedIn Sales Navigator Lead List Exporter to Clay / HubSpot (No Cookies)\n\n**What this workflow does:**\nExport high-converting Sales Navigator lead criteria with verified corporate email patterns without browser extensions or cookie bans.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-sales-navigator-lead-exporter`](https://apify.com/laborious_rumor/linkedin-sales-navigator-lead-exporter) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: LinkedIn Sales Navigator Lead Exporter (No Cookies)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ LinkedIn Sales Navigator Lead List Exporter to Clay / HubSpot (No Cookies)\n\n**What this workflow does:**\nExport high-converting Sales Navigator lead criteria with verified corporate email patterns without browser extensions or cookie bans.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-sales-navigator-lead-exporter`](https://apify.com/laborious_rumor/linkedin-sales-navigator-lead-exporter) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify LinkedIn Sales Navigator Lead Exporter (No Cookies)** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "33a64c9e-1ccb-4a1f-a7e9-30165efff8ee",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "827f34a9-c25a-4ca3-a15b-4f30980e752c",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "388cad46-d49e-48b5-a2ab-2f716334768e",
               "name": "queries",
               "value": "[\"VP Engineering Series B SaaS US\",\"Chief Marketing Officer E-Commerce New York\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "ca395e30-3d87-4ebe-ae89-b6e713a520e3",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "addae3bd-de83-4115-a455-6d279688df6b",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: LinkedIn Sales Navigator Lead Exporter (No Cookies)",
+      "id": "361cc6aa-1f1d-427e-aa78-d88e6e9f9ee1",
+      "name": "Run Apify LinkedIn Sales Navigator Lead Exporter (No Cookies)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "a0e6ed78-74bf-4da7-a88e-6083a063521b",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "d0793d39-daa5-43bb-a799-01844a701cd0",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: LinkedIn Sales Navigator Lead Exporter (No Cookies)",
+            "node": "Run Apify LinkedIn Sales Navigator Lead Exporter (No Cookies)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: LinkedIn Sales Navigator Lead Exporter (No Cookies)": {
+    "Run Apify LinkedIn Sales Navigator Lead Exporter (No Cookies)": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "83cb2007-317a-49ed-aab6-4ceadb9cf1f3",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/linkedin-sales-navigator-lead-exporter",
-    "category": "LinkedIn & B2B"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

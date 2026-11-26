@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ YouTube & TikTok Timestamped Transcript + Opening Hook Swipe File to Notion\n\n**What this workflow does:**\nBuild an automated Notion swipe file of opening 5-second video hooks and full transcripts from YouTube and TikTok.\n\n**Powered by Apify Actor:** [`laborious_rumor/youtube-tiktok-transcript-hook-extractor`](https://apify.com/laborious_rumor/youtube-tiktok-transcript-hook-extractor) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: YouTube & TikTok Transcript Hook Extractor** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ YouTube & TikTok Timestamped Transcript + Opening Hook Swipe File to Notion\n\n**What this workflow does:**\nBuild an automated Notion swipe file of opening 5-second video hooks and full transcripts from YouTube and TikTok.\n\n**Powered by Apify Actor:** [`laborious_rumor/youtube-tiktok-transcript-hook-extractor`](https://apify.com/laborious_rumor/youtube-tiktok-transcript-hook-extractor) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify YouTube & TikTok Transcript Hook Extractor** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "84c4f04a-6a53-44bc-a894-02ef260c2995",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "4871546b-1cee-4647-aa50-f4ba9a593ed6",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "79a3ff82-43c7-4812-a7ab-af250cc1a973",
               "name": "queries",
               "value": "[\"Alex Hormozi VSL hooks\",\"MrBeast retention editing breakdown\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "d1e0454f-9d5a-464e-a1a8-fdf06fc2169a",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "64ba6583-b3fa-4948-a709-16defc06966b",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: YouTube & TikTok Transcript Hook Extractor",
+      "id": "a0cbbc3f-5cad-4605-aec3-271ed72dffb6",
+      "name": "Run Apify YouTube & TikTok Transcript Hook Extractor",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "105a7210-b37e-4f57-aec4-5b16f7e63bfd",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "8ba195d3-d4ba-45aa-add3-b6ce94c01746",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: YouTube & TikTok Transcript Hook Extractor",
+            "node": "Run Apify YouTube & TikTok Transcript Hook Extractor",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: YouTube & TikTok Transcript Hook Extractor": {
+    "Run Apify YouTube & TikTok Transcript Hook Extractor": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "9bd2551d-172a-49a1-ab41-d759b6c7be8b",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/youtube-tiktok-transcript-hook-extractor",
-    "category": "Social & Creator"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

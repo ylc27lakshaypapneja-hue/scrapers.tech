@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ AliExpress Winning Product Order Volume & Supplier Price Margin Finder\n\n**What this workflow does:**\nCompare AliExpress supplier factory pricing and 7-day order growth against US DTC retail prices for high-margin sourcing.\n\n**Powered by Apify Actor:** [`laborious_rumor/aliexpress-product-scraper`](https://apify.com/laborious_rumor/aliexpress-product-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: AliExpress Product Scraper: Prices & Orders** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ AliExpress Winning Product Order Volume & Supplier Price Margin Finder\n\n**What this workflow does:**\nCompare AliExpress supplier factory pricing and 7-day order growth against US DTC retail prices for high-margin sourcing.\n\n**Powered by Apify Actor:** [`laborious_rumor/aliexpress-product-scraper`](https://apify.com/laborious_rumor/aliexpress-product-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify AliExpress Product Scraper Prices & Orders** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "1fab2a64-3e84-47fb-abfe-59fd9125dee7",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "956cf020-6eb5-4404-a920-e3debb7ce8f6",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "6c6ae36b-4838-4c10-a8b9-66a437a234fa",
               "name": "queries",
               "value": "[\"portable espresso maker\",\"magnetic wireless power bank\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "7aca3ea9-ac19-403c-a569-970e2601764d",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "3aee58c2-35d5-451e-a30b-ebd5cee11963",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: AliExpress Product Scraper: Prices & Orders",
+      "id": "3eec8081-23e0-4079-a8e5-713fe3e69d9e",
+      "name": "Run Apify AliExpress Product Scraper Prices & Orders",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "09875960-9927-442e-a437-30d3829c8a14",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "6230d8b0-76ae-4975-a783-3b51d70d9b8f",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: AliExpress Product Scraper: Prices & Orders",
+            "node": "Run Apify AliExpress Product Scraper Prices & Orders",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: AliExpress Product Scraper: Prices & Orders": {
+    "Run Apify AliExpress Product Scraper Prices & Orders": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7d1ccfeb-191a-4eb3-a03d-ca6628ba1ba2",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/aliexpress-product-scraper",
-    "category": "E-Commerce"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

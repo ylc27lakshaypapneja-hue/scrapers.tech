@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ Daily New US Business & LLC Incorporations Filing Alert for B2B Services\n\n**What this workflow does:**\nReach brand-new US business owners within 48 hours of LLC formation to pitch accounting, banking, insurance, or web design.\n\n**Powered by Apify Actor:** [`laborious_rumor/us-new-business-llc-incorporations-scraper`](https://apify.com/laborious_rumor/us-new-business-llc-incorporations-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: US New Business & LLC Incorporations Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ Daily New US Business & LLC Incorporations Filing Alert for B2B Services\n\n**What this workflow does:**\nReach brand-new US business owners within 48 hours of LLC formation to pitch accounting, banking, insurance, or web design.\n\n**Powered by Apify Actor:** [`laborious_rumor/us-new-business-llc-incorporations-scraper`](https://apify.com/laborious_rumor/us-new-business-llc-incorporations-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify US New Business & LLC Incorporations Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "be7bb4a7-9012-48ce-afc7-65db40810383",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "3c10e69c-d56d-4a69-a4b4-75dca61831b0",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "cf277a78-263f-41b8-a21c-3b5039c66274",
               "name": "queries",
               "value": "[\"newly registered LLC Texas\",\"new Delaware corporation filings\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "ee68ef2b-d87a-4b08-a592-435dbeb6e472",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "91c8f026-bd47-4dc9-a6b2-c8f63dbad9d8",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: US New Business & LLC Incorporations Scraper",
+      "id": "8dbd19fc-ab57-418d-a479-d8f2db960ea7",
+      "name": "Run Apify US New Business & LLC Incorporations Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "fa874d1d-ab38-427e-a65a-c3c8bd44b400",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "c68433e8-8feb-4d2f-ab64-eea514a1319a",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: US New Business & LLC Incorporations Scraper",
+            "node": "Run Apify US New Business & LLC Incorporations Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: US New Business & LLC Incorporations Scraper": {
+    "Run Apify US New Business & LLC Incorporations Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b01fbef3-f2f0-471f-a8ad-eb398ff9c0e3",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/us-new-business-llc-incorporations-scraper",
-    "category": "Startups & Real Estate"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }

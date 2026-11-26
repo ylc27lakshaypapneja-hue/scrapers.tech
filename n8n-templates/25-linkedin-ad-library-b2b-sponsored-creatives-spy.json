@@ -3,12 +3,12 @@
   "nodes": [
     {
       "parameters": {
-        "content": "## ⚡ LinkedIn Ad Library B2B Competitor Sponsored Content & Lead Gen Ad Spy\n\n**What this workflow does:**\nExtract every active B2B LinkedIn ad creative, headline, and offer run by enterprise SaaS competitors.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-ad-library-b2b-creatives-scraper`](https://apify.com/laborious_rumor/linkedin-ad-library-b2b-creatives-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify: LinkedIn Ad Library B2B Creatives Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
+        "content": "## ⚡ LinkedIn Ad Library B2B Competitor Sponsored Content & Lead Gen Ad Spy\n\n**What this workflow does:**\nExtract every active B2B LinkedIn ad creative, headline, and offer run by enterprise SaaS competitors.\n\n**Powered by Apify Actor:** [`laborious_rumor/linkedin-ad-library-b2b-creatives-scraper`](https://apify.com/laborious_rumor/linkedin-ad-library-b2b-creatives-scraper) (*First 1,000 results 100% Free — zero login cookies required!*)\n\n### Setup in 30 Seconds:\n1. Get your free Apify API token at [console.apify.com/settings/integrations](https://console.apify.com/settings/integrations).\n2. Open the **Run Apify LinkedIn Ad Library B2B Creatives Scraper** HTTP Request node and replace `YOUR_APIFY_API_TOKEN` with your token.\n3. Click **Test Workflow** to extract live structured JSON records!",
         "height": 300,
         "width": 640
       },
-      "id": "sticky-note-1",
-      "name": "Setup Instructions",
+      "id": "4e008856-f3ed-489d-a628-b6d0945c2b75",
+      "name": "Sticky Note: Setup Instructions",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
@@ -27,7 +27,7 @@
           ]
         }
       },
-      "id": "schedule-trigger-1",
+      "id": "508291fb-073b-4ac5-a2e2-3f95f0c3e647",
       "name": "Daily Schedule Trigger",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
@@ -41,21 +41,22 @@
         "assignments": {
           "assignments": [
             {
-              "id": "queries-field",
+              "id": "34485ea5-a618-4931-a263-020d08b4e545",
               "name": "queries",
               "value": "[\"Gong.io\",\"Deel\"]",
               "type": "array"
             },
             {
-              "id": "max-items-field",
+              "id": "21a1f653-0c51-442e-a91a-5af474aa5eff",
               "name": "maxItems",
               "value": 25,
               "type": "number"
             }
           ]
-        }
+        },
+        "options": {}
       },
-      "id": "set-search-queries-1",
+      "id": "af5de823-c251-4245-a307-ed696d972136",
       "name": "Configure Target Queries",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -84,8 +85,8 @@
           "timeout": 60000
         }
       },
-      "id": "apify-actor-node-1",
-      "name": "Run Apify: LinkedIn Ad Library B2B Creatives Scraper",
+      "id": "895eaf5f-d4fe-46c9-abe9-375245a95b36",
+      "name": "Run Apify LinkedIn Ad Library B2B Creatives Scraper",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -97,11 +98,14 @@
       "parameters": {
         "conditions": {
           "options": {
-            "caseSensitive": false
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
-              "id": "verified-check",
+              "id": "19dc12e0-93d9-4990-a292-2ee53163cb6c",
               "leftValue": "={{ $json.verifiedStatus }}",
               "rightValue": true,
               "operator": {
@@ -111,9 +115,10 @@
             }
           ],
           "combinator": "and"
-        }
+        },
+        "options": {}
       },
-      "id": "filter-verified-1",
+      "id": "563940d1-1b63-47e5-a8ca-0a79e3a871ce",
       "name": "Filter Verified Records",
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2,
@@ -123,6 +128,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Daily Schedule Trigger": {
       "main": [
@@ -139,14 +145,14 @@
       "main": [
         [
           {
-            "node": "Run Apify: LinkedIn Ad Library B2B Creatives Scraper",
+            "node": "Run Apify LinkedIn Ad Library B2B Creatives Scraper",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Run Apify: LinkedIn Ad Library B2B Creatives Scraper": {
+    "Run Apify LinkedIn Ad Library B2B Creatives Scraper": {
       "main": [
         [
           {
@@ -158,9 +164,13 @@
       ]
     }
   },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7786fbeb-bd76-4e37-a549-ec05f40b41f1",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "apifyActorUrl": "https://apify.com/laborious_rumor/linkedin-ad-library-b2b-creatives-scraper",
-    "category": "Ad Spy & SEO"
-  }
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
 }
