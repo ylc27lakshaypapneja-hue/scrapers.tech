@@ -43,7 +43,7 @@
             {
               "id": "queries-field",
               "name": "queries",
-              "value": "[\"alex@stripe.com\",\"contact@vercel.com\"]",
+              "value": "[\"user@example.com\",\"sales@example.org\"]",
               "type": "array"
             },
             {

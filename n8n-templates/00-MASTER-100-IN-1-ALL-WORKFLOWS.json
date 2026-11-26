@@ -1,5 +1,5 @@
 {
-  "name": "Master 100-in-1 B2B Lead Gen, Web Scraping & AI/RAG Automation Suite (via Apify)",
+  "name": "Run 100 B2B lead gen and web scraping pipelines with Apify",
   "nodes": [
     {
       "parameters": {
@@ -8,12 +8,27 @@
         "width": 1100
       },
       "id": "master-sticky-header",
-      "name": "Master 100-in-1 Suite Overview",
+      "name": "Sticky Note: Master Suite Overview",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
         100,
         40
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### ⏱️ Step 1: Trigger & Global Credentials\nRuns on a 24-hour schedule and injects your  and default  limit into all downstream Apify scraper nodes.",
+        "height": 200,
+        "width": 520
+      },
+      "id": "sticky-step-1",
+      "name": "Sticky Note: Trigger & Config",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        80,
+        320
       ]
     },
     {
@@ -62,6 +77,81 @@
       "position": [
         380,
         400
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 📦 Column 1 (#01–#20): LinkedIn & B2B Outbound Pipelines\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
+        "height": 140,
+        "width": 460
+      },
+      "id": "sticky-col-1",
+      "name": "Sticky Note: Column 1 (#01–#20)",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        730,
+        190
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 📦 Column 2 (#21–#40): Ad Spy, SEO & Creator Intelligence\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
+        "height": 140,
+        "width": 460
+      },
+      "id": "sticky-col-2",
+      "name": "Sticky Note: Column 2 (#21–#40)",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1250,
+        190
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 📦 Column 3 (#41–#60): E-Commerce, Startups & AI/RAG\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
+        "height": 140,
+        "width": 460
+      },
+      "id": "sticky-col-3",
+      "name": "Sticky Note: Column 3 (#41–#60)",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1770,
+        190
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 📦 Column 4 (#61–#80): Reviews, Podcasts, Video & VC Deals\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
+        "height": 140,
+        "width": 460
+      },
+      "id": "sticky-col-4",
+      "name": "Sticky Note: Column 4 (#61–#80)",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2290,
+        190
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### 📦 Column 5 (#81–#100): Real Estate, Local Maps & ATS Jobs\nEnable the HTTP Request nodes below that match your target scraping pipeline.",
+        "height": 140,
+        "width": 460
+      },
+      "id": "sticky-col-5",
+      "name": "Sticky Note: Column 5 (#81–#100)",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2810,
+        190
       ]
     },
     {
@@ -668,7 +758,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\"queries\":[\"founders@stripe.com\",\"press@anthropic.com\"],\"maxItems\":25}",
+        "jsonBody": "{\"queries\":[\"user@example.com\",\"contact@example.org\"],\"maxItems\":25}",
         "options": {
           "timeout": 60000
         }
@@ -730,7 +820,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\"queries\":[\"alex@stripe.com\",\"contact@vercel.com\"],\"maxItems\":25}",
+        "jsonBody": "{\"queries\":[\"user@example.com\",\"sales@example.org\"],\"maxItems\":25}",
         "options": {
           "timeout": 60000
         }

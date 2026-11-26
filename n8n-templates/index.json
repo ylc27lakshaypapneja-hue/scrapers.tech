@@ -291,8 +291,8 @@
     "actorSlug": "reverse-email-to-linkedin-profile-lookup",
     "actorTitle": "Reverse Email Lookup to LinkedIn Profile API",
     "defaultQueries": [
-      "founders@stripe.com",
-      "press@anthropic.com"
+      "user@example.com",
+      "contact@example.org"
     ],
     "useCase": "Turn inbound Stripe/Typeform signup emails into full LinkedIn profiles, job titles, and company firmographics automatically.",
     "downloadUrl": "https://scrapers.tech/n8n-templates/20-reverse-email-to-linkedin-profile-enrichment.json",
@@ -321,8 +321,8 @@
     "actorSlug": "bulk-email-verifier-cleaner",
     "actorTitle": "Bulk Email Verifier & Validator - MX & SMTP",
     "defaultQueries": [
-      "alex@stripe.com",
-      "contact@vercel.com"
+      "user@example.com",
+      "sales@example.org"
     ],
     "useCase": "Verify email deliverability, DNS MX records, and catch-all status inside n8n before pushing leads to Instantly or Smartlead.",
     "downloadUrl": "https://scrapers.tech/n8n-templates/22-bulk-email-verifier-mx-smtp-catchall-cleaner.json",

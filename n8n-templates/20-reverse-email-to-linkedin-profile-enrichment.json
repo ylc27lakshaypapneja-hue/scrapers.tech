@@ -43,7 +43,7 @@
             {
               "id": "queries-field",
               "name": "queries",
-              "value": "[\"founders@stripe.com\",\"press@anthropic.com\"]",
+              "value": "[\"user@example.com\",\"contact@example.org\"]",
               "type": "array"
             },
             {
